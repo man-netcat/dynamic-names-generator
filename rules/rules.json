@@ -1531,13 +1531,6 @@
             "government_rank = 3"
         ]
     },
-    "CHINESE_EMPIRE": {
-        "name": "Great {NAME}",
-        "tags": [],
-        "conditions": [
-            "is_emperor_of_china = yes"
-        ]
-    },
     "MAMLUK_EMIR": {
         "name": "Mamluk Emirate of {NAME}",
         "tags": [],
@@ -1957,15 +1950,6 @@
             "NOT = { government_rank = 2 }"
         ]
     },
-    "GREAT_VIET": {
-        "name": "Great Viet",
-        "tags": [
-            "DAI"
-        ],
-        "conditions": [
-            "is_emperor_of_china = yes"
-        ]
-    },
     "LATER_JIN": {
         "name": "Later Jin",
         "tags": [
@@ -1974,82 +1958,6 @@
         ],
         "conditions": [
             "mission_completed = mch_proclaim_later_jin"
-        ]
-    },
-    "GREAT_ZHONGHAN": {
-        "name": "Great Zhonghan",
-        "tags": [
-            "KOR"
-        ],
-        "conditions": [
-            "is_emperor_of_china = yes"
-        ]
-    },
-    "GREAT_ZHONGRI": {
-        "name": "Great Zhongri",
-        "tags": [
-            "JAP"
-        ],
-        "conditions": [
-            "is_emperor_of_china = yes"
-        ]
-    },
-    "GREAT_ZHONGYUE": {
-        "name": "Great Zhongyue",
-        "tags": [
-            "DAI",
-            "ANN"
-        ],
-        "conditions": [
-            "is_emperor_of_china = yes"
-        ]
-    },
-    "GREAT_ZHONGZHAN": {
-        "name": "Great Zhongzhan",
-        "tags": [
-            "CHP"
-        ],
-        "conditions": [
-            "is_emperor_of_china = yes"
-        ]
-    },
-    "GREAT_ZHONGDIAN": {
-        "name": "Great Zhongdian",
-        "tags": [
-            "AVA",
-            "PEG"
-        ],
-        "conditions": [
-            "is_emperor_of_china = yes"
-        ]
-    },
-    "GREAT_ZHONGLAO": {
-        "name": "Great Zhonglao",
-        "tags": [
-            "LUA",
-            "VIE"
-        ],
-        "conditions": [
-            "is_emperor_of_china = yes"
-        ]
-    },
-    "GREAT_ZHONGTAI": {
-        "name": "Great Zhongtai",
-        "tags": [
-            "AYU",
-            "SUK"
-        ],
-        "conditions": [
-            "is_emperor_of_china = yes"
-        ]
-    },
-    "LATER_TANG": {
-        "name": "Later Tang",
-        "tags": [
-            "TNG"
-        ],
-        "conditions": [
-            "is_emperor_of_china = yes"
         ]
     },
     "EASTERN": {
@@ -2184,6 +2092,78 @@
             "NOT = { any_owned_province = { region = south_china_region } }",
             "NOT = { any_owned_province = { region = xinan_region } }",
             "num_of_provinces_in_states = 10"
+        ]
+    },
+    "CHINESE_EMPIRE": {
+        "name": "Great {NAME}",
+        "tags": [],
+        "conditions": [
+            "is_emperor_of_china = yes"
+        ]
+    },
+    "GREAT_NIHON": {
+        "name": "Great Nihon",
+        "tags": [],
+        "conditions": [
+            "is_emperor_of_china = yes",
+            "primary_culture = japanese"
+        ]
+    },
+    "GREAT_JOSEON": {
+        "name": "Great Joseon",
+        "tags": [],
+        "conditions": [
+            "is_emperor_of_china = yes",
+            "primary_culture = korean"
+        ]
+    },
+    "GREAT_HAN": {
+        "name": "Great Han",
+        "tags": [],
+        "conditions": [
+            "is_emperor_of_china = yes",
+            "primary_culture = korean_new"
+        ]
+    },
+    "GREAT_ZHUANG": {
+        "name": "Great Zhuang",
+        "tags": [],
+        "conditions": [
+            "is_emperor_of_china = yes",
+            "primary_culture = zhuang_new"
+        ]
+    },
+    "GREAT_ZANG": {
+        "name": "Great Zang",
+        "tags": [],
+        "conditions": [
+            "is_emperor_of_china = yes",
+            "primary_culture = tibetan_new"
+        ]
+    },
+    "GREAT_YUE": {
+        "name": "Great Yue",
+        "tags": [],
+        "conditions": [
+            "is_emperor_of_china = yes",
+            "primary_culture = vietnamese_new"
+        ]
+    },
+    "GREAT_VIET": {
+        "name": "Great Viet",
+        "tags": [],
+        "conditions": [
+            "is_emperor_of_china = yes",
+            "primary_culture = vietnamese"
+        ]
+    },
+    "LATER_TANG": {
+        "name": "Later Tang",
+        "tags": [
+            "TNG"
+        ],
+        "conditions": [
+            "is_emperor_of_china = yes"
         ]
     },
     "IRI": {
