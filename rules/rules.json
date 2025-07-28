@@ -1060,7 +1060,7 @@
             "government = monarchy",
             "religion_group = muslim",
             "NOT = { is_march = yes }",
-            "is_subject_of_type = vassal",
+            "OR = { is_subject_of_type = vassal is_subject_of_type = march }",
             "NOT = { has_reform = eyalet_government }",
             "NOT = { has_reform = barbary_eyalet_government }",
             "overlord = { primary_culture = turkish }",
@@ -2876,7 +2876,7 @@
         "name": "Anxi Protectorate",
         "tags": [],
         "conditions": [
-            "is_subject_of_type = vassal",
+            "OR = { is_subject_of_type = vassal is_subject_of_type = march }",
             "overlord = { is_emperor_of_china = yes }",
             "capital_scope = { region = central_asia_region }"
         ]
@@ -2885,7 +2885,7 @@
         "name": "Andong Protectorate",
         "tags": [],
         "conditions": [
-            "is_subject_of_type = vassal",
+            "OR = { is_subject_of_type = vassal is_subject_of_type = march }",
             "overlord = { is_emperor_of_china = yes }",
             "capital_scope = { region = manchuria_region }"
         ]
@@ -2894,7 +2894,7 @@
         "name": "Annan Protectorate",
         "tags": [],
         "conditions": [
-            "is_subject_of_type = vassal",
+            "OR = { is_subject_of_type = vassal is_subject_of_type = march }",
             "overlord = { is_emperor_of_china = yes }",
             "capital_scope = { region = indo_china_region }"
         ]
@@ -2903,7 +2903,7 @@
         "name": "Anbei Protectorate",
         "tags": [],
         "conditions": [
-            "is_subject_of_type = vassal",
+            "OR = { is_subject_of_type = vassal is_subject_of_type = march }",
             "overlord = { is_emperor_of_china = yes }",
             "capital_scope = { region = mongolia_region }"
         ]
@@ -2912,7 +2912,7 @@
         "name": "Tubo Protectorate",
         "tags": [],
         "conditions": [
-            "is_subject_of_type = vassal",
+            "OR = { is_subject_of_type = vassal is_subject_of_type = march }",
             "overlord = { is_emperor_of_china = yes }",
             "capital_scope = { region = tibet_region }"
         ]
@@ -2921,7 +2921,7 @@
         "name": "North Hebei Feudatory",
         "tags": [],
         "conditions": [
-            "is_subject_of_type = vassal",
+            "OR = { is_subject_of_type = vassal is_subject_of_type = march }",
             "overlord = { is_emperor_of_china = yes }",
             "capital_scope = { area = hebei_area }"
         ]
@@ -2930,7 +2930,7 @@
         "name": "South Hebei Feudatory",
         "tags": [],
         "conditions": [
-            "is_subject_of_type = vassal",
+            "OR = { is_subject_of_type = vassal is_subject_of_type = march }",
             "overlord = { is_emperor_of_china = yes }",
             "capital_scope = { area = south_hebei_area }"
         ]
@@ -2939,7 +2939,7 @@
         "name": "Shandong Feudatory",
         "tags": [],
         "conditions": [
-            "is_subject_of_type = vassal",
+            "OR = { is_subject_of_type = vassal is_subject_of_type = march }",
             "overlord = { is_emperor_of_china = yes }",
             "capital_scope = { area = shandong_area }"
         ]
@@ -2948,7 +2948,7 @@
         "name": "North Jiangsu Feudatory",
         "tags": [],
         "conditions": [
-            "is_subject_of_type = vassal",
+            "OR = { is_subject_of_type = vassal is_subject_of_type = march }",
             "overlord = { is_emperor_of_china = yes }",
             "capital_scope = { area = jiangsu_area }"
         ]
@@ -2957,7 +2957,7 @@
         "name": "South Jiangsu Feudatory",
         "tags": [],
         "conditions": [
-            "is_subject_of_type = vassal",
+            "OR = { is_subject_of_type = vassal is_subject_of_type = march }",
             "overlord = { is_emperor_of_china = yes }",
             "capital_scope = { area = south_jiangsu_area }"
         ]
@@ -2966,7 +2966,7 @@
         "name": "North Anhui Feudatory",
         "tags": [],
         "conditions": [
-            "is_subject_of_type = vassal",
+            "OR = { is_subject_of_type = vassal is_subject_of_type = march }",
             "overlord = { is_emperor_of_china = yes }",
             "capital_scope = { area = anhui_area }"
         ]
@@ -2975,7 +2975,7 @@
         "name": "South Anhui Feudatory",
         "tags": [],
         "conditions": [
-            "is_subject_of_type = vassal",
+            "OR = { is_subject_of_type = vassal is_subject_of_type = march }",
             "overlord = { is_emperor_of_china = yes }",
             "capital_scope = { area = south_anhui_area }"
         ]
@@ -2984,7 +2984,7 @@
         "name": "Zhejiang Feudatory",
         "tags": [],
         "conditions": [
-            "is_subject_of_type = vassal",
+            "OR = { is_subject_of_type = vassal is_subject_of_type = march }",
             "overlord = { is_emperor_of_china = yes }",
             "capital_scope = { area = zhejiang_area }"
         ]
@@ -2993,7 +2993,7 @@
         "name": "Jiangxi Feudatory",
         "tags": [],
         "conditions": [
-            "is_subject_of_type = vassal",
+            "OR = { is_subject_of_type = vassal is_subject_of_type = march }",
             "overlord = { is_emperor_of_china = yes }",
             "capital_scope = { area = jiangxi_area }"
         ]
@@ -3002,7 +3002,7 @@
         "name": "Fujian Feudatory",
         "tags": [],
         "conditions": [
-            "is_subject_of_type = vassal",
+            "OR = { is_subject_of_type = vassal is_subject_of_type = march }",
             "overlord = { is_emperor_of_china = yes }",
             "capital_scope = { area = fujian_area }"
         ]
@@ -3011,7 +3011,7 @@
         "name": "Taiwan Feudatory",
         "tags": [],
         "conditions": [
-            "is_subject_of_type = vassal",
+            "OR = { is_subject_of_type = vassal is_subject_of_type = march }",
             "overlord = { is_emperor_of_china = yes }",
             "capital_scope = { area = taiwan_area }"
         ]
@@ -3020,7 +3020,7 @@
         "name": "East Guangdong Feudatory",
         "tags": [],
         "conditions": [
-            "is_subject_of_type = vassal",
+            "OR = { is_subject_of_type = vassal is_subject_of_type = march }",
             "overlord = { is_emperor_of_china = yes }",
             "capital_scope = { area = guangdong_area }"
         ]
@@ -3029,7 +3029,7 @@
         "name": "West Guangdong Feudatory",
         "tags": [],
         "conditions": [
-            "is_subject_of_type = vassal",
+            "OR = { is_subject_of_type = vassal is_subject_of_type = march }",
             "overlord = { is_emperor_of_china = yes }",
             "capital_scope = { area = west_guangdong_area }"
         ]
@@ -3038,7 +3038,7 @@
         "name": "Guangxi Feudatory",
         "tags": [],
         "conditions": [
-            "is_subject_of_type = vassal",
+            "OR = { is_subject_of_type = vassal is_subject_of_type = march }",
             "overlord = { is_emperor_of_china = yes }",
             "capital_scope = { area = guangxi_area }"
         ]
@@ -3047,7 +3047,7 @@
         "name": "Yun-Gui Hinterland Feudatory",
         "tags": [],
         "conditions": [
-            "is_subject_of_type = vassal",
+            "OR = { is_subject_of_type = vassal is_subject_of_type = march }",
             "overlord = { is_emperor_of_china = yes }",
             "capital_scope = { area = yun_gui_area }"
         ]
@@ -3056,7 +3056,7 @@
         "name": "Yun-Gui Frontier Feudatory",
         "tags": [],
         "conditions": [
-            "is_subject_of_type = vassal",
+            "OR = { is_subject_of_type = vassal is_subject_of_type = march }",
             "overlord = { is_emperor_of_china = yes }",
             "capital_scope = { area = yun_gui_borderland_area }"
         ]
@@ -3065,7 +3065,7 @@
         "name": "Sichuan Feudatory",
         "tags": [],
         "conditions": [
-            "is_subject_of_type = vassal",
+            "OR = { is_subject_of_type = vassal is_subject_of_type = march }",
             "overlord = { is_emperor_of_china = yes }",
             "capital_scope = { area = sichuan_area }"
         ]
@@ -3074,7 +3074,7 @@
         "name": "Chuannan Feudatory",
         "tags": [],
         "conditions": [
-            "is_subject_of_type = vassal",
+            "OR = { is_subject_of_type = vassal is_subject_of_type = march }",
             "overlord = { is_emperor_of_china = yes }",
             "capital_scope = { area = chuannan_area }"
         ]
@@ -3083,7 +3083,7 @@
         "name": "Chuanbei Feudatory",
         "tags": [],
         "conditions": [
-            "is_subject_of_type = vassal",
+            "OR = { is_subject_of_type = vassal is_subject_of_type = march }",
             "overlord = { is_emperor_of_china = yes }",
             "capital_scope = { area = chuanbei_area }"
         ]
@@ -3092,7 +3092,7 @@
         "name": "Hubei Feudatory",
         "tags": [],
         "conditions": [
-            "is_subject_of_type = vassal",
+            "OR = { is_subject_of_type = vassal is_subject_of_type = march }",
             "overlord = { is_emperor_of_china = yes }",
             "capital_scope = { area = huguang_area }"
         ]
@@ -3101,7 +3101,7 @@
         "name": "Hunan Feudatory",
         "tags": [],
         "conditions": [
-            "is_subject_of_type = vassal",
+            "OR = { is_subject_of_type = vassal is_subject_of_type = march }",
             "overlord = { is_emperor_of_china = yes }",
             "capital_scope = { area = hunan_area }"
         ]
@@ -3110,7 +3110,7 @@
         "name": "South Henan Feudatory",
         "tags": [],
         "conditions": [
-            "is_subject_of_type = vassal",
+            "OR = { is_subject_of_type = vassal is_subject_of_type = march }",
             "overlord = { is_emperor_of_china = yes }",
             "capital_scope = { area = henan_area }"
         ]
@@ -3119,7 +3119,7 @@
         "name": "North Henan Feudatory",
         "tags": [],
         "conditions": [
-            "is_subject_of_type = vassal",
+            "OR = { is_subject_of_type = vassal is_subject_of_type = march }",
             "overlord = { is_emperor_of_china = yes }",
             "capital_scope = { area = north_henan_area }"
         ]
@@ -3128,7 +3128,7 @@
         "name": "Shanxi Feudatory",
         "tags": [],
         "conditions": [
-            "is_subject_of_type = vassal",
+            "OR = { is_subject_of_type = vassal is_subject_of_type = march }",
             "overlord = { is_emperor_of_china = yes }",
             "capital_scope = { area = shanxi_area }"
         ]
@@ -3137,7 +3137,7 @@
         "name": "Shaanxi Feudatory",
         "tags": [],
         "conditions": [
-            "is_subject_of_type = vassal",
+            "OR = { is_subject_of_type = vassal is_subject_of_type = march }",
             "overlord = { is_emperor_of_china = yes }",
             "capital_scope = { area = shaanxi_area }"
         ]
@@ -3146,7 +3146,7 @@
         "name": "East Gansu Feudatory",
         "tags": [],
         "conditions": [
-            "is_subject_of_type = vassal",
+            "OR = { is_subject_of_type = vassal is_subject_of_type = march }",
             "overlord = { is_emperor_of_china = yes }",
             "capital_scope = { area = gansu_area }"
         ]
@@ -3155,7 +3155,7 @@
         "name": "West Gansu Feudatory",
         "tags": [],
         "conditions": [
-            "is_subject_of_type = vassal",
+            "OR = { is_subject_of_type = vassal is_subject_of_type = march }",
             "overlord = { is_emperor_of_china = yes }",
             "capital_scope = { area = west_gansu_area }"
         ]
