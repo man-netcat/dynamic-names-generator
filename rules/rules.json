@@ -1498,7 +1498,7 @@
         ]
     },
     "JOSEON_P": {
-        "name": "Prinedom of Joseon",
+        "name": "Princedom of Joseon",
         "tags": [
             "KOR"
         ],
@@ -1528,6 +1528,40 @@
         "conditions": [
             "has_reform = monarchy_mechanic",
             "dynasty = \"Yi\"",
+            "government_rank = 3"
+        ]
+    },
+    "GORYEO_P": {
+        "name": "Princedom of Goryeo",
+        "tags": [
+            "KOR"
+        ],
+        "conditions": [
+            "has_reform = monarchy_mechanic",
+            "NOT = { dynasty = \"Yi\" }",
+            "NOT = { government_rank = 2 }"
+        ]
+    },
+    "GORYEO_K": {
+        "name": "Kingdom of Goryeo",
+        "tags": [
+            "KOR"
+        ],
+        "conditions": [
+            "has_reform = monarchy_mechanic",
+            "NOT = { dynasty = \"Yi\" }",
+            "government_rank = 2",
+            "NOT = { government_rank = 3 }"
+        ]
+    },
+    "GORYEO_E": {
+        "name": "Goryeo Empire",
+        "tags": [
+            "KOR"
+        ],
+        "conditions": [
+            "has_reform = monarchy_mechanic",
+            "NOT = { dynasty = \"Yi\" }",
             "government_rank = 3"
         ]
     },
@@ -2111,15 +2145,31 @@
     },
     "GREAT_JOSEON": {
         "name": "Great Joseon",
-        "tags": [],
+        "tags": [
+            "KOR"
+        ],
         "conditions": [
             "is_emperor_of_china = yes",
+            "dynasty = \"Yi\"",
+            "primary_culture = korean"
+        ]
+    },
+    "GREAT_GORYEO": {
+        "name": "Great Goguryeo",
+        "tags": [
+            "KOR"
+        ],
+        "conditions": [
+            "is_emperor_of_china = yes",
+            "NOT = { dynasty = \"Yi\" }",
             "primary_culture = korean"
         ]
     },
     "GREAT_HAN": {
-        "name": "Great Han",
-        "tags": [],
+        "name": "Great Zhonghan",
+        "tags": [
+            "KOR"
+        ],
         "conditions": [
             "is_emperor_of_china = yes",
             "primary_culture = korean_new"
