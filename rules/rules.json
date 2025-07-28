@@ -1582,15 +1582,6 @@
             "NOT = { government_rank = 3 }"
         ]
     },
-    "GREAT_SHUN": {
-        "name": "Great Shun",
-        "tags": [
-            "CSH"
-        ],
-        "conditions": [
-            "government_rank = 2"
-        ]
-    },
     "IMPERIAL_COMMONWEALTH": {
         "name": "Imperial Commonwealth",
         "tags": [
@@ -2927,7 +2918,7 @@
         ]
     },
     "HEBEI_FEUDATORY": {
-        "name": "Feudatory of North Hebei",
+        "name": "North Hebei Feudatory",
         "tags": [],
         "conditions": [
             "is_subject_of_type = vassal",
@@ -2936,7 +2927,7 @@
         ]
     },
     "SOUTH_HEBEI_FEUDATORY": {
-        "name": "Feudatory of South Hebei",
+        "name": "South Hebei Feudatory",
         "tags": [],
         "conditions": [
             "is_subject_of_type = vassal",
@@ -2945,7 +2936,7 @@
         ]
     },
     "SHANDONG_FEUDATORY": {
-        "name": "Feudatory of Shandong",
+        "name": "Shandong Feudatory",
         "tags": [],
         "conditions": [
             "is_subject_of_type = vassal",
@@ -2954,7 +2945,7 @@
         ]
     },
     "JIANGSU_FEUDATORY": {
-        "name": "Feudatory of North Jiangsu",
+        "name": "North Jiangsu Feudatory",
         "tags": [],
         "conditions": [
             "is_subject_of_type = vassal",
@@ -2963,7 +2954,7 @@
         ]
     },
     "SOUTH_JIANGSU_FEUDATORY": {
-        "name": "Feudatory of South Jiangsu",
+        "name": "South Jiangsu Feudatory",
         "tags": [],
         "conditions": [
             "is_subject_of_type = vassal",
@@ -2972,7 +2963,7 @@
         ]
     },
     "ANHUI_FEUDATORY": {
-        "name": "Feudatory of North Anhui",
+        "name": "North Anhui Feudatory",
         "tags": [],
         "conditions": [
             "is_subject_of_type = vassal",
@@ -2981,7 +2972,7 @@
         ]
     },
     "SOUTH_ANHUI_FEUDATORY": {
-        "name": "Feudatory of South Anhui",
+        "name": "South Anhui Feudatory",
         "tags": [],
         "conditions": [
             "is_subject_of_type = vassal",
@@ -2990,7 +2981,7 @@
         ]
     },
     "ZHEJIANG_FEUDATORY": {
-        "name": "Feudatory of Zhejiang",
+        "name": "Zhejiang Feudatory",
         "tags": [],
         "conditions": [
             "is_subject_of_type = vassal",
@@ -2999,7 +2990,7 @@
         ]
     },
     "JIANGXI_FEUDATORY": {
-        "name": "Feudatory of Jiangxi",
+        "name": "Jiangxi Feudatory",
         "tags": [],
         "conditions": [
             "is_subject_of_type = vassal",
@@ -3008,7 +2999,7 @@
         ]
     },
     "FUJIAN_FEUDATORY": {
-        "name": "Feudatory of Fujian",
+        "name": "Fujian Feudatory",
         "tags": [],
         "conditions": [
             "is_subject_of_type = vassal",
@@ -3017,7 +3008,7 @@
         ]
     },
     "TAIWAN_FEUDATORY": {
-        "name": "Feudatory of Taiwan",
+        "name": "Taiwan Feudatory",
         "tags": [],
         "conditions": [
             "is_subject_of_type = vassal",
@@ -3026,7 +3017,7 @@
         ]
     },
     "GUANGDONG_FEUDATORY": {
-        "name": "Feudatory of East Guangdong",
+        "name": "East Guangdong Feudatory",
         "tags": [],
         "conditions": [
             "is_subject_of_type = vassal",
@@ -3035,7 +3026,7 @@
         ]
     },
     "WEST_GUANGDONG_FEUDATORY": {
-        "name": "Feudatory of West Guangdong",
+        "name": "West Guangdong Feudatory",
         "tags": [],
         "conditions": [
             "is_subject_of_type = vassal",
@@ -3044,7 +3035,7 @@
         ]
     },
     "GUANGXI_FEUDATORY": {
-        "name": "Feudatory of Guangxi",
+        "name": "Guangxi Feudatory",
         "tags": [],
         "conditions": [
             "is_subject_of_type = vassal",
@@ -3053,7 +3044,7 @@
         ]
     },
     "YUN_GUI_FEUDATORY": {
-        "name": "Feudatory of Yun-Gui Hinterland",
+        "name": "Yun-Gui Hinterland Feudatory",
         "tags": [],
         "conditions": [
             "is_subject_of_type = vassal",
@@ -3062,7 +3053,7 @@
         ]
     },
     "YUN_GUI_BORDER_FEUDATORY": {
-        "name": "Feudatory of Yun-Gui Frontier",
+        "name": "Yun-Gui Frontier Feudatory",
         "tags": [],
         "conditions": [
             "is_subject_of_type = vassal",
@@ -3071,7 +3062,7 @@
         ]
     },
     "SICHUAN_FEUDATORY": {
-        "name": "Feudatory of Sichuan",
+        "name": "Sichuan Feudatory",
         "tags": [],
         "conditions": [
             "is_subject_of_type = vassal",
@@ -3080,7 +3071,7 @@
         ]
     },
     "CHUANNAN_FEUDATORY": {
-        "name": "Feudatory of Chuannan",
+        "name": "Chuannan Feudatory",
         "tags": [],
         "conditions": [
             "is_subject_of_type = vassal",
@@ -3089,7 +3080,7 @@
         ]
     },
     "CHUANBEI_FEUDATORY": {
-        "name": "Feudatory of Chuanbei",
+        "name": "Chuanbei Feudatory",
         "tags": [],
         "conditions": [
             "is_subject_of_type = vassal",
@@ -3098,7 +3089,7 @@
         ]
     },
     "HUGUANG_FEUDATORY": {
-        "name": "Feudatory of Hubei",
+        "name": "Hubei Feudatory",
         "tags": [],
         "conditions": [
             "is_subject_of_type = vassal",
@@ -3107,7 +3098,7 @@
         ]
     },
     "HUNAN_FEUDATORY": {
-        "name": "Feudatory of Hunan",
+        "name": "Hunan Feudatory",
         "tags": [],
         "conditions": [
             "is_subject_of_type = vassal",
@@ -3116,7 +3107,7 @@
         ]
     },
     "HENAN_FEUDATORY": {
-        "name": "Feudatory of South Henan",
+        "name": "South Henan Feudatory",
         "tags": [],
         "conditions": [
             "is_subject_of_type = vassal",
@@ -3125,7 +3116,7 @@
         ]
     },
     "NORTH_HENAN_FEUDATORY": {
-        "name": "Feudatory of North Henan",
+        "name": "North Henan Feudatory",
         "tags": [],
         "conditions": [
             "is_subject_of_type = vassal",
@@ -3134,7 +3125,7 @@
         ]
     },
     "SHANXI_FEUDATORY": {
-        "name": "Feudatory of Shanxi",
+        "name": "Shanxi Feudatory",
         "tags": [],
         "conditions": [
             "is_subject_of_type = vassal",
@@ -3143,7 +3134,7 @@
         ]
     },
     "SHAANXI_FEUDATORY": {
-        "name": "Feudatory of Shaanxi",
+        "name": "Shaanxi Feudatory",
         "tags": [],
         "conditions": [
             "is_subject_of_type = vassal",
@@ -3152,7 +3143,7 @@
         ]
     },
     "GANSU_FEUDATORY": {
-        "name": "Feudatory of East Gansu",
+        "name": "East Gansu Feudatory",
         "tags": [],
         "conditions": [
             "is_subject_of_type = vassal",
@@ -3161,7 +3152,7 @@
         ]
     },
     "WEST_GANSU_FEUDATORY": {
-        "name": "Feudatory of West Gansu",
+        "name": "West Gansu Feudatory",
         "tags": [],
         "conditions": [
             "is_subject_of_type = vassal",
