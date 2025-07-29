@@ -8,6 +8,7 @@ from collections import defaultdict
 
 class ModBuilder:
     def __init__(self):
+        # Read rules, tag names, and dynasty names from input files
         self.rules_list = read_rules()
         print("Rules read successfully")
         self.tag_name_list = read_tag_names()
@@ -15,43 +16,53 @@ class ModBuilder:
         self.dynasty_names = read_dynasties()
         print("Dynasty names read successfully")
 
+        # Prepare lists and dictionaries for processing
         self.tag_names = list(self.tag_name_list.items())
         self.rules: dict[str, list[RuleEntry]] = defaultdict(list)
         self.tag_to_rules: dict[str, list[RuleEntry]] = defaultdict(list)
         self.events = {}
         self.event_id = 1
+        # Generate keys for dynasty names for localisation/events
         self.dynasty_keys = {
             name: name.upper().replace(" ", "_").replace("-", "_").replace("'", "")
             for name in self.dynasty_names
         }
 
+    # Assign rules to tags based on their conditions
     def assign_rules_to_tags(self):
         for rule in self.rules_list:
             if not rule.tags:
+                # If rule has no tags, assign to all tags
                 for tag, _ in self.tag_names:
                     self.tag_to_rules[tag].append(rule)
             else:
+                # Otherwise, assign to specified tags
                 for tag in rule.tags:
                     self.tag_to_rules[tag].append(rule)
 
+        # For each tag, process rules and generate RuleEntry objects
         for tag, _ in self.tag_names:
             for rule in self.tag_to_rules[tag]:
                 name = get_country_name(rule.name, (tag, self.tag_name_list[tag]))
                 if name:
                     tag_name_value = get_tag_name(tag, rule.tag_name)
+                    # Special case for Teutonic Order Electorate
                     if tag_name_value == "TEO_ELECTORATE":
                         tag_name_value = "TEO_ELECTORATE_NAME"
                     self.rules[tag].append(
                         RuleEntry(tag_name_value, name, " ".join(rule.conditions))
                     )
 
+    # Generate event script for dynamic country names
     def generate_event_script(self):
+        # Collect rules that use dynasty names
         dynasty_rules = [
             (rule.name, " ".join(rule.conditions), rule.tag_name)
             for rule in self.rules_list
             if "{DYNASTY}" in rule.name
         ]
 
+        # Start building event script lines
         event_lines = [
             "### generated events for dynamic names\n",
             f"namespace = {EVENT_NAME}\n\n",
@@ -65,6 +76,7 @@ class ModBuilder:
             "\timmediate = {",
         ]
 
+        # Add event triggers for each tag
         for tag, _ in self.tag_names:
             event_lines.append(
                 f"\t\tif = {{ limit = {{ tag = {tag} }} country_event = {{ id = {EVENT_NAME}.{self.event_id} }} }}"
@@ -72,6 +84,7 @@ class ModBuilder:
             self.events[tag] = str(self.event_id)
             self.event_id += 1
 
+        # Add event triggers for dynasty rules
         for rule in dynasty_rules:
             event_lines.append(
                 f"\t\tif = {{ limit = {{ {rule[1]} }} country_event = {{ id = {EVENT_NAME}.{self.event_id} }} }}"
@@ -87,6 +100,7 @@ class ModBuilder:
             "}",
         ]
 
+        # Generate country events for each tag
         for tag, _ in self.tag_names:
             id = self.events[tag]
             tag_event = [
@@ -113,6 +127,7 @@ class ModBuilder:
             ]
             event_lines.extend(tag_event)
 
+        # Generate country events for dynasty rules
         for rule in dynasty_rules:
             id = self.events[rule[0]]
             dynasty_event = [
@@ -139,12 +154,14 @@ class ModBuilder:
             ]
             event_lines.extend(dynasty_event)
 
+        # Write event script to file
         os.makedirs("../events", exist_ok=True)
         with open(f"../events/{EVENT_NAME}_events.txt", "w+") as f:
             f.write("\n".join(event_lines))
 
         print("Writing event done")
 
+    # Generate localisation file for country names and dynasties
     def generate_localisation(self):
         loc_lines = ["l_english:", "\n #tag rules\n"]
         for tag, entries in self.rules.items():
@@ -168,11 +185,13 @@ class ModBuilder:
                     )
                     loc_lines.append(f' {key}_{rule.tag_name}_ADJ: "{name.title()}"')
 
+        # Add localisation for decision
         loc_lines.append('update_dynamic_names_decision_title: "Update Dynamic Names"')
         loc_lines.append(
             'update_dynamic_names_decision_desc: "Force update dynamic names (e.g. after a government rank change). Happens automatically every 2 in-game years."'
         )
 
+        # Write localisation to file
         os.makedirs("../localisation", exist_ok=True)
         with open(
             f"../localisation/{EVENT_NAME}_localisation_l_english.yml",
@@ -183,6 +202,7 @@ class ModBuilder:
 
         print("Writing localisation done")
 
+    # Generate on_actions file to trigger events on game actions
     def generate_on_actions(self):
         on_actions_lines = [
             "on_startup = { events = { %s.0 } }" % EVENT_NAME,
@@ -196,12 +216,14 @@ class ModBuilder:
             "on_country_released = { events = { %s.0 } }" % EVENT_NAME,
         ]
 
+        # Write on_actions to file
         os.makedirs("../common/on_actions", exist_ok=True)
         with open(f"../common/on_actions/{EVENT_NAME}_on_actions.txt", "w+") as f:
             f.write("\n\n".join(on_actions_lines))
 
         print("Writing on_actions done")
 
+    # Generate decision file for updating dynamic names
     def generate_decision(self):
         decision_lines = [
             "country_decisions = {",
@@ -214,12 +236,14 @@ class ModBuilder:
             "}",
         ]
 
+        # Write decision to file
         os.makedirs("../decisions", exist_ok=True)
         with open(f"../decisions/{EVENT_NAME}_decisions.txt", "w+") as f:
             f.write("\n".join(decision_lines))
 
         print("Writing decision done")
 
+    # Main build function to run all generation steps
     def build(self):
         self.assign_rules_to_tags()
         self.generate_event_script()
@@ -228,6 +252,7 @@ class ModBuilder:
         self.generate_decision()
 
 
+# Entry point for script execution
 if __name__ == "__main__":
     builder = ModBuilder()
     builder.build()
