@@ -2074,7 +2074,7 @@
         ]
     },
     "GREAT_GORYEO": {
-        "name": "Great Goguryeo",
+        "name": "Great Goryeo",
         "tags": [
             "KOR"
         ],
@@ -2126,10 +2126,11 @@
             "primary_culture = vietnamese"
         ]
     },
-    "LATER_TANG": {
-        "name": "Later Tang",
+    "LATER": {
+        "name": "Later {NAME}",
         "tags": [
-            "TNG"
+            "TNG",
+            "QIN"
         ],
         "conditions": [
             "is_emperor_of_china = yes"
