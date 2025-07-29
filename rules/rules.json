@@ -1987,26 +1987,7 @@
     },
     "EASTERN": {
         "name": "Eastern {NAME}",
-        "tags": [
-            "JIN",
-            "LNG",
-            "MNG",
-            "QIC",
-            "QIN",
-            "SHU",
-            "YAN",
-            "CHC",
-            "HUA",
-            "MIN",
-            "TNG",
-            "WUU",
-            "XIC",
-            "YUE",
-            "QNG",
-            "CXI",
-            "CSH",
-            "CZH"
-        ],
+        "tags": [],
         "conditions": [
             "NOT = { any_owned_province = { area = sichuan_area } }",
             "NOT = { any_owned_province = { area = yun_gui_area } }",
@@ -2018,31 +1999,13 @@
             "NOT = { any_owned_province = { area = shaanxi_area } }",
             "NOT = { any_owned_province = { area = guangxi_area } }",
             "NOT = { any_owned_province = { area = west_guangdong_area } }",
+            "culture_group = east_asian",
             "num_of_provinces_in_states = 10"
         ]
     },
     "WESTERN": {
         "name": "Western {NAME}",
-        "tags": [
-            "JIN",
-            "LNG",
-            "MNG",
-            "QIC",
-            "QIN",
-            "SHU",
-            "YAN",
-            "CHC",
-            "HUA",
-            "MIN",
-            "TNG",
-            "WUU",
-            "XIC",
-            "YUE",
-            "QNG",
-            "CXI",
-            "CSH",
-            "CZH"
-        ],
+        "tags": [],
         "conditions": [
             "NOT = { any_owned_province = { area = guangdong_area } }",
             "NOT = { any_owned_province = { area = fujian_area } }",
@@ -2061,61 +2024,26 @@
             "NOT = { any_owned_province = { area = north_henan_area } }",
             "NOT = { any_owned_province = { area = jiangsu_area } }",
             "NOT = { any_owned_province = { area = anhui_area } }",
+            "culture_group = east_asian",
             "num_of_provinces_in_states = 10"
         ]
     },
     "SOUTHERN": {
         "name": "Southern {NAME}",
-        "tags": [
-            "JIN",
-            "LNG",
-            "MNG",
-            "QIC",
-            "QIN",
-            "SHU",
-            "YAN",
-            "CHC",
-            "HUA",
-            "MIN",
-            "TNG",
-            "WUU",
-            "XIC",
-            "YUE",
-            "QNG",
-            "CXI",
-            "CSH",
-            "CZH"
-        ],
+        "tags": [],
         "conditions": [
             "NOT = { any_owned_province = { region = north_china_region } }",
+            "culture_group = east_asian",
             "num_of_provinces_in_states = 10"
         ]
     },
     "NORTHERN": {
         "name": "Northern {NAME}",
-        "tags": [
-            "JIN",
-            "LNG",
-            "MNG",
-            "QIC",
-            "QIN",
-            "SHU",
-            "YAN",
-            "CHC",
-            "HUA",
-            "MIN",
-            "TNG",
-            "WUU",
-            "XIC",
-            "YUE",
-            "QNG",
-            "CXI",
-            "CSH",
-            "CZH"
-        ],
+        "tags": [],
         "conditions": [
             "NOT = { any_owned_province = { region = south_china_region } }",
             "NOT = { any_owned_province = { region = xinan_region } }",
+            "culture_group = east_asian",
             "num_of_provinces_in_states = 10"
         ]
     },
