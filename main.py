@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from utils import *
 from classes.rule_entry import RuleEntry
 import os
