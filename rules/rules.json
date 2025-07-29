@@ -2908,8 +2908,8 @@
             "capital_scope = { region = mongolia_region }"
         ]
     },
-    "TUBO_PROTECTORATE": {
-        "name": "Tubo Protectorate",
+    "ANFU_PROTECTORATE": {
+        "name": "Anfu Protectorate",
         "tags": [],
         "conditions": [
             "OR = { is_subject_of_type = vassal is_subject_of_type = march }",
@@ -2917,13 +2917,22 @@
             "capital_scope = { region = tibet_region }"
         ]
     },
-    "WA_PROTECTORATE": {
-        "name": "Wa Protectorate",
+    "ANWO_PROTECTORATE": {
+        "name": "Anwo Protectorate",
         "tags": [],
         "conditions": [
             "OR = { is_subject_of_type = vassal is_subject_of_type = march }",
             "overlord = { is_emperor_of_china = yes }",
             "capital_scope = { region = japan_region }"
+        ]
+    },
+    "ANHAN_PROTECTORATE": {
+        "name": "Anhan Protectorate",
+        "tags": [],
+        "conditions": [
+            "OR = { is_subject_of_type = vassal is_subject_of_type = march }",
+            "overlord = { is_emperor_of_china = yes }",
+            "capital_scope = { region = korea_region }"
         ]
     },
     "HEBEI_FEUDATORY": {
