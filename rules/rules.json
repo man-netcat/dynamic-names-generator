@@ -164,6 +164,15 @@
             "NOT = { government_rank = 2 }"
         ]
     },
+    "TUMEN": {
+        "name": "{NAME_ADJ} Tümen",
+        "tags": [],
+        "conditions": [
+            "has_reform = steppe_horde",
+            "is_march = yes",
+            "overlord = { OR = { culture_group = altaic culture_group = tartar primary_culture = altaic_new } }"
+        ]
+    },
     "KHANATE": {
         "name": "{NAME_ADJ} Khanate",
         "tags": [],
