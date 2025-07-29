@@ -2917,6 +2917,15 @@
             "capital_scope = { region = tibet_region }"
         ]
     },
+    "WA_PROTECTORATE": {
+        "name": "Wa Protectorate",
+        "tags": [],
+        "conditions": [
+            "OR = { is_subject_of_type = vassal is_subject_of_type = march }",
+            "overlord = { is_emperor_of_china = yes }",
+            "capital_scope = { region = japan_region }"
+        ]
+    },
     "HEBEI_FEUDATORY": {
         "name": "North Hebei Feudatory",
         "tags": [],
