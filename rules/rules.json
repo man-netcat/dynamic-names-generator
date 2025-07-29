@@ -2130,7 +2130,8 @@
         "name": "Later {NAME}",
         "tags": [
             "TNG",
-            "QIN"
+            "QIN",
+            "YUA"
         ],
         "conditions": [
             "is_emperor_of_china = yes"
