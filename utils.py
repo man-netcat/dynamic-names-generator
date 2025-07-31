@@ -1,15 +1,15 @@
-import json
+import yaml
 from classes.rule import Rule
 from classes.tagName import TagName
 from defines.defines import *
 
 
 def read_rules() -> list[Rule]:
-    rules = open(RULES_PATH, encoding="utf-8-sig")
-    rules_json = json.load(rules)
+    with open(RULES_PATH, encoding="utf-8-sig") as rules:
+        rules_yaml = yaml.safe_load(rules)
     rules_list = []
 
-    for key, entry in rules_json.items():
+    for key, entry in rules_yaml.items():
         rule = Rule(entry["name"], key, entry["tags"], entry["conditions"])
         rules_list.append(rule)
 
