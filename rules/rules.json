@@ -2009,7 +2009,9 @@
             "NOT = { any_owned_province = { area = guangxi_area } }",
             "NOT = { any_owned_province = { area = west_guangdong_area } }",
             "culture_group = east_asian",
-            "num_of_provinces_in_states = 10"
+            "num_of_provinces_in_states = 10",
+            "capital_scope = { superregion = china_superregion }",
+            "is_subject = no"
         ]
     },
     "WESTERN": {
@@ -2034,7 +2036,9 @@
             "NOT = { any_owned_province = { area = jiangsu_area } }",
             "NOT = { any_owned_province = { area = anhui_area } }",
             "culture_group = east_asian",
-            "num_of_provinces_in_states = 10"
+            "num_of_provinces_in_states = 10",
+            "capital_scope = { superregion = china_superregion }",
+            "is_subject = no"
         ]
     },
     "SOUTHERN": {
@@ -2043,7 +2047,9 @@
         "conditions": [
             "NOT = { any_owned_province = { region = north_china_region } }",
             "culture_group = east_asian",
-            "num_of_provinces_in_states = 10"
+            "num_of_provinces_in_states = 10",
+            "capital_scope = { superregion = china_superregion }",
+            "is_subject = no"
         ]
     },
     "NORTHERN": {
@@ -2053,7 +2059,9 @@
             "NOT = { any_owned_province = { region = south_china_region } }",
             "NOT = { any_owned_province = { region = xinan_region } }",
             "culture_group = east_asian",
-            "num_of_provinces_in_states = 10"
+            "num_of_provinces_in_states = 10",
+            "capital_scope = { superregion = china_superregion }",
+            "is_subject = no"
         ]
     },
     "CHINESE_EMPIRE": {
@@ -2176,7 +2184,9 @@
             "has_reform = steppe_horde",
             "OR = { culture_group = altaic culture_group = tartar primary_culture = altaic_new }",
             "NOT = { government_rank = 3 }",
-            "num_of_provinces_in_states = 15"
+            "num_of_provinces_in_states = 15",
+            "capital_scope = { region = mongolia_region }",
+            "is_subject = no"
         ]
     },
     "CHAGATAI_HORDE": {
