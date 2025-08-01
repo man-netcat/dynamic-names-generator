@@ -1,4 +1,4 @@
-﻿DUCHY:
+DUCHY:
   name: Duchy of {NAME}
   tags: []
   conditions:
@@ -1626,6 +1626,8 @@ LATER_JIN:
   conditions:
   - mission_completed = mch_proclaim_later_jin
 
+# Chinese Empire titles for each of the four directions
+
 EASTERN:
   name: Eastern {NAME}
   tags: []
@@ -2236,6 +2238,8 @@ GREAT_ARMENIA_THEOCRACY:
   - government = theocracy
   - has_country_flag = is_GREAT_ARMENIA_flag
 
+# Chinese protectorates for each region surrounding the China superregion
+
 ANXI_PROTECTORATE:
   name: Anxi Protectorate
   tags: []
@@ -2299,6 +2303,8 @@ ANMIAN_PROTECTORATE:
   - OR = { is_subject_of_type = vassal is_subject_of_type = march }
   - overlord = { is_emperor_of_china = yes }
   - capital_scope = { region = burma_region }
+
+# Feudatories for each area in the China superregion
 
 HEBEI_FEUDATORY:
   name: North Hebei Feudatory
@@ -2515,3 +2521,45 @@ WEST_GANSU_FEUDATORY:
   - OR = { is_subject_of_type = vassal is_subject_of_type = march }
   - overlord = { is_emperor_of_china = yes }
   - capital_scope = { area = west_gansu_area }
+
+# Japanese puppet states
+
+SHINAKOKU:
+  name: Shinakoku
+  tags: []
+  conditions:
+  - OR = { is_subject_of_type = vassal is_subject_of_type = march }
+  - overlord = { tag = JAP }
+  - capital_scope = { superregion = china_superregion }
+
+MANCHUKOKU:
+  name: Manchukoku # More commonly known in the west as Manchukuo
+  tags: []
+  conditions:
+  - OR = { is_subject_of_type = vassal is_subject_of_type = march }
+  - overlord = { tag = JAP }
+  - capital_scope = { region = manchuria_region }
+
+CHOSENKOKU:
+  name: Chosenkoku
+  tags: []
+  conditions:
+  - OR = { is_subject_of_type = vassal is_subject_of_type = march }
+  - overlord = { tag = JAP }
+  - capital_scope = { region = korea_region }
+
+FIRIPINKOKU:
+  name: Firipinkoku
+  tags: []
+  conditions:
+  - OR = { is_subject_of_type = vassal is_subject_of_type = march }
+  - overlord = { tag = JAP }
+  - capital_scope = { region = philippines_region }
+
+MOKOKOKU:
+  name: Mokokoku
+  tags: []
+  conditions:
+  - OR = { is_subject_of_type = vassal is_subject_of_type = march }
+  - overlord = { tag = JAP }
+  - capital_scope = { region = mongolia_region }
