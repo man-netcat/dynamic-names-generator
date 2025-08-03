@@ -204,16 +204,20 @@ class ModBuilder:
 
     # Generate on_actions file to trigger events on game actions
     def generate_on_actions(self):
+        triggers = [
+            "on_startup",
+            "on_government_change",
+            "on_native_change_government",
+            "on_religion_change",
+            "on_primary_culture_changed",
+            "on_monarch_death",
+            "on_country_creation",
+            "on_bi_yearly_pulse",
+            "on_country_released",
+        ]
+
         on_actions_lines = [
-            "on_startup = { events = { %s.0 } }" % EVENT_NAME,
-            "on_government_change = { events = { %s.0 } }" % EVENT_NAME,
-            "on_native_change_government = { events = { %s.0 } }" % EVENT_NAME,
-            "on_religion_change = { events = { %s.0 } }" % EVENT_NAME,
-            "on_primary_culture_changed = { events = { %s.0 } }" % EVENT_NAME,
-            "on_monarch_death = { events = { %s.0 } }" % EVENT_NAME,
-            "on_country_creation = { events = { %s.0 } }" % EVENT_NAME,
-            "on_bi_yearly_pulse = { events = { %s.0 } }" % EVENT_NAME,
-            "on_country_released = { events = { %s.0 } }" % EVENT_NAME,
+            f"{trigger} = {{ events = {{ {EVENT_NAME}.0 }} }}" for trigger in triggers
         ]
 
         # Write on_actions to file
