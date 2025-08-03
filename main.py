@@ -31,6 +31,7 @@ class ModBuilder:
     # Assign rules to tags based on their conditions
     def assign_rules_to_tags(self):
         for rule in self.rules_list:
+            print(f"Processing rule: {rule.name} with tags: {rule.tags} and conditions: {rule.conditions}")
             if not rule.tags:
                 # If rule has no tags, assign to all tags
                 for tag, _ in self.tag_names:

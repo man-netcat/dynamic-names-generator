@@ -1,19 +1,23 @@
-import yaml
 from classes.rule import Rule
 from classes.tagName import TagName
+from defines.defines import *
+from antlr4 import *
+from parser.RulesVisitor import RulesVisitor
+from parser.RulesLexer import RulesLexer
+from parser.RulesParser import RulesParser
+from classes.rule import Rule
 from defines.defines import *
 
 
 def read_rules() -> list[Rule]:
-    with open(RULES_PATH, encoding="utf-8-sig") as rules:
-        rules_yaml = yaml.safe_load(rules)
-    rules_list = []
+    input_stream = FileStream(RULES_PATH, encoding="utf-8-sig")
+    lexer = RulesLexer(input_stream)
+    token_stream = CommonTokenStream(lexer)
+    parser = RulesParser(token_stream)
+    tree = parser.root()
 
-    for key, entry in rules_yaml.items():
-        rule = Rule(entry["name"], key, entry["tags"], entry["conditions"])
-        rules_list.append(rule)
-
-    return rules_list
+    visitor = RulesVisitor()
+    return visitor.visit(tree)
 
 
 def read_tag_names() -> list[(str, TagName)]:

@@ -1,29 +1,24 @@
 grammar Rules;
 
 // Parser rules
-file: rule_object+ EOF;
-rule_object: IDENTIFIER '=' '{' rule_body '}';
-rule_body: (name_block | conditions_block | tags_block)*;
+root: ruleObject+ EOF;
 
-name_block: 'name' '=' STRING;
-conditions_block: 'conditions' '=' condition_block;
-tags_block: 'tags' '=' tag_block;
+ruleObject:
+	IDENTIFIER '=' '{' nameBlock tagsBlock? conditionsBlock? '}';
 
-condition_block: '{' condition_expr* '}';
-tag_block: '{' IDENTIFIER* '}';
-condition_expr: logical_expr | key_value | block_expr;
-
-logical_expr: ('OR' | 'AND') '=' condition_block
-	| 'NOT' '=' (block_expr | condition_expr);
-
-block_expr: '{' condition_expr* '}';
-
-key_value: IDENTIFIER '=' ( value | condition_block);
-
-value: IDENTIFIER | STRING | NUMBER | 'yes' | 'no';
+nameBlock: 'name' '=' name = STRING;
+tagsBlock: 'tags' '=' '{' tag = IDENTIFIER+ '}';
+conditionsBlock: 'conditions' '=' '{' condition = expr+ '}';
+expr:
+	id = IDENTIFIER '=' (
+		value = '{' expr+ '}'
+		| IDENTIFIER
+		| STRING
+		| NUMBER
+	);
 
 // Lexer rules
-IDENTIFIER: [a-zA-Z_][A-Za-z_0-9]*;
+IDENTIFIER: [A-Za-z][A-Za-z_0-9]*;
 STRING: '"' (~["\\] | '\\' .)* '"';
 NUMBER: [0-9]+;
 
