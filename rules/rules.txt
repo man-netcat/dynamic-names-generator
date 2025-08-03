@@ -1448,6 +1448,20 @@ SHEIKHDOM = {
     }
 }
 
+DYNASTY_SHEIKHDOM = {
+    name = "{DYNASTY} Sheikhdom"
+    conditions = {
+        government = monarchy
+        OR = {
+            culture_group = iranian
+            has_country_flag = turkoman_adopt_shahanshah_title
+        }
+        NOT = {
+            government_rank = 2
+        }
+    }
+}
+
 SHAHDOM = {
     name = "Shahdom of {NAME}"
     conditions = {
@@ -1464,15 +1478,18 @@ SHAHDOM = {
     }
 }
 
-MALIKATE_SISTAN = {
-    name = "Malikate of Sistan"
-    tags = {
-        SIS
-    }
+DYNASTY_SHAHDOM = {
+    name = "{DYNASTY} Shahdom"
     conditions = {
         government = monarchy
+        OR = {
+            culture_group = iranian
+            has_country_flag = turkoman_adopt_shahanshah_title
+            tag = SIS
+        }
+        government_rank = 2
         NOT = {
-            government_rank = 2
+            government_rank = 3
         }
     }
 }
@@ -1480,14 +1497,26 @@ MALIKATE_SISTAN = {
 MALIKATE = {
     name = "Malikate of {NAME}"
     conditions = {
-        religion_group = muslim
-        government = tribal
-        NOT = {
-            has_reform = steppe_horde
+        OR = {
+            AND = {
+                religion_group = muslim
+                government = tribal
+                NOT = {
+                    has_reform = steppe_horde
+                }
+                NOT = {
+                    government_rank = 2
+                }
+            }
+            AND = {
+                tag = SIS
+                government = monarchy
+                NOT = {
+                    government_rank = 2
+                }
+            }
         }
-        NOT = {
-            government_rank = 2
-        }
+
     }
 }
 
