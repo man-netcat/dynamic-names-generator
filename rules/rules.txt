@@ -5028,7 +5028,7 @@ FIRIPINKOKU = {
             tag = JAP
         }
         capital_scope = {
-            region = philippines_region
+            region = moluccas_region
         }
     }
 }
