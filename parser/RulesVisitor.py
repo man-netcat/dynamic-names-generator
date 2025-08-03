@@ -36,7 +36,7 @@ class RulesVisitor(BaseRulesVisitor):
         key = identifiers[0].getText()
 
         if ctx.STRING():
-            value = ctx.STRING().getText().strip('"')
+            value = ctx.STRING().getText()
         elif ctx.NUMBER():
             value = ctx.NUMBER().getText()
         elif len(identifiers) == 2:
