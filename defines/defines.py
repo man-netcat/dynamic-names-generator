@@ -1,6 +1,15 @@
 RULES_PATH = "rules/rules.txt"
 DYNASTIES_PATH = "data/dynasties.txt"
 TAG_NAMES_PATH = "data/tag_names.txt"
+REVOLUTIONARIES_PATH = "data/revolutionary_names.txt"
+DYNASTIC_NAMES_PATH = "data/dynastic_country_names.txt"
+JAPANESE_PUPPETS_PATH = "data/japanese_puppets.txt"
+FEUDATORIES_PATH = "data/feudatories.txt"
+PROTECTORATES_PATH = "data/protectorates.txt"
+EYALETS_PATH = "data/eyalets.txt"
+EMPIRE_OF_CHINA_NAMES = "data/empire_of_china_names.txt"
+SHOGUNATE_NAMES = "data/shogunate_names.txt"
+
 EVENT_NAME = "dynamic_names"
 
 EVENT_SCRIPT_HEADER = """\
@@ -26,7 +35,7 @@ country_event = {{
 }}
 """
 
-COUNTRY_EVENT_TEMPLATE = """\
+TAG_DEPENDANT_EVENT_TEMPLATE = """\
 country_event = {{
     id = {event_name}.{id}
     title = {event_name}.{id}.title
@@ -49,7 +58,7 @@ country_event = {{
 }}
 """
 
-DYNASTY_EVENT_TEMPLATE = """\
+TAG_AGNOSTIC_EVENT_TEMPLATE = """\
 country_event = {{
     id = {event_name}.{id}
     title = {event_name}.{id}.title
@@ -78,3 +87,5 @@ country_decisions = {{
     }}
 }}
 """
+
+FORMAT_TEMPLATES = ["{NAME}", "{NAME_ADJ}", "{DYNASTY}"]
