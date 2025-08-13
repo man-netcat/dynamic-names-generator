@@ -303,14 +303,19 @@ SLOVAKIA = {
 
 IRAN = {
 	name = "Iran"
-	name_adj = "Irani"
+	name_adj = "Iranian"
 	tags = {
 		tag = PER
 		tag = ERS
 	}
 	conditions = {
-		government = republic
-		is_revolutionary_republic_trigger = yes
+		OR = {
+			AND = {
+				government = republic
+				is_revolutionary_republic_trigger = yes
+			}
+			has_country_flag = is_iran_flag
+		}
 	}
 }
 

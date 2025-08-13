@@ -1330,6 +1330,9 @@ PRINCIPALITY_EASTERN = {
 			primary_culture = goths
 			primary_culture = gothic_ger
 		}
+		NOT = {
+			government_rank = 3
+		}
 	}
 }
 
@@ -1349,7 +1352,7 @@ RES_PUBLICA = {
 }
 
 KHEDIVATE = {
-	name = "{NAME_ADJ} Republic"
+	name = "{NAME_ADJ} Khedivate"
 	conditions = {
 		OR = {
 			has_reform = enlightened_despotism
@@ -2182,14 +2185,10 @@ OTTOMAN_MARCH = {
 }
 
 ILKHANATE = {
-	name = "The Ilkhanate"
+	name = "Persian Ilkhanate"
+	name_adj = "Persian"
 	tags = {
 		tag = ILK
-	}
-	conditions = {
-		OR = {
-			is_march = yes
-		}
 	}
 }
 

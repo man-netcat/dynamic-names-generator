@@ -83,9 +83,7 @@ class Generator:
                         tag=tag_name_value,
                         name=name,
                         name_adj=name_adj,
-                        condition=" ".join(
-                            rule.conditions + substitution_rule.conditions
-                        ),
+                        condition=" ".join(rule.conditions),
                     )
 
                     self.rules[substitution_rule.id].append(entry)

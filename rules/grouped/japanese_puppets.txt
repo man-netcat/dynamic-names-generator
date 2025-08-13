@@ -1,11 +1,29 @@
 JAPANESE_PUPPET_GROUP = {
 	group = {
-		SHINAKOKU = {
-			name = "Shinakoku"
-			name_adj = "Shinakoku"
+		KARAKOKU = {
+			name = "Karakoku"
+			name_adj = "Karakoku"
 			conditions = {
 				capital_scope = {
 					superregion = china_superregion
+				}
+			}
+		}
+		TENJIKU = {
+			name = "Tenjiku"
+			name_adj = "Tenjiku"
+			conditions = {
+				capital_scope = {
+					superregion = india_superregion
+				}
+			}
+		}
+		KUNLUN = {
+			name = "Kunlun"
+			name_adj = "Kunlun"
+			conditions = {
+				capital_scope = {
+					region = tibet_region
 				}
 			}
 		}

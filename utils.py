@@ -146,9 +146,7 @@ def read_tag_names(file_path: str) -> dict[str, Localisation]:
         name = line_split[0]
         value = line_split[1]
         if "_ADJ2" in name:
-            key = name.replace("_ADJ2", "")
-            tagName = tag_name_list[key]
-            tagName.adj = process_name(value)
+            continue
         elif "_ADJ" in name:
             key = name.replace("_ADJ", "")
             tagName = tag_name_list[key]

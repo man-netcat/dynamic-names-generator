@@ -1,5 +1,6 @@
 EYALET_GROUP = {
 	group = {
+		# Original Eyalets
 		MACARISTAN = {
 			name = "Macaristan"
 			name_adj = "Macaristani"
@@ -42,6 +43,13 @@ EYALET_GROUP = {
 			name_adj = "Siqilliyan"
 			tags = {
 				tag = SIC
+			}
+		}
+		ROMA = {
+			name = "Roma"
+			name_adj = "Romali"
+			tags = {
+				tag = PAP
 			}
 		}
 		MISIR = {
@@ -135,11 +143,26 @@ EYALET_GROUP = {
 				tag = RAS
 			}
 		}
+		# Additional Eyalets
 		TRABZON = {
 			name = "Trabzon"
 			name_adj = "Trabzoni"
 			tags = {
 				tag = TRE
+			}
+		}
+		KARAMAN = {
+			name = "Karaman"
+			name_adj = "Karamani"
+			tags = {
+				tag = KAR
+			}
+		}
+		BASRA = {
+			name = "Basra"
+			name_adj = "Basrali"
+			tags = {
+				tag = BSR
 			}
 		}
 		BOSNA = {
