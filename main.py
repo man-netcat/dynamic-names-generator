@@ -8,17 +8,22 @@ from utils import *
 from classes.RuleEntry import RuleEntry
 
 
-class ModBuilder:
+class Generator:
     def __init__(self):
         # Read rules, tag names, and dynasty names from input files
-        self.rules_list = read_rules()
+        self.rules_list: list[Rule] = read_rules(RULES_PATH)
         print("Rules read successfully")
+        self.rules_list.extend(read_grouped_rules(GROUPED_RULES_DIR))
+        print("Grouped Rules read successfully")
+        self.substitution_rules_list: list[Rule] = read_rules(SUB_RULES_PATH)
+        print("Substitution Rules read successfully")
         self.tag_name_list = read_tag_names(TAG_NAMES_PATH)
         print("Tag names read successfully")
         self.dynasty_names = read_dynasties()
         print("Dynasty names read successfully")
 
         self.global_rules_list: list[Rule] = []
+        self.tagged_rules_list: list[Rule] = []
         self.rules: dict[str, list[RuleEntry]] = defaultdict(list)
         self.tag_to_rules: dict[str, list[Rule]] = defaultdict(list)
         self.events = {}
@@ -27,23 +32,12 @@ class ModBuilder:
         self.dynasty_keys = {name: format_as_tag(name) for name in self.dynasty_names}
 
     def assign_rules(self):
-        for module in [
-            add_revolutionaries(),
-            add_feudatories(),
-            add_protectorates(),
-            add_jap_puppets(),
-            add_emperor_of_china(),
-            add_shogunates(),
-            add_eyalets(),
-            add_dynastic_names(self.rules_list),
-        ]:
-            self.rules_list.extend(module)
-
         # Map rules to applicable tags
         for rule in self.rules_list:
             if not any(x in rule.name for x in FORMAT_TEMPLATES) and not rule.tags:
                 self.global_rules_list.append(rule)
             else:
+                self.tagged_rules_list.append(rule)
                 target_tags = rule.tags or self.tag_name_list.keys()
                 for tag in target_tags:
                     self.tag_to_rules[tag].append(rule)
@@ -61,17 +55,42 @@ class ModBuilder:
 
                 name_adj = rule.name_adj or loc.adj
 
-                self.rules[tag].append(
-                    RuleEntry(
+                entry = RuleEntry(
+                    tag=tag_name_value,
+                    name=name,
+                    name_adj=name_adj,
+                    condition=" ".join(rule.conditions),
+                )
+                self.rules[tag].append(entry)
+
+        # Rules for substituting names
+        for substitution_rule in self.substitution_rules_list:
+            for rule in self.tagged_rules_list:
+                if set(substitution_rule.tags) & set(rule.tags) or rule.tags == []:
+                    loc = Localisation(
+                        substitution_rule.name,
+                        substitution_rule.name_adj,
+                    )
+                    name = get_country_name(rule.name, (substitution_rule.id, loc))
+                    if not name:
+                        continue
+
+                    tag_name_value = get_tag_name(substitution_rule.id, rule.id)
+
+                    name_adj = rule.name_adj or loc.adj
+
+                    entry = RuleEntry(
                         tag=tag_name_value,
                         name=name,
                         name_adj=name_adj,
-                        condition=" ".join(rule.conditions),
+                        condition=" ".join(
+                            rule.conditions + substitution_rule.conditions
+                        ),
                     )
-                )
+
+                    self.rules[substitution_rule.id].append(entry)
 
     def generate_event_script(self):
-
         # Compose event triggers for the initial event immediate block
         event_triggers = []
         for tag, _ in self.tag_name_list.items():
@@ -81,13 +100,24 @@ class ModBuilder:
             self.events[tag] = str(self.event_id)
             self.event_id += 1
 
+        for substitution_rule in self.substitution_rules_list:
+            if substitution_rule.tags != []:
+                tags = f"OR = {{ {' '.join(f'tag = {tag}' for tag in substitution_rule.tags)} }}"
+            else:
+                tags = ""
+            event_triggers.append(
+                f"        if = {{ limit = {{ {tags} {substitution_rule.conditions[0]} }} country_event = {{ id = {EVENT_NAME}.{self.event_id} }} }}"
+            )
+            self.events[substitution_rule.id] = str(self.event_id)
+            self.event_id += 1
+
         dynasty_rules = [rule for rule in self.rules_list if "{DYNASTY}" in rule.name]
         for rule in dynasty_rules:
             conditions = " ".join(rule.conditions)
             event_triggers.append(
                 f"        if = {{ limit = {{ {conditions} }} country_event = {{ id = {EVENT_NAME}.{self.event_id} }} }}"
             )
-            self.events[rule.name] = str(self.event_id)
+            self.events[rule.id] = str(self.event_id)
             self.event_id += 1
 
         # Add global rules directly
@@ -96,7 +126,7 @@ class ModBuilder:
             event_triggers.append(
                 f"        if = {{ limit = {{ {conditions} }} override_country_name = {rule.id} }}"
             )
-            self.events[rule.name] = str(self.event_id)
+            self.events[rule.id] = str(self.event_id)
             self.event_id += 1
 
         # Write event header with triggers
@@ -123,9 +153,25 @@ class ModBuilder:
                 )
             )
 
+        # Country events per substituted name tag
+        for substitution_rule in self.substitution_rules_list:
+            id = self.events[substitution_rule.id]
+            conditions = []
+            for rule in self.rules[substitution_rule.id]:
+                conditions.append(
+                    f"        if = {{ limit = {{ {rule.condition} }} override_country_name = {rule.tag} }}"
+                )
+            event_lines.append(
+                TAG_AGNOSTIC_EVENT_TEMPLATE.format(
+                    event_name=EVENT_NAME,
+                    id=id,
+                    conditions="\n".join(conditions),
+                )
+            )
+
         # Dynasty rules events
         for rule in dynasty_rules:
-            id = self.events[rule.name]
+            id = self.events[rule.id]
             conditions = []
             for name in self.dynasty_names:
                 key = self.dynasty_keys[name]
@@ -138,8 +184,8 @@ class ModBuilder:
                 )
             )
 
-        os.makedirs("../events", exist_ok=True)
-        with open(f"../events/{EVENT_NAME}_events.txt", "w+") as f:
+        os.makedirs(f"{MOD_PATH}/events", exist_ok=True)
+        with open(f"{MOD_PATH}/events/{EVENT_NAME}_events.txt", "w+") as f:
             f.write("\n".join(event_lines))
 
         print("Writing event done")
@@ -150,8 +196,7 @@ class ModBuilder:
             loc_lines.append(f" # {tag}")
             for entry in entries:
                 loc_lines.append(f' {entry.tag}: "{entry.name}"')
-                if entry.name_adj:
-                    loc_lines.append(f' {entry.tag}_ADJ: "{entry.name_adj}"')
+                loc_lines.append(f' {entry.tag}_ADJ: "{entry.name_adj}"')
 
         loc_lines.append(" #dynasties")
         for rule in self.rules_list:
@@ -168,17 +213,17 @@ class ModBuilder:
         for rule in self.global_rules_list:
             loc_lines.append(f"\n # {rule.id}")
             loc_lines.append(f' {rule.id}: "{rule.name}"')
-            if entry.name_adj:
-                loc_lines.append(f' {rule.id}_ADJ: "{rule.name_adj}"')
+            loc_lines.append(f' {rule.id}_ADJ: "{rule.name_adj}"')
 
+        loc_lines.append(" #decision")
         loc_lines.append('update_dynamic_names_decision_title: "Update Dynamic Names"')
         loc_lines.append(
             'update_dynamic_names_decision_desc: "Force update dynamic names (e.g. after a government rank change). Happens automatically every 2 in-game years."'
         )
 
-        os.makedirs("../localisation", exist_ok=True)
+        os.makedirs(f"{MOD_PATH}/localisation", exist_ok=True)
         with open(
-            f"../localisation/{EVENT_NAME}_localisation_l_english.yml",
+            f"{MOD_PATH}/localisation/{EVENT_NAME}_localisation_l_english.yml",
             "w+",
             encoding="utf-8-sig",
         ) as f:
@@ -203,15 +248,17 @@ class ModBuilder:
             f"{trigger} = {{ events = {{ {EVENT_NAME}.0 }} }}" for trigger in triggers
         ]
 
-        os.makedirs("../common/on_actions", exist_ok=True)
-        with open(f"../common/on_actions/{EVENT_NAME}_on_actions.txt", "w+") as f:
+        os.makedirs(f"{MOD_PATH}/common/on_actions", exist_ok=True)
+        with open(
+            f"{MOD_PATH}/common/on_actions/{EVENT_NAME}_on_actions.txt", "w+"
+        ) as f:
             f.write("\n\n".join(on_actions_lines))
 
         print("Writing on_actions done")
 
     def generate_decision(self):
-        os.makedirs("../decisions", exist_ok=True)
-        with open(f"../decisions/{EVENT_NAME}_decisions.txt", "w+") as f:
+        os.makedirs(f"{MOD_PATH}/decisions", exist_ok=True)
+        with open(f"{MOD_PATH}/decisions/{EVENT_NAME}_decisions.txt", "w+") as f:
             f.write(DECISION_TEMPLATE.format(event_name=EVENT_NAME))
 
         print("Writing decision done")
@@ -225,5 +272,5 @@ class ModBuilder:
 
 
 if __name__ == "__main__":
-    builder = ModBuilder()
+    builder = Generator()
     builder.build()

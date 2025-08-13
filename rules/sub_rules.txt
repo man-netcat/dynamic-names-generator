@@ -1,0 +1,533 @@
+# Revolutionary republics
+INDIA = {
+	name = "India"
+	name_adj = "Indian"
+	tags = {
+		tag = BHA
+		tag = HIN
+	}
+	conditions = {
+		government = republic
+		is_revolutionary_republic_trigger = yes
+	}
+}
+
+BANGLADESH = {
+	name = "Bangladesh"
+	name_adj = "Bangladeshi"
+	tags = {
+		tag = BNG
+	}
+	conditions = {
+		government = republic
+		is_revolutionary_republic_trigger = yes
+	}
+}
+
+CAMBODIA = {
+	name = "Cambodia"
+	name_adj = "Cambodian"
+	tags = {
+		tag = KHM
+	}
+	conditions = {
+		government = republic
+		is_revolutionary_republic_trigger = yes
+	}
+}
+
+LAOS = {
+	name = "Laos"
+	name_adj = "Laotian"
+	tags = {
+		tag = LXA
+	}
+	conditions = {
+		government = republic
+		is_revolutionary_republic_trigger = yes
+	}
+}
+
+THAILAND = {
+	name = "Thailand"
+	name_adj = "Thai"
+	tags = {
+		tag = SUK
+		tag = AYU
+		tag = SIA
+	}
+	conditions = {
+		government = republic
+		is_revolutionary_republic_trigger = yes
+	}
+}
+
+BURMA = {
+	name = "Burma"
+	name_adj = "Burmese"
+	tags = {
+		tag = AVA
+		tag = HSE
+		tag = TAU
+	}
+	conditions = {
+		government = republic
+		is_revolutionary_republic_trigger = yes
+	}
+}
+
+CHINA = {
+	name = "China"
+	name_adj = "Chinese"
+	tags = {
+	}
+	conditions = {
+		culture_group = chinese
+		government = republic
+		is_revolutionary_republic_trigger = yes
+		num_of_provinces_owned_or_owned_by_subjects_with = {
+			value = 75
+			OR = {
+				region = north_china_region
+				region = south_china_region
+				region = xinan_region
+			}
+		}
+	}
+}
+
+BELGIUM = {
+	name = "Belgium"
+	name_adj = "Belgian"
+	tags = {
+	}
+	conditions = {
+		government = republic
+		is_revolutionary_republic_trigger = yes
+		capital_scope = {
+			OR = {
+				area = brabant_area
+				area = flanders_area
+				area = wallonia_area
+			}
+			NOT = {
+				province_id = 94
+			}
+		}
+	}
+}
+
+LIGURIA = {
+	name = "Liguria"
+	name_adj = "Ligurian"
+	tags = {
+		tag = GEN
+	}
+	conditions = {
+		government = republic
+		is_revolutionary_republic_trigger = yes
+	}
+}
+
+CISAPLIA = {
+	name = "Cisalpia"
+	name_adj = "Cisalpine"
+	tags = {
+		tag = MLO
+	}
+	conditions = {
+		government = republic
+		is_revolutionary_republic_trigger = yes
+	}
+}
+
+PARTHENOPEA = {
+	name = "Parthenopea"
+	name_adj = "Parthenopean"
+	tags = {
+		tag = NAP
+		tag = TTS
+	}
+	conditions = {
+		government = republic
+		is_revolutionary_republic_trigger = yes
+	}
+}
+
+PIEDMONT = {
+	name = "Piedmont"
+	name_adj = "Piedmontese"
+	tags = {
+		tag = SAV
+		tag = SPI
+	}
+	conditions = {
+		government = republic
+		is_revolutionary_republic_trigger = yes
+	}
+}
+
+HELVETIA = {
+	name = "Helvetia"
+	name_adj = "Helvetic"
+	tags = {
+		tag = SWI
+	}
+	conditions = {
+		government = republic
+		is_revolutionary_republic_trigger = yes
+	}
+}
+
+ETRURIA = {
+	name = "Etruria"
+	name_adj = "Etrurian"
+	tags = {
+		tag = LAN
+		tag = TUS
+	}
+	conditions = {
+		government = republic
+		is_revolutionary_republic_trigger = yes
+	}
+}
+
+ANCONIA = {
+	name = "Anconia"
+	name_adj = "Anconine"
+	tags = {
+		tag = URB
+	}
+	conditions = {
+		government = republic
+		is_revolutionary_republic_trigger = yes
+	}
+}
+
+SAN_MARCO = {
+	name = "San Marco"
+	name_adj = "Sanmarconese"
+	tags = {
+		tag = VEN
+	}
+	conditions = {
+		government = republic
+		is_revolutionary_republic_trigger = yes
+	}
+}
+
+CZECHIA = {
+	name = "Czechia"
+	name_adj = "Czech"
+	tags = {
+		tag = BOH
+	}
+	conditions = {
+		government = republic
+		is_revolutionary_republic_trigger = yes
+	}
+}
+
+SLOVENIA = {
+	name = "Slovenia"
+	name_adj = "Slovene"
+	tags = {
+		tag = CLI
+	}
+	conditions = {
+		government = republic
+		is_revolutionary_republic_trigger = yes
+	}
+}
+
+ILLYRIA = {
+	name = "Illyria"
+	name_adj = "Illyrian"
+	tags = {
+		tag = CRO
+	}
+	conditions = {
+		government = republic
+		is_revolutionary_republic_trigger = yes
+	}
+}
+
+UKRAINE = {
+	name = "Ukraine"
+	name_adj = "Ukrainian"
+	tags = {
+		tag = UKR
+		tag = KIE
+	}
+	conditions = {
+		government = republic
+		is_revolutionary_republic_trigger = yes
+	}
+}
+
+LATVIA = {
+	name = "Latvia"
+	name_adj = "Latvian"
+	tags = {
+		tag = LVA
+	}
+	conditions = {
+		government = republic
+		is_revolutionary_republic_trigger = yes
+	}
+}
+
+DACIA = {
+	name = "Dacia"
+	name_adj = "Dacian"
+	tags = {
+		tag = RMN
+	}
+	conditions = {
+		government = republic
+		is_revolutionary_republic_trigger = yes
+	}
+}
+
+SLOVAKIA = {
+	name = "Slovakia"
+	name_adj = "Slovak"
+	tags = {
+		tag = SLO
+	}
+	conditions = {
+		government = republic
+		is_revolutionary_republic_trigger = yes
+	}
+}
+
+IRAN = {
+	name = "Iran"
+	name_adj = "Irani"
+	tags = {
+		tag = PER
+		tag = ERS
+	}
+	conditions = {
+		government = republic
+		is_revolutionary_republic_trigger = yes
+	}
+}
+
+GURKANI = {
+	name = "Gurkani"
+	name_adj = "Gurkani"
+	tags = {
+		tag = TIM
+	}
+	conditions = {
+		government = republic
+		is_revolutionary_republic_trigger = yes
+	}
+}
+
+HELLADA = {
+	name = "Hellada"
+	name_adj = "Hellene"
+	tags = {
+		tag = GRE
+	}
+	conditions = {
+		government = republic
+		is_revolutionary_republic_trigger = yes
+	}
+}
+
+# Name flags
+LPC = {
+	name = "Lithuania-Poland"
+	name_adj = "Commonwealth"
+	tags = {
+		tag = PLC
+	}
+	conditions = {
+		primary_culture = lithuanian
+	}
+}
+
+PLC = {
+	name = "Poland-Lithuania"
+	name_adj = "Commonwealth"
+	tags = {
+		tag = PLC
+	}
+	conditions = {
+		primary_culture = polish
+	}
+}
+
+KINGDOM_OF_GOD = {
+	name = "Kingdom of God"
+	name_adj = "Papal"
+	tags = {
+		tag = PAP
+	}
+	conditions = {
+		has_country_flag = is_kingdom_of_god_flag
+	}
+}
+
+CHAGATAI = {
+	name = "Chagatai"
+	name_adj = "Chagatai"
+	tags = {
+		tag = CHG
+	}
+	conditions = {
+		has_country_flag = is_CHAGATAI_flag
+	}
+}
+
+AUSTRALIA_HUNGARY = {
+	name = "Australia-Hungary"
+	name_adj = "Australohungarian"
+	tags = {
+		tag = AUH
+	}
+	conditions = {
+		has_country_flag = is_AUSTRALIA_HUNGARY_flag
+	}
+}
+
+GOTHIA = {
+	name = "Gothia"
+	name_adj = "Gothic"
+	tags = {
+		tag = FEO
+	}
+	conditions = {
+		has_country_flag = is_GOTHIA_flag
+	}
+}
+
+GREAT_ARMENIA = {
+	name = "Great Armenia"
+	name_adj = "Great Armenian"
+	tags = {
+		tag = ARM
+	}
+	conditions = {
+		has_country_flag = is_GREAT_ARMENIA_flag
+	}
+}
+
+# Dynastic names
+OTTOMANS = {
+	name = "The Ottomans"
+	name_adj = "Ottoman"
+	tags = {
+		tag = TUR
+	}
+	conditions = {
+		has_reform = monarchy_mechanic
+		dynasty = "Osmanoglu"
+	}
+}
+
+TURKIYE = {
+	name = "Turkiye"
+	name_adj = "Turkish"
+	tags = {
+		tag = TUR
+	}
+	conditions = {
+		has_reform = monarchy_mechanic
+		NOT = {
+			dynasty = "Osmanoglu"
+		}
+	}
+}
+
+JOSEON = {
+	name = "Joseon"
+	name_adj = "Joseonese"
+	tags = {
+		tag = KOR
+	}
+	conditions = {
+		has_reform = monarchy_mechanic
+		dynasty = "Yi"
+	}
+}
+
+GOGURYEO = {
+	name = "Goguryeo"
+	name_adj = "Goguryeoan"
+	tags = {
+		tag = KOR
+	}
+	conditions = {
+		has_reform = monarchy_mechanic
+		dynasty = "Go"
+	}
+}
+
+SILLA = {
+	name = "Silla"
+	name_adj = "Sillan"
+	tags = {
+		tag = KOR
+	}
+	conditions = {
+		has_reform = monarchy_mechanic
+		OR = {
+			dynasty = "Park"
+			dynasty = "Kim"
+		}
+	}
+}
+
+BALHAE = {
+	name = "Balhae"
+	name_adj = "Balhaean"
+	tags = {
+		tag = KOR
+	}
+	conditions = {
+		has_reform = monarchy_mechanic
+		dynasty = "Dae"
+	}
+}
+
+GORYEO = {
+	name = "Goryeo"
+	name_adj = "Goryeoan"
+	tags = {
+		tag = KOR
+	}
+	conditions = {
+		has_reform = monarchy_mechanic
+		dynasty = "Wang"
+	}
+}
+
+DAI_NAM = {
+	name = "Dai Nam"
+	name_adj = "Dainamese"
+	tags = {
+		tag = DAI
+	}
+	conditions = {
+		has_reform = monarchy_mechanic
+		OR = {
+			dynasty = "Nguyen"
+			dynasty = "Nguyen Phuc"
+		}
+	}
+}
+
+VIET_NAM = {
+	name = "Viet Nam"
+	name_adj = "Vietnamese"
+	tags = {
+		tag = DAI
+	}
+	conditions = {
+		government = republic
+	}
+}

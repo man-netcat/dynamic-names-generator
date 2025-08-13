@@ -1,14 +1,11 @@
+MOD_PATH = "/home/rick/.local/share/Paradox Interactive/Europa Universalis IV/mod/Dynamic-Names"
+
 RULES_PATH = "rules/rules.txt"
+SUB_RULES_PATH = "rules/sub_rules.txt"
+GROUPED_RULES_DIR = "rules/grouped"
+
 DYNASTIES_PATH = "data/dynasties.txt"
 TAG_NAMES_PATH = "data/tag_names.txt"
-REVOLUTIONARIES_PATH = "data/revolutionary_names.txt"
-DYNASTIC_NAMES_PATH = "data/dynastic_country_names.txt"
-JAPANESE_PUPPETS_PATH = "data/japanese_puppets.txt"
-FEUDATORIES_PATH = "data/feudatories.txt"
-PROTECTORATES_PATH = "data/protectorates.txt"
-EYALETS_PATH = "data/eyalets.txt"
-EMPIRE_OF_CHINA_NAMES = "data/empire_of_china_names.txt"
-SHOGUNATE_NAMES = "data/shogunate_names.txt"
 
 EVENT_NAME = "dynamic_names"
 

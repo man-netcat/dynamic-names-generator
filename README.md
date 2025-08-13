@@ -1,4 +1,4 @@
-Enhanced version of the generator for the EU4 mod [Dynamic Names Redux](https://steamcommunity.com/sharedfiles/filedetails/?id=3512012035)
+Personalised version of the generator for the EU4 mod [Dynamic Names Redux](https://steamcommunity.com/sharedfiles/filedetails/?id=3512012035)
 
 Original code and credit goes to [Jey the Count](https://steamcommunity.com/profiles/76561198315499375)
 
