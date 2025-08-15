@@ -1,4 +1,5 @@
 EYALET_GROUP = {
+	name = "Eyalet-i {ITEM_NAME}"
 	group = {
 		# Original Eyalets
 		MACARISTAN = {

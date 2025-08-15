@@ -1,7 +1,8 @@
 CHINESE_PROTECTORATE_GROUP = {
+	name = "{ITEM_NAME} Protectorate"
 	group = {
 		ANXI = {
-			name = "Anxi Protectorate"
+			name = "Anxi"
 			name_adj = "Anxi"
 			conditions = {
 				capital_scope = {
@@ -10,7 +11,7 @@ CHINESE_PROTECTORATE_GROUP = {
 			}
 		}
 		ANDONG = {
-			name = "Andong Protectorate"
+			name = "Andong"
 			name_adj = "Andong"
 			conditions = {
 				capital_scope = {
@@ -19,7 +20,7 @@ CHINESE_PROTECTORATE_GROUP = {
 			}
 		}
 		ANNAN = {
-			name = "Annan Protectorate"
+			name = "Annan"
 			name_adj = "Annan"
 			conditions = {
 				capital_scope = {
@@ -28,7 +29,7 @@ CHINESE_PROTECTORATE_GROUP = {
 			}
 		}
 		ANBEI = {
-			name = "Anbei Protectorate"
+			name = "Anbei"
 			name_adj = "Anbei"
 			conditions = {
 				capital_scope = {
@@ -37,7 +38,7 @@ CHINESE_PROTECTORATE_GROUP = {
 			}
 		}
 		ANTU = {
-			name = "Antu Protectorate"
+			name = "Antu"
 			name_adj = "Antu"
 			conditions = {
 				capital_scope = {
@@ -46,7 +47,7 @@ CHINESE_PROTECTORATE_GROUP = {
 			}
 		}
 		ANRI = {
-			name = "Anri Protectorate"
+			name = "Anri"
 			name_adj = "Anri"
 			conditions = {
 				capital_scope = {
@@ -55,7 +56,7 @@ CHINESE_PROTECTORATE_GROUP = {
 			}
 		}
 		ANHAN = {
-			name = "Anhan Protectorate"
+			name = "Anhan"
 			name_adj = "Anhan"
 			conditions = {
 				capital_scope = {
@@ -64,7 +65,7 @@ CHINESE_PROTECTORATE_GROUP = {
 			}
 		}
 		ANMIAN = {
-			name = "Anmian Protectorate"
+			name = "Anmian"
 			name_adj = "Anmian"
 			conditions = {
 				capital_scope = {

@@ -1,42 +1,43 @@
 CHINESE_EMPIRE_GROUP = {
+	name = "Great {ITEM_NAME}"
 	group = {
 		NIHON = {
-			name = "Great Nihon"
+			name = "Nihon"
 			name_adj = "Nihon"
 			conditions = {
 				culture_group = japanese_g
 			}
 		}
 		BOD = {
-			name = "Great Bod"
+			name = "Bod"
 			name_adj = "Bod"
 			conditions = {
 				culture_group = tibetan_group
 			}
 		}
 		VIET = {
-			name = "Great Viet"
+			name = "Viet"
 			name_adj = "Viet"
 			conditions = {
 				culture = vietnamese
 			}
 		}
 		ZHONGHAN = {
-			name = "Great Zhonghan"
+			name = "Zhonghan"
 			name_adj = "Zhonghan"
 			conditions = {
 				culture = korean_new
 			}
 		}
 		ZHUANG = {
-			name = "Great Zhuang"
+			name = "Zhuang"
 			name_adj = "Zhuang"
 			conditions = {
 				culture = zhuang_new
 			}
 		}
 		YUE_VIETNAM = {
-			name = "Great Yue"
+			name = "Yue"
 			name_adj = "Yue"
 			conditions = {
 				culture = vietnamese_new

@@ -1,0 +1,29 @@
+MONGOL_BROTHER_REALM_GROUP = {
+	name = "{ITEM_NAME} Ulus"
+	group = {
+		ILKHANATE = {
+			name = "Hulegu"
+			name_adj = "Huleguid"
+			tags = {
+				tag = ILK
+			}
+		}
+		YUAN = {
+			name = "Yuan"
+			name_adj = "Borjigid"
+			tags = {
+				tag = YUA
+			}
+		}
+		GOLDEN_HORDE = {
+			name = "Ulug"
+			name_adj = "Jochid"
+			tags = {
+				tag = GLH
+			}
+		}
+	}
+	conditions = {
+		is_subject_of_type = mongol_brother_realm
+	}
+}

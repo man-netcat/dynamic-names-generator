@@ -79,8 +79,6 @@ BURMA = {
 CHINA = {
 	name = "China"
 	name_adj = "Chinese"
-	tags = {
-	}
 	conditions = {
 		culture_group = chinese
 		government = republic
@@ -96,11 +94,21 @@ CHINA = {
 	}
 }
 
+TAIWAN = {
+	name = "Taiwan"
+	name_adj = "Taiwanese"
+	tags = {
+		tag = FRM
+	}
+	conditions = {
+		government = republic
+		is_revolutionary_republic_trigger = yes
+	}
+}
+
 BELGIUM = {
 	name = "Belgium"
 	name_adj = "Belgian"
-	tags = {
-	}
 	conditions = {
 		government = republic
 		is_revolutionary_republic_trigger = yes

@@ -39,6 +39,10 @@ def read_rule_file(path: str):
     )
 
 
+def substitute(template: str, format_str: str, item_name: str) -> str:
+    return template.replace(format_str, item_name)
+
+
 def read_lines(path: str):
     with open(path, encoding="utf-8-sig") as f:
         for line in f:
@@ -49,12 +53,10 @@ def read_lines(path: str):
 
 
 def get_country_name(rule_name: str, tag_name: tuple[str, Localisation]) -> str:
-    if "NAME_ADJ2" in rule_name:
-        rule_name = rule_name.replace("{NAME_ADJ2}", tag_name[1].adj2)
-    elif "NAME_ADJ" in rule_name:
-        rule_name = rule_name.replace("{NAME_ADJ}", tag_name[1].adj)
+    if "NAME_ADJ" in rule_name:
+        rule_name = substitute(rule_name, "{NAME_ADJ}", tag_name[1].adj)
     elif "NAME" in rule_name:
-        rule_name = rule_name.replace("{NAME}", tag_name[1].name)
+        rule_name = substitute(rule_name, "{NAME}", tag_name[1].name)
     elif "DYNASTY" not in rule_name:
         rule_name = rule_name
     else:
@@ -64,10 +66,14 @@ def get_country_name(rule_name: str, tag_name: tuple[str, Localisation]) -> str:
 
 def get_dynasty_name(rule_name: str, dynasty_name: str) -> str:
     if "DYNASTY" in rule_name:
-        rule_name = rule_name.replace("{DYNASTY}", dynasty_name.capitalize())
+        rule_name = substitute(rule_name, "{DYNASTY}", dynasty_name.capitalize())
     else:
         rule_name = None
     return rule_name
+
+
+def get_item_name(rule_name: str, item_name: str) -> str:
+    return substitute(rule_name, "{ITEM_NAME}", item_name)
 
 
 # ------------------------------------
@@ -126,7 +132,16 @@ def read_grouped_rules(dir: str) -> list[Rule]:
                 else None
             )
 
+            group_name_template = group_data["name"] if "name" in group_data else None
+
             for key, rule_data in group.items():
+                if group_name_template:
+                    item_name = get_item_name(group_name_template, rule_data["name"])
+                else:
+                    item_name = rule_data["name"]
+
+                rule_data["name"] = item_name
+
                 rule = parse_rule(
                     get_tag_name(group_key, key),
                     rule_data,

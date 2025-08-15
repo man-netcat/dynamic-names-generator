@@ -1,7 +1,8 @@
 CHINESE_FEUDATORY_GROUP = {
+	name = "{ITEM_NAME} Feudatory"
 	group = {
 		HEBEI = {
-			name = "Hebei Feudatory"
+			name = "Hebei"
 			name_adj = "Hebei"
 			conditions = {
 				capital_scope = {
@@ -13,7 +14,7 @@ CHINESE_FEUDATORY_GROUP = {
 			}
 		}
 		SHANDONG = {
-			name = "Shandong Feudatory"
+			name = "Shandong"
 			name_adj = "Shandong"
 			conditions = {
 				capital_scope = {
@@ -22,7 +23,7 @@ CHINESE_FEUDATORY_GROUP = {
 			}
 		}
 		JIANGSU = {
-			name = "Jiangsu Feudatory"
+			name = "Jiangsu"
 			name_adj = "Jiangsu"
 			conditions = {
 				capital_scope = {
@@ -34,7 +35,7 @@ CHINESE_FEUDATORY_GROUP = {
 			}
 		}
 		ANHUI = {
-			name = "Anhui Feudatory"
+			name = "Anhui"
 			name_adj = "Anhui"
 			conditions = {
 				capital_scope = {
@@ -46,7 +47,7 @@ CHINESE_FEUDATORY_GROUP = {
 			}
 		}
 		ZHEJIANG = {
-			name = "Zhejiang Feudatory"
+			name = "Zhejiang"
 			name_adj = "Zhejiang"
 			conditions = {
 				capital_scope = {
@@ -55,7 +56,7 @@ CHINESE_FEUDATORY_GROUP = {
 			}
 		}
 		JIANGXI = {
-			name = "Jiangxi Feudatory"
+			name = "Jiangxi"
 			name_adj = "Jiangxi"
 			conditions = {
 				capital_scope = {
@@ -64,7 +65,7 @@ CHINESE_FEUDATORY_GROUP = {
 			}
 		}
 		FUJIAN = {
-			name = "Fujian Feudatory"
+			name = "Fujian"
 			name_adj = "Fujian"
 			conditions = {
 				capital_scope = {
@@ -73,7 +74,7 @@ CHINESE_FEUDATORY_GROUP = {
 			}
 		}
 		TAIWAN = {
-			name = "Taiwan Feudatory"
+			name = "Taiwan"
 			name_adj = "Taiwan"
 			conditions = {
 				capital_scope = {
@@ -82,7 +83,7 @@ CHINESE_FEUDATORY_GROUP = {
 			}
 		}
 		GUANGXI = {
-			name = "Guangxi Feudatory"
+			name = "Guangxi"
 			name_adj = "Guangxi"
 			conditions = {
 				capital_scope = {
@@ -91,7 +92,7 @@ CHINESE_FEUDATORY_GROUP = {
 			}
 		}
 		GUANGDONG = {
-			name = "Guangdong Feudatory"
+			name = "Guangdong"
 			name_adj = "Guangdong"
 			conditions = {
 				capital_scope = {
@@ -103,7 +104,7 @@ CHINESE_FEUDATORY_GROUP = {
 			}
 		}
 		YUNNAN = {
-			name = "Yun-Gui Feudatory"
+			name = "Yun-Gui"
 			name_adj = "Yun-Gui"
 			conditions = {
 				capital_scope = {
@@ -115,7 +116,7 @@ CHINESE_FEUDATORY_GROUP = {
 			}
 		}
 		SICHUAN = {
-			name = "Sichuan Feudatory"
+			name = "Sichuan"
 			name_adj = "Sichuan"
 			conditions = {
 				capital_scope = {
@@ -124,7 +125,7 @@ CHINESE_FEUDATORY_GROUP = {
 			}
 		}
 		CHUANNAN = {
-			name = "Chuannan Feudatory"
+			name = "Chuannan"
 			name_adj = "Chuannan"
 			conditions = {
 				capital_scope = {
@@ -133,7 +134,7 @@ CHINESE_FEUDATORY_GROUP = {
 			}
 		}
 		CHUANBEI = {
-			name = "Chuanbei Feudatory"
+			name = "Chuanbei"
 			name_adj = "Chuanbei"
 			conditions = {
 				capital_scope = {
@@ -142,7 +143,7 @@ CHINESE_FEUDATORY_GROUP = {
 			}
 		}
 		HUBEI = {
-			name = "Hubei Feudatory"
+			name = "Hubei"
 			name_adj = "Hubei"
 			conditions = {
 				capital_scope = {
@@ -151,7 +152,7 @@ CHINESE_FEUDATORY_GROUP = {
 			}
 		}
 		HUNAN = {
-			name = "Hunan Feudatory"
+			name = "Hunan"
 			name_adj = "Hunan"
 			conditions = {
 				capital_scope = {
@@ -160,7 +161,7 @@ CHINESE_FEUDATORY_GROUP = {
 			}
 		}
 		HENAN = {
-			name = "Henan Feudatory"
+			name = "Henan"
 			name_adj = "Henan"
 			conditions = {
 				capital_scope = {
@@ -172,7 +173,7 @@ CHINESE_FEUDATORY_GROUP = {
 			}
 		}
 		SHAANXI = {
-			name = "Shaanxi Feudatory"
+			name = "Shaanxi"
 			name_adj = "Shaanxi"
 			conditions = {
 				capital_scope = {
@@ -181,7 +182,7 @@ CHINESE_FEUDATORY_GROUP = {
 			}
 		}
 		SHANXI = {
-			name = "Shanxi Feudatory"
+			name = "Shanxi"
 			name_adj = "Shanxi"
 			conditions = {
 				capital_scope = {
@@ -190,7 +191,7 @@ CHINESE_FEUDATORY_GROUP = {
 			}
 		}
 		GANSU = {
-			name = "Gansu Feudatory"
+			name = "Gansu"
 			name_adj = "Gansu"
 			conditions = {
 				capital_scope = {
