@@ -76,24 +76,6 @@ BURMA = {
 	}
 }
 
-CHINA = {
-	name = "China"
-	name_adj = "Chinese"
-	conditions = {
-		culture_group = chinese
-		government = republic
-		is_revolutionary_republic_trigger = yes
-		num_of_provinces_owned_or_owned_by_subjects_with = {
-			value = 75
-			OR = {
-				region = north_china_region
-				region = south_china_region
-				region = xinan_region
-			}
-		}
-	}
-}
-
 TAIWAN = {
 	name = "Taiwan"
 	name_adj = "Taiwanese"
@@ -309,6 +291,32 @@ SLOVAKIA = {
 	}
 }
 
+# Revolutionary Country Flags
+TURKIYE = {
+	name = "Turkiye"
+	name_adj = "Turkish"
+	tags = {
+		tag = TUR
+	}
+	conditions = {
+		OR = {
+			has_country_flag = is_revolutionary_turkey_flag
+			has_country_flag = is_turkey_flag
+		}
+	}
+}
+
+CHINA = {
+	name = "China"
+	name_adj = "Chinese"
+	conditions = {
+		OR = {
+			has_country_flag = is_revolutionary_china_flag
+			has_country_flag = is_china_flag
+		}
+	}
+}
+
 IRAN = {
 	name = "Iran"
 	name_adj = "Iranian"
@@ -318,10 +326,7 @@ IRAN = {
 	}
 	conditions = {
 		OR = {
-			AND = {
-				government = republic
-				is_revolutionary_republic_trigger = yes
-			}
+			has_country_flag = is_revolutionary_iran_flag
 			has_country_flag = is_iran_flag
 		}
 	}
@@ -334,8 +339,10 @@ GURKANI = {
 		tag = TIM
 	}
 	conditions = {
-		government = republic
-		is_revolutionary_republic_trigger = yes
+		OR = {
+			has_country_flag = is_revolutionary_gurkani_flag
+			has_country_flag = is_gurkani_flag
+		}
 	}
 }
 
@@ -352,20 +359,23 @@ HELLADA = {
 }
 
 # Name flags
-LPC = {
+LPC_SUB = {
 	name = "Lithuania-Poland"
-	name_adj = "Commonwealth"
+	name_adj = "Lithuanian-Polish"
 	tags = {
 		tag = PLC
 	}
 	conditions = {
-		primary_culture = lithuanian
+		OR = {
+			primary_culture = lithuanian
+			has_country_flag = is_LPC_flag
+		}
 	}
 }
 
-PLC = {
+PLC_SUB = {
 	name = "Poland-Lithuania"
-	name_adj = "Commonwealth"
+	name_adj = "Polish-Lithuanian"
 	tags = {
 		tag = PLC
 	}
@@ -374,9 +384,45 @@ PLC = {
 	}
 }
 
-KINGDOM_OF_GOD = {
-	name = "Kingdom of God"
-	name_adj = "Papal"
+AUH_SUB = {
+	name = "Austria-Hungary"
+	name_adj = "Austrian-Hungarian"
+	tags = {
+		tag = AUH
+	}
+	conditions = {
+		primary_culture = austrian
+	}
+}
+
+HUA_SUB = {
+	name = "Hungary-Austria"
+	name_adj = "Hungarian-Austrian"
+	tags = {
+		tag = AUH
+	}
+	conditions = {
+		OR = {
+			primary_culture = hungarian
+			has_country_flag = is_HUNGARY_AUSTRIA_flag
+		}
+	}
+}
+
+AUSTRALIA_HUNGARY = {
+	name = "Australia-Hungary"
+	name_adj = "Australohungarian"
+	tags = {
+		tag = AUH
+	}
+	conditions = {
+		has_country_flag = is_AUSTRALIA_HUNGARY_flag
+	}
+}
+
+GOD = {
+	name = "God"
+	name_adj = "Divine"
 	tags = {
 		tag = PAP
 	}
@@ -396,14 +442,56 @@ CHAGATAI = {
 	}
 }
 
-AUSTRALIA_HUNGARY = {
-	name = "Australia-Hungary"
-	name_adj = "Australohungarian"
+THE_ROMANS = {
+	name = "The Romans"
+	name_adj = "Roman"
 	tags = {
-		tag = AUH
+		tag = ROM
+		tag = BYZ
+	}
+}
+
+WESTERN_ROMAN = {
+	name = "The Western Romans"
+	name_adj = "Western Roman"
+	tags = {
+		tag = ROM
 	}
 	conditions = {
-		has_country_flag = is_AUSTRALIA_HUNGARY_flag
+		exists = BYZ
+	}
+}
+
+EASTERN_ROMAN = {
+	name = "The Eastern Romans"
+	name_adj = "Eastern Roman"
+	tags = {
+		tag = BYZ
+	}
+	conditions = {
+		exists = ROM
+	}
+}
+
+THE_SELJUKS = {
+	name = "The Seljuks"
+	name_adj = "Seljuk"
+	tags = {
+		tag = RUM
+	}
+	conditions = {
+		has_country_flag = is_SELJUK_EMPIRE_flag
+	}
+}
+
+THE_AYYUBIDS = {
+	name = "The Ayyubids"
+	name_adj = "Ayyubid"
+	tags = {
+		tag = HSN
+	}
+	conditions = {
+		has_country_flag = is_AYB_flag
 	}
 }
 
@@ -429,29 +517,90 @@ GREAT_ARMENIA = {
 	}
 }
 
+RAMANNADESA = {
+	name = "Ramannadesa"
+	name_adj = "Ramannadesan"
+	tags = {
+		tag = PEG
+	}
+	conditions = {
+		has_country_flag = is_ramannadesa
+	}
+}
+
+DVARAVATI = {
+	name = "Dvaravati"
+	name_adj = "Dvaravatian"
+	tags = {
+		tag = AYU
+	}
+	conditions = {
+		has_country_flag = is_dvaravati
+	}
+}
+
+HARIPHUNCHAI = {
+	name = "Hariphunchai"
+	name_adj = "Hariphunchai"
+	tags = {
+		tag = LNA
+	}
+	conditions = {
+		has_country_flag = is_hariphunchai
+	}
+}
+
+SRIVIJAYA = {
+	name = "Srivijaya"
+	name_adj = "Srivijayan"
+	tags = {
+		tag = MSA
+	}
+	conditions = {
+		has_country_flag = is_srijivaya_flag
+	}
+}
+
+NUSANTARA = {
+	name = "Nusantara"
+	name_adj = "Nusantaran"
+	tags = {
+		tag = MSA
+	}
+	conditions = {
+		has_country_flag = is_nusantara_flag
+	}
+}
+
 # Dynastic names
-OTTOMANS = {
+THE_OTTOMANS = {
 	name = "The Ottomans"
 	name_adj = "Ottoman"
 	tags = {
 		tag = TUR
 	}
 	conditions = {
-		has_reform = monarchy_mechanic
 		dynasty = "Osmanoglu"
 	}
 }
 
-TURKIYE = {
-	name = "Turkiye"
-	name_adj = "Turkish"
+ANATOLIA = {
+	name = "Anatolia"
+	name_adj = "Anatolian"
 	tags = {
 		tag = TUR
 	}
 	conditions = {
-		has_reform = monarchy_mechanic
-		NOT = {
-			dynasty = "Osmanoglu"
+		AND = {
+			NOT = {
+				dynasty = "Osmanoglu"
+			}
+			NOT = {
+				OR = {
+					has_country_flag = is_revolutionary_turkey_flag
+					has_country_flag = is_turkey_flag
+				}
+			}
 		}
 	}
 }
@@ -530,6 +679,7 @@ DAI_NAM = {
 		OR = {
 			dynasty = "Nguyen"
 			dynasty = "Nguyen Phuc"
+			has_country_flag = is_dai_nam_flag
 		}
 	}
 }
@@ -541,6 +691,9 @@ VIET_NAM = {
 		tag = DAI
 	}
 	conditions = {
-		government = republic
+		OR = {
+			government = republic
+			has_country_flag = is_viet_name_flag
+		}
 	}
 }

@@ -66,6 +66,14 @@ PEASANT_REPUBLIC = {
 	}
 }
 
+REVOLUTIONARY_EMPIRE = {
+	name = "Revolutionary Empire of {NAME}"
+	conditions = {
+		government = monarchy
+		has_reform = revolutionary_empire_reform
+	}
+}
+
 BISHOPRIC = {
 	name = "Bishopric of {NAME}"
 	conditions = {
@@ -466,6 +474,16 @@ THE_MONGOLS = {
 	}
 }
 
+ULUG_ULUS = {
+	name = "Ulug Ulus"
+	tags = {
+		tag = GLH
+	}
+	conditions = {
+		has_country_flag = is_ULUG_ULUS_flag
+	}
+}
+
 GRAND_CHIEFDOM = {
 	name = "Grand Chiefdom of {NAME}"
 	conditions = {
@@ -620,9 +638,7 @@ UNITED_PROVINCES = {
 			AND = {
 				government = republic
 				primary_culture = dutch
-				NOT = {
-					is_revolutionary_republic_trigger = yes
-				}
+				is_revolutionary_republic_trigger = no
 				NOT = {
 					has_reform = presidential_despot_reform
 				}
@@ -635,9 +651,7 @@ UNITED_PROVINCES = {
 				NOT = {
 					has_reform = presidential_reform
 				}
-				NOT = {
-					is_revolutionary_republic_trigger = yes
-				}
+				is_revolutionary_republic_trigger = no
 				NOT = {
 					has_reform = constitutional_republic
 				}
@@ -2863,9 +2877,7 @@ FEDERAL_KINGDOM = {
 		NOT = {
 			has_reform = presidential_reform
 		}
-		NOT = {
-			is_revolutionary_republic_trigger = yes
-		}
+		is_revoltionary_republic_trigger = no
 		NOT = {
 			has_reform = constitutional_republic
 		}
@@ -2889,9 +2901,7 @@ FEDERAL_EMPIRE = {
 		NOT = {
 			has_reform = presidential_reform
 		}
-		NOT = {
-			is_revolutionary_republic_trigger = yes
-		}
+		is_revoltionary_republic_trigger = no
 		NOT = {
 			has_reform = constitutional_republic
 		}
@@ -3459,85 +3469,6 @@ THREE_LEAGUES = {
 	}
 	conditions = {
 		government = republic
-	}
-}
-
-# Roman Empire depending on the existence of either the Byzantine or Roman tags
-BYZ_ROMAN_EMPIRE = {
-	name = "Roman Empire"
-	tags = {
-		tag = BYZ
-		tag = ROM
-	}
-}
-
-EASTERN_ROMAN_EMPIRE = {
-	name = "Eastern Roman Empire"
-	tags = {
-		tag = BYZ
-	}
-	conditions = {
-		exists = ROM
-	}
-}
-
-WESTERN_ROMAN_EMPIRE = {
-	name = "Western Roman Empire"
-	tags = {
-		tag = ROM
-	}
-	conditions = {
-		exists = BYZ
-	}
-}
-
-ROMAN_REPUBLIC = {
-	name = "Roman Republic"
-	tags = {
-		tag = BYZ
-		tag = ROM
-	}
-	conditions = {
-		government = republic
-		is_subject = no
-		OR = {
-			AND = {
-				tag = BYZ
-				NOT = {
-					exists = ROM
-				}
-			}
-			AND = {
-				tag = ROM
-				NOT = {
-					exists = BYZ
-				}
-			}
-		}
-	}
-}
-
-EASTERN_ROMAN_REPUBLIC = {
-	name = "Eastern Roman Republic"
-	tags = {
-		tag = BYZ
-	}
-	conditions = {
-		government = republic
-		is_subject = no
-		exists = ROM
-	}
-}
-
-WESTERN_ROMAN_REPUBLIC = {
-	name = "Western Roman Republic"
-	tags = {
-		tag = ROM
-	}
-	conditions = {
-		government = republic
-		is_subject = no
-		exists = BYZ
 	}
 }
 

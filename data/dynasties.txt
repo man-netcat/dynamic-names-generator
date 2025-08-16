@@ -11,7 +11,6 @@ Al-Bat'hari
 al-Dila'i
 Al-Hakli
 al-Ilighi
-al-Ilighi
 Al-Mahra
 al-Malshuti
 Al-Mashaiki
@@ -23,7 +22,6 @@ al-Said
 al-Shabani
 Al-Shahri
 al-Shihab
-al-Tadsi
 al-Tadsi
 Alaouite
 Alawiyya
@@ -103,7 +101,6 @@ Khuzani
 Korai
 Kujuji
 Lashari
-Lashari
 Lund
 Maanid
 Maatka
@@ -117,7 +114,6 @@ Mirwari
 Muradid
 Mzabi
 Nabhani
-Nausherwani
 Nausherwani
 Ordubadi
 Ouled Nail
@@ -136,7 +132,6 @@ Sa'ad ud-Dawlah
 Saadi
 Saadun
 Sabah
-Safavid
 Safavid
 Sahandlu
 Saud

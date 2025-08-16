@@ -29,7 +29,9 @@ class Generator:
         self.events = {}
         self.event_id = 1
 
-        self.dynasty_keys = {name: format_as_tag(name) for name in self.dynasty_names}
+        self.dynasty_keys = {
+            name: f"{format_as_tag(name)}" for name in self.dynasty_names
+        }
 
     def assign_rules(self):
         # Map rules to applicable tags
@@ -103,8 +105,14 @@ class Generator:
                 tags = f"OR = {{ {' '.join(f'tag = {tag}' for tag in substitution_rule.tags)} }}"
             else:
                 tags = ""
+
+            condition = (
+                substitution_rule.conditions[0]
+                if substitution_rule.conditions
+                else "always = yes"
+            )
             event_triggers.append(
-                f"        if = {{ limit = {{ {tags} {substitution_rule.conditions[0]} }} country_event = {{ id = {EVENT_NAME}.{self.event_id} }} }}"
+                f"        if = {{ limit = {{ {tags} {condition} }} country_event = {{ id = {EVENT_NAME}.{self.event_id} }} }}"
             )
             self.events[substitution_rule.id] = str(self.event_id)
             self.event_id += 1
@@ -228,6 +236,26 @@ class Generator:
             f.write("\n".join(loc_lines))
 
         print("Writing localisation done")
+
+        seen = set()
+        duplicates = []
+
+        for line in loc_lines:
+            if line.strip().startswith("#"):
+                continue
+            if ":" in line:
+                key = line.split(":", 1)[0].strip()
+                if key in seen:
+                    duplicates.append(key)
+                else:
+                    seen.add(key)
+
+        if duplicates:
+            print("FAILURE: Duplicate localisation keys found:")
+            for key in duplicates:
+                print(" -", key)
+            print("ABORTING")
+            exit(1)
 
     def generate_on_actions(self):
         triggers = [
