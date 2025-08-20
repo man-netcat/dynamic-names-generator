@@ -1,86 +1,86 @@
 CHINESE_PROTECTORATE_GROUP = {
-	name = "{ITEM_NAME} Protectorate"
-	group = {
-		ANXI = {
-			name = "Anxi"
-			name_adj = "Anxi"
-			conditions = {
-				capital_scope = {
-					region = central_asia_region
-				}
-			}
-		}
-		ANDONG = {
-			name = "Andong"
-			name_adj = "Andong"
-			conditions = {
-				capital_scope = {
-					region = manchuria_region
-				}
-			}
-		}
-		ANNAN = {
-			name = "Annan"
-			name_adj = "Annan"
-			conditions = {
-				capital_scope = {
-					region = indo_china_region
-				}
-			}
-		}
-		ANBEI = {
-			name = "Anbei"
-			name_adj = "Anbei"
-			conditions = {
-				capital_scope = {
-					region = mongolia_region
-				}
-			}
-		}
-		ANTU = {
-			name = "Antu"
-			name_adj = "Antu"
-			conditions = {
-				capital_scope = {
-					region = tibet_region
-				}
-			}
-		}
-		ANRI = {
-			name = "Anri"
-			name_adj = "Anri"
-			conditions = {
-				capital_scope = {
-					region = japan_region
-				}
-			}
-		}
-		ANHAN = {
-			name = "Anhan"
-			name_adj = "Anhan"
-			conditions = {
-				capital_scope = {
-					region = korea_region
-				}
-			}
-		}
-		ANMIAN = {
-			name = "Anmian"
-			name_adj = "Anmian"
-			conditions = {
-				capital_scope = {
-					region = burma_region
-				}
-			}
-		}
-	}
-	conditions = {
-		OR = {
-			is_subject_of_type = vassal
-			is_subject_of_type = march
-		}
-		overlord = {
-			is_emperor_of_china = yes
-		}
-	}
+    name = "{ITEM_NAME} Protectorate"
+    group = {
+        ANXI = {
+            name = "Anxi"
+            name_adj = "Anxi"
+            conditions = {
+                capital_scope = {
+                    region = central_asia_region
+                }
+            }
+        }
+        ANDONG = {
+            name = "Andong"
+            name_adj = "Andong"
+            conditions = {
+                capital_scope = {
+                    region = manchuria_region
+                }
+            }
+        }
+        ANNAN = {
+            name = "Annan"
+            name_adj = "Annan"
+            conditions = {
+                capital_scope = {
+                    region = indo_china_region
+                }
+            }
+        }
+        ANBEI = {
+            name = "Anbei"
+            name_adj = "Anbei"
+            conditions = {
+                capital_scope = {
+                    region = mongolia_region
+                }
+            }
+        }
+        ANTU = {
+            name = "Antu"
+            name_adj = "Antu"
+            conditions = {
+                capital_scope = {
+                    region = tibet_region
+                }
+            }
+        }
+        ANRI = {
+            name = "Anri"
+            name_adj = "Anri"
+            conditions = {
+                capital_scope = {
+                    region = japan_region
+                }
+            }
+        }
+        ANHAN = {
+            name = "Anhan"
+            name_adj = "Anhan"
+            conditions = {
+                capital_scope = {
+                    region = korea_region
+                }
+            }
+        }
+        ANMIAN = {
+            name = "Anmian"
+            name_adj = "Anmian"
+            conditions = {
+                capital_scope = {
+                    region = burma_region
+                }
+            }
+        }
+    }
+    conditions = {
+        OR = {
+            is_subject_of_type = vassal
+            is_subject_of_type = march
+        }
+        overlord = {
+            is_emperor_of_china = yes
+        }
+    }
 }

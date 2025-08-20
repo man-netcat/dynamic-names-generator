@@ -3,9 +3,8 @@
 import os
 from collections import defaultdict
 
-from utils import *
-
 from classes.RuleEntry import RuleEntry
+from utils import *
 
 
 class Generator:
@@ -52,8 +51,6 @@ class Generator:
                     continue
 
                 tag_name_value = get_tag_name(tag, rule.id)
-                if tag_name_value == "TEO_ELECTORATE":
-                    tag_name_value = "TEO_ELECTORATE_NAME"
 
                 name_adj = rule.name_adj or loc.adj
 
@@ -182,7 +179,7 @@ class Generator:
             for name in self.dynasty_names:
                 key = self.dynasty_keys[name]
                 conditions.append(
-                    f'        if = {{ limit = {{ dynasty = "{name}" }} override_country_name = {key}_{rule.id} }}'
+                    f'        if = {{ limit = {{ dynasty = "{name}" NOT = {{ any_country = {{ NOT = {{ tag = THIS }} dynasty = "{name}" }} }} }} override_country_name = {key}_{rule.id} }}'
                 )
             event_lines.append(
                 TAG_AGNOSTIC_EVENT_TEMPLATE.format(

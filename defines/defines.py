@@ -5,7 +5,7 @@ SUB_RULES_PATH = "rules/sub_rules.txt"
 GROUPED_RULES_DIR = "rules/grouped"
 
 DYNASTIES_PATH = "data/dynasties.txt"
-TAG_NAMES_PATH = "data/tag_names.txt"
+TAG_NAMES_PATH = "data/tag_names.yml"
 
 EVENT_NAME = "dynamic_names"
 
@@ -16,9 +16,6 @@ namespace = {event_name}
 
 country_event = {{
     id = {event_name}.0
-    title = {event_name}.0.title
-    desc = {event_name}.0.desc
-    picture = TRADEGOODS_eventPicture
     hidden = yes
     is_triggered_only = yes
 
@@ -35,9 +32,6 @@ country_event = {{
 TAG_DEPENDANT_EVENT_TEMPLATE = """\
 country_event = {{
     id = {event_name}.{id}
-    title = {event_name}.{id}.title
-    desc = {event_name}.{id}.desc
-    picture = TRADEGOODS_eventPicture
     hidden = yes
     is_triggered_only = yes
 
@@ -58,9 +52,6 @@ country_event = {{
 TAG_AGNOSTIC_EVENT_TEMPLATE = """\
 country_event = {{
     id = {event_name}.{id}
-    title = {event_name}.{id}.title
-    desc = {event_name}.{id}.desc
-    picture = TRADEGOODS_eventPicture
     hidden = yes
     is_triggered_only = yes
 

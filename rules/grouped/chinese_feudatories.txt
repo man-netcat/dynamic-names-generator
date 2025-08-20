@@ -1,215 +1,215 @@
 CHINESE_FEUDATORY_GROUP = {
-	name = "{ITEM_NAME} Feudatory"
-	group = {
-		HEBEI = {
-			name = "Hebei"
-			name_adj = "Hebei"
-			conditions = {
-				capital_scope = {
-					OR = {
-						area = hebei_area
-						area = south_hebei_area
-					}
-				}
-			}
-		}
-		SHANDONG = {
-			name = "Shandong"
-			name_adj = "Shandong"
-			conditions = {
-				capital_scope = {
-					area = shandong_area
-				}
-			}
-		}
-		JIANGSU = {
-			name = "Jiangsu"
-			name_adj = "Jiangsu"
-			conditions = {
-				capital_scope = {
-					OR = {
-						area = jiangsu_area
-						area = south_jiangsu_area
-					}
-				}
-			}
-		}
-		ANHUI = {
-			name = "Anhui"
-			name_adj = "Anhui"
-			conditions = {
-				capital_scope = {
-					OR = {
-						area = anhui_area
-						area = south_anhui_area
-					}
-				}
-			}
-		}
-		ZHEJIANG = {
-			name = "Zhejiang"
-			name_adj = "Zhejiang"
-			conditions = {
-				capital_scope = {
-					area = zhejiang_area
-				}
-			}
-		}
-		JIANGXI = {
-			name = "Jiangxi"
-			name_adj = "Jiangxi"
-			conditions = {
-				capital_scope = {
-					area = jiangxi_area
-				}
-			}
-		}
-		FUJIAN = {
-			name = "Fujian"
-			name_adj = "Fujian"
-			conditions = {
-				capital_scope = {
-					area = fujian_area
-				}
-			}
-		}
-		TAIWAN = {
-			name = "Taiwan"
-			name_adj = "Taiwan"
-			conditions = {
-				capital_scope = {
-					area = taiwan_area
-				}
-			}
-		}
-		GUANGXI = {
-			name = "Guangxi"
-			name_adj = "Guangxi"
-			conditions = {
-				capital_scope = {
-					area = guangxi_area
-				}
-			}
-		}
-		GUANGDONG = {
-			name = "Guangdong"
-			name_adj = "Guangdong"
-			conditions = {
-				capital_scope = {
-					OR = {
-						area = guangdong_area
-						area = west_guangdong_area
-					}
-				}
-			}
-		}
-		YUNNAN = {
-			name = "Yun-Gui"
-			name_adj = "Yun-Gui"
-			conditions = {
-				capital_scope = {
-					OR = {
-						area = yun_gui_area
-						area = yun_gui_borderland_area
-					}
-				}
-			}
-		}
-		SICHUAN = {
-			name = "Sichuan"
-			name_adj = "Sichuan"
-			conditions = {
-				capital_scope = {
-					area = sichuan_area
-				}
-			}
-		}
-		CHUANNAN = {
-			name = "Chuannan"
-			name_adj = "Chuannan"
-			conditions = {
-				capital_scope = {
-					area = chuannan_area
-				}
-			}
-		}
-		CHUANBEI = {
-			name = "Chuanbei"
-			name_adj = "Chuanbei"
-			conditions = {
-				capital_scope = {
-					area = chuanbei_area
-				}
-			}
-		}
-		HUBEI = {
-			name = "Hubei"
-			name_adj = "Hubei"
-			conditions = {
-				capital_scope = {
-					area = huguang_area
-				}
-			}
-		}
-		HUNAN = {
-			name = "Hunan"
-			name_adj = "Hunan"
-			conditions = {
-				capital_scope = {
-					area = hunan_area
-				}
-			}
-		}
-		HENAN = {
-			name = "Henan"
-			name_adj = "Henan"
-			conditions = {
-				capital_scope = {
-					OR = {
-						area = henan_area
-						area = north_henan_area
-					}
-				}
-			}
-		}
-		SHAANXI = {
-			name = "Shaanxi"
-			name_adj = "Shaanxi"
-			conditions = {
-				capital_scope = {
-					area = shaanxi_area
-				}
-			}
-		}
-		SHANXI = {
-			name = "Shanxi"
-			name_adj = "Shanxi"
-			conditions = {
-				capital_scope = {
-					area = shanxi_area
-				}
-			}
-		}
-		GANSU = {
-			name = "Gansu"
-			name_adj = "Gansu"
-			conditions = {
-				capital_scope = {
-					OR = {
-						area = gansu_area
-						area = west_gansu_area
-					}
-				}
-			}
-		}
-	}
-	conditions = {
-		OR = {
-			is_subject_of_type = vassal
-			is_subject_of_type = march
-		}
-		overlord = {
-			is_emperor_of_china = yes
-		}
-	}
+    name = "{ITEM_NAME} Feudatory"
+    group = {
+        HEBEI = {
+            name = "Hebei"
+            name_adj = "Hebei"
+            conditions = {
+                capital_scope = {
+                    OR = {
+                        area = hebei_area
+                        area = south_hebei_area
+                    }
+                }
+            }
+        }
+        SHANDONG = {
+            name = "Shandong"
+            name_adj = "Shandong"
+            conditions = {
+                capital_scope = {
+                    area = shandong_area
+                }
+            }
+        }
+        JIANGSU = {
+            name = "Jiangsu"
+            name_adj = "Jiangsu"
+            conditions = {
+                capital_scope = {
+                    OR = {
+                        area = jiangsu_area
+                        area = south_jiangsu_area
+                    }
+                }
+            }
+        }
+        ANHUI = {
+            name = "Anhui"
+            name_adj = "Anhui"
+            conditions = {
+                capital_scope = {
+                    OR = {
+                        area = anhui_area
+                        area = south_anhui_area
+                    }
+                }
+            }
+        }
+        ZHEJIANG = {
+            name = "Zhejiang"
+            name_adj = "Zhejiang"
+            conditions = {
+                capital_scope = {
+                    area = zhejiang_area
+                }
+            }
+        }
+        JIANGXI = {
+            name = "Jiangxi"
+            name_adj = "Jiangxi"
+            conditions = {
+                capital_scope = {
+                    area = jiangxi_area
+                }
+            }
+        }
+        FUJIAN = {
+            name = "Fujian"
+            name_adj = "Fujian"
+            conditions = {
+                capital_scope = {
+                    area = fujian_area
+                }
+            }
+        }
+        TAIWAN = {
+            name = "Taiwan"
+            name_adj = "Taiwan"
+            conditions = {
+                capital_scope = {
+                    area = taiwan_area
+                }
+            }
+        }
+        GUANGXI = {
+            name = "Guangxi"
+            name_adj = "Guangxi"
+            conditions = {
+                capital_scope = {
+                    area = guangxi_area
+                }
+            }
+        }
+        GUANGDONG = {
+            name = "Guangdong"
+            name_adj = "Guangdong"
+            conditions = {
+                capital_scope = {
+                    OR = {
+                        area = guangdong_area
+                        area = west_guangdong_area
+                    }
+                }
+            }
+        }
+        YUNNAN = {
+            name = "Yun-Gui"
+            name_adj = "Yun-Gui"
+            conditions = {
+                capital_scope = {
+                    OR = {
+                        area = yun_gui_area
+                        area = yun_gui_borderland_area
+                    }
+                }
+            }
+        }
+        SICHUAN = {
+            name = "Sichuan"
+            name_adj = "Sichuan"
+            conditions = {
+                capital_scope = {
+                    area = sichuan_area
+                }
+            }
+        }
+        CHUANNAN = {
+            name = "Chuannan"
+            name_adj = "Chuannan"
+            conditions = {
+                capital_scope = {
+                    area = chuannan_area
+                }
+            }
+        }
+        CHUANBEI = {
+            name = "Chuanbei"
+            name_adj = "Chuanbei"
+            conditions = {
+                capital_scope = {
+                    area = chuanbei_area
+                }
+            }
+        }
+        HUBEI = {
+            name = "Hubei"
+            name_adj = "Hubei"
+            conditions = {
+                capital_scope = {
+                    area = huguang_area
+                }
+            }
+        }
+        HUNAN = {
+            name = "Hunan"
+            name_adj = "Hunan"
+            conditions = {
+                capital_scope = {
+                    area = hunan_area
+                }
+            }
+        }
+        HENAN = {
+            name = "Henan"
+            name_adj = "Henan"
+            conditions = {
+                capital_scope = {
+                    OR = {
+                        area = henan_area
+                        area = north_henan_area
+                    }
+                }
+            }
+        }
+        SHAANXI = {
+            name = "Shaanxi"
+            name_adj = "Shaanxi"
+            conditions = {
+                capital_scope = {
+                    area = shaanxi_area
+                }
+            }
+        }
+        SHANXI = {
+            name = "Shanxi"
+            name_adj = "Shanxi"
+            conditions = {
+                capital_scope = {
+                    area = shanxi_area
+                }
+            }
+        }
+        GANSU = {
+            name = "Gansu"
+            name_adj = "Gansu"
+            conditions = {
+                capital_scope = {
+                    OR = {
+                        area = gansu_area
+                        area = west_gansu_area
+                    }
+                }
+            }
+        }
+    }
+    conditions = {
+        OR = {
+            is_subject_of_type = vassal
+            is_subject_of_type = march
+        }
+        overlord = {
+            is_emperor_of_china = yes
+        }
+    }
 }

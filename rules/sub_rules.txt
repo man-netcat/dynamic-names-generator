@@ -1,699 +1,1030 @@
 # Revolutionary republics
 INDIA = {
-	name = "India"
-	name_adj = "Indian"
-	tags = {
-		tag = BHA
-		tag = HIN
-	}
-	conditions = {
-		government = republic
-		is_revolutionary_republic_trigger = yes
-	}
+    name = "India"
+    name_adj = "Indian"
+    tags = {
+        tag = BHA
+        tag = HIN
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
 }
 
 BANGLADESH = {
-	name = "Bangladesh"
-	name_adj = "Bangladeshi"
-	tags = {
-		tag = BNG
-	}
-	conditions = {
-		government = republic
-		is_revolutionary_republic_trigger = yes
-	}
+    name = "Bangladesh"
+    name_adj = "Bangladeshi"
+    tags = {
+        tag = BNG
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
+}
+
+SRI_LANKA = {
+    name = "Sri Lanka"
+    name_adj = "Sri Lankan"
+    tags = {
+        tag = CEY
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
 }
 
 CAMBODIA = {
-	name = "Cambodia"
-	name_adj = "Cambodian"
-	tags = {
-		tag = KHM
-	}
-	conditions = {
-		government = republic
-		is_revolutionary_republic_trigger = yes
-	}
+    name = "Cambodia"
+    name_adj = "Cambodian"
+    tags = {
+        tag = KHM
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
 }
 
 LAOS = {
-	name = "Laos"
-	name_adj = "Laotian"
-	tags = {
-		tag = LXA
-	}
-	conditions = {
-		government = republic
-		is_revolutionary_republic_trigger = yes
-	}
+    name = "Laos"
+    name_adj = "Laotian"
+    tags = {
+        tag = LXA
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
 }
 
 THAILAND = {
-	name = "Thailand"
-	name_adj = "Thai"
-	tags = {
-		tag = SUK
-		tag = AYU
-		tag = SIA
-	}
-	conditions = {
-		government = republic
-		is_revolutionary_republic_trigger = yes
-	}
+    name = "Thailand"
+    name_adj = "Thai"
+    tags = {
+        tag = SUK
+        tag = AYU
+        tag = SIA
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
 }
 
 BURMA = {
-	name = "Burma"
-	name_adj = "Burmese"
-	tags = {
-		tag = AVA
-		tag = HSE
-		tag = TAU
-	}
-	conditions = {
-		government = republic
-		is_revolutionary_republic_trigger = yes
-	}
+    name = "Burma"
+    name_adj = "Burmese"
+    tags = {
+        tag = AVA
+        tag = TAU
+        tag = PEG
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
 }
 
 TAIWAN = {
-	name = "Taiwan"
-	name_adj = "Taiwanese"
-	tags = {
-		tag = FRM
-	}
-	conditions = {
-		government = republic
-		is_revolutionary_republic_trigger = yes
-	}
+    name = "Taiwan"
+    name_adj = "Taiwanese"
+    tags = {
+        tag = FRM
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
 }
 
 BELGIUM = {
-	name = "Belgium"
-	name_adj = "Belgian"
-	conditions = {
-		government = republic
-		is_revolutionary_republic_trigger = yes
-		capital_scope = {
-			OR = {
-				area = brabant_area
-				area = flanders_area
-				area = wallonia_area
-			}
-			NOT = {
-				province_id = 94
-			}
-		}
-	}
+    name = "Belgium"
+    name_adj = "Belgian"
+    tags = {
+        tag = HAI
+        tag = FLA
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
 }
 
 LIGURIA = {
-	name = "Liguria"
-	name_adj = "Ligurian"
-	tags = {
-		tag = GEN
-	}
-	conditions = {
-		government = republic
-		is_revolutionary_republic_trigger = yes
-	}
+    name = "Liguria"
+    name_adj = "Ligurian"
+    tags = {
+        tag = GEN
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
 }
 
 CISAPLIA = {
-	name = "Cisalpia"
-	name_adj = "Cisalpine"
-	tags = {
-		tag = MLO
-	}
-	conditions = {
-		government = republic
-		is_revolutionary_republic_trigger = yes
-	}
+    name = "Cisalpia"
+    name_adj = "Cisalpine"
+    tags = {
+        tag = MLO
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
 }
 
 PARTHENOPEA = {
-	name = "Parthenopea"
-	name_adj = "Parthenopean"
-	tags = {
-		tag = NAP
-		tag = TTS
-	}
-	conditions = {
-		government = republic
-		is_revolutionary_republic_trigger = yes
-	}
+    name = "Parthenopea"
+    name_adj = "Parthenopean"
+    tags = {
+        tag = NAP
+        tag = TTS
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
 }
 
 PIEDMONT = {
-	name = "Piedmont"
-	name_adj = "Piedmontese"
-	tags = {
-		tag = SAV
-		tag = SPI
-	}
-	conditions = {
-		government = republic
-		is_revolutionary_republic_trigger = yes
-	}
+    name = "Piedmont"
+    name_adj = "Piedmontese"
+    tags = {
+        tag = SAV
+        tag = SPI
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
 }
 
 HELVETIA = {
-	name = "Helvetia"
-	name_adj = "Helvetic"
-	tags = {
-		tag = SWI
-	}
-	conditions = {
-		government = republic
-		is_revolutionary_republic_trigger = yes
-	}
+    name = "Helvetia"
+    name_adj = "Helvetic"
+    tags = {
+        tag = SWI
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
 }
 
 ETRURIA = {
-	name = "Etruria"
-	name_adj = "Etrurian"
-	tags = {
-		tag = LAN
-		tag = TUS
-	}
-	conditions = {
-		government = republic
-		is_revolutionary_republic_trigger = yes
-	}
+    name = "Etruria"
+    name_adj = "Etrurian"
+    tags = {
+        tag = LAN
+        tag = TUS
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
 }
 
 ANCONIA = {
-	name = "Anconia"
-	name_adj = "Anconine"
-	tags = {
-		tag = URB
-	}
-	conditions = {
-		government = republic
-		is_revolutionary_republic_trigger = yes
-	}
+    name = "Anconia"
+    name_adj = "Anconine"
+    tags = {
+        tag = URB
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
 }
 
 SAN_MARCO = {
-	name = "San Marco"
-	name_adj = "Sanmarconese"
-	tags = {
-		tag = VEN
-	}
-	conditions = {
-		government = republic
-		is_revolutionary_republic_trigger = yes
-	}
+    name = "San Marco"
+    name_adj = "Sanmarconese"
+    tags = {
+        tag = VEN
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
 }
 
 CZECHIA = {
-	name = "Czechia"
-	name_adj = "Czech"
-	tags = {
-		tag = BOH
-	}
-	conditions = {
-		government = republic
-		is_revolutionary_republic_trigger = yes
-	}
+    name = "Czechia"
+    name_adj = "Czech"
+    tags = {
+        tag = BOH
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
 }
 
 SLOVENIA = {
-	name = "Slovenia"
-	name_adj = "Slovene"
-	tags = {
-		tag = CLI
-	}
-	conditions = {
-		government = republic
-		is_revolutionary_republic_trigger = yes
-	}
+    name = "Slovenia"
+    name_adj = "Slovene"
+    tags = {
+        tag = CLI
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
 }
 
 ILLYRIA = {
-	name = "Illyria"
-	name_adj = "Illyrian"
-	tags = {
-		tag = CRO
-	}
-	conditions = {
-		government = republic
-		is_revolutionary_republic_trigger = yes
-	}
+    name = "Illyria"
+    name_adj = "Illyrian"
+    tags = {
+        tag = CRO
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
 }
 
 UKRAINE = {
-	name = "Ukraine"
-	name_adj = "Ukrainian"
-	tags = {
-		tag = UKR
-		tag = KIE
-	}
-	conditions = {
-		government = republic
-		is_revolutionary_republic_trigger = yes
-	}
+    name = "Ukraine"
+    name_adj = "Ukrainian"
+    tags = {
+        tag = UKR
+        tag = KIE
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
 }
 
 LATVIA = {
-	name = "Latvia"
-	name_adj = "Latvian"
-	tags = {
-		tag = LVA
-	}
-	conditions = {
-		government = republic
-		is_revolutionary_republic_trigger = yes
-	}
+    name = "Latvia"
+    name_adj = "Latvian"
+    tags = {
+        tag = LVA
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
 }
 
 DACIA = {
-	name = "Dacia"
-	name_adj = "Dacian"
-	tags = {
-		tag = RMN
-	}
-	conditions = {
-		government = republic
-		is_revolutionary_republic_trigger = yes
-	}
+    name = "Dacia"
+    name_adj = "Dacian"
+    tags = {
+        tag = RMN
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
 }
 
 SLOVAKIA = {
-	name = "Slovakia"
-	name_adj = "Slovak"
-	tags = {
-		tag = SLO
-	}
-	conditions = {
-		government = republic
-		is_revolutionary_republic_trigger = yes
-	}
+    name = "Slovakia"
+    name_adj = "Slovak"
+    tags = {
+        tag = SLO
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
+}
+
+HELLADA = {
+    name = "Hellada"
+    name_adj = "Hellene"
+    tags = {
+        tag = GRE
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
+}
+
+BELARUS = {
+    name = "Belarus"
+    name_adj = "Belarussian"
+    tags = {
+        tag = PLT
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
+}
+
+KUBAN = {
+    name = "Kuban"
+    name_adj = "Kuban"
+    tags = {
+        tag = CIR
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
+}
+
+TATARSTAN = {
+    name = "Tatarstan"
+    name_adj = "Tatar"
+    tags = {
+        tag = KAZ
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
+}
+
+KAZAKHSTAN = {
+    name = "Kazakhstan"
+    name_adj = "Kazakh"
+    tags = {
+        tag = KZH
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
+}
+
+UZBEKISTAN = {
+    name = "Uzbekistan"
+    name_adj = "Uzbek"
+    tags = {
+        tag = SHY
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
+}
+
+MONGOLIA = {
+    name = "Mongolia"
+    name_adj = "Mongolian"
+    tags = {
+        tag = KLK
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
+}
+
+JAMAICA = {
+    name = "Jamaica"
+    name_adj = "Jamaican"
+    tags = {
+        tag = WSI
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
+}
+
+KURDISTAN = {
+    name = "Kurdistan"
+    name_adj = "Kurdistani"
+    tags = {
+        tag = BTL
+        tag = ARD
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
+}
+
+AZERBAIJAN = {
+    name = "Azerbaijan"
+    name_adj = "Azerbaijani"
+    tags = {
+        tag = SRV
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
+}
+
+LIBYA = {
+    name = "Libya"
+    name_adj = "Libyan"
+    tags = {
+        tag = TRP
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
+}
+
+TUNISIA = {
+    name = "Tunisia"
+    name_adj = "Tunisian"
+    tags = {
+        tag = TUN
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
+}
+
+ALGERIA = {
+    name = "Algeria"
+    name_adj = "Algerian"
+    tags = {
+        tag = ALG
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
+}
+
+UGANDA = {
+    name = "Uganda"
+    name_adj = "Ugandan"
+    tags = {
+        tag = BUG
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
+}
+
+SENEGAL = {
+    name = "Senegal"
+    name_adj = "Senegalese"
+    tags = {
+        tag = JOL
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
+}
+
+CHAD = {
+    name = "Chad"
+    name_adj = "Chadian"
+    tags = {
+        tag = KBO
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
+}
+
+KENYA = {
+    name = "Kenya"
+    name_adj = "Kenyan"
+    tags = {
+        tag = MBA
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
+}
+
+MADAGASCAR = {
+    name = "Madagascar"
+    name_adj = "Malagasy"
+    tags = {
+        tag = MIR
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
+}
+
+BURKINA_FASO = {
+    name = "Burkina Faso"
+    name_adj = "Burkinabe"
+    tags = {
+        tag = MSI
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
+}
+
+ANGOLA = {
+    name = "Angola"
+    name_adj = "Angolan"
+    tags = {
+        tag = NDO
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
+}
+
+SOMALILAND = {
+    name = "Somaliland"
+    name_adj = "Somalilander"
+    tags = {
+        tag = ADA
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
+}
+
+SOUTH_AFRICA = {
+    name = "South Africa"
+    name_adj = "South African"
+    tags = {
+        tag = ZUL
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
+}
+
+SUDAN = {
+    name = "Sudan"
+    name_adj = "Sudanese"
+    tags = {
+        tag = ABB
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
+}
+
+NIGER = {
+    name = "Niger"
+    name_adj = "Nigerien"
+    tags = {
+        tag = SON
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
+}
+
+NIGERIA = {
+    name = "Nigeria"
+    name_adj = "Nigerian"
+    tags = {
+        tag = HAU
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
+}
+
+GHANA = {
+    name = "Ghana"
+    name_adj = "Ghanaian"
+    tags = {
+        tag = ASH
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
+}
+
+EZO = {
+    name = "Ezo"
+    name_adj = "Ezoan"
+    tags = {
+        tag = ANU
+        conditions = {
+            government = republic
+            is_revolutionary_republic_trigger = yes
+        }
+    }
 }
 
 # Revolutionary Country Flags
 TURKIYE = {
-	name = "Turkiye"
-	name_adj = "Turkish"
-	tags = {
-		tag = TUR
-	}
-	conditions = {
-		OR = {
-			has_country_flag = is_revolutionary_turkey_flag
-			has_country_flag = is_turkey_flag
-		}
-	}
+    name = "Turkiye"
+    name_adj = "Turkish"
+    tags = {
+        tag = TUR
+    }
+    conditions = {
+        OR = {
+            has_country_flag = is_revolutionary_turkey_flag
+            has_country_flag = is_turkey_flag
+        }
+    }
 }
 
 CHINA = {
-	name = "China"
-	name_adj = "Chinese"
-	conditions = {
-		OR = {
-			has_country_flag = is_revolutionary_china_flag
-			has_country_flag = is_china_flag
-		}
-	}
+    name = "China"
+    name_adj = "Chinese"
+    conditions = {
+        OR = {
+            has_country_flag = is_revolutionary_china_flag
+            has_country_flag = is_china_flag
+        }
+    }
 }
 
 IRAN = {
-	name = "Iran"
-	name_adj = "Iranian"
-	tags = {
-		tag = PER
-		tag = ERS
-	}
-	conditions = {
-		OR = {
-			has_country_flag = is_revolutionary_iran_flag
-			has_country_flag = is_iran_flag
-		}
-	}
+    name = "Iran"
+    name_adj = "Iranian"
+    tags = {
+        tag = PER
+        tag = ERS
+    }
+    conditions = {
+        OR = {
+            has_country_flag = is_revolutionary_iran_flag
+            has_country_flag = is_iran_flag
+        }
+    }
 }
 
 GURKANI = {
-	name = "Gurkani"
-	name_adj = "Gurkani"
-	tags = {
-		tag = TIM
-	}
-	conditions = {
-		OR = {
-			has_country_flag = is_revolutionary_gurkani_flag
-			has_country_flag = is_gurkani_flag
-		}
-	}
-}
-
-HELLADA = {
-	name = "Hellada"
-	name_adj = "Hellene"
-	tags = {
-		tag = GRE
-	}
-	conditions = {
-		government = republic
-		is_revolutionary_republic_trigger = yes
-	}
+    name = "Gurkaniya"
+    name_adj = "Gurkani"
+    tags = {
+        tag = TIM
+        tag = MUG
+    }
+    conditions = {
+        OR = {
+            has_country_flag = is_TIM_GURKANI_flag
+            has_country_flag = is_revolutionary_gurkani_flag
+            has_country_flag = is_gurkani_flag
+        }
+    }
 }
 
 # Name flags
 LPC_SUB = {
-	name = "Lithuania-Poland"
-	name_adj = "Lithuanian-Polish"
-	tags = {
-		tag = PLC
-	}
-	conditions = {
-		OR = {
-			primary_culture = lithuanian
-			has_country_flag = is_LPC_flag
-		}
-	}
+    name = "Lithuania-Poland"
+    name_adj = "Lithuanian-Polish"
+    tags = {
+        tag = PLC
+    }
+    conditions = {
+        OR = {
+            primary_culture = lithuanian
+            has_country_flag = is_LPC_flag
+        }
+    }
 }
 
 PLC_SUB = {
-	name = "Poland-Lithuania"
-	name_adj = "Polish-Lithuanian"
-	tags = {
-		tag = PLC
-	}
-	conditions = {
-		primary_culture = polish
-	}
+    name = "Poland-Lithuania"
+    name_adj = "Polish-Lithuanian"
+    tags = {
+        tag = PLC
+    }
+    conditions = {
+        primary_culture = polish
+    }
 }
 
 AUH_SUB = {
-	name = "Austria-Hungary"
-	name_adj = "Austrian-Hungarian"
-	tags = {
-		tag = AUH
-	}
-	conditions = {
-		primary_culture = austrian
-	}
+    name = "Austria-Hungary"
+    name_adj = "Austrian-Hungarian"
+    tags = {
+        tag = AUH
+    }
+    conditions = {
+        primary_culture = austrian
+    }
 }
 
 HUA_SUB = {
-	name = "Hungary-Austria"
-	name_adj = "Hungarian-Austrian"
-	tags = {
-		tag = AUH
-	}
-	conditions = {
-		OR = {
-			primary_culture = hungarian
-			has_country_flag = is_HUNGARY_AUSTRIA_flag
-		}
-	}
+    name = "Hungary-Austria"
+    name_adj = "Hungarian-Austrian"
+    tags = {
+        tag = AUH
+    }
+    conditions = {
+        OR = {
+            primary_culture = hungarian
+            has_country_flag = is_HUNGARY_AUSTRIA_flag
+        }
+    }
 }
 
 AUSTRALIA_HUNGARY = {
-	name = "Australia-Hungary"
-	name_adj = "Australohungarian"
-	tags = {
-		tag = AUH
-	}
-	conditions = {
-		has_country_flag = is_AUSTRALIA_HUNGARY_flag
-	}
+    name = "Australia-Hungary"
+    name_adj = "Australohungarian"
+    tags = {
+        tag = AUH
+    }
+    conditions = {
+        has_country_flag = is_AUSTRALIA_HUNGARY_flag
+    }
 }
 
 GOD = {
-	name = "God"
-	name_adj = "Divine"
-	tags = {
-		tag = PAP
-	}
-	conditions = {
-		has_country_flag = is_kingdom_of_god_flag
-	}
+    name = "God"
+    name_adj = "Divine"
+    tags = {
+        tag = PAP
+    }
+    conditions = {
+        has_country_flag = is_kingdom_of_god_flag
+    }
 }
 
 CHAGATAI = {
-	name = "Chagatai"
-	name_adj = "Chagatai"
-	tags = {
-		tag = CHG
-	}
-	conditions = {
-		has_country_flag = is_CHAGATAI_flag
-	}
+    name = "Chagatai"
+    name_adj = "Chagatai"
+    tags = {
+        tag = CHG
+    }
+    conditions = {
+        has_country_flag = is_CHAGATAI_flag
+    }
 }
 
 THE_ROMANS = {
-	name = "The Romans"
-	name_adj = "Roman"
-	tags = {
-		tag = ROM
-		tag = BYZ
-	}
+    name = "The Romans"
+    name_adj = "Roman"
+    tags = {
+        tag = ROM
+        tag = BYZ
+    }
 }
 
 WESTERN_ROMAN = {
-	name = "The Western Romans"
-	name_adj = "Western Roman"
-	tags = {
-		tag = ROM
-	}
-	conditions = {
-		exists = BYZ
-	}
+    name = "The Western Romans"
+    name_adj = "Western Roman"
+    tags = {
+        tag = ROM
+    }
+    conditions = {
+        exists = BYZ
+    }
 }
 
 EASTERN_ROMAN = {
-	name = "The Eastern Romans"
-	name_adj = "Eastern Roman"
-	tags = {
-		tag = BYZ
-	}
-	conditions = {
-		exists = ROM
-	}
+    name = "The Eastern Romans"
+    name_adj = "Eastern Roman"
+    tags = {
+        tag = BYZ
+    }
+    conditions = {
+        exists = ROM
+    }
 }
 
 THE_SELJUKS = {
-	name = "The Seljuks"
-	name_adj = "Seljuk"
-	tags = {
-		tag = RUM
-	}
-	conditions = {
-		has_country_flag = is_SELJUK_EMPIRE_flag
-	}
+    name = "The Seljuks"
+    name_adj = "Seljuk"
+    tags = {
+        tag = RUM
+    }
+    conditions = {
+        has_country_flag = is_SELJUK_EMPIRE_flag
+    }
 }
 
 THE_AYYUBIDS = {
-	name = "The Ayyubids"
-	name_adj = "Ayyubid"
-	tags = {
-		tag = HSN
-	}
-	conditions = {
-		has_country_flag = is_AYB_flag
-	}
+    name = "The Ayyubids"
+    name_adj = "Ayyubid"
+    tags = {
+        tag = HSN
+    }
+    conditions = {
+        has_country_flag = is_AYB_flag
+    }
 }
 
 GOTHIA = {
-	name = "Gothia"
-	name_adj = "Gothic"
-	tags = {
-		tag = FEO
-	}
-	conditions = {
-		has_country_flag = is_GOTHIA_flag
-	}
+    name = "Gothia"
+    name_adj = "Gothic"
+    tags = {
+        tag = FEO
+    }
+    conditions = {
+        has_country_flag = is_GOTHIA_flag
+    }
 }
 
 GREAT_ARMENIA = {
-	name = "Great Armenia"
-	name_adj = "Great Armenian"
-	tags = {
-		tag = ARM
-	}
-	conditions = {
-		has_country_flag = is_GREAT_ARMENIA_flag
-	}
+    name = "Great Armenia"
+    name_adj = "Great Armenian"
+    tags = {
+        tag = ARM
+    }
+    conditions = {
+        has_country_flag = is_GREAT_ARMENIA_flag
+    }
 }
 
 RAMANNADESA = {
-	name = "Ramannadesa"
-	name_adj = "Ramannadesan"
-	tags = {
-		tag = PEG
-	}
-	conditions = {
-		has_country_flag = is_ramannadesa
-	}
+    name = "Ramannadesa"
+    name_adj = "Ramannadesan"
+    tags = {
+        tag = PEG
+    }
+    conditions = {
+        has_country_flag = is_ramannadesa
+    }
 }
 
 DVARAVATI = {
-	name = "Dvaravati"
-	name_adj = "Dvaravatian"
-	tags = {
-		tag = AYU
-	}
-	conditions = {
-		has_country_flag = is_dvaravati
-	}
+    name = "Dvaravati"
+    name_adj = "Dvaravatian"
+    tags = {
+        tag = AYU
+    }
+    conditions = {
+        has_country_flag = is_dvaravati
+    }
 }
 
 HARIPHUNCHAI = {
-	name = "Hariphunchai"
-	name_adj = "Hariphunchai"
-	tags = {
-		tag = LNA
-	}
-	conditions = {
-		has_country_flag = is_hariphunchai
-	}
+    name = "Hariphunchai"
+    name_adj = "Hariphunchai"
+    tags = {
+        tag = LNA
+    }
+    conditions = {
+        has_country_flag = is_hariphunchai
+    }
 }
 
 SRIVIJAYA = {
-	name = "Srivijaya"
-	name_adj = "Srivijayan"
-	tags = {
-		tag = MSA
-	}
-	conditions = {
-		has_country_flag = is_srijivaya_flag
-	}
+    name = "Srivijaya"
+    name_adj = "Srivijayan"
+    tags = {
+        tag = MSA
+    }
+    conditions = {
+        has_country_flag = is_srijivaya_flag
+    }
 }
 
 NUSANTARA = {
-	name = "Nusantara"
-	name_adj = "Nusantaran"
-	tags = {
-		tag = MSA
-	}
-	conditions = {
-		has_country_flag = is_nusantara_flag
-	}
+    name = "Nusantara"
+    name_adj = "Nusantaran"
+    tags = {
+        tag = MSA
+    }
+    conditions = {
+        has_country_flag = is_nusantara_flag
+    }
+}
+
+# The sultan of Oman lives in Zanzibar now
+# (That's just where he lives)
+ZANZIBAR = {
+    name = "Zanzibar"
+    name_adj = "Zanzibari"
+    tags = {
+        tag = OMA
+    }
+    conditions = {
+        has_country_flag = is_OMAN_ZANZIBAR_flag
+    }
 }
 
 # Dynastic names
 THE_OTTOMANS = {
-	name = "The Ottomans"
-	name_adj = "Ottoman"
-	tags = {
-		tag = TUR
-	}
-	conditions = {
-		dynasty = "Osmanoglu"
-	}
+    name = "The Ottomans"
+    name_adj = "Ottoman"
+    tags = {
+        tag = TUR
+    }
+    conditions = {
+        dynasty = "Osmanoglu"
+    }
 }
 
 ANATOLIA = {
-	name = "Anatolia"
-	name_adj = "Anatolian"
-	tags = {
-		tag = TUR
-	}
-	conditions = {
-		AND = {
-			NOT = {
-				dynasty = "Osmanoglu"
-			}
-			NOT = {
-				OR = {
-					has_country_flag = is_revolutionary_turkey_flag
-					has_country_flag = is_turkey_flag
-				}
-			}
-		}
-	}
+    name = "Anatolia"
+    name_adj = "Anatolian"
+    tags = {
+        tag = TUR
+    }
+    conditions = {
+        NOT = {
+            OR = {
+                dynasty = "Osmanoglu"
+                has_country_flag = is_revolutionary_turkey_flag
+                has_country_flag = is_turkey_flag
+            }
+        }
+    }
 }
 
+
 JOSEON = {
-	name = "Joseon"
-	name_adj = "Joseonese"
-	tags = {
-		tag = KOR
-	}
-	conditions = {
-		has_reform = monarchy_mechanic
-		dynasty = "Yi"
-	}
+    name = "Joseon"
+    name_adj = "Joseonese"
+    tags = {
+        tag = KOR
+    }
+    conditions = {
+        has_reform = monarchy_mechanic
+        dynasty = "Yi"
+    }
 }
 
 GOGURYEO = {
-	name = "Goguryeo"
-	name_adj = "Goguryeoan"
-	tags = {
-		tag = KOR
-	}
-	conditions = {
-		has_reform = monarchy_mechanic
-		dynasty = "Go"
-	}
+    name = "Goguryeo"
+    name_adj = "Goguryeoan"
+    tags = {
+        tag = KOR
+    }
+    conditions = {
+        has_reform = monarchy_mechanic
+        dynasty = "Go"
+    }
 }
 
 SILLA = {
-	name = "Silla"
-	name_adj = "Sillan"
-	tags = {
-		tag = KOR
-	}
-	conditions = {
-		has_reform = monarchy_mechanic
-		OR = {
-			dynasty = "Park"
-			dynasty = "Kim"
-		}
-	}
+    name = "Silla"
+    name_adj = "Sillan"
+    tags = {
+        tag = KOR
+    }
+    conditions = {
+        has_reform = monarchy_mechanic
+        OR = {
+            dynasty = "Park"
+            dynasty = "Kim"
+        }
+    }
 }
 
 BALHAE = {
-	name = "Balhae"
-	name_adj = "Balhaean"
-	tags = {
-		tag = KOR
-	}
-	conditions = {
-		has_reform = monarchy_mechanic
-		dynasty = "Dae"
-	}
+    name = "Balhae"
+    name_adj = "Balhaean"
+    tags = {
+        tag = KOR
+    }
+    conditions = {
+        has_reform = monarchy_mechanic
+        dynasty = "Dae"
+    }
 }
 
 GORYEO = {
-	name = "Goryeo"
-	name_adj = "Goryeoan"
-	tags = {
-		tag = KOR
-	}
-	conditions = {
-		has_reform = monarchy_mechanic
-		dynasty = "Wang"
-	}
+    name = "Goryeo"
+    name_adj = "Goryeoan"
+    tags = {
+        tag = KOR
+    }
+    conditions = {
+        has_reform = monarchy_mechanic
+        dynasty = "Wang"
+    }
 }
 
 DAI_NAM = {
-	name = "Dai Nam"
-	name_adj = "Dainamese"
-	tags = {
-		tag = DAI
-	}
-	conditions = {
-		has_reform = monarchy_mechanic
-		OR = {
-			dynasty = "Nguyen"
-			dynasty = "Nguyen Phuc"
-			has_country_flag = is_dai_nam_flag
-		}
-	}
+    name = "Dai Nam"
+    name_adj = "Dainamese"
+    tags = {
+        tag = DAI
+    }
+    conditions = {
+        has_reform = monarchy_mechanic
+        OR = {
+            dynasty = "Nguyen"
+            dynasty = "Nguyen Phuc"
+            has_country_flag = is_dai_nam_flag
+        }
+    }
 }
 
 VIET_NAM = {
-	name = "Viet Nam"
-	name_adj = "Vietnamese"
-	tags = {
-		tag = DAI
-	}
-	conditions = {
-		OR = {
-			government = republic
-			has_country_flag = is_viet_name_flag
-		}
-	}
+    name = "Viet Nam"
+    name_adj = "Vietnamese"
+    tags = {
+        tag = DAI
+    }
+    conditions = {
+        OR = {
+            government = republic
+            has_country_flag = is_viet_nam_flag
+        }
+    }
 }

@@ -1,85 +1,85 @@
 JAPANESE_PUPPET_GROUP = {
-	group = {
-		KARAKOKU = {
-			name = "Karakoku"
-			name_adj = "Karakoku"
-			conditions = {
-				capital_scope = {
-					superregion = china_superregion
-				}
-			}
-		}
-		TENJIKU = {
-			name = "Tenjiku"
-			name_adj = "Tenjiku"
-			conditions = {
-				capital_scope = {
-					superregion = india_superregion
-				}
-			}
-		}
-		KUNLUN = {
-			name = "Kunlun"
-			name_adj = "Kunlun"
-			conditions = {
-				capital_scope = {
-					region = tibet_region
-				}
-			}
-		}
-		MANCHUKOKU = {
-			name = "Manchukoku"
-			name_adj = "Manchukoku"
-			conditions = {
-				capital_scope = {
-					region = manchuria_region
-				}
-			}
-		}
-		CHOSENKOKU = {
-			name = "Chosenkoku"
-			name_adj = "Chosenkoku"
-			conditions = {
-				capital_scope = {
-					region = korea_region
-				}
-			}
-		}
-		FIRIPINKOKU = {
-			name = "Firipinkoku"
-			name_adj = "Firipinkoku"
-			conditions = {
-				capital_scope = {
-					region = moluccas_region
-				}
-			}
-		}
-		MOKOKOKU = {
-			name = "Mokokoku"
-			name_adj = "Mokokoku"
-			conditions = {
-				capital_scope = {
-					region = mongolia_region
-				}
-			}
-		}
-		EZOKOKU = {
-			name = "Ezokoku"
-			name_adj = "Ezokoku"
-			conditions = {
-				capital_scope = {
-					area = hokkaido_area
-				}
-			}
-		}
-	}
-	conditions = {
-		OR = {
-			is_subject_of_type = vassal
-			is_subject_of_type = march
-		}
-		overlord = {
-			tag = JAP
-		}
-	}
+    group = {
+        KARAKOKU = {
+            name = "Karakoku"
+            name_adj = "Karakoku"
+            conditions = {
+                capital_scope = {
+                    superregion = china_superregion
+                }
+            }
+        }
+        TENJIKU = {
+            name = "Tenjiku"
+            name_adj = "Tenjiku"
+            conditions = {
+                capital_scope = {
+                    superregion = india_superregion
+                }
+            }
+        }
+        KUNLUN = {
+            name = "Kunlun"
+            name_adj = "Kunlun"
+            conditions = {
+                capital_scope = {
+                    region = tibet_region
+                }
+            }
+        }
+        MANCHUKOKU = {
+            name = "Manchukoku"
+            name_adj = "Manchukoku"
+            conditions = {
+                capital_scope = {
+                    region = manchuria_region
+                }
+            }
+        }
+        CHOSENKOKU = {
+            name = "Chosenkoku"
+            name_adj = "Chosenkoku"
+            conditions = {
+                capital_scope = {
+                    region = korea_region
+                }
+            }
+        }
+        FIRIPINKOKU = {
+            name = "Firipinkoku"
+            name_adj = "Firipinkoku"
+            conditions = {
+                capital_scope = {
+                    region = moluccas_region
+                }
+            }
+        }
+        MOKOKOKU = {
+            name = "Mokokoku"
+            name_adj = "Mokokoku"
+            conditions = {
+                capital_scope = {
+                    region = mongolia_region
+                }
+            }
+        }
+        EZOKOKU = {
+            name = "Ezokoku"
+            name_adj = "Ezokoku"
+            conditions = {
+                capital_scope = {
+                    area = hokkaido_area
+                }
+            }
+        }
+    }
+    conditions = {
+        OR = {
+            is_subject_of_type = vassal
+            is_subject_of_type = march
+        }
+        overlord = {
+            tag = JAP
+        }
+    }
 }

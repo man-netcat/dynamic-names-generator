@@ -148,7 +148,7 @@ def read_grouped_rules(dir: str) -> list[Rule]:
                     group_tags,
                     group_conditions,
                 )
-                rules.append(rule)
+            rules.append(rule)
 
     return rules
 
