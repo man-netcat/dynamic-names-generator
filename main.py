@@ -10,16 +10,16 @@ from utils import *
 class Generator:
     def __init__(self):
         # Read rules, tag names, and dynasty names from input files
-        self.rules_list: list[Rule] = read_rules(RULES_PATH)
-        print("Rules read successfully")
-        self.rules_list.extend(read_grouped_rules(GROUPED_RULES_DIR))
-        print("Grouped Rules read successfully")
-        self.substitution_rules_list: list[Rule] = read_rules(SUB_RULES_PATH)
-        print("Substitution Rules read successfully")
         self.tag_name_list = read_tag_names(TAG_NAMES_PATH)
         print("Tag names read successfully")
         self.dynasty_names = read_dynasties()
         print("Dynasty names read successfully")
+        self.rules_list: list[Rule] = parse_rule_file(RULES_PATH)
+        print("Rules read successfully")
+        self.rules_list.extend(parse_rules_dir(GROUPED_RULES_DIR))
+        print("Grouped Rules read successfully")
+        self.substitution_rules_list: list[Rule] = parse_rule_file(SUB_RULES_PATH)
+        print("Substitution Rules read successfully")
 
         self.global_rules_list: list[Rule] = []
         self.tagged_rules_list: list[Rule] = []
@@ -58,7 +58,7 @@ class Generator:
                     tag=tag_name_value,
                     name=name,
                     name_adj=name_adj,
-                    condition=" ".join(rule.conditions),
+                    condition=rule.conditions,
                 )
                 self.rules[tag].append(entry)
 
@@ -82,7 +82,7 @@ class Generator:
                         tag=tag_name_value,
                         name=name,
                         name_adj=name_adj,
-                        condition=" ".join(rule.conditions),
+                        condition=rule.conditions,
                     )
 
                     self.rules[substitution_rule.id].append(entry)
@@ -104,7 +104,7 @@ class Generator:
                 tags = ""
 
             condition = (
-                substitution_rule.conditions[0]
+                substitution_rule.conditions
                 if substitution_rule.conditions
                 else "always = yes"
             )
@@ -116,18 +116,16 @@ class Generator:
 
         dynasty_rules = [rule for rule in self.rules_list if "{DYNASTY}" in rule.name]
         for rule in dynasty_rules:
-            conditions = " ".join(rule.conditions)
             event_triggers.append(
-                f"        if = {{ limit = {{ {conditions} }} country_event = {{ id = {EVENT_NAME}.{self.event_id} }} }}"
+                f"        if = {{ limit = {{ {rule.conditions} }} country_event = {{ id = {EVENT_NAME}.{self.event_id} }} }}"
             )
             self.events[rule.id] = str(self.event_id)
             self.event_id += 1
 
         # Add global rules directly
         for rule in self.global_rules_list:
-            conditions = " ".join(rule.conditions)
             event_triggers.append(
-                f"        if = {{ limit = {{ {conditions} }} override_country_name = {rule.id} }}"
+                f"        if = {{ limit = {{ {rule.conditions} }} override_country_name = {rule.id} }}"
             )
             self.events[rule.id] = str(self.event_id)
             self.event_id += 1

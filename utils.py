@@ -1,5 +1,4 @@
 import os
-
 import pyradox
 
 from classes.Localisation import Localisation
@@ -16,11 +15,11 @@ def process_name(name: str) -> str:
 
 
 def get_tag_name(tag: str, tag_name: str) -> str:
-    return tag + "_" + tag_name
+    return f"{tag}_{tag_name}"
 
 
-def format_as_tag(str: str):
-    return str.upper().replace(" ", "_").replace("-", "_").replace("'", "")
+def format_as_tag(s: str) -> str:
+    return s.upper().replace(" ", "_").replace("-", "_").replace("'", "")
 
 
 def split_stripped(s: str, sep: str = ",", maxsplit: int = -1) -> list[str]:
@@ -28,15 +27,15 @@ def split_stripped(s: str, sep: str = ",", maxsplit: int = -1) -> list[str]:
 
 
 def build_conditions(tree) -> str:
-    return " ".join(map(str.strip, str(tree).split("\n")))
+    return " ".join(map(str.strip, str(tree).split("\n"))).strip()
+
+
+def build_tags(tree) -> list[str]:
+    return list(tree["tags"].values()) if tree and "tags" in tree else []
 
 
 def read_rule_file(path: str):
-    return pyradox.txt.parse_file(
-        path=path,
-        game="EU4",
-        path_relative_to_game=False,
-    )
+    return pyradox.txt.parse_file(path=path, game="EU4", path_relative_to_game=False)
 
 
 def substitute(template: str, format_str: str, item_name: str) -> str:
@@ -47,29 +46,24 @@ def read_lines(path: str):
     with open(path, encoding="utf-8-sig") as f:
         for line in f:
             line = line.strip()
-            if not line or line.startswith("#"):
-                continue
-            yield line
+            if line and not line.startswith("#"):
+                yield line
 
 
 def get_country_name(rule_name: str, tag_name: tuple[str, Localisation]) -> str:
     if "NAME_ADJ" in rule_name:
-        rule_name = substitute(rule_name, "{NAME_ADJ}", tag_name[1].adj)
+        return substitute(rule_name, "{NAME_ADJ}", tag_name[1].adj)
     elif "NAME" in rule_name:
-        rule_name = substitute(rule_name, "{NAME}", tag_name[1].name)
-    elif "DYNASTY" not in rule_name:
-        rule_name = rule_name
-    else:
-        rule_name = None
+        return substitute(rule_name, "{NAME}", tag_name[1].name)
+    elif "DYNASTY" in rule_name:
+        return None
     return rule_name
 
 
 def get_dynasty_name(rule_name: str, dynasty_name: str) -> str:
     if "DYNASTY" in rule_name:
-        rule_name = substitute(rule_name, "{DYNASTY}", dynasty_name.capitalize())
-    else:
-        rule_name = None
-    return rule_name
+        return substitute(rule_name, "{DYNASTY}", dynasty_name.capitalize())
+    return None
 
 
 def get_item_name(rule_name: str, item_name: str) -> str:
@@ -81,101 +75,92 @@ def get_item_name(rule_name: str, item_name: str) -> str:
 # ------------------------------------
 
 
-def parse_rule(
-    key: str,
-    rule_data: dict,
-    group_tags: list[str] = [],
-    group_conditions: str = None,
-) -> Rule:
-    group_tags = group_tags or []
-    combined_conditions = []
-    if group_conditions:
-        combined_conditions.append(group_conditions)
-    if "conditions" in rule_data:
-        combined_conditions.append(build_conditions(rule_data["conditions"]))
+def parse_rule_data(
+    key: str, rule_data: dict, parent_tags=None, parent_conditions=""
+) -> list[Rule]:
+    """Recursively parse rule data (grouped or regular)."""
+    if parent_tags is None:
+        parent_tags = []
 
-    tags = group_tags + (
-        list(rule_data["tags"].values()) if "tags" in rule_data else []
-    )
-
-    return Rule(
-        id=key,
-        name=rule_data["name"],
-        name_adj=rule_data["name_adj"],
-        tags=tags,
-        conditions=combined_conditions,
-    )
-
-
-def read_rules(path: str) -> list[Rule]:
-    data = read_rule_file(path)
-    rules = [parse_rule(key, rule_data) for key, rule_data in data.items()]
-    return rules
-
-
-def read_grouped_rules(dir: str) -> list[Rule]:
     rules: list[Rule] = []
 
-    for filename in os.listdir(dir):
-        file_path = os.path.join(dir, filename)
-        if not os.path.isfile(file_path):
-            continue
-
-        data = read_rule_file(file_path)
-
-        for group_key, group_data in data.items():
-            group = group_data["group"]
-            group_tags = group_data["tags"]
+    group_tags = parent_tags + build_tags(rule_data)
+    group_conditions = parent_conditions
+    if "conditions" in rule_data:
+        if parent_conditions:
             group_conditions = (
-                build_conditions(group_data["conditions"])
-                if "conditions" in group_data
-                else None
+                f"{parent_conditions} {build_conditions(rule_data['conditions'])}"
             )
+        else:
+            group_conditions = build_conditions(rule_data["conditions"])
 
-            group_name_template = group_data["name"] if "name" in group_data else None
-
-            for key, rule_data in group.items():
-                if group_name_template:
-                    item_name = get_item_name(group_name_template, rule_data["name"])
-                else:
-                    item_name = rule_data["name"]
-
-                rule_data["name"] = item_name
-
-                rule = parse_rule(
-                    get_tag_name(group_key, key),
-                    rule_data,
-                    group_tags,
-                    group_conditions,
+    # Handle grouped rules
+    if "group" in rule_data:
+        group_name_template = rule_data["name"] if "name" in rule_data else None
+        for sub_key in rule_data["group"]:
+            sub_rule = rule_data["group"][sub_key]
+            if group_name_template and "name" in sub_rule:
+                sub_rule["name"] = get_item_name(group_name_template, sub_rule["name"])
+            rules.extend(
+                parse_rule_data(
+                    get_tag_name(key, sub_key), sub_rule, group_tags, group_conditions
                 )
-            rules.append(rule)
+            )
+        return rules
 
+    # Handle regular rule
+    rule_name = rule_data["name"] if "name" in rule_data else None
+    name_adj = rule_data["name_adj"] if "name_adj" in rule_data else None
+
+    rules.append(
+        Rule(
+            id=key,
+            name=rule_name,
+            name_adj=name_adj,
+            tags=group_tags,
+            conditions=group_conditions,
+        )
+    )
     return rules
+
+
+def parse_rule_file(file_path: str) -> list[Rule]:
+    data = read_rule_file(file_path)
+    all_rules: list[Rule] = []
+
+    for key in data:
+        all_rules.extend(parse_rule_data(key, data[key]))
+
+    return all_rules
+
+
+def parse_rules_dir(dir_path: str) -> list[Rule]:
+    all_rules: list[Rule] = []
+
+    for filename in os.listdir(dir_path):
+        file_path = os.path.join(dir_path, filename)
+        if os.path.isfile(file_path):
+            all_rules.extend(parse_rule_file(file_path))
+
+    return all_rules
 
 
 def read_tag_names(file_path: str) -> dict[str, Localisation]:
-    tag_names = read_lines(file_path)
     tag_name_list: dict[str, Localisation] = {}
-    for line in tag_names:
-        line_split = line.split(":")
-        name = line_split[0]
-        value = line_split[1]
+
+    for line in read_lines(file_path):
+        name, value = line.split(":", 1)
         if "_ADJ2" in name:
             continue
-        elif "_ADJ" in name:
+        value = process_name(value)
+        if "_ADJ" in name:
             key = name.replace("_ADJ", "")
             tagName = tag_name_list[key]
-            tagName.adj = process_name(value)
+            tagName.adj = value
         else:
-            value = process_name(value)
-            tagName = Localisation(name=value, adj=None)
-            tag_name_list[name] = tagName
+            tag_name_list[name] = Localisation(name=value, adj=None)
     return tag_name_list
 
 
 def read_dynasties() -> list[str]:
-    dynasty_names = read_lines(DYNASTIES_PATH)
-    dynasty_names_list = []
-    for dynasty in dynasty_names:
-        dynasty_names_list.append(dynasty.replace("\n", ""))
-    return dynasty_names_list
+    return [dynasty.strip() for dynasty in read_lines(DYNASTIES_PATH)]

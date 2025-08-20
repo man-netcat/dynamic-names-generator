@@ -8,4 +8,4 @@ class Rule:
     name: str
     name_adj: str = None
     tags: List[str] = field(default_factory=list)
-    conditions: List[str] = field(default_factory=list)
+    conditions: str = None
