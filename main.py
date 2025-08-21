@@ -114,7 +114,7 @@ class Generator:
             self.events[substitution_rule.id] = str(self.event_id)
             self.event_id += 1
 
-        dynasty_rules = [rule for rule in self.rules_list if "{DYNASTY}" in rule.name]
+        dynasty_rules = [rule for rule in self.rules_list if rule.name_dynastic]
         for rule in dynasty_rules:
             event_triggers.append(
                 f"        if = {{ limit = {{ {rule.conditions} }} country_event = {{ id = {EVENT_NAME}.{self.event_id} }} }}"
@@ -201,12 +201,12 @@ class Generator:
 
         loc_lines.append(" #dynasties")
         for rule in self.rules_list:
-            if "{DYNASTY}" in rule.name:
+            if rule.name_dynastic:
                 loc_lines.append(f"\n # {rule.id}")
                 for name in self.dynasty_names:
                     key = self.dynasty_keys[name]
                     loc_lines.append(
-                        f' {key}_{rule.id}: "{rule.name.replace("{DYNASTY}", name.title())}"'
+                        f' {key}_{rule.id}: "{rule.name_dynastic.replace("{DYNASTY}", name.title())}"'
                     )
                     loc_lines.append(f' {key}_{rule.id}_ADJ: "{name.title()}"')
 

@@ -285,17 +285,6 @@ TRIBE = {
 			government = native
 			has_reform = siberian_tribe
 			has_reform = native_basic_reform
-			AND = {
-				has_reform = steppe_horde
-				NOT = {
-					OR = {
-						culture_group = altaic
-						culture_group = tartar
-						primary_culture = altaic_new
-						primary_culture = manchu_new
-					}
-				}
-			}
 		}
 	}
 }
@@ -335,6 +324,15 @@ STEPPE = {
 			name = "Golden Horde"
 			tags = {
 				tag = GLH
+			}
+		}
+		ULUG_ULUS = {
+			name = "Ulug Ulus"
+			tags = {
+				tag = GLH
+			}
+			conditions = {
+				has_country_flag = is_ULUG_ULUS_flag
 			}
 		}
 	}
@@ -437,13 +435,17 @@ MONGOL = {
 	}
 }
 
-ULUG_ULUS = {
-	name = "Ulug Ulus"
-	tags = {
-		tag = GLH
-	}
+IKKO_IKKI_THEOCRACY = {
+	name = "Holy State of the Ikko-Ikki"
 	conditions = {
-		has_country_flag = is_ULUG_ULUS_flag
+		has_reform = ikko_ikki_reform
+	}
+}
+
+IKKO_IKKI_REPUBLIC = {
+	name = "Republic of the Ikko-Ikki"
+	conditions = {
+		has_reform = ikko_ikki_republic_reform
 	}
 }
 
@@ -643,14 +645,7 @@ ISLAMIC_MONARCHY = {
 	group = {
 		EMIRATE = {
 			name = "Emirate of {NAME}"
-			conditions = {
-				NOT = {
-					government_rank = 2
-				}
-			}
-		}
-		DYNASTY_EMIRATE = {
-			name = "{DYNASTY} Emirate"
+			name_dynastic = "{DYNASTY} Emirate"
 			conditions = {
 				NOT = {
 					government_rank = 2
@@ -659,6 +654,7 @@ ISLAMIC_MONARCHY = {
 		}
 		SULTANATE = {
 			name = "Sultanate of {NAME}"
+			name_dynastic = "{DYNASTY} Sultanate"
 			conditions = {
 				government_rank = 2
 				NOT = {
@@ -666,17 +662,9 @@ ISLAMIC_MONARCHY = {
 				}
 			}
 		}
-		DYNASTY_SULTANATE = {
-			name = "{DYNASTY} Sultanate"
-			conditions = {
-				government_rank = 2
-				NOT = {
-					government_rank = 3
-				}
-			}
-		}
-		DYNASTY_EMPIRE = {
-			name = "{DYNASTY} Empire"
+		EMPIRE = {
+			name = "Empire of {NAME}"
+			name_dynastic = "{DYNASTY} Empire"
 			conditions = {
 				government_rank = 3
 			}
@@ -1390,14 +1378,7 @@ IRANIAN_MONARCHY = {
 	group = {
 		SHEIKHDOM = {
 			name = "Sheikhdom of {NAME}"
-			conditions = {
-				NOT = {
-					government_rank = 2
-				}
-			}
-		}
-		DYNASTY_SHEIKHDOM = {
-			name = "{DYNASTY} Sheikhdom"
+			name_dynastic = "{DYNASTY} Sheikhdom"
 			conditions = {
 				NOT = {
 					government_rank = 2
@@ -1406,15 +1387,7 @@ IRANIAN_MONARCHY = {
 		}
 		SHAHDOM = {
 			name = "Shahdom of {NAME}"
-			conditions = {
-				government_rank = 2
-				NOT = {
-					government_rank = 3
-				}
-			}
-		}
-		DYNASTY_SHAHDOM = {
-			name = "{DYNASTY} Shahdom"
+			name_dynastic = "{DYNASTY} Shahdom"
 			conditions = {
 				government_rank = 2
 				NOT = {
@@ -1614,14 +1587,7 @@ SHARIFATE_GROUP = {
 	group = {
 		SHARIFATE = {
 			name = "Sharifate of {NAME}"
-			conditions = {
-				NOT = {
-					government_rank = 2
-				}
-			}
-		}
-		DYNASTY_SHARIFATE = {
-			name = "{DYNASTY} Sharifate"
+			name_dynastic = "{DYNASTY} Sharifate"
 			conditions = {
 				NOT = {
 					government_rank = 2
@@ -1630,15 +1596,7 @@ SHARIFATE_GROUP = {
 		}
 		GREAT_SHARIFATE = {
 			name = "Great Sharifate of {NAME}"
-			conditions = {
-				government_rank = 2
-				NOT = {
-					government_rank = 3
-				}
-			}
-		}
-		DYNASTY_GREAT_SHARIFATE = {
-			name = "Great {DYNASTY} Sharifate"
+			name_dynastic = "Great {DYNASTY} Sharifate"
 			conditions = {
 				government_rank = 2
 				NOT = {
@@ -1648,12 +1606,7 @@ SHARIFATE_GROUP = {
 		}
 		GRAND_SHARIFATE = {
 			name = "Grand Sharifate of {NAME}"
-			conditions = {
-				government_rank = 3
-			}
-		}
-		DYNASTY_GRAND_SHARIFATE = {
-			name = "Grand {DYNASTY} Sharifate"
+			name_dynastic = "Grand {DYNASTY} Sharifate"
 			conditions = {
 				government_rank = 3
 			}
@@ -2135,14 +2088,7 @@ IMAMATES = {
 	group = {
 		IMAMATE = {
 			name = "Imamate of {NAME}"
-			conditions = {
-				NOT = {
-					government_rank = 2
-				}
-			}
-		}
-		DYNASTY_IMAMATE = {
-			name = "{DYNASTY} Imamate"
+			name_dynastic = "{DYNASTY} Imamate"
 			conditions = {
 				NOT = {
 					government_rank = 2
@@ -2151,15 +2097,7 @@ IMAMATES = {
 		}
 		GREAT_IMAMATE = {
 			name = "Great Imamate of {NAME}"
-			conditions = {
-				government_rank = 2
-				NOT = {
-					government_rank = 3
-				}
-			}
-		}
-		GREAT_DYNASTY_IMAMATE = {
-			name = "Great {DYNASTY} Imamate"
+			name_dynastic = "Great {DYNASTY} Imamate"
 			conditions = {
 				government_rank = 2
 				NOT = {
@@ -2169,12 +2107,7 @@ IMAMATES = {
 		}
 		HIGH_IMAMATE = {
 			name = "High Imamate of {NAME}"
-			conditions = {
-				government_rank = 3
-			}
-		}
-		HIGH_DYNASTY_IMAMATE = {
-			name = "High {DYNASTY} Imamate"
+			name_dynastic = "High {DYNASTY} Imamate"
 			conditions = {
 				government_rank = 3
 			}
@@ -2362,7 +2295,9 @@ INDEP_DAIMYO_GROUP = {
 		INDEP_DAIMYO = {
 			name = "{NAME} Lordship"
 			conditions = {
-				government_rank = 2
+				NOT = {
+					government_rank = 2
+				}
 			}
 		}
 		GRAND_INDEP_DAIMYO = {

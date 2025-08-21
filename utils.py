@@ -111,12 +111,14 @@ def parse_rule_data(
     # Handle regular rule
     rule_name = rule_data["name"] if "name" in rule_data else None
     name_adj = rule_data["name_adj"] if "name_adj" in rule_data else None
+    name_dynastic = rule_data["name_dynastic"] if "name_dynastic" in rule_data else None
 
     rules.append(
         Rule(
             id=key,
             name=rule_name,
             name_adj=name_adj,
+            name_dynastic=name_dynastic,
             tags=group_tags,
             conditions=group_conditions,
         )
