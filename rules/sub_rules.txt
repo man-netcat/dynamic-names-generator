@@ -737,6 +737,17 @@ NUSANTARA = {
     }
 }
 
+SIQILLIYA = {
+    name = "Siqilliya"
+    name_adj = "Siqilliyan"
+    tags = {
+        tag = SIC
+    }
+    conditions = {
+        has_country_flag = is_SIQ_flag
+    }
+}
+
 # The sultan of Oman lives in Zanzibar now
 # (That's just where he lives)
 ZANZIBAR = {
