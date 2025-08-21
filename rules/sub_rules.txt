@@ -243,11 +243,51 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
             }
         }
 
+        SIBERIA = {
+            name = "Siberia"
+            name_adj = "Siberian"
+            tags = {
+                tag = SIB
+            }
+        }
+
+        TAJIKISTAN = {
+            name = "Tajikistan"
+            name_adj = "Tajikistani"
+            tags = {
+                tag = KOK
+            }
+        }
+
+        TURKMENISTAN = {
+            name = "Turkmenistan"
+            name_adj = "Turkmen"
+            tags = {
+                tag = KHI
+            }
+        }
+
         UZBEKISTAN = {
             name = "Uzbekistan"
             name_adj = "Uzbek"
             tags = {
                 tag = SHY
+            }
+        }
+
+        XINJIANG = {
+            name = "Xinjiang"
+            name_adj = "Xinjiang"
+            tags = {
+                tag = KAS
+            }
+        }
+
+        KYRGYZSTAN = {
+            name = "Kyrgyzstan"
+            name_adj = "Kyrgyzstani"
+            tags = {
+                tag = CHG
             }
         }
 
