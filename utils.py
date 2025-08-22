@@ -34,6 +34,29 @@ def build_tags(tree) -> list[str]:
     return list(tree["tags"].values()) if tree and "tags" in tree else []
 
 
+def build_if_block(
+    limit: str = None, tag: str = None, event_id: int = None, override_name: str = None
+) -> str:
+    if not (event_id or override_name):
+        raise RuntimeError("event_id or override_name must be specified")
+
+    conditions = []
+    if tag:
+        conditions.append(f"tag = {tag}")
+    if limit:
+        conditions.append(limit)
+
+    limit_str = " ".join(conditions) if conditions else "always = yes"
+
+    action = (
+        f"country_event = {{ id = {EVENT_NAME}.{event_id} }}"
+        if event_id
+        else f"override_country_name = {override_name}"
+    )
+
+    return f"        if = {{ limit = {{ {limit_str} }} {action} }}"
+
+
 def read_rule_file(path: str):
     return pyradox.txt.parse_file(path=path, game="EU4", path_relative_to_game=False)
 
@@ -108,14 +131,14 @@ def parse_rule_data(
     # Handle regular rule
     rule_name = rule_data["name"] if "name" in rule_data else None
     name_adj = rule_data["name_adj"] if "name_adj" in rule_data else None
-    name_dynastic = rule_data["name_dynastic"] if "name_dynastic" in rule_data else None
+    name_dynasty = rule_data["name_dynasty"] if "name_dynasty" in rule_data else None
 
     rules.append(
         Rule(
             id=key,
             name=rule_name,
             name_adj=name_adj,
-            name_dynastic=name_dynastic,
+            name_dynasty=name_dynasty,
             tags=group_tags,
             conditions=group_conditions,
         )

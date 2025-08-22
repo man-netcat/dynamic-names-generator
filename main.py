@@ -15,9 +15,8 @@ class Generator:
         self.dynasty_names = read_lines(DYNASTIES_PATH)
         print("Dynasty names read successfully")
         self.rules_list: list[Rule] = parse_rule_file(RULES_PATH)
-        print("Rules read successfully")
         self.rules_list.extend(parse_rules_dir(GROUPED_RULES_DIR))
-        print("Grouped Rules read successfully")
+        print("Rules read successfully")
         self.substitution_rules_list: list[Rule] = parse_rules_dir(SUB_RULES_DIR)
         print("Substitution Rules read successfully")
 
@@ -35,6 +34,8 @@ class Generator:
     def assign_rules(self):
         # Map rules to applicable tags
         for rule in self.rules_list:
+            if not rule.name:
+                continue
             if not any(x in rule.name for x in FORMAT_TEMPLATES) and not rule.tags:
                 self.global_rules_list.append(rule)
             else:
@@ -51,7 +52,6 @@ class Generator:
                     continue
 
                 tag_name_value = get_tag_name(tag, rule.id)
-
                 name_adj = rule.name_adj or loc.adj
 
                 entry = RuleEntry(
@@ -75,7 +75,6 @@ class Generator:
                         continue
 
                     tag_name_value = get_tag_name(substitution_rule.id, rule.id)
-
                     name_adj = rule.name_adj or loc.adj
 
                     entry = RuleEntry(
@@ -90,34 +89,28 @@ class Generator:
     def generate_event_script(self):
         # Compose event triggers for the initial event immediate block
         event_triggers = []
-        for tag, _ in self.tag_name_list.items():
-            event_triggers.append(
-                f"        if = {{ limit = {{ tag = {tag} }} country_event = {{ id = {EVENT_NAME}.{self.event_id} }} }}"
-            )
+
+        for tag in self.tag_name_list.keys():
+            event_triggers.append(build_if_block(tag=tag, event_id=self.event_id))
             self.events[tag] = str(self.event_id)
             self.event_id += 1
 
         for substitution_rule in self.substitution_rules_list:
+            tags_str = ""
             if substitution_rule.tags != []:
-                tags = f"OR = {{ {' '.join(f'tag = {tag}' for tag in substitution_rule.tags)} }}"
-            else:
-                tags = ""
-
-            condition = (
-                substitution_rule.conditions
-                if substitution_rule.conditions
-                else "always = yes"
-            )
+                tags_str = f"OR = {{ {' '.join(f'tag = {tag}' for tag in substitution_rule.tags)} }}"
+            condition = substitution_rule.conditions or "always = yes"
+            combined_limit = f"{tags_str} {condition}".strip()
             event_triggers.append(
-                f"        if = {{ limit = {{ {tags} {condition} }} country_event = {{ id = {EVENT_NAME}.{self.event_id} }} }}"
+                build_if_block(limit=combined_limit, event_id=self.event_id)
             )
             self.events[substitution_rule.id] = str(self.event_id)
             self.event_id += 1
 
-        dynasty_rules = [rule for rule in self.rules_list if rule.name_dynastic]
+        dynasty_rules = [rule for rule in self.rules_list if rule.name_dynasty]
         for rule in dynasty_rules:
             event_triggers.append(
-                f"        if = {{ limit = {{ {rule.conditions} }} country_event = {{ id = {EVENT_NAME}.{self.event_id} }} }}"
+                build_if_block(limit=rule.conditions, event_id=self.event_id)
             )
             self.events[rule.id] = str(self.event_id)
             self.event_id += 1
@@ -125,7 +118,7 @@ class Generator:
         # Add global rules directly
         for rule in self.global_rules_list:
             event_triggers.append(
-                f"        if = {{ limit = {{ {rule.conditions} }} override_country_name = {rule.id} }}"
+                build_if_block(limit=rule.conditions, override_name=rule.id)
             )
             self.events[rule.id] = str(self.event_id)
             self.event_id += 1
@@ -138,12 +131,12 @@ class Generator:
         ]
 
         # Country events per tag
-        for tag, _ in self.tag_name_list.items():
+        for tag in self.tag_name_list.keys():
             id = self.events[tag]
             conditions = []
             for rule in self.rules[tag]:
                 conditions.append(
-                    f"        if = {{ limit = {{ {rule.condition} }} override_country_name = {rule.tag} }}"
+                    build_if_block(limit=rule.condition, override_name=rule.tag)
                 )
             event_lines.append(
                 TAG_DEPENDANT_EVENT_TEMPLATE.format(
@@ -160,7 +153,7 @@ class Generator:
             conditions = []
             for rule in self.rules[substitution_rule.id]:
                 conditions.append(
-                    f"        if = {{ limit = {{ {rule.condition} }} override_country_name = {rule.tag} }}"
+                    build_if_block(limit=rule.condition, override_name=rule.tag)
                 )
             event_lines.append(
                 TAG_AGNOSTIC_EVENT_TEMPLATE.format(
@@ -176,8 +169,9 @@ class Generator:
             conditions = []
             for name in self.dynasty_names:
                 key = self.dynasty_keys[name]
+                limit_cond = f'dynasty = "{name}" NOT = {{ any_country = {{ dynasty = "{name}" }} }}'
                 conditions.append(
-                    f'        if = {{ limit = {{ dynasty = "{name}" NOT = {{ any_country = {{ dynasty = "{name}" }} }} }} override_country_name = {key}_{rule.id} }}'
+                    build_if_block(limit=limit_cond, override_name=f"{key}_{rule.id}")
                 )
             event_lines.append(
                 TAG_AGNOSTIC_EVENT_TEMPLATE.format(
@@ -201,12 +195,12 @@ class Generator:
 
         loc_lines.append(" #dynasties")
         for rule in self.rules_list:
-            if rule.name_dynastic:
+            if rule.name_dynasty:
                 loc_lines.append(f"\n # {rule.id}")
                 for name in self.dynasty_names:
                     key = self.dynasty_keys[name]
                     loc_lines.append(
-                        f' {key}_{rule.id}: "{rule.name_dynastic.replace("{DYNASTY}", name.title())}"'
+                        f' {key}_{rule.id}: "{rule.name_dynasty.replace("{DYNASTY}", name.title())}"'
                     )
                     loc_lines.append(f' {key}_{rule.id}_ADJ: "{name.title()}"')
 
@@ -232,6 +226,7 @@ class Generator:
 
         print("Writing localisation done")
 
+        # Check for duplicates
         seen = set()
         duplicates = []
 
@@ -254,15 +249,16 @@ class Generator:
 
     def generate_on_actions(self):
         triggers = [
-            "on_startup",
-            "on_government_change",
-            "on_native_change_government",
-            "on_religion_change",
-            "on_primary_culture_changed",
-            "on_monarch_death",
-            "on_country_creation",
             "on_bi_yearly_pulse",
+            "on_country_creation",
             "on_country_released",
+            "on_government_change",
+            "on_monarch_death",
+            "on_native_change_government",
+            "on_primary_culture_changed",
+            "on_reform_changed",
+            "on_religion_change",
+            "on_startup",
         ]
 
         on_actions_lines = [

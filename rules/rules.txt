@@ -645,7 +645,7 @@ ISLAMIC_MONARCHY = {
 	group = {
 		EMIRATE = {
 			name = "Emirate of {NAME}"
-			name_dynastic = "{DYNASTY} Emirate"
+			name_dynasty = "{DYNASTY} Emirate"
 			conditions = {
 				NOT = {
 					government_rank = 2
@@ -654,7 +654,7 @@ ISLAMIC_MONARCHY = {
 		}
 		SULTANATE = {
 			name = "Sultanate of {NAME}"
-			name_dynastic = "{DYNASTY} Sultanate"
+			name_dynasty = "{DYNASTY} Sultanate"
 			conditions = {
 				government_rank = 2
 				NOT = {
@@ -664,7 +664,7 @@ ISLAMIC_MONARCHY = {
 		}
 		EMPIRE = {
 			name = "Empire of {NAME}"
-			name_dynastic = "{DYNASTY} Empire"
+			name_dynasty = "{DYNASTY} Empire"
 			conditions = {
 				government_rank = 3
 			}
@@ -1343,7 +1343,7 @@ IRANIAN_MONARCHY = {
 	group = {
 		SHEIKHDOM = {
 			name = "Sheikhdom of {NAME}"
-			name_dynastic = "{DYNASTY} Sheikhdom"
+			name_dynasty = "{DYNASTY} Sheikhdom"
 			conditions = {
 				NOT = {
 					government_rank = 2
@@ -1352,7 +1352,7 @@ IRANIAN_MONARCHY = {
 		}
 		SHAHDOM = {
 			name = "Shahdom of {NAME}"
-			name_dynastic = "{DYNASTY} Shahdom"
+			name_dynasty = "{DYNASTY} Shahdom"
 			conditions = {
 				government_rank = 2
 				NOT = {
@@ -1512,7 +1512,7 @@ SHARIFATE_GROUP = {
 	group = {
 		SHARIFATE = {
 			name = "Sharifate of {NAME}"
-			name_dynastic = "{DYNASTY} Sharifate"
+			name_dynasty = "{DYNASTY} Sharifate"
 			conditions = {
 				NOT = {
 					government_rank = 2
@@ -1521,7 +1521,7 @@ SHARIFATE_GROUP = {
 		}
 		GREAT_SHARIFATE = {
 			name = "Great Sharifate of {NAME}"
-			name_dynastic = "Great {DYNASTY} Sharifate"
+			name_dynasty = "Great {DYNASTY} Sharifate"
 			conditions = {
 				government_rank = 2
 				NOT = {
@@ -1531,7 +1531,7 @@ SHARIFATE_GROUP = {
 		}
 		GRAND_SHARIFATE = {
 			name = "Grand Sharifate of {NAME}"
-			name_dynastic = "Grand {DYNASTY} Sharifate"
+			name_dynasty = "Grand {DYNASTY} Sharifate"
 			conditions = {
 				government_rank = 3
 			}
@@ -1944,7 +1944,7 @@ IMAMATES = {
 	group = {
 		IMAMATE = {
 			name = "Imamate of {NAME}"
-			name_dynastic = "{DYNASTY} Imamate"
+			name_dynasty = "{DYNASTY} Imamate"
 			conditions = {
 				NOT = {
 					government_rank = 2
@@ -1953,7 +1953,7 @@ IMAMATES = {
 		}
 		GREAT_IMAMATE = {
 			name = "Great Imamate of {NAME}"
-			name_dynastic = "Great {DYNASTY} Imamate"
+			name_dynasty = "Great {DYNASTY} Imamate"
 			conditions = {
 				government_rank = 2
 				NOT = {
@@ -1963,7 +1963,7 @@ IMAMATES = {
 		}
 		HIGH_IMAMATE = {
 			name = "High Imamate of {NAME}"
-			name_dynastic = "High {DYNASTY} Imamate"
+			name_dynasty = "High {DYNASTY} Imamate"
 			conditions = {
 				government_rank = 3
 			}
@@ -2843,7 +2843,7 @@ TURKISH_MONARCHY = {
 	group = {
 		BEYLIK = {
 			name = "Beylik-i {NAME}"
-			name_dynastic = "Beylik-i {DYNASTY}"
+			name_dynasty = "Beylik-i {DYNASTY}"
 			conditions = {
 				NOT = {
 					government_rank = 2
@@ -2852,7 +2852,7 @@ TURKISH_MONARCHY = {
 		}
 		DEVLET = {
 			name = "Devlet-i {NAME}"
-			name_dynastic = "Devlet-i {DYNASTY}"
+			name_dynasty = "Devlet-i {DYNASTY}"
 			conditions = {
 				government_rank = 2
 			}
@@ -2868,21 +2868,18 @@ TURKISH_VASSAL = {
 	group = {
 		SANCAK = {
 			name = "Sancak-i {NAME}"
-			name_dynastic = "Sancak-i {DYNASTY}"
 			conditions = {
 				is_subject_of_type = vassal
 			}
 		}
 		PASHALIK = {
 			name = "Pashalik-i {NAME}"
-			name_dynastic = "Pashalik-i {DYNASTY}"
 			conditions = {
 				is_march = yes
 			}
 		}
 		EYALET = {
 			name = "Eyalet-i {NAME}"
-			name_dynastic = "Eyalet-i {DYNASTY}"
 			conditions = {
 				OR = {
 					is_subject_of_type = eyalet

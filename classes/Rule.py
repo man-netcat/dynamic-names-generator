@@ -7,6 +7,6 @@ class Rule:
     id: str
     name: str
     name_adj: str = None
-    name_dynastic: str = None
+    name_dynasty: str = None
     tags: List[str] = field(default_factory=list)
     conditions: str = None
