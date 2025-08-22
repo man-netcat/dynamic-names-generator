@@ -48,13 +48,15 @@ def build_if_block(
 
     limit_str = " ".join(conditions) if conditions else "always = yes"
 
-    action = (
-        f"country_event = {{ id = {EVENT_NAME}.{event_id} }}"
-        if event_id
-        else f"override_country_name = {override_name}"
-    )
+    actions = []
+    if override_name:
+        actions.append(f"override_country_name = {override_name}")
+    if event_id:
+        actions.append(f"country_event = {{ id = {EVENT_NAME}.{event_id} }}")
 
-    return f"        if = {{ limit = {{ {limit_str} }} {action} }}"
+    actions_str = " ".join(actions)
+
+    return f"        if = {{ limit = {{ {limit_str} }} {actions_str} }}"
 
 
 def read_rule_file(path: str):

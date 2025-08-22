@@ -27,11 +27,19 @@ class Generator:
         self.events = {}
         self.event_id = 1
 
+        # helper mappings so we can find the original Rule from a RuleEntry tag
+        self.rule_by_id: dict[str, Rule] = {}
+        self.entry_to_ruleid: dict[str, str] = {}
+
         self.dynasty_keys = {
             name: f"{format_as_tag(name)}_DYNASTY" for name in self.dynasty_names
         }
 
     def assign_rules(self):
+        # Build rule_by_id map early so we can reference rules later
+        for rule in self.rules_list:
+            self.rule_by_id[rule.id] = rule
+
         # Map rules to applicable tags
         for rule in self.rules_list:
             if not rule.name:
@@ -61,6 +69,8 @@ class Generator:
                     condition=rule.conditions,
                 )
                 self.rules[tag].append(entry)
+                # map the localisation tag back to the original rule id
+                self.entry_to_ruleid[entry.tag] = rule.id
 
         # Rules for substituting names
         for substitution_rule in self.substitution_rules_list:
@@ -85,16 +95,20 @@ class Generator:
                     )
 
                     self.rules[substitution_rule.id].append(entry)
+                    # map the localisation tag back to the original rule id
+                    self.entry_to_ruleid[entry.tag] = rule.id
 
     def generate_event_script(self):
         # Compose event triggers for the initial event immediate block
         event_triggers = []
 
+        # Assign event ids for tag-specific events and add triggers for them
         for tag in self.tag_name_list.keys():
             event_triggers.append(build_if_block(tag=tag, event_id=self.event_id))
             self.events[tag] = str(self.event_id)
             self.event_id += 1
 
+        # Assign event ids for substitution rules and add triggers for them
         for substitution_rule in self.substitution_rules_list:
             tags_str = ""
             if substitution_rule.tags != []:
@@ -107,15 +121,13 @@ class Generator:
             self.events[substitution_rule.id] = str(self.event_id)
             self.event_id += 1
 
+        # Assign event ids for dynasty rules here but do not append them to the initial triggers
         dynasty_rules = [rule for rule in self.rules_list if rule.name_dynasty]
         for rule in dynasty_rules:
-            event_triggers.append(
-                build_if_block(limit=rule.conditions, event_id=self.event_id)
-            )
             self.events[rule.id] = str(self.event_id)
             self.event_id += 1
 
-        # Add global rules directly
+        # Add global rules directly to the initial triggers
         for rule in self.global_rules_list:
             event_triggers.append(
                 build_if_block(limit=rule.conditions, override_name=rule.id)
@@ -134,9 +146,20 @@ class Generator:
         for tag in self.tag_name_list.keys():
             id = self.events[tag]
             conditions = []
-            for rule in self.rules[tag]:
+            for entry in self.rules[tag]:
+                # find the original rule for this entry so we can check for dynasty linkage
+                orig_rule_id = self.entry_to_ruleid.get(entry.tag)
+                orig_rule = self.rule_by_id.get(orig_rule_id)
+                dynasty_event_id = None
+                if orig_rule and orig_rule.name_dynasty:
+                    dynasty_event_id = self.events.get(orig_rule.id)
+
                 conditions.append(
-                    build_if_block(limit=rule.condition, override_name=rule.tag)
+                    build_if_block(
+                        limit=entry.condition,
+                        override_name=entry.tag,
+                        event_id=dynasty_event_id,
+                    )
                 )
             event_lines.append(
                 TAG_DEPENDANT_EVENT_TEMPLATE.format(
@@ -151,9 +174,20 @@ class Generator:
         for substitution_rule in self.substitution_rules_list:
             id = self.events[substitution_rule.id]
             conditions = []
-            for rule in self.rules[substitution_rule.id]:
+            for entry in self.rules[substitution_rule.id]:
+                # find the original rule for this entry so we can check for dynasty linkage
+                orig_rule_id = self.entry_to_ruleid.get(entry.tag)
+                orig_rule = self.rule_by_id.get(orig_rule_id)
+                dynasty_event_id = None
+                if orig_rule and orig_rule.name_dynasty:
+                    dynasty_event_id = self.events.get(orig_rule.id)
+
                 conditions.append(
-                    build_if_block(limit=rule.condition, override_name=rule.tag)
+                    build_if_block(
+                        limit=entry.condition,
+                        override_name=entry.tag,
+                        event_id=dynasty_event_id,
+                    )
                 )
             event_lines.append(
                 TAG_AGNOSTIC_EVENT_TEMPLATE.format(

@@ -663,7 +663,7 @@ ISLAMIC_MONARCHY = {
 			}
 		}
 		EMPIRE = {
-			name = "Empire of {NAME}"
+			name = "{NAME_ADJ} Empire"
 			name_dynasty = "{DYNASTY} Empire"
 			conditions = {
 				government_rank = 3
@@ -2243,27 +2243,6 @@ USA_T = {
 	}
 }
 
-MAMLUK_EMIR = {
-	name = "Mamluk Emirate of {NAME}"
-	conditions = {
-		has_reform = mamluk_government
-		NOT = {
-			government_rank = 2
-		}
-	}
-}
-
-MAMLUK_SULTAN = {
-	name = "Mamluk Sultanate of {NAME}"
-	conditions = {
-		has_reform = mamluk_government
-		government_rank = 2
-		NOT = {
-			government_rank = 3
-		}
-	}
-}
-
 IMPERIAL_COMMONWEALTH = {
 	name = "Imperial Commonwealth"
 	tags = {
@@ -2792,7 +2771,7 @@ SAUDI_ARABIA = {
 	}
 	group = {
 		SAUDI_ARABIA_KINGDOM = {
-			name = "Kingdom of Saudi {NAME}"
+			name = "Kingdom of Saudi Arabia"
 			conditions = {
 				government_rank = 2
 				NOT = {
@@ -2801,7 +2780,7 @@ SAUDI_ARABIA = {
 			}
 		}
 		SAUDI_ARABIA_EMPIRE = {
-			name = "Empire of Saudi {NAME}"
+			name = "Empire of Saudi Arabia"
 			conditions = {
 				government_rank = 3
 			}
@@ -2894,5 +2873,30 @@ TURKISH_VASSAL = {
 		overlord = {
 			primary_culture = turkish
 		}
+	}
+}
+
+MAMLUK = {
+	group = {
+		MAMLUK_EMIR = {
+			name = "Mamluk Emirate of {NAME}"
+			conditions = {
+				NOT = {
+					government_rank = 2
+				}
+			}
+		}
+		MAMLUK_SULTAN = {
+			name = "Mamluk Sultanate of {NAME}"
+			conditions = {
+				government_rank = 2
+				NOT = {
+					government_rank = 3
+				}
+			}
+		}
+	}
+	conditions = {
+		has_reform = mamluk_government
 	}
 }
