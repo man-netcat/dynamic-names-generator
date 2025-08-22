@@ -8,7 +8,7 @@ COUNTRIES_PATH = (
 # Regex patterns
 religion_pattern = re.compile(r"religion\s*=\s*(sunni|shiite|ibadi)")
 dynasty_pattern = re.compile(
-    r'\bmonarch\s*=\s*\{[^{}]*?dynasty\s*=\s*"([^"]+)"[^{}]*?\}', re.DOTALL
+    r'\bmonarch\s*=\s*\{[^{}]*?dynasty\s*=\s*"?([^"\s]+)"?[^{}]*?\}', re.DOTALL
 )
 
 dynasties = set()

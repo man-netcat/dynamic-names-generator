@@ -19,7 +19,7 @@ def get_tag_name(tag: str, tag_name: str) -> str:
 
 
 def format_as_tag(s: str) -> str:
-    return s.upper().replace(" ", "_").replace("-", "_").replace("'", "")
+    return s.upper().replace(" ", "_").replace("-", "_").replace("'", "_")
 
 
 def split_stripped(s: str, sep: str = ",", maxsplit: int = -1) -> list[str]:
@@ -42,12 +42,9 @@ def substitute(template: str, format_str: str, item_name: str) -> str:
     return template.replace(format_str, item_name)
 
 
-def read_lines(path: str):
+def read_lines(path: str) -> list[str]:
     with open(path, encoding="utf-8-sig") as f:
-        for line in f:
-            line = line.strip()
-            if line and not line.startswith("#"):
-                yield line
+        return [line.strip() for line in f if line.strip() and not line.startswith("#")]
 
 
 def get_country_name(rule_name: str, tag_name: tuple[str, Localisation]) -> str:
@@ -162,7 +159,3 @@ def read_tag_names(file_path: str) -> dict[str, Localisation]:
         else:
             tag_name_list[name] = Localisation(name=value, adj=None)
     return tag_name_list
-
-
-def read_dynasties() -> list[str]:
-    return [dynasty.strip() for dynasty in read_lines(DYNASTIES_PATH)]

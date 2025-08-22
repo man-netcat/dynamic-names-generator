@@ -12,7 +12,7 @@ class Generator:
         # Read rules, tag names, and dynasty names from input files
         self.tag_name_list = read_tag_names(TAG_NAMES_PATH)
         print("Tag names read successfully")
-        self.dynasty_names = read_dynasties()
+        self.dynasty_names = read_lines(DYNASTIES_PATH)
         print("Dynasty names read successfully")
         self.rules_list: list[Rule] = parse_rule_file(RULES_PATH)
         print("Rules read successfully")
@@ -29,7 +29,7 @@ class Generator:
         self.event_id = 1
 
         self.dynasty_keys = {
-            name: f"{format_as_tag(name)}" for name in self.dynasty_names
+            name: f"{format_as_tag(name)}_DYNASTY" for name in self.dynasty_names
         }
 
     def assign_rules(self):
@@ -177,7 +177,7 @@ class Generator:
             for name in self.dynasty_names:
                 key = self.dynasty_keys[name]
                 conditions.append(
-                    f'        if = {{ limit = {{ dynasty = "{name}" NOT = {{ any_country = {{ NOT = {{ tag = THIS }} dynasty = "{name}" }} }} }} override_country_name = {key}_{rule.id} }}'
+                    f'        if = {{ limit = {{ dynasty = "{name}" NOT = {{ any_country = {{ dynasty = "{name}" }} }} }} override_country_name = {key}_{rule.id} }}'
                 )
             event_lines.append(
                 TAG_AGNOSTIC_EVENT_TEMPLATE.format(

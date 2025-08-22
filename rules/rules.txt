@@ -691,15 +691,6 @@ ISLAMIC_MONARCHY = {
 				has_country_flag = sultan_titles_for_non_muslims
 			}
 		}
-		NOT = {
-			OR = {
-				is_subject_of_type = eyalet
-				is_subject_of_type = core_eyalet
-				has_reform = barbary_eyalet_government
-				has_reform = eyalet_government
-				has_reform = mamluk_government
-			}
-		}
 	}
 }
 
@@ -1222,32 +1213,6 @@ GRAND_DUCHY = {
 	}
 }
 
-TURKISH_MONARCHY = {
-	group = {
-		BEYLIK = {
-			name = "Beylik of {NAME}"
-			conditions = {
-				NOT = {
-					government_rank = 2
-				}
-			}
-		}
-		TURKISH_SULTANATE = {
-			name = "{NAME_ADJ} Sultanate"
-			conditions = {
-				government_rank = 2
-				NOT = {
-					government_rank = 3
-				}
-			}
-		}
-	}
-	conditions = {
-		government = monarchy
-		primary_culture = turkish
-	}
-}
-
 HRE_EMPEROR = {
 	group = {
 		COUNTY = {
@@ -1403,14 +1368,6 @@ IRANIAN_MONARCHY = {
 			has_country_flag = turkoman_adopt_shahanshah_title
 			tag = SIS
 		}
-		NOT = {
-			OR = {
-				is_subject_of_type = eyalet
-				is_subject_of_type = core_eyalet
-				has_reform = barbary_eyalet_government
-				has_reform = eyalet_government
-			}
-		}
 	}
 }
 
@@ -1434,14 +1391,6 @@ MALIKATE = {
 				NOT = {
 					government_rank = 2
 				}
-			}
-		}
-		NOT = {
-			OR = {
-				is_subject_of_type = eyalet
-				is_subject_of_type = core_eyalet
-				has_reform = barbary_eyalet_government
-				has_reform = eyalet_government
 			}
 		}
 	}
@@ -1471,14 +1420,6 @@ TRIBAL_MUSLIM = {
 		NOT = {
 			has_reform = steppe_horde
 		}
-		NOT = {
-			OR = {
-				is_subject_of_type = eyalet
-				is_subject_of_type = core_eyalet
-				has_reform = barbary_eyalet_government
-				has_reform = eyalet_government
-			}
-		}
 		is_revolutionary_republic_trigger = no
 	}
 }
@@ -1507,14 +1448,6 @@ BEDOUIN = {
 		government = tribal
 		religion_group = muslim
 		primary_culture = bedouin_arabic
-		NOT = {
-			OR = {
-				is_subject_of_type = eyalet
-				is_subject_of_type = core_eyalet
-				has_reform = barbary_eyalet_government
-				has_reform = eyalet_government
-			}
-		}
 		is_revolutionary_republic_trigger = no
 	}
 }
@@ -1542,14 +1475,6 @@ NAJRAN_EMIRATE = {
 		religion_group = muslim
 		NOT = {
 			government_rank = 2
-		}
-		NOT = {
-			OR = {
-				is_subject_of_type = eyalet
-				is_subject_of_type = core_eyalet
-				has_reform = barbary_eyalet_government
-				has_reform = eyalet_government
-			}
 		}
 		is_revolutionary_republic_trigger = no
 	}
@@ -1620,14 +1545,6 @@ SHARIFATE_GROUP = {
 			has_reform = sharifate_reform
 		}
 		religion_group = muslim
-		NOT = {
-			OR = {
-				is_subject_of_type = eyalet
-				is_subject_of_type = core_eyalet
-				has_reform = barbary_eyalet_government
-				has_reform = eyalet_government
-			}
-		}
 	}
 }
 
@@ -1769,59 +1686,6 @@ VICEROYALTY = {
 		government_rank = 2
 		NOT = {
 			government_rank = 3
-		}
-	}
-}
-
-EYALET = {
-	name = "Eyalet of {NAME}"
-	conditions = {
-		OR = {
-			is_subject_of_type = eyalet
-			is_subject_of_type = core_eyalet
-			has_reform = barbary_eyalet_government
-			has_reform = eyalet_government
-		}
-	}
-}
-
-OTTOMAN_VASSAL = {
-	name = "Beylik of {NAME}"
-	conditions = {
-		government = monarchy
-		religion_group = muslim
-		NOT = {
-			is_march = yes
-		}
-		OR = {
-			is_subject_of_type = vassal
-			is_subject_of_type = march
-		}
-		NOT = {
-			has_reform = eyalet_government
-		}
-		NOT = {
-			has_reform = barbary_eyalet_government
-		}
-		overlord = {
-			primary_culture = turkish
-		}
-		NOT = {
-			government_rank = 2
-		}
-	}
-}
-
-OTTOMAN_MARCH = {
-	name = "Pashalik of {NAME}"
-	conditions = {
-		is_march = yes
-		religion_group = muslim
-		overlord = {
-			primary_culture = turkish
-		}
-		NOT = {
-			government_rank = 2
 		}
 	}
 }
@@ -2072,14 +1936,6 @@ SHEIKHDOM_RELIGIOUS = {
 		}
 		NOT = {
 			government_rank = 2
-		}
-		NOT = {
-			OR = {
-				is_subject_of_type = eyalet
-				is_subject_of_type = core_eyalet
-				has_reform = barbary_eyalet_government
-				has_reform = eyalet_government
-			}
 		}
 	}
 }
@@ -2980,5 +2836,66 @@ EMPIRE_OF_THE_CROWN_OF_SAINT_STEFAN = {
 	conditions = {
 		has_reform = monarchy_mechanic
 		government_rank = 3
+	}
+}
+
+TURKISH_MONARCHY = {
+	group = {
+		BEYLIK = {
+			name = "Beylik-i {NAME}"
+			name_dynastic = "Beylik-i {DYNASTY}"
+			conditions = {
+				NOT = {
+					government_rank = 2
+				}
+			}
+		}
+		DEVLET = {
+			name = "Devlet-i {NAME}"
+			name_dynastic = "Devlet-i {DYNASTY}"
+			conditions = {
+				government_rank = 2
+			}
+		}
+	}
+	conditions = {
+		government = monarchy
+		primary_culture = turkish
+	}
+}
+
+TURKISH_VASSAL = {
+	group = {
+		SANCAK = {
+			name = "Sancak-i {NAME}"
+			name_dynastic = "Sancak-i {DYNASTY}"
+			conditions = {
+				is_subject_of_type = vassal
+			}
+		}
+		PASHALIK = {
+			name = "Pashalik-i {NAME}"
+			name_dynastic = "Pashalik-i {DYNASTY}"
+			conditions = {
+				is_march = yes
+			}
+		}
+		EYALET = {
+			name = "Eyalet-i {NAME}"
+			name_dynastic = "Eyalet-i {DYNASTY}"
+			conditions = {
+				OR = {
+					is_subject_of_type = eyalet
+					is_subject_of_type = core_eyalet
+					has_reform = barbary_eyalet_government
+					has_reform = eyalet_government
+				}
+			}
+		}
+	}
+	conditions = {
+		overlord = {
+			primary_culture = turkish
+		}
 	}
 }
