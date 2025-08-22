@@ -9,7 +9,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = HIN
             }
         }
-
         BANGLADESH = {
             name = "Bangladesh"
             name_adj = "Bangladeshi"
@@ -17,7 +16,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = BNG
             }
         }
-
         SRI_LANKA = {
             name = "Sri Lanka"
             name_adj = "Sri Lankan"
@@ -25,7 +23,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = CEY
             }
         }
-
         CAMBODIA = {
             name = "Cambodia"
             name_adj = "Cambodian"
@@ -33,7 +30,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = KHM
             }
         }
-
         LAOS = {
             name = "Laos"
             name_adj = "Laotian"
@@ -41,7 +37,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = LXA
             }
         }
-
         THAILAND = {
             name = "Thailand"
             name_adj = "Thai"
@@ -51,7 +46,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = SIA
             }
         }
-
         BURMA = {
             name = "Burma"
             name_adj = "Burmese"
@@ -61,7 +55,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = PEG
             }
         }
-
         TAIWAN = {
             name = "Taiwan"
             name_adj = "Taiwanese"
@@ -69,7 +62,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = FRM
             }
         }
-
         BELGIUM = {
             name = "Belgium"
             name_adj = "Belgian"
@@ -78,7 +70,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = FLA
             }
         }
-
         LIGURIA = {
             name = "Liguria"
             name_adj = "Ligurian"
@@ -86,7 +77,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = GEN
             }
         }
-
         CISAPLIA = {
             name = "Cisalpia"
             name_adj = "Cisalpine"
@@ -94,7 +84,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = MLO
             }
         }
-
         PARTHENOPEA = {
             name = "Parthenopea"
             name_adj = "Parthenopean"
@@ -103,7 +92,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = TTS
             }
         }
-
         PIEDMONT = {
             name = "Piedmont"
             name_adj = "Piedmontese"
@@ -112,7 +100,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = SPI
             }
         }
-
         HELVETIA = {
             name = "Helvetia"
             name_adj = "Helvetic"
@@ -120,7 +107,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = SWI
             }
         }
-
         ETRURIA = {
             name = "Etruria"
             name_adj = "Etrurian"
@@ -129,7 +115,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = TUS
             }
         }
-
         ANCONIA = {
             name = "Anconia"
             name_adj = "Anconine"
@@ -137,7 +122,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = URB
             }
         }
-
         SAN_MARCO = {
             name = "San Marco"
             name_adj = "Sanmarconese"
@@ -145,7 +129,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = VEN
             }
         }
-
         CZECHIA = {
             name = "Czechia"
             name_adj = "Czech"
@@ -153,7 +136,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = BOH
             }
         }
-
         SLOVENIA = {
             name = "Slovenia"
             name_adj = "Slovene"
@@ -161,7 +143,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = CLI
             }
         }
-
         ILLYRIA = {
             name = "Illyria"
             name_adj = "Illyrian"
@@ -169,7 +150,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = CRO
             }
         }
-
         UKRAINE = {
             name = "Ukraine"
             name_adj = "Ukrainian"
@@ -178,7 +158,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = KIE
             }
         }
-
         LATVIA = {
             name = "Latvia"
             name_adj = "Latvian"
@@ -186,7 +165,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = LVA
             }
         }
-
         DACIA = {
             name = "Dacia"
             name_adj = "Dacian"
@@ -194,7 +172,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = RMN
             }
         }
-
         SLOVAKIA = {
             name = "Slovakia"
             name_adj = "Slovak"
@@ -202,7 +179,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = SLO
             }
         }
-
         HELLADA = {
             name = "Hellada"
             name_adj = "Hellene"
@@ -210,7 +186,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = GRE
             }
         }
-
         BELARUS = {
             name = "Belarus"
             name_adj = "Belarussian"
@@ -218,7 +193,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = PLT
             }
         }
-
         KUBAN = {
             name = "Kuban"
             name_adj = "Kuban"
@@ -226,7 +200,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = CIR
             }
         }
-
         TATARSTAN = {
             name = "Tatarstan"
             name_adj = "Tatar"
@@ -234,7 +207,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = KAZ
             }
         }
-
         KAZAKHSTAN = {
             name = "Kazakhstan"
             name_adj = "Kazakh"
@@ -242,7 +214,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = KZH
             }
         }
-
         SIBERIA = {
             name = "Siberia"
             name_adj = "Siberian"
@@ -250,7 +221,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = SIB
             }
         }
-
         TAJIKISTAN = {
             name = "Tajikistan"
             name_adj = "Tajikistani"
@@ -258,7 +228,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = KOK
             }
         }
-
         TURKMENISTAN = {
             name = "Turkmenistan"
             name_adj = "Turkmen"
@@ -266,7 +235,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = KHI
             }
         }
-
         UZBEKISTAN = {
             name = "Uzbekistan"
             name_adj = "Uzbek"
@@ -274,7 +242,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = SHY
             }
         }
-
         XINJIANG = {
             name = "Xinjiang"
             name_adj = "Xinjiang"
@@ -282,7 +249,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = KAS
             }
         }
-
         KYRGYZSTAN = {
             name = "Kyrgyzstan"
             name_adj = "Kyrgyzstani"
@@ -290,7 +256,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = CHG
             }
         }
-
         MONGOLIA = {
             name = "Mongolia"
             name_adj = "Mongolian"
@@ -298,7 +263,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = KLK
             }
         }
-
         JAMAICA = {
             name = "Jamaica"
             name_adj = "Jamaican"
@@ -306,7 +270,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = WSI
             }
         }
-
         KURDISTAN = {
             name = "Kurdistan"
             name_adj = "Kurdistani"
@@ -315,7 +278,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = ARD
             }
         }
-
         AZERBAIJAN = {
             name = "Azerbaijan"
             name_adj = "Azerbaijani"
@@ -323,7 +285,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = SRV
             }
         }
-
         LIBYA = {
             name = "Libya"
             name_adj = "Libyan"
@@ -331,7 +292,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = TRP
             }
         }
-
         TUNISIA = {
             name = "Tunisia"
             name_adj = "Tunisian"
@@ -339,7 +299,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = TUN
             }
         }
-
         ALGERIA = {
             name = "Algeria"
             name_adj = "Algerian"
@@ -347,7 +306,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = ALG
             }
         }
-
         UGANDA = {
             name = "Uganda"
             name_adj = "Ugandan"
@@ -355,7 +313,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = BUG
             }
         }
-
         SENEGAL = {
             name = "Senegal"
             name_adj = "Senegalese"
@@ -363,7 +320,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = JOL
             }
         }
-
         CHAD = {
             name = "Chad"
             name_adj = "Chadian"
@@ -371,7 +327,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = KBO
             }
         }
-
         KENYA = {
             name = "Kenya"
             name_adj = "Kenyan"
@@ -379,7 +334,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = MBA
             }
         }
-
         MADAGASCAR = {
             name = "Madagascar"
             name_adj = "Malagasy"
@@ -387,7 +341,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = MIR
             }
         }
-
         BURKINA_FASO = {
             name = "Burkina Faso"
             name_adj = "Burkinabe"
@@ -395,7 +348,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = MSI
             }
         }
-
         ANGOLA = {
             name = "Angola"
             name_adj = "Angolan"
@@ -403,7 +355,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = NDO
             }
         }
-
         SOMALILAND = {
             name = "Somaliland"
             name_adj = "Somalilander"
@@ -411,7 +362,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = ADA
             }
         }
-
         SOUTH_AFRICA = {
             name = "South Africa"
             name_adj = "South African"
@@ -419,7 +369,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = ZUL
             }
         }
-
         SUDAN = {
             name = "Sudan"
             name_adj = "Sudanese"
@@ -427,7 +376,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = ABB
             }
         }
-
         NIGER = {
             name = "Niger"
             name_adj = "Nigerien"
@@ -435,7 +383,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = SON
             }
         }
-
         NIGERIA = {
             name = "Nigeria"
             name_adj = "Nigerian"
@@ -443,7 +390,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = HAU
             }
         }
-
         GHANA = {
             name = "Ghana"
             name_adj = "Ghanaian"
@@ -451,7 +397,6 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
                 tag = ASH
             }
         }
-
         EZO = {
             name = "Ezo"
             name_adj = "Ezoan"
@@ -463,412 +408,5 @@ REVOLUTIONARY_REPUBLIC_GROUP = {
     conditions = {
         government = republic
         is_revolutionary_republic_trigger = yes
-    }
-}
-
-# Revolutionary Country Flags
-TURKIYE = {
-    name = "Turkiye"
-    name_adj = "Turkish"
-    tags = {
-        tag = TUR
-    }
-    conditions = {
-        OR = {
-            has_country_flag = is_revolutionary_turkey_flag
-            has_country_flag = is_turkey_flag
-        }
-    }
-}
-
-CHINA = {
-    name = "China"
-    name_adj = "Chinese"
-    conditions = {
-        OR = {
-            has_country_flag = is_revolutionary_china_flag
-            has_country_flag = is_china_flag
-        }
-    }
-}
-
-IRAN = {
-    name = "Iran"
-    name_adj = "Iranian"
-    tags = {
-        tag = PER
-        tag = ERS
-    }
-    conditions = {
-        OR = {
-            has_country_flag = is_revolutionary_iran_flag
-            has_country_flag = is_iran_flag
-        }
-    }
-}
-
-GURKANI = {
-    name = "Gurkaniya"
-    name_adj = "Gurkani"
-    tags = {
-        tag = TIM
-        tag = MUG
-    }
-    conditions = {
-        OR = {
-            has_country_flag = is_TIM_GURKANI_flag
-            has_country_flag = is_revolutionary_gurkani_flag
-            has_country_flag = is_gurkani_flag
-        }
-    }
-}
-
-# Name flags
-LPC_SUB = {
-    name = "Lithuania-Poland"
-    name_adj = "Lithuanian-Polish"
-    tags = {
-        tag = PLC
-    }
-    conditions = {
-        OR = {
-            primary_culture = lithuanian
-            has_country_flag = is_LPC_flag
-        }
-    }
-}
-
-PLC_SUB = {
-    name = "Poland-Lithuania"
-    name_adj = "Polish-Lithuanian"
-    tags = {
-        tag = PLC
-    }
-    conditions = {
-        primary_culture = polish
-    }
-}
-
-AUH_SUB = {
-    name = "Austria-Hungary"
-    name_adj = "Austrian-Hungarian"
-    tags = {
-        tag = AUH
-    }
-    conditions = {
-        primary_culture = austrian
-    }
-}
-
-HUA_SUB = {
-    name = "Hungary-Austria"
-    name_adj = "Hungarian-Austrian"
-    tags = {
-        tag = AUH
-    }
-    conditions = {
-        OR = {
-            primary_culture = hungarian
-            has_country_flag = is_HUNGARY_AUSTRIA_flag
-        }
-    }
-}
-
-AUSTRALIA_HUNGARY = {
-    name = "Australia-Hungary"
-    name_adj = "Australohungarian"
-    tags = {
-        tag = AUH
-    }
-    conditions = {
-        has_country_flag = is_AUSTRALIA_HUNGARY_flag
-    }
-}
-
-GOD = {
-    name = "God"
-    name_adj = "Divine"
-    tags = {
-        tag = PAP
-    }
-    conditions = {
-        has_country_flag = is_kingdom_of_god_flag
-    }
-}
-
-CHAGATAI = {
-    name = "Chagatai"
-    name_adj = "Chagatai"
-    tags = {
-        tag = CHG
-    }
-    conditions = {
-        has_country_flag = is_CHAGATAI_flag
-    }
-}
-
-THE_ROMANS = {
-    name = "The Romans"
-    name_adj = "Roman"
-    tags = {
-        tag = ROM
-        tag = BYZ
-    }
-}
-
-WESTERN_ROMAN = {
-    name = "The Western Romans"
-    name_adj = "Western Roman"
-    tags = {
-        tag = ROM
-    }
-    conditions = {
-        exists = BYZ
-    }
-}
-
-EASTERN_ROMAN = {
-    name = "The Eastern Romans"
-    name_adj = "Eastern Roman"
-    tags = {
-        tag = BYZ
-    }
-    conditions = {
-        exists = ROM
-    }
-}
-
-THE_SELJUKS = {
-    name = "The Seljuks"
-    name_adj = "Seljuk"
-    tags = {
-        tag = RUM
-    }
-    conditions = {
-        has_country_flag = is_SELJUK_EMPIRE_flag
-    }
-}
-
-THE_AYYUBIDS = {
-    name = "The Ayyubids"
-    name_adj = "Ayyubid"
-    tags = {
-        tag = HSN
-    }
-    conditions = {
-        has_country_flag = is_AYB_flag
-    }
-}
-
-GOTHIA = {
-    name = "Gothia"
-    name_adj = "Gothic"
-    tags = {
-        tag = FEO
-    }
-    conditions = {
-        has_country_flag = is_GOTHIA_flag
-    }
-}
-
-GREAT_ARMENIA = {
-    name = "Great Armenia"
-    name_adj = "Great Armenian"
-    tags = {
-        tag = ARM
-    }
-    conditions = {
-        has_country_flag = is_GREAT_ARMENIA_flag
-    }
-}
-
-RAMANNADESA = {
-    name = "Ramannadesa"
-    name_adj = "Ramannadesan"
-    tags = {
-        tag = PEG
-    }
-    conditions = {
-        has_country_flag = is_ramannadesa
-    }
-}
-
-DVARAVATI = {
-    name = "Dvaravati"
-    name_adj = "Dvaravatian"
-    tags = {
-        tag = AYU
-    }
-    conditions = {
-        has_country_flag = is_dvaravati
-    }
-}
-
-HARIPHUNCHAI = {
-    name = "Hariphunchai"
-    name_adj = "Hariphunchai"
-    tags = {
-        tag = LNA
-    }
-    conditions = {
-        has_country_flag = is_hariphunchai
-    }
-}
-
-SRIVIJAYA = {
-    name = "Srivijaya"
-    name_adj = "Srivijayan"
-    tags = {
-        tag = MSA
-    }
-    conditions = {
-        has_country_flag = is_srijivaya_flag
-    }
-}
-
-NUSANTARA = {
-    name = "Nusantara"
-    name_adj = "Nusantaran"
-    tags = {
-        tag = MSA
-    }
-    conditions = {
-        has_country_flag = is_nusantara_flag
-    }
-}
-
-SIQILLIYA = {
-    name = "Siqilliya"
-    name_adj = "Siqilliyan"
-    tags = {
-        tag = SIC
-    }
-    conditions = {
-        has_country_flag = is_SIQ_flag
-    }
-}
-
-# The sultan of Oman lives in Zanzibar now
-# (That's just where he lives)
-ZANZIBAR = {
-    name = "Zanzibar"
-    name_adj = "Zanzibari"
-    tags = {
-        tag = OMA
-    }
-    conditions = {
-        has_country_flag = is_OMAN_ZANZIBAR_flag
-    }
-}
-
-# Dynastic names
-THE_OTTOMANS = {
-    name = "The Ottomans"
-    name_adj = "Ottoman"
-    tags = {
-        tag = TUR
-    }
-    conditions = {
-        dynasty = "Osmanoglu"
-    }
-}
-
-ANATOLIA = {
-    name = "Anatolia"
-    name_adj = "Anatolian"
-    tags = {
-        tag = TUR
-    }
-    conditions = {
-        NOT = {
-            OR = {
-                dynasty = "Osmanoglu"
-                has_country_flag = is_revolutionary_turkey_flag
-                has_country_flag = is_turkey_flag
-            }
-        }
-    }
-}
-
-KOREAN_DYNASTIES_GROUP = {
-    tags = {
-        tag = KOR
-    }
-    group = {
-        JOSEON = {
-            name = "Joseon"
-            name_adj = "Joseonese"
-            conditions = {
-                dynasty = "Yi"
-            }
-        }
-
-        GOGURYEO = {
-            name = "Goguryeo"
-            name_adj = "Goguryeoan"
-            conditions = {
-                dynasty = "Go"
-            }
-        }
-
-        SILLA = {
-            name = "Silla"
-            name_adj = "Sillan"
-            conditions = {
-                OR = {
-                    dynasty = "Park"
-                    dynasty = "Kim"
-                }
-            }
-        }
-
-        BALHAE = {
-            name = "Balhae"
-            name_adj = "Balhaean"
-            conditions = {
-                dynasty = "Dae"
-            }
-        }
-
-        GORYEO = {
-            name = "Goryeo"
-            name_adj = "Goryeoan"
-            conditions = {
-                dynasty = "Wang"
-            }
-        }
-    }
-    conditions = {
-        has_reform = monarchy_mechanic
-    }
-}
-
-DAI_NAM = {
-    name = "Dai Nam"
-    name_adj = "Dainamese"
-    tags = {
-        tag = DAI
-    }
-    conditions = {
-        has_reform = monarchy_mechanic
-        OR = {
-            dynasty = "Nguyen"
-            dynasty = "Nguyen Phuc"
-            has_country_flag = is_dai_nam_flag
-        }
-    }
-}
-
-VIET_NAM = {
-    name = "Viet Nam"
-    name_adj = "Vietnamese"
-    tags = {
-        tag = DAI
-    }
-    conditions = {
-        OR = {
-            government = republic
-            has_country_flag = is_viet_nam_flag
-        }
     }
 }

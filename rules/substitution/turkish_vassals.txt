@@ -1,0 +1,309 @@
+TURKISH_VASSAL_GROUP = {
+    group = {
+        # Original Eyalets
+        MACARISTAN = {
+            name = "Macaristan"
+            name_adj = "Macaristani"
+            tags = {
+                tag = HUN
+            }
+        }
+        SLOVAKYA = {
+            name = "Slovakya"
+            name_adj = "Slovakyan"
+            tags = {
+                tag = SLO
+            }
+        }
+        ERDEL = {
+            name = "Erdel"
+            name_adj = "Erdeli"
+            tags = {
+                tag = TRA
+            }
+        }
+        AVUSTURYA = {
+            name = "Avusturya"
+            name_adj = "Avusturyan"
+            tags = {
+                tag = HAB
+            }
+        }
+        LOMBARDIYA = {
+            name = "Lombardiya"
+            name_adj = "Lombardiyan"
+            tags = {
+                tag = MLO
+                tag = FER
+                tag = SAV
+            }
+        }
+        SIQILLIYA = {
+            name = "Siqilliya"
+            name_adj = "Siqilliyan"
+            tags = {
+                tag = SIC
+            }
+        }
+        ROMA = {
+            name = "Roma"
+            name_adj = "Romali"
+            tags = {
+                tag = PAP
+            }
+        }
+        MISIR = {
+            name = "Misir"
+            name_adj = "Misiri"
+            tags = {
+                tag = EGY
+                tag = MAM
+            }
+        }
+        TRABLUS_GARB = {
+            name = "Trâblus Gârb"
+            name_adj = "Trâblusi"
+            tags = {
+                tag = TRP
+            }
+        }
+        TUNUS = {
+            name = "Tunus"
+            name_adj = "Tunusi"
+            tags = {
+                tag = TUN
+            }
+        }
+        CEZAYIR_I_GRAB = {
+            name = "Cezayir-i Gârb"
+            name_adj = "Cezayiri"
+            tags = {
+                tag = ALG
+                tag = TLC
+            }
+        }
+        ENDULUS = {
+            name = "Endülüs"
+            name_adj = "Endülüsi"
+            tags = {
+                tag = ADU
+                tag = GRA
+            }
+        }
+        PERS = {
+            name = "Pers"
+            name_adj = "Persi"
+            tags = {
+                tag = PER
+                tag = ARL
+                tag = FRS
+            }
+        }
+        ADAL = {
+            name = "Adal"
+            name_adj = "Adali"
+            tags = {
+                tag = ADA
+                tag = HAR
+                tag = AFA
+            }
+        }
+        VENEDIK = {
+            name = "Venedik"
+            name_adj = "Venedikan"
+            tags = {
+                tag = VEN
+            }
+        }
+        CENOVA = {
+            name = "Cenova"
+            name_adj = "Cenovan"
+            tags = {
+                tag = GEN
+            }
+        }
+        FAS_EYALET = {
+            name = "Fas"
+            name_adj = "Fasi"
+            tags = {
+                tag = MOR
+                tag = SOS
+                tag = MRK
+                tag = TFL
+                tag = TET
+                tag = FEZ
+            }
+        }
+        YEMEN = {
+            name = "Yemen"
+            name_adj = "Yemeni"
+            tags = {
+                tag = YEM
+                tag = ADE
+                tag = RAS
+            }
+        }
+        # Additional Eyalets
+        TRABZON = {
+            name = "Trabzon"
+            name_adj = "Trabzoni"
+            tags = {
+                tag = TRE
+            }
+        }
+        KARAMAN = {
+            name = "Karaman"
+            name_adj = "Karamani"
+            tags = {
+                tag = KAR
+            }
+        }
+        BASRA = {
+            name = "Basra"
+            name_adj = "Basrali"
+            tags = {
+                tag = BSR
+            }
+        }
+        BOSNA = {
+            name = "Bosna"
+            name_adj = "Bosnak"
+            tags = {
+                tag = BOS
+            }
+        }
+        SIRVAN = {
+            name = "Sirvan"
+            name_adj = "Sirvani"
+            tags = {
+                tag = SRV
+            }
+        }
+        SAM_EYALET = {
+            name = "Sam"
+            name_adj = "Sami"
+            tags = {
+                tag = SYR
+            }
+        }
+        GIRID = {
+            name = "Girid"
+            name_adj = "Giridi"
+            tags = {
+                tag = CRT
+            }
+        }
+        MORA = {
+            name = "Mora"
+            name_adj = "Mori"
+            tags = {
+                tag = MOE
+            }
+        }
+        HERSEK = {
+            name = "Hersek"
+            name_adj = "Hersekish"
+            tags = {
+                tag = HRZ
+            }
+        }
+        KIRKIM = {
+            name = "Kirim"
+            name_adj = "Kirimi"
+            tags = {
+                tag = CRI
+            }
+        }
+        DIYARBEKIR = {
+            name = "Diyarbekir"
+            name_adj = "Diyarbekiri"
+            tags = {
+                tag = AKK
+                tag = HSN
+                tag = BTL
+            }
+        }
+        MOSUL = {
+            name = "Mosul"
+            name_adj = "Mosuli"
+            tags = {
+                tag = QAR
+            }
+        }
+        BAGDAT = {
+            name = "Bagdat"
+            name_adj = "Bagdati"
+            tags = {
+                tag = IRQ
+            }
+        }
+        ZULKADRIYE = {
+            name = "Zülkadriye"
+            name_adj = "Zülkadriyi"
+            tags = {
+                tag = DUL
+            }
+        }
+        CERKESYA = {
+            name = "Cerkesya"
+            name_adj = "Cerkesyan"
+            tags = {
+                tag = CIR
+            }
+        }
+        KIBRIS = {
+            name = "Kibris"
+            name_adj = "Kibrisi"
+            tags = {
+                tag = CYP
+            }
+        }
+        KORSIKA = {
+            name = "Korsika"
+            name_adj = "Korsikan"
+            tags = {
+                tag = COR
+            }
+        }
+        SARDINYA = {
+            name = "Sardinya"
+            name_adj = "Sardinya"
+            tags = {
+                tag = SAR
+            }
+        }
+        RUMELI = {
+            name = "Rumeli"
+            name_adj = "Rumelian"
+            tags = {
+                tag = BUL
+            }
+        }
+        SIRBISTAN = {
+            name = "Sirbistan"
+            name_adj = "Sirbistani"
+            tags = {
+                tag = SER
+            }
+        }
+        ARABISTAN = {
+            name = "Arabistan"
+            name_adj = "Arabistani"
+            tags = {
+                tag = ARB
+            }
+        }
+        KONSTANTINIYYE = {
+            name = "Kostantiniyye"
+            name_adj = "Kostantiniyeli"
+            tags = {
+                tag = BYZ
+            }
+        }
+    }
+    conditions = {
+        overlord = {
+            primary_culture = turkish
+        }
+    }
+}

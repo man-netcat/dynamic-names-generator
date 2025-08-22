@@ -1,7 +1,7 @@
 MOD_PATH = "/home/rick/.local/share/Paradox Interactive/Europa Universalis IV/mod/Dynamic-Names"
 
 RULES_PATH = "rules/rules.txt"
-SUB_RULES_PATH = "rules/sub_rules.txt"
+SUB_RULES_DIR = "rules/substitution"
 GROUPED_RULES_DIR = "rules/grouped"
 
 DYNASTIES_PATH = "data/dynasties.txt"

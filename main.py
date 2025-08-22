@@ -18,7 +18,7 @@ class Generator:
         print("Rules read successfully")
         self.rules_list.extend(parse_rules_dir(GROUPED_RULES_DIR))
         print("Grouped Rules read successfully")
-        self.substitution_rules_list: list[Rule] = parse_rule_file(SUB_RULES_PATH)
+        self.substitution_rules_list: list[Rule] = parse_rules_dir(SUB_RULES_DIR)
         print("Substitution Rules read successfully")
 
         self.global_rules_list: list[Rule] = []

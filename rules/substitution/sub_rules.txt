@@ -1,0 +1,402 @@
+# Revolutionary Country Flags
+TURKIYE = {
+	name = "Turkiye"
+	name_adj = "Turkish"
+	tags = {
+		tag = TUR
+	}
+	conditions = {
+		OR = {
+			has_country_flag = is_revolutionary_turkey_flag
+			has_country_flag = is_turkey_flag
+		}
+	}
+}
+
+CHINA = {
+	name = "China"
+	name_adj = "Chinese"
+	conditions = {
+		OR = {
+			has_country_flag = is_revolutionary_china_flag
+			has_country_flag = is_china_flag
+		}
+	}
+}
+
+IRAN = {
+	name = "Iran"
+	name_adj = "Iranian"
+	tags = {
+		tag = PER
+		tag = ERS
+	}
+	conditions = {
+		OR = {
+			has_country_flag = is_revolutionary_iran_flag
+			has_country_flag = is_iran_flag
+		}
+	}
+}
+
+GURKANI = {
+	name = "Gurkaniya"
+	name_adj = "Gurkani"
+	tags = {
+		tag = TIM
+		tag = MUG
+	}
+	conditions = {
+		OR = {
+			has_country_flag = is_TIM_GURKANI_flag
+			has_country_flag = is_revolutionary_gurkani_flag
+			has_country_flag = is_gurkani_flag
+		}
+	}
+}
+
+# Name flags
+LPC_SUB = {
+	name = "Lithuania-Poland"
+	name_adj = "Lithuanian-Polish"
+	tags = {
+		tag = PLC
+	}
+	conditions = {
+		OR = {
+			primary_culture = lithuanian
+			has_country_flag = is_LPC_flag
+		}
+	}
+}
+
+PLC_SUB = {
+	name = "Poland-Lithuania"
+	name_adj = "Polish-Lithuanian"
+	tags = {
+		tag = PLC
+	}
+	conditions = {
+		primary_culture = polish
+	}
+}
+
+AUH_SUB = {
+	name = "Austria-Hungary"
+	name_adj = "Austrian-Hungarian"
+	tags = {
+		tag = AUH
+	}
+	conditions = {
+		primary_culture = austrian
+	}
+}
+
+HUA_SUB = {
+	name = "Hungary-Austria"
+	name_adj = "Hungarian-Austrian"
+	tags = {
+		tag = AUH
+	}
+	conditions = {
+		OR = {
+			primary_culture = hungarian
+			has_country_flag = is_HUNGARY_AUSTRIA_flag
+		}
+	}
+}
+
+AUSTRALIA_HUNGARY = {
+	name = "Australia-Hungary"
+	name_adj = "Australohungarian"
+	tags = {
+		tag = AUH
+	}
+	conditions = {
+		has_country_flag = is_AUSTRALIA_HUNGARY_flag
+	}
+}
+
+GOD = {
+	name = "God"
+	name_adj = "Divine"
+	tags = {
+		tag = PAP
+	}
+	conditions = {
+		has_country_flag = is_kingdom_of_god_flag
+	}
+}
+
+CHAGATAI = {
+	name = "Chagatai"
+	name_adj = "Chagatai"
+	tags = {
+		tag = CHG
+	}
+	conditions = {
+		has_country_flag = is_CHAGATAI_flag
+	}
+}
+
+THE_ROMANS = {
+	name = "The Romans"
+	name_adj = "Roman"
+	tags = {
+		tag = ROM
+		tag = BYZ
+	}
+}
+
+WESTERN_ROMAN = {
+	name = "The Western Romans"
+	name_adj = "Western Roman"
+	tags = {
+		tag = ROM
+	}
+	conditions = {
+		exists = BYZ
+	}
+}
+
+EASTERN_ROMAN = {
+	name = "The Eastern Romans"
+	name_adj = "Eastern Roman"
+	tags = {
+		tag = BYZ
+	}
+	conditions = {
+		exists = ROM
+	}
+}
+
+THE_SELJUKS = {
+	name = "The Seljuks"
+	name_adj = "Seljuk"
+	tags = {
+		tag = RUM
+	}
+	conditions = {
+		has_country_flag = is_SELJUK_EMPIRE_flag
+	}
+}
+
+THE_AYYUBIDS = {
+	name = "The Ayyubids"
+	name_adj = "Ayyubid"
+	tags = {
+		tag = HSN
+	}
+	conditions = {
+		has_country_flag = is_AYB_flag
+	}
+}
+
+GOTHIA = {
+	name = "Gothia"
+	name_adj = "Gothic"
+	tags = {
+		tag = FEO
+	}
+	conditions = {
+		has_country_flag = is_GOTHIA_flag
+	}
+}
+
+GREAT_ARMENIA = {
+	name = "Great Armenia"
+	name_adj = "Great Armenian"
+	tags = {
+		tag = ARM
+	}
+	conditions = {
+		has_country_flag = is_GREAT_ARMENIA_flag
+	}
+}
+
+RAMANNADESA = {
+	name = "Ramannadesa"
+	name_adj = "Ramannadesan"
+	tags = {
+		tag = PEG
+	}
+	conditions = {
+		has_country_flag = is_ramannadesa
+	}
+}
+
+DVARAVATI = {
+	name = "Dvaravati"
+	name_adj = "Dvaravatian"
+	tags = {
+		tag = AYU
+	}
+	conditions = {
+		has_country_flag = is_dvaravati
+	}
+}
+
+HARIPHUNCHAI = {
+	name = "Hariphunchai"
+	name_adj = "Hariphunchai"
+	tags = {
+		tag = LNA
+	}
+	conditions = {
+		has_country_flag = is_hariphunchai
+	}
+}
+
+SRIVIJAYA = {
+	name = "Srivijaya"
+	name_adj = "Srivijayan"
+	tags = {
+		tag = MSA
+	}
+	conditions = {
+		has_country_flag = is_srijivaya_flag
+	}
+}
+
+NUSANTARA = {
+	name = "Nusantara"
+	name_adj = "Nusantaran"
+	tags = {
+		tag = MSA
+	}
+	conditions = {
+		has_country_flag = is_nusantara_flag
+	}
+}
+
+SIQILLIYA = {
+	name = "Siqilliya"
+	name_adj = "Siqilliyan"
+	tags = {
+		tag = SIC
+	}
+	conditions = {
+		has_country_flag = is_SIQ_flag
+	}
+}
+
+# The sultan of Oman lives in Zanzibar now
+# (That's just where he lives)
+ZANZIBAR = {
+	name = "Zanzibar"
+	name_adj = "Zanzibari"
+	tags = {
+		tag = OMA
+	}
+	conditions = {
+		has_country_flag = is_OMAN_ZANZIBAR_flag
+	}
+}
+
+# Dynastic names
+THE_OTTOMANS = {
+	name = "The Ottomans"
+	name_adj = "Ottoman"
+	tags = {
+		tag = TUR
+	}
+	conditions = {
+		dynasty = "Osmanoglu"
+	}
+}
+
+ANATOLIA = {
+	name = "Anatolia"
+	name_adj = "Anatolian"
+	tags = {
+		tag = TUR
+	}
+	conditions = {
+		NOT = {
+			OR = {
+				dynasty = "Osmanoglu"
+				has_country_flag = is_revolutionary_turkey_flag
+				has_country_flag = is_turkey_flag
+			}
+		}
+	}
+}
+
+KOREAN_DYNASTIES_GROUP = {
+	tags = {
+		tag = KOR
+	}
+	group = {
+		JOSEON = {
+			name = "Joseon"
+			name_adj = "Joseonese"
+			conditions = {
+				dynasty = "Yi"
+			}
+		}
+		GOGURYEO = {
+			name = "Goguryeo"
+			name_adj = "Goguryeoan"
+			conditions = {
+				dynasty = "Go"
+			}
+		}
+		SILLA = {
+			name = "Silla"
+			name_adj = "Sillan"
+			conditions = {
+				OR = {
+					dynasty = "Park"
+					dynasty = "Kim"
+				}
+			}
+		}
+		BALHAE = {
+			name = "Balhae"
+			name_adj = "Balhaean"
+			conditions = {
+				dynasty = "Dae"
+			}
+		}
+		GORYEO = {
+			name = "Goryeo"
+			name_adj = "Goryeoan"
+			conditions = {
+				dynasty = "Wang"
+			}
+		}
+	}
+	conditions = {
+		has_reform = monarchy_mechanic
+	}
+}
+
+DAI_NAM = {
+	name = "Dai Nam"
+	name_adj = "Dainamese"
+	tags = {
+		tag = DAI
+	}
+	conditions = {
+		has_reform = monarchy_mechanic
+		OR = {
+			dynasty = "Nguyen"
+			dynasty = "Nguyen Phuc"
+			has_country_flag = is_dai_nam_flag
+		}
+	}
+}
+
+VIET_NAM = {
+	name = "Viet Nam"
+	name_adj = "Vietnamese"
+	tags = {
+		tag = DAI
+	}
+	conditions = {
+		OR = {
+			government = republic
+			has_country_flag = is_viet_nam_flag
+		}
+	}
+}
