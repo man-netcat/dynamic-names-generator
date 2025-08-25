@@ -238,8 +238,8 @@ TURKISH_VASSAL_GROUP = {
             }
         }
         ZULKADRIYE = {
-            name = "Zülkadriye"
-            name_adj = "Zülkadriyi"
+            name = "Zulkadriye"
+            name_adj = "Zulkadriyi"
             tags = {
                 tag = DUL
             }
@@ -298,6 +298,13 @@ TURKISH_VASSAL_GROUP = {
             name_adj = "Kostantiniyeli"
             tags = {
                 tag = BYZ
+            }
+        }
+        ANATOLIA = {
+            name = "Anadolu"
+            name_adj = "Anadolulu"
+            tags = {
+                tag = TUR
             }
         }
     }

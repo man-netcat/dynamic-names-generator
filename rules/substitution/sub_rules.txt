@@ -293,18 +293,6 @@ ZANZIBAR = {
 	}
 }
 
-# Dynastic names
-THE_OTTOMANS = {
-	name = "The Ottomans"
-	name_adj = "Ottoman"
-	tags = {
-		tag = TUR
-	}
-	conditions = {
-		dynasty = "Osmanoglu"
-	}
-}
-
 ANATOLIA = {
 	name = "Anatolia"
 	name_adj = "Anatolian"

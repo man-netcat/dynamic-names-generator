@@ -1,34 +1,48 @@
 import os
-import re
+from pyradox import parse_dir, parse_file
+from pyradox.datatype.tree import Tree
 
 COUNTRIES_PATH = (
     "/mnt/data/SteamLibrary/steamapps/common/Europa Universalis IV/history/countries"
 )
-
-# Regex patterns
-religion_pattern = re.compile(r"religion\s*=\s*(sunni|shiite|ibadi)")
-dynasty_pattern = re.compile(
-    r'\bmonarch\s*=\s*\{[^{}]*?dynasty\s*=\s*"?([^"\s]+)"?[^{}]*?\}', re.DOTALL
-)
+CULTURES_FILE = "/mnt/data/SteamLibrary/steamapps/common/Europa Universalis IV/common/cultures/00_cultures.txt"
 
 dynasties = set()
 
-for filename in os.listdir(COUNTRIES_PATH):
-    if not filename.endswith(".txt"):
-        continue
+# Parse all country history files
+parsed_countries = parse_dir(COUNTRIES_PATH)
 
-    filepath = os.path.join(COUNTRIES_PATH, filename)
-    with open(filepath, encoding="utf-8", errors="ignore") as f:
-        content = f.read()
+for country_filename, country_data in parsed_countries:
+    for top_level_key, top_level_value in country_data.items():
 
-    # Skip files without the desired religion
-    if not religion_pattern.search(content):
-        continue
+        # Skip if religion is not Muslim
+        if top_level_key == "religion" and top_level_value not in [
+            "sunni",
+            "ibadi",
+            "shiite",
+        ]:
+            break
 
-    # Find all monarch blocks with dynasties
-    matches = dynasty_pattern.findall(content)
-    dynasties.update(matches)
+        # Look for nested structures (like monarch and heir blocks)
+        if isinstance(top_level_value, Tree):
+            for block_key, block_data in top_level_value.items():
+                if block_key in ["monarch", "heir"]:
+                    for attribute_key, attribute_value in block_data.items():
+                        if attribute_key == "dynasty":
+                            dynasties.add(attribute_value)
 
-# Output the results
-for dynasty in sorted(dynasties):
-    print(dynasty)
+parsed_cultures = parse_file(CULTURES_FILE)
+
+for culture_group, culture_group_data in parsed_cultures.items():
+    for top_level_key, top_level_value in culture_group_data.items():
+        if top_level_key == "graphical_culture" and top_level_value != "muslimgfx":
+            break
+
+        if isinstance(top_level_value, Tree):
+            for block_key, block_data in top_level_value.items():
+                print(top_level_value._data)
+                # if block_key == "dynasty_names":
+
+# Output the dynasties
+# for dynasty_name in sorted(dynasties):
+#     print(dynasty_name)

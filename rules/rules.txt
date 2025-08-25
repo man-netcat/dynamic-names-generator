@@ -278,163 +278,6 @@ COUNTY = {
 	}
 }
 
-TRIBE = {
-	name = "{NAME} Tribe"
-	conditions = {
-		OR = {
-			government = native
-			has_reform = siberian_tribe
-			has_reform = native_basic_reform
-		}
-	}
-}
-
-STEPPE = {
-	group = {
-		HORDE = {
-			name = "{NAME_ADJ} Horde"
-			conditions = {
-				NOT = {
-					government_rank = 2
-				}
-			}
-		}
-		KHANATE = {
-			name = "{NAME_ADJ} Khanate"
-			conditions = {
-				government_rank = 2
-				NOT = {
-					government_rank = 3
-				}
-			}
-		}
-		KHAGANATE = {
-			name = "{NAME_ADJ} Khaganate"
-			conditions = {
-				government_rank = 3
-			}
-		}
-		GREAT_HORDE = {
-			name = "Great Horde"
-			tags = {
-				tag = GOL
-			}
-		}
-		GOLDEN_HORDE = {
-			name = "Golden Horde"
-			tags = {
-				tag = GLH
-			}
-		}
-		ULUG_ULUS = {
-			name = "Ulug Ulus"
-			tags = {
-				tag = GLH
-			}
-			conditions = {
-				has_country_flag = is_ULUG_ULUS_flag
-			}
-		}
-	}
-	conditions = {
-		has_reform = steppe_horde
-		OR = {
-			culture_group = altaic
-			culture_group = tartar
-			primary_culture = altaic_new
-		}
-	}
-}
-
-TUMEN = {
-	name = "{NAME_ADJ} Tumen"
-	conditions = {
-		has_reform = steppe_horde
-		is_march = yes
-		overlord = {
-			OR = {
-				culture_group = altaic
-				culture_group = tartar
-				primary_culture = altaic_new
-			}
-		}
-	}
-}
-
-JURCHENS = {
-	name = "{NAME} Jurchens"
-	conditions = {
-		has_reform = steppe_horde
-		primary_culture = manchu
-	}
-}
-
-MANCHU = {
-	group = {
-		MANCHUS = {
-			name = "{NAME} Manchus"
-		}
-		THE_MANCHUS = {
-			name = "The Manchus"
-			tags = {
-				tag = MCH
-			}
-			conditions = {
-				is_subject = yes
-			}
-		}
-		MANCHU_KHANATE = {
-			name = "Manchu Khanate"
-			tags = {
-				tag = MCH
-			}
-			conditions = {
-				government_rank = 2
-				NOT = {
-					government_rank = 3
-				}
-			}
-		}
-		MANCHU_KHAGANATE = {
-			name = "Manchu Khaganate"
-			tags = {
-				tag = MCH
-			}
-			conditions = {
-				government_rank = 3
-			}
-		}
-	}
-	conditions = {
-		has_reform = steppe_horde
-		primary_culture = manchu_new
-	}
-}
-
-MONGOL = {
-	group = {
-		MONGOLS = {
-			name = "{NAME} Mongols"
-		}
-		THE_MONGOLS = {
-			name = "The Mongols"
-			tags = {
-				tag = KHA
-			}
-		}
-	}
-	conditions = {
-		has_reform = steppe_horde
-		OR = {
-			primary_culture = mongol
-			primary_culture = chahar
-			primary_culture = khalkha
-			primary_culture = oirats
-		}
-		is_subject = yes
-	}
-}
-
 IKKO_IKKI_THEOCRACY = {
 	name = "Holy State of the Ikko-Ikki"
 	conditions = {
@@ -554,6 +397,7 @@ LATIN_REPUBLIC = {
 	}
 	conditions = {
 		government = republic
+		religion_group = christian
 		culture_group = latin
 	}
 }
@@ -1167,6 +1011,7 @@ DESPOTATE = {
 	name = "Despotate of {NAME}"
 	conditions = {
 		government = monarchy
+		religion_group = christian
 		OR = {
 			tag = BYZ
 			tag = TRE
@@ -1194,6 +1039,7 @@ GRAND_DUCHY = {
 	name = "Grand Duchy of {NAME}"
 	conditions = {
 		government = monarchy
+		religion_group = christian
 		OR = {
 			AND = {
 				tag = LUX
@@ -1295,6 +1141,7 @@ ARCHDUCHY = {
 	name = "Archduchy of {NAME}"
 	conditions = {
 		government = monarchy
+		religion_group = christian
 		OR = {
 			AND = {
 				tag = HAB
@@ -1326,6 +1173,7 @@ ARCHKINGDOM = {
 	name = "Arch-Kingdom of {NAME}"
 	conditions = {
 		government = monarchy
+		religion_group = christian
 		AND = {
 			tag = DAN
 			government = monarchy
@@ -1392,6 +1240,9 @@ MALIKATE = {
 					government_rank = 2
 				}
 			}
+		}
+		NOT = {
+			tag = NJR
 		}
 	}
 }
@@ -1463,48 +1314,6 @@ MALI_KINGDOM = {
 		NOT = {
 			government_rank = 3
 		}
-	}
-}
-
-NAJRAN_EMIRATE = {
-	name = "Emirate of Najran"
-	tags = {
-		tag = NJR
-	}
-	conditions = {
-		religion_group = muslim
-		NOT = {
-			government_rank = 2
-		}
-		is_revolutionary_republic_trigger = no
-	}
-}
-
-AVAR = {
-	tags = {
-		tag = AVR
-	}
-	group = {
-		KHANATE = {
-			name = "Avar Khanate"
-			conditions = {
-				NOT = {
-					government_rank = 2
-				}
-			}
-		}
-		KHAGANATE = {
-			name = "Avar Khaganate"
-			conditions = {
-				government_rank = 2
-				NOT = {
-					government_rank = 3
-				}
-			}
-		}
-	}
-	conditions = {
-		government = monarchy
 	}
 }
 
@@ -1583,6 +1392,7 @@ ELECTORAL_REPUBLIC_GROUP = {
 	}
 	conditions = {
 		government = republic
+		religion_group = christian
 		is_elector = yes
 		NOT = {
 			is_emperor = yes
@@ -1594,6 +1404,7 @@ ELECTORATE_BISHOPRIC = {
 	name = "Electoral Bishopric of {NAME}"
 	conditions = {
 		government = theocracy
+		religion_group = christian
 		is_elector = yes
 		is_emperor = no
 		NOT = {
@@ -1630,6 +1441,7 @@ HERCEGSEG_GROUP = {
 	}
 	conditions = {
 		government = monarchy
+		religion_group = christian
 	}
 }
 
@@ -1640,6 +1452,7 @@ COUNTY_PALATINE = {
 	}
 	conditions = {
 		government = monarchy
+		religion_group = christian
 		NOT = {
 			government_rank = 2
 		}
@@ -1823,16 +1636,6 @@ STRATOCRACY = {
 	}
 }
 
-ISLAMIC_CALIPHATE = {
-	name = "{NAME_ADJ} Caliphate"
-	conditions = {
-		OR = {
-			has_country_modifier = unified_islam
-			has_country_modifier = hsn_ayyubid_caliphate
-		}
-	}
-}
-
 JARLDOM = {
 	name = "Jarldom of {NAME}"
 	conditions = {
@@ -1843,63 +1646,6 @@ JARLDOM = {
 		}
 		NOT = {
 			government_rank = 2
-		}
-	}
-}
-
-SISTERHOODS = {
-	group = {
-		SISTERHOOD = {
-			name = "Sisterhood of {NAME}"
-			conditions = {
-				NOT = {
-					government_rank = 3
-				}
-			}
-		}
-		GRAND_SISTERHOOD = {
-			name = "Grand Sisterhood of {NAME}"
-			conditions = {
-				government_rank = 3
-			}
-		}
-	}
-	conditions = {
-		OR = {
-			AND = {
-				has_reform = holy_state_reform
-				has_country_modifier = sisters_takeover
-			}
-			has_reform = sisterhood_of_jeanne_darc_reform
-		}
-	}
-}
-
-MONASTIC_ORDER_GROUP = {
-	group = {
-		MONASTIC_ORDER = {
-			name = "{NAME_ADJ} Order"
-			conditions = {
-				NOT = {
-					government_rank = 3
-				}
-			}
-		}
-		MONASTIC_EMPIRE = {
-			# I don't think this is possible, monastic orders are locked to duchy rank
-			name = "Empire of the {NAME_ADJ} Order"
-			conditions = {
-				government_rank = 3
-			}
-		}
-	}
-	conditions = {
-		OR = {
-			has_reform = monastic_order_reform
-			AND = {
-				government = theocracy
-				tag = KOJ
-			}
 		}
 	}
 }
@@ -2335,6 +2081,7 @@ CROWN_SPANISH = {
 		tag = CAT
 	}
 	conditions = {
+		religion_group = christian
 		government_rank = 2
 		num_of_provinces_in_states = 18
 	}
@@ -2347,6 +2094,7 @@ CROWN_CZECH = {
 		tag = MVA
 	}
 	conditions = {
+		religion_group = christian
 		government_rank = 2
 		num_of_provinces_in_states = 12
 	}
@@ -2365,14 +2113,212 @@ DUCAL_PRUSSIA = {
 	}
 }
 
-LATER_JIN = {
-	name = "Later Jin"
-	tags = {
-		tag = MJZ
-		tag = MCH
+TRIBE = {
+	name = "{NAME} Tribe"
+	conditions = {
+		OR = {
+			government = native
+			has_reform = siberian_tribe
+			has_reform = native_basic_reform
+		}
+	}
+}
+
+STEPPE = {
+	group = {
+		HORDE = {
+			name = "{NAME_ADJ} Horde"
+			conditions = {
+				NOT = {
+					government_rank = 2
+				}
+			}
+		}
+		KHANATE = {
+			name = "{NAME_ADJ} Khanate"
+			conditions = {
+				government_rank = 2
+				NOT = {
+					government_rank = 3
+				}
+			}
+		}
+		KHAGANATE = {
+			name = "{NAME_ADJ} Khaganate"
+			conditions = {
+				government_rank = 3
+			}
+		}
+		GREAT_HORDE = {
+			name = "Great Horde"
+			tags = {
+				tag = GOL
+			}
+		}
+		GOLDEN_HORDE = {
+			name = "Golden Horde"
+			tags = {
+				tag = GLH
+			}
+		}
+		ULUG_ULUS = {
+			name = "Ulug Ulus"
+			tags = {
+				tag = GLH
+			}
+			conditions = {
+				has_country_flag = is_ULUG_ULUS_flag
+			}
+		}
 	}
 	conditions = {
-		mission_completed = mch_proclaim_later_jin
+		has_reform = steppe_horde
+		OR = {
+			culture_group = altaic
+			culture_group = tartar
+			primary_culture = altaic_new
+			tag = AVR
+		}
+	}
+}
+
+JURCHENS = {
+	name = "{NAME} Jurchens"
+	conditions = {
+		has_reform = steppe_horde
+		primary_culture = manchu
+	}
+}
+
+MANCHU = {
+	group = {
+		MANCHUS = {
+			name = "{NAME} Manchus"
+		}
+		THE_MANCHUS = {
+			name = "The Manchus"
+			tags = {
+				tag = MCH
+			}
+			conditions = {
+				is_subject = yes
+			}
+		}
+		KHANATE = {
+			name = "Manchu Khanate"
+			tags = {
+				tag = MCH
+			}
+			conditions = {
+				government_rank = 2
+				NOT = {
+					government_rank = 3
+				}
+				is_subject = no
+			}
+		}
+		KHAGANATE = {
+			name = "Manchu Khaganate"
+			tags = {
+				tag = MCH
+			}
+			conditions = {
+				government_rank = 3
+				is_subject = no
+			}
+		}
+		LATER_JIN = {
+			name = "Later Jin"
+			tags = {
+				tag = MJZ
+				tag = MCH
+			}
+			conditions = {
+				mission_completed = mch_proclaim_later_jin
+			}
+		}
+	}
+	conditions = {
+		has_reform = steppe_horde
+		primary_culture = manchu_new
+	}
+}
+
+MONGOL = {
+	group = {
+		MONGOLS = {
+			name = "{NAME} Mongols"
+		}
+		THE_MONGOLS = {
+			name = "The Mongols"
+			tags = {
+				tag = KHA
+			}
+			conditions = {
+				is_subject = yes
+			}
+		}
+		KHANATE = {
+			name = "Mongol Khanate"
+			tags = {
+				tag = KHA
+			}
+			conditions = {
+				government_rank = 2
+				NOT = {
+					government_rank = 3
+				}
+				is_subject = no
+			}
+		}
+		KHAGANATE = {
+			name = "Mongol Khaganate"
+			tags = {
+				tag = KHA
+			}
+			conditions = {
+				government_rank = 3
+				is_subject = no
+			}
+		}
+	}
+	conditions = {
+		has_reform = steppe_horde
+		OR = {
+			primary_culture = mongol
+			primary_culture = chahar
+			primary_culture = khalkha
+			primary_culture = oirats
+		}
+	}
+}
+
+NORTHERN_YUAN = {
+	name = "Northern Yuan"
+	tags = {
+		tag = KHA
+	}
+	conditions = {
+		government = monarchy
+		capital_scope = {
+			region = mongolia_region
+		}
+		is_subject = no
+	}
+}
+
+TUMEN = {
+	name = "{NAME_ADJ} Tumen"
+	conditions = {
+		is_march = yes
+		overlord = {
+			has_reform = steppe_horde
+			OR = {
+				culture_group = altaic
+				culture_group = tartar
+				primary_culture = altaic_new
+			}
+		}
 	}
 }
 
@@ -2552,29 +2498,6 @@ OIRAT_CONFEDERATION = {
 	}
 }
 
-NORTHERN_YUAN = {
-	name = "Northern Yuan"
-	tags = {
-		tag = KHA
-	}
-	conditions = {
-		has_reform = steppe_horde
-		OR = {
-			culture_group = altaic
-			culture_group = tartar
-			primary_culture = altaic_new
-		}
-		NOT = {
-			government_rank = 3
-		}
-		num_of_provinces_in_states = 15
-		capital_scope = {
-			region = mongolia_region
-		}
-		is_subject = no
-	}
-}
-
 KAZAN_KHANATE = {
 	name = "Khanate of {NAME}"
 	tags = {
@@ -2679,6 +2602,7 @@ NOVGOROD = {
 	}
 	conditions = {
 		government = republic
+		religion_group = christian
 	}
 }
 
@@ -2726,6 +2650,63 @@ LEAGUE_OF_LEZHE = {
 	}
 }
 
+SISTERHOODS = {
+	group = {
+		SISTERHOOD = {
+			name = "Sisterhood of {NAME}"
+			conditions = {
+				NOT = {
+					government_rank = 3
+				}
+			}
+		}
+		GRAND = {
+			name = "Grand Sisterhood of {NAME}"
+			conditions = {
+				government_rank = 3
+			}
+		}
+	}
+	conditions = {
+		OR = {
+			AND = {
+				has_reform = holy_state_reform
+				has_country_modifier = sisters_takeover
+			}
+			has_reform = sisterhood_of_jeanne_darc_reform
+		}
+	}
+}
+
+MONASTIC = {
+	group = {
+		ORDER = {
+			name = "{NAME_ADJ} Order"
+			conditions = {
+				NOT = {
+					government_rank = 3
+				}
+			}
+		}
+		EMPIRE = {
+			name = "Empire of the {NAME_ADJ} Order"
+			conditions = {
+				government_rank = 3
+			}
+		}
+	}
+	conditions = {
+		religion = catholic
+		OR = {
+			has_reform = monastic_order_reform
+			AND = {
+				government = theocracy
+				tag = KOJ
+			}
+		}
+	}
+}
+
 KNIGHTS_OF = {
 	tags = {
 		tag = KNI
@@ -2736,25 +2717,26 @@ KNIGHTS_OF = {
 			name = "The Knights"
 		}
 		RHODES = {
-			name = "Knights of Rhodes"
+			name = "The Knights of Rhodes"
 			conditions = {
 				capital = 320
 			}
 		}
 		MALTA = {
-			name = "Knights of Malta"
+			name = "The Knights of Malta"
 			conditions = {
 				capital = 126
 			}
 		}
 		JERUSALEM = {
-			name = "Knights of Jerusalem"
+			name = "The Knights of Jerusalem"
 			conditions = {
 				capital = 379
 			}
 		}
 	}
 	conditions = {
+		religion = catholic
 		OR = {
 			has_reform = monastic_order_reform
 			government = theocracy
@@ -2770,7 +2752,7 @@ SAUDI_ARABIA = {
 		tag = ARB
 	}
 	group = {
-		SAUDI_ARABIA_KINGDOM = {
+		KINGDOM = {
 			name = "Kingdom of Saudi Arabia"
 			conditions = {
 				government_rank = 2
@@ -2779,7 +2761,7 @@ SAUDI_ARABIA = {
 				}
 			}
 		}
-		SAUDI_ARABIA_EMPIRE = {
+		EMPIRE = {
 			name = "Empire of Saudi Arabia"
 			conditions = {
 				government_rank = 3
@@ -2878,7 +2860,7 @@ TURKISH_VASSAL = {
 
 MAMLUK = {
 	group = {
-		MAMLUK_EMIR = {
+		EMIR = {
 			name = "Mamluk Emirate of {NAME}"
 			conditions = {
 				NOT = {
@@ -2886,7 +2868,7 @@ MAMLUK = {
 				}
 			}
 		}
-		MAMLUK_SULTAN = {
+		SULTAN = {
 			name = "Mamluk Sultanate of {NAME}"
 			conditions = {
 				government_rank = 2
@@ -2898,5 +2880,16 @@ MAMLUK = {
 	}
 	conditions = {
 		has_reform = mamluk_government
+	}
+}
+
+ISLAMIC_CALIPHATE = {
+	name = "{NAME_ADJ} Caliphate"
+	name_dynasty = "{DYNASTY} Caliphate"
+	conditions = {
+		OR = {
+			has_country_modifier = unified_islam
+			has_country_modifier = hsn_ayyubid_caliphate
+		}
 	}
 }

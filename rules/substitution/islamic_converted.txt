@@ -1,0 +1,406 @@
+ISLAMIC_CONVERTED_GROUP = {
+	group = {
+		PORTUGAL = {
+			name = "al-Burtuqal"
+			name_adj = "al-Burtuqali"
+			tags = {
+				tag = POR
+			}
+		}
+		CASTILLE = {
+			name = "al-Qashtalah"
+			name_adj = "Qashtali"
+			tags = {
+				tag = CAS
+			}
+		}
+		NAVARRA = {
+			name = "Balat al-Baskans"
+			name_adj = "Baskansi"
+			tags = {
+				tag = NAV
+			}
+		}
+		ARAGON = {
+			name = "Araghun"
+			name_adj = "Araghuni"
+			tags = {
+				tag = ARA
+			}
+		}
+		SPAIN = {
+			name = "Isbaniya"
+			name_adj = "Isbani"
+			tags = {
+				tag = SPA
+			}
+		}
+		FRANCE = {
+			name = "Faransa"
+			name_adj = "Faransi"
+			tags = {
+				tag = FRA
+			}
+		}
+		ENGLAND = {
+			name = "Inkiliz"
+			name_adj = "Inkilizi"
+			tags = {
+				tag = ENG
+			}
+		}
+		SCOTLAND = {
+			name = "Isqutlandiya"
+			name_adj = "Isqutlandi"
+			tags = {
+				tag = SCO
+			}
+		}
+		IRELAND = {
+			name = "Irlanda"
+			name_adj = "Irlandi"
+			tags = {
+				tag = IRE
+			}
+		}
+		HUNGARY = {
+			name = "al-Majar"
+			name_adj = "Majari"
+			tags = {
+				tag = HUN
+			}
+		}
+		POLAND = {
+			name = "Lahistan"
+			name_adj = "Lahistani"
+			tags = {
+				tag = POL
+			}
+		}
+		LITHUANIA = {
+			name = "Litwaniya"
+			name_adj = "Litwani"
+			tags = {
+				tag = LIT
+			}
+		}
+		TEUTONIC_ORDER = {
+			name = "al-Rum al-Tawtuni"
+			name_adj = "Tawtuni"
+			tags = {
+				tag = TEU
+			}
+		}
+		LIVONIAN_ORDER = {
+			name = "al-Rum al-Liviyun"
+			name_adj = "Liviyuni"
+			tags = {
+				tag = LIV
+			}
+		}
+		AUSTRIA = {
+			name = "Awstriya"
+			name_adj = "Awstriyi"
+			tags = {
+				tag = HAB
+			}
+		}
+		VENICE = {
+			name = "Baniqiyya"
+			name_adj = "Baniqi"
+			tags = {
+				tag = VEN
+			}
+		}
+		BYZANTIUM = {
+			name = "Qustantiniyya"
+			name_adj = "Qustantini"
+			tags = {
+				tag = BYZ
+			}
+		}
+		SERBIA = {
+			name = "Sirb"
+			name_adj = "Sirbi"
+			tags = {
+				tag = SER
+			}
+		}
+		BOSNIA = {
+			name = "Busniya"
+			name_adj = "Busni"
+			tags = {
+				tag = BOS
+			}
+		}
+		CROATIA = {
+			name = "Kirwatiya"
+			name_adj = "Kirwati"
+			tags = {
+				tag = CRO
+			}
+		}
+		MONTENEGRO = {
+			name = "al-Jabal al-Aswad"
+			name_adj = "Aswadi"
+			tags = {
+				tag = MON
+			}
+		}
+		GENOA = {
+			name = "Jinuwa"
+			name_adj = "Jinuwi"
+			tags = {
+				tag = GEN
+			}
+		}
+		GREECE = {
+			name = "al-Yunan"
+			name_adj = "Yunani"
+			tags = {
+				tag = GRE
+			}
+		}
+		CYPRUS = {
+			name = "Qubrus"
+			name_adj = "Qubrusi"
+			tags = {
+				tag = CYP
+			}
+		}
+		MALTA = {
+			name = "Maltah"
+			name_adj = "Malti"
+			tags = {
+				tag = JAI
+			}
+		}
+		ITALY = {
+			name = "Italiya"
+			name_adj = "Itali"
+			tags = {
+				tag = ITA
+			}
+		}
+		NAPLES = {
+			name = "Nabul"
+			name_adj = "Nabuli"
+			tags = {
+				tag = NAP
+			}
+		}
+		ARMENIA = {
+			name = "al-Arman"
+			name_adj = "Armani"
+			tags = {
+				tag = ARM
+			}
+		}
+		GEORGIA = {
+			name = "Jurjiya"
+			name_adj = "Jurji"
+			tags = {
+				tag = GEO
+			}
+		}
+		MUSCOVY = {
+			name = "Moskva"
+			name_adj = "Moskvawi"
+			tags = {
+				tag = MOS
+			}
+		}
+		NOVGOROD = {
+			name = "Nufghorod"
+			name_adj = "Nufghorodi"
+			tags = {
+				tag = NOV
+			}
+		}
+		RUSSIA = {
+			name = "Bilad al-Rus"
+			name_adj = "Rusi"
+			tags = {
+				tag = RUS
+			}
+		}
+		LUXEMBOURG = {
+			name = "Luksimburgh"
+			name_adj = "Luksimburghi"
+			tags = {
+				tag = LUX
+			}
+		}
+		NETHERLANDS = {
+			name = "Bilad al-Aradi al-Sufla"
+			name_adj = "Suflawi"
+			tags = {
+				tag = NED
+			}
+		}
+		DENMARK = {
+			name = "Danimark"
+			name_adj = "Danimarki"
+			tags = {
+				tag = DAN
+			}
+		}
+		SWEDEN = {
+			name = "Asuj"
+			name_adj = "Asuji"
+			tags = {
+				tag = SWE
+			}
+		}
+		NORWAY = {
+			name = "Nirwij"
+			name_adj = "Nirwiji"
+			tags = {
+				tag = NOR
+			}
+		}
+		FINLAND = {
+			name = "Filandiya"
+			name_adj = "Filandi"
+			tags = {
+				tag = FIN
+			}
+		}
+		BOHEMIA = {
+			name = "Buhimiya"
+			name_adj = "Buhimi"
+			tags = {
+				tag = BOH
+			}
+		}
+		ROMANIA = {
+			name = "al-Wallak"
+			name_adj = "Wallaki"
+			tags = {
+				tag = RMN
+			}
+		}
+		WALLACHIA = {
+			name = "al-Wallak"
+			name_adj = "Wallaki"
+			tags = {
+				tag = WAL
+			}
+		}
+		TRANSYLVANIA = {
+			name = "Transilfaniya"
+			name_adj = "Transilfani"
+			tags = {
+				tag = TRA
+			}
+		}
+		ALBANIA = {
+			name = "Arban"
+			name_adj = "Arbani"
+			tags = {
+				tag = ALB
+			}
+		}
+		BULGARIA = {
+			name = "Bulghar"
+			name_adj = "Bulghari"
+			tags = {
+				tag = BUL
+			}
+		}
+		MOLDAVIA = {
+			name = "Muldawiyya"
+			name_adj = "Muldawi"
+			tags = {
+				tag = MOL
+			}
+		}
+		SICILY = {
+			name = "Siqilliyya"
+			name_adj = "Siqilli"
+			tags = {
+				tag = SIC
+			}
+		}
+		SARDINIA = {
+			name = "Sardaniya"
+			name_adj = "Sardani"
+			tags = {
+				tag = SAR
+			}
+		}
+		CORSICA = {
+			name = "Qursika"
+			name_adj = "Qursiki"
+			tags = {
+				tag = COR
+			}
+		}
+		MOREA = {
+			name = "Muriya"
+			name_adj = "Muriyi"
+			tags = {
+				tag = MOE
+			}
+		}
+		DALMATIA = {
+			name = "Dalmatiya"
+			name_adj = "Dalmati"
+			tags = {
+				tag = DAL
+			}
+		}
+		EPIRUS = {
+			name = "Abirus"
+			name_adj = "Abirusi"
+			tags = {
+				tag = EPI
+			}
+		}
+		CRETE = {
+			name = "Iqritiya"
+			name_adj = "Iqriti"
+			tags = {
+				tag = CRT
+			}
+		}
+		ATHENS = {
+			name = "Athina"
+			name_adj = "Athini"
+			tags = {
+				tag = ATH
+			}
+		}
+		NAXOS = {
+			name = "Naksus"
+			name_adj = "Naksusi"
+			tags = {
+				tag = NAX
+			}
+		}
+		RAGUSA = {
+			name = "Raghusa"
+			name_adj = "Raghusi"
+			tags = {
+				tag = RAG
+			}
+		}
+		THE_KNIGHTS = {
+			name = "al-Fursan"
+			name_adj = "Fursani"
+			tags = {
+				tag = KNI
+			}
+		}
+		LATIN_EMPIRE = {
+			name = "al-Imbraturiyya al-Latiniyya"
+			name_adj = "Latini"
+			tags = {
+				tag = LAE
+			}
+		}
+	}
+	conditions = {
+		religion_group = muslim
+	}
+}
