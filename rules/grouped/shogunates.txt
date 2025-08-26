@@ -1,197 +1,199 @@
 JAPANESE_SHOGUNATE_GROUP = {
-    name = "{ITEM_NAME} Shogunate"
-    group = {
-        KAMAKURA = {
-            name = "Kamakura"
-            name_adj = "Kamakura"
-            tags = {
-                tag = HJO
-            }
-        }
-        MUROMACHI = {
-            name = "Muromachi"
-            name_adj = "Muromachi"
-            tags = {
-                tag = ASK
-            }
-        }
-        AZUCHI = {
-            name = "Azuchi"
-            name_adj = "Azuchi"
-            tags = {
-                tag = ODA
-            }
-        }
-        EDO = {
-            name = "Edo"
-            name_adj = "Edo"
-            tags = {
-                tag = TKG
-            }
-        }
-        SATSUMA = {
-            name = "Satsuma"
-            name_adj = "Satsuma"
-            tags = {
-                tag = SMZ
-            }
-        }
-        CHOSHU = {
-            name = "Choshu"
-            name_adj = "Choshu"
-            tags = {
-                tag = MRI
-            }
-        }
-        ECHIGO = {
-            name = "Echigo"
-            name_adj = "Echigo"
-            tags = {
-                tag = UES
-            }
-        }
-        SENDAI = {
-            name = "Sendai"
-            name_adj = "Sendai"
-            tags = {
-                tag = DTE
-            }
-        }
-        TOSA = {
-            name = "Tosa"
-            name_adj = "Tosa"
-            tags = {
-                tag = CSK
-            }
-        }
-        KAI = {
-            name = "Kai"
-            name_adj = "Kai"
-            tags = {
-                tag = TKD
-            }
-        }
-        SURUGA = {
-            name = "Suruga"
-            name_adj = "Suruga"
-            tags = {
-                tag = IMG
-            }
-        }
-        IZUMO = {
-            name = "Izumo"
-            name_adj = "Izumo"
-            tags = {
-                tag = AMA
-            }
-        }
-        ECHIZEN = {
-            name = "Echizen"
-            name_adj = "Echizen"
-            tags = {
-                tag = ASA
-            }
-        }
-        BUNGO = {
-            name = "Bungo"
-            name_adj = "Bungo"
-            tags = {
-                tag = OTM
-            }
-        }
-        SUO = {
-            name = "Suo"
-            name_adj = "Suo"
-            tags = {
-                tag = OUC
-            }
-        }
-        SETTSU = {
-            name = "Settsu"
-            name_adj = "Settsu"
-            tags = {
-                tag = HSK
-            }
-        }
-        ETCHU = {
-            name = "Etchu"
-            name_adj = "Etchu"
-            tags = {
-                tag = MAE
-            }
-        }
-        HARIMA = {
-            name = "Harima"
-            name_adj = "Harima"
-            tags = {
-                tag = AKM
-            }
-        }
-        TANGO = {
-            name = "Tango"
-            name_adj = "Tango"
-            tags = {
-                tag = ISK
-            }
-        }
-        IYO = {
-            name = "Iyo"
-            name_adj = "Iyo"
-            tags = {
-                tag = KNO
-            }
-        }
-        HIGO = {
-            name = "Higo"
-            name_adj = "Higo"
-            tags = {
-                tag = KKC
-            }
-        }
-        HIZEN = {
-            name = "Hizen"
-            name_adj = "Hizen"
-            tags = {
-                tag = SHN
-            }
-        }
-        HITACHI = {
-            name = "Hitachi"
-            name_adj = "Hitachi"
-            tags = {
-                tag = STK
-            }
-        }
-        MINO = {
-            name = "Mino"
-            name_adj = "Mino"
-            tags = {
-                tag = TKI
-            }
-        }
-        SHIMOTSUKE = {
-            name = "Shimotsuke"
-            name_adj = "Shimotsuke"
-            tags = {
-                tag = UTN
-            }
-        }
-        YAMATO = {
-            name = "Yamato"
-            name_adj = "Yamato"
-            tags = {
-                tag = TTI
-            }
-        }
-        EZO = {
-            name = "Ezo"
-            name_adj = "Ezo"
-            tags = {
-                tag = ANU
-            }
-        }
-    }
-    conditions = {
-        has_reform = shogunate
-    }
+	group = {
+		GENERIC = {
+			name = "{NAME} Shogunate"
+		}
+		KAMAKURA = {
+			name = "Kamakura Shogunate"
+			name_adj = "Kamakura"
+			tags = {
+				tag = HJO
+			}
+		}
+		MUROMACHI = {
+			name = "Muromachi Shogunate"
+			name_adj = "Muromachi"
+			tags = {
+				tag = ASK
+			}
+		}
+		AZUCHI = {
+			name = "Azuchi Shogunate"
+			name_adj = "Azuchi"
+			tags = {
+				tag = ODA
+			}
+		}
+		EDO = {
+			name = "Edo Shogunate"
+			name_adj = "Edo"
+			tags = {
+				tag = TKG
+			}
+		}
+		SATSUMA = {
+			name = "Satsuma Shogunate"
+			name_adj = "Satsuma"
+			tags = {
+				tag = SMZ
+			}
+		}
+		CHOSHU = {
+			name = "Choshu Shogunate"
+			name_adj = "Choshu"
+			tags = {
+				tag = MRI
+			}
+		}
+		ECHIGO = {
+			name = "Echigo Shogunate"
+			name_adj = "Echigo"
+			tags = {
+				tag = UES
+			}
+		}
+		SENDAI = {
+			name = "Sendai Shogunate"
+			name_adj = "Sendai"
+			tags = {
+				tag = DTE
+			}
+		}
+		TOSA = {
+			name = "Tosa Shogunate"
+			name_adj = "Tosa"
+			tags = {
+				tag = CSK
+			}
+		}
+		KAI = {
+			name = "Kai Shogunate"
+			name_adj = "Kai"
+			tags = {
+				tag = TKD
+			}
+		}
+		SURUGA = {
+			name = "Suruga Shogunate"
+			name_adj = "Suruga"
+			tags = {
+				tag = IMG
+			}
+		}
+		IZUMO = {
+			name = "Izumo Shogunate"
+			name_adj = "Izumo"
+			tags = {
+				tag = AMA
+			}
+		}
+		ECHIZEN = {
+			name = "Echizen Shogunate"
+			name_adj = "Echizen"
+			tags = {
+				tag = ASA
+			}
+		}
+		BUNGO = {
+			name = "Bungo Shogunate"
+			name_adj = "Bungo"
+			tags = {
+				tag = OTM
+			}
+		}
+		SUO = {
+			name = "Suo Shogunate"
+			name_adj = "Suo"
+			tags = {
+				tag = OUC
+			}
+		}
+		SETTSU = {
+			name = "Settsu Shogunate"
+			name_adj = "Settsu"
+			tags = {
+				tag = HSK
+			}
+		}
+		ETCHU = {
+			name = "Etchu Shogunate"
+			name_adj = "Etchu"
+			tags = {
+				tag = MAE
+			}
+		}
+		HARIMA = {
+			name = "Harima Shogunate"
+			name_adj = "Harima"
+			tags = {
+				tag = AKM
+			}
+		}
+		TANGO = {
+			name = "Tango Shogunate"
+			name_adj = "Tango"
+			tags = {
+				tag = ISK
+			}
+		}
+		IYO = {
+			name = "Iyo Shogunate"
+			name_adj = "Iyo"
+			tags = {
+				tag = KNO
+			}
+		}
+		HIGO = {
+			name = "Higo Shogunate"
+			name_adj = "Higo"
+			tags = {
+				tag = KKC
+			}
+		}
+		HIZEN = {
+			name = "Hizen Shogunate"
+			name_adj = "Hizen"
+			tags = {
+				tag = SHN
+			}
+		}
+		HITACHI = {
+			name = "Hitachi Shogunate"
+			name_adj = "Hitachi"
+			tags = {
+				tag = STK
+			}
+		}
+		MINO = {
+			name = "Mino Shogunate"
+			name_adj = "Mino"
+			tags = {
+				tag = TKI
+			}
+		}
+		SHIMOTSUKE = {
+			name = "Shimotsuke Shogunate"
+			name_adj = "Shimotsuke"
+			tags = {
+				tag = UTN
+			}
+		}
+		YAMATO = {
+			name = "Yamato Shogunate"
+			name_adj = "Yamato"
+			tags = {
+				tag = TTI
+			}
+		}
+		EZO = {
+			name = "Ezo Shogunate"
+			name_adj = "Ezo"
+			tags = {
+				tag = ANU
+			}
+		}
+	}
+	conditions = {
+		has_reform = shogunate
+	}
 }

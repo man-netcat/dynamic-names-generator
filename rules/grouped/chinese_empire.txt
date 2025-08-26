@@ -1,53 +1,155 @@
-CHINESE_EMPIRE_GROUP = {
-	name = "Great {ITEM_NAME}"
+CHINESE_EMPIRE = {
 	group = {
-		NIHON = {
-			name = "Nihon"
-			name_adj = "Nihon"
+		GENERIC = {
+			name = "Great {NAME}"
+		}
+		# East Asian group
+		CHINESE = {
+			name = "Da {NAME}"
+			conditions = {
+				culture_group = east_asian
+			}
+		}
+		VIETNAMESE_SINICIZED = {
+			name = "Da Yue"
+			name_adj = "Yue"
+			conditions = {
+				primary_culture = vietnamese_new
+			}
+		}
+		KOREAN_SINICIZED = {
+			name = "Da Zhonghan"
+			name_adj = "Zhonghan"
+			conditions = {
+				primary_culture = korean_new
+			}
+		}
+		TIBETAN_SINICIZED = {
+			name = "Da Xizang"
+			name_adj = "Xizang"
+			conditions = {
+				primary_culture = tibetan_new
+			}
+		}
+		ALTAIC_SINICIZED = {
+			name = "Da Menggu"
+			name_adj = "Menggu"
+			conditions = {
+				primary_culture = altaic_new
+				NOT = {
+					tag = YUA
+				}
+			}
+		}
+		ZHUANG_SINICIZED = {
+			name = "Da Zhuang"
+			name_adj = "Zhuang"
+			conditions = {
+				primary_culture = zhuang_new
+			}
+		}
+		MANCHU = {
+			name = "Da Manzhou"
+			name_adj = "Manzhou"
+			conditions = {
+				primary_culture = manchu_new
+				NOT = {
+					tag = QNG
+				}
+			}
+		}
+		# Korean group
+		KOREAN = {
+			name = "Dae {NAME}"
+			conditions = {
+				culture_group = korean_g
+			}
+		}
+		# Japanese groups
+		JAPANESE = {
+			name = "Dai Nihon"
+			name_adj = "Japanese"
 			conditions = {
 				culture_group = japanese_g
 			}
 		}
-		BOD = {
-			name = "Bod"
-			name_adj = "Bod"
+		# Tibetan group
+		TIBETAN = {
+			name = "Bod-Chen"
+			name_adj = "Tibetan"
 			conditions = {
 				culture_group = tibetan_group
+				NOT = {
+					tag = TIB
+				}
 			}
 		}
-		VIET = {
-			name = "Viet"
+		# Thai group
+		THAI = {
+			name = "Maha {NAME}"
+			conditions = {
+				culture_group = thai_group
+			}
+		}
+		# South-East Asian group
+		SOUTHEAST_ASIAN = {
+			name = "{NAME} Krom"
+			conditions = {
+				culture_group = southeastasian_group
+			}
+		}
+		VIETNAMESE = {
+			name = "Dai Viet Thuong"
 			name_adj = "Viet"
 			conditions = {
-				culture = vietnamese
+				primary_culture = vietnamese
 			}
 		}
-		ZHONGHAN = {
-			name = "Zhonghan"
-			name_adj = "Zhonghan"
+		# Burman group
+		BURMAN = {
+			name = "{NAME} Thiri"
 			conditions = {
-				culture = korean_new
+				culture_group = burman
 			}
 		}
-		ZHUANG = {
-			name = "Zhuang"
-			name_adj = "Zhuang"
-			conditions = {
-				culture = zhuang_new
-			}
-		}
-		YUE_VIETNAM = {
-			name = "Yue"
-			name_adj = "Yue"
-			conditions = {
-				culture = vietnamese_new
-			}
-		}
-		MONGGOL = {
-			name = "Monggol"
-			name_adj = "Monggol"
+		# Altaic group
+		ALTAIC = {
+			name = "Altan Ulus"
+			name_adj = "Mongol"
 			conditions = {
 				culture_group = altaic
+				NOT = {
+					tag = YUA
+				}
+			}
+		}
+		# Evenk group
+		JURCHEN = {
+			name = "Da {NAME}"
+			conditions = {
+				primary_culture = manchu
+			}
+		}
+		# Explicit tags
+		YUAN = {
+			name = "Da Yuan"
+			name_adj = "Yuan"
+			tags = {
+				tag = YUA
+			}
+		}
+		QING = {
+			name = "Da Qing"
+			name_adj = "Qing"
+			tags = {
+				tag = QNG
+			}
+		}
+		TIBET = {
+			name = "Bod-Chen Po"
+			name_adj = "Tibetan"
+			tags = {
+				tag = TIB
 			}
 		}
 	}

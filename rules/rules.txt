@@ -1885,13 +1885,6 @@ WARRIOR_MONK_GROUP = {
 	}
 }
 
-SHOGUNATE = {
-	name = "{NAME} Shogunate"
-	conditions = {
-		has_reform = shogunate
-	}
-}
-
 INDEP_DAIMYO_GROUP = {
 	group = {
 		INDEP_DAIMYO = {
@@ -2176,6 +2169,7 @@ STEPPE = {
 		OR = {
 			culture_group = altaic
 			culture_group = tartar
+			primary_culture = manchu
 			primary_culture = altaic_new
 			tag = AVR
 		}
@@ -2187,6 +2181,9 @@ JURCHENS = {
 	conditions = {
 		has_reform = steppe_horde
 		primary_culture = manchu
+		NOT = {
+			total_development = 150
+		}
 	}
 }
 
@@ -2200,9 +2197,6 @@ MANCHU = {
 			tags = {
 				tag = MCH
 			}
-			conditions = {
-				is_subject = yes
-			}
 		}
 		KHANATE = {
 			name = "Manchu Khanate"
@@ -2214,7 +2208,10 @@ MANCHU = {
 				NOT = {
 					government_rank = 3
 				}
-				is_subject = no
+				AND = {
+					is_subject = no
+					total_development = 150
+				}
 			}
 		}
 		KHAGANATE = {
@@ -2254,9 +2251,6 @@ MONGOL = {
 			tags = {
 				tag = KHA
 			}
-			conditions = {
-				is_subject = yes
-			}
 		}
 		KHANATE = {
 			name = "Mongol Khanate"
@@ -2268,7 +2262,10 @@ MONGOL = {
 				NOT = {
 					government_rank = 3
 				}
-				is_subject = no
+				AND = {
+					is_subject = no
+					total_development = 150
+				}
 			}
 		}
 		KHAGANATE = {
@@ -2457,13 +2454,6 @@ CHINESE = {
 			superregion = china_superregion
 		}
 		is_subject = no
-	}
-}
-
-CHINESE_EMPIRE = {
-	name = "Great {NAME}"
-	conditions = {
-		is_emperor_of_china = yes
 	}
 }
 
@@ -2713,7 +2703,7 @@ KNIGHTS_OF = {
 		tag = KOJ
 	}
 	group = {
-		KNIGHTS = {
+		GENERIC = {
 			name = "The Knights"
 		}
 		RHODES = {
