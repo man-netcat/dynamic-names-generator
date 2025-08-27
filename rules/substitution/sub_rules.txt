@@ -1,18 +1,4 @@
 # Revolutionary Country Flags
-TURKIYE = {
-	name = "Turkiye"
-	name_adj = "Turkish"
-	tags = {
-		tag = TUR
-	}
-	conditions = {
-		OR = {
-			has_country_flag = is_revolutionary_turkey_flag
-			has_country_flag = is_turkey_flag
-		}
-	}
-}
-
 CHINA = {
 	name = "China"
 	name_adj = "Chinese"
@@ -170,17 +156,6 @@ EASTERN_ROMAN = {
 	}
 }
 
-THE_SELJUKS = {
-	name = "The Seljuks"
-	name_adj = "Seljuk"
-	tags = {
-		tag = RUM
-	}
-	conditions = {
-		has_country_flag = is_SELJUK_EMPIRE_flag
-	}
-}
-
 THE_AYYUBIDS = {
 	name = "The Ayyubids"
 	name_adj = "Ayyubid"
@@ -293,20 +268,51 @@ ZANZIBAR = {
 	}
 }
 
-ANATOLIA = {
-	name = "Anatolia"
-	name_adj = "Anatolian"
+OSMANIYYE = {
+	name = "Osmaniyye"
+	name_adj = "Ottoman"
 	tags = {
 		tag = TUR
 	}
 	conditions = {
+		dynasty = "Osmanoglu"
+		OR = {
+			has_reform = ottoman_government
+			has_reform = modernized_ottoman_government
+			has_reform = reorganized_ottoman_government
+		}
 		NOT = {
 			OR = {
-				dynasty = "Osmanoglu"
 				has_country_flag = is_revolutionary_turkey_flag
 				has_country_flag = is_turkey_flag
 			}
 		}
+	}
+}
+
+THE_SELJUKS = {
+	name = "The Seljuks"
+	name_adj = "Seljuk"
+	tags = {
+		tag = RUM
+	}
+	conditions = {
+		has_country_flag = is_SELJUK_EMPIRE_flag
+		NOT = {
+			has_reform = sultanate_of_rum_reform
+		}
+	}
+}
+
+SELJUCKLU = {
+	name = "Seljuklu"
+	name_adj = "Seljuk"
+	tags = {
+		tag = RUM
+	}
+	conditions = {
+		has_country_flag = is_SELJUK_EMPIRE_flag
+		has_reform = sultanate_of_rum_reform
 	}
 }
 

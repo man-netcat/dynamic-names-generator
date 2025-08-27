@@ -279,7 +279,7 @@ COUNTY = {
 }
 
 IKKO_IKKI_THEOCRACY = {
-	name = "Holy State of the Ikko-Ikki"
+	name = "Holy Order of the Ikko-Ikki"
 	conditions = {
 		has_reform = ikko_ikki_reform
 	}
@@ -418,39 +418,6 @@ AMBROSIAN_REPUBLIC = {
 	}
 	conditions = {
 		has_reform = ambrosian_republic
-	}
-}
-
-UNITED_PROVINCES = {
-	name = "United Provinces of {NAME}"
-	conditions = {
-		OR = {
-			AND = {
-				government = republic
-				primary_culture = dutch
-				is_revolutionary_republic_trigger = no
-				NOT = {
-					has_reform = presidential_despot_reform
-				}
-			}
-			AND = {
-				has_reform = states_general_reform
-				NOT = {
-					has_reform = parliamentary_reform
-				}
-				NOT = {
-					has_reform = presidential_reform
-				}
-				is_revolutionary_republic_trigger = no
-				NOT = {
-					has_reform = constitutional_republic
-				}
-				NOT = {
-					has_reform = presidential_despot_reform
-				}
-			}
-		}
-		government_rank = 2
 	}
 }
 
@@ -989,20 +956,6 @@ KHEDIVATE = {
 		religion_group = muslim
 		NOT = {
 			government_rank = 2
-		}
-	}
-}
-
-QING_KHANATE = {
-	name = "Qing Khanate"
-	tags = {
-		tag = QNG
-	}
-	conditions = {
-		government = monarchy
-		government_rank = 2
-		NOT = {
-			government_rank = 3
 		}
 	}
 }
@@ -1652,6 +1605,7 @@ JARLDOM = {
 
 SHEIKHDOM_RELIGIOUS = {
 	name = "Sheikhdom of {NAME}"
+	name_dynasty = "{DYNASTY} Sheikhdom"
 	conditions = {
 		OR = {
 			AND = {
@@ -1923,8 +1877,47 @@ DAIMYO = {
 	}
 }
 
+JAPANESE_DIVINE = {
+	group = {
+		INDEP_DAIMYO = {
+			name = "Divine Duchy of Japan"
+			conditions = {
+				NOT = {
+					government_rank = 2
+				}
+			}
+		}
+		GRAND_INDEP_DAIMYO = {
+			name = "Divine Kingdom of Japan"
+			conditions = {
+				government_rank = 2
+				NOT = {
+					government_rank = 3
+				}
+			}
+		}
+		GREAT_INDEP_DAIMYO = {
+			name = "Divine Empire of Japan"
+			conditions = {
+				government_rank = 3
+			}
+		}
+	}
+	conditions = {
+		has_reform = japanese_divine_empire
+	}
+}
+
 FEDERAL = {
 	group = {
+		UNITED_PROVINCES = {
+			name = "United Provinces of {NAME}"
+			conditions = {
+				NOT = {
+					government_rank = 2
+				}
+			}
+		}
 		KINGDOM = {
 			name = "Federal Kingdom of {NAME}"
 			conditions = {
@@ -1951,7 +1944,102 @@ FEDERAL = {
 				has_reform = presidential_despot_reform
 			}
 		}
-		is_revoltionary_republic_trigger = no
+		is_revolutionary_republic_trigger = no
+	}
+}
+
+NETHERLANDS = {
+	tags = {
+		tag = NED
+	}
+	group = {
+		REPUBLIC = {
+			group = {
+				BATAVIAN = {
+					name = "Batavian Republic"
+					conditions = {
+						OR = {
+							has_reform = parliamentary_reform
+							has_reform = presidential_reform
+						}
+						is_revolutionary_republic_trigger = yes
+					}
+				}
+				UNITED_PROVINCES = {
+					group = {
+						MONARCHISTS = {
+							name = "Seven United Provinces of Oranje-Nassau"
+							conditions = {
+								is_monarchists_in_power = yes
+							}
+						}
+						STATISTS = {
+							name = "Republic of the Seven United Provinces"
+							conditions = {
+								is_statists_in_power = yes
+							}
+						}
+					}
+					conditions = {
+						has_reform = dutch_republic
+						has_reform = seven_provinces_reform
+						is_revolutionary_republic_trigger = no
+					}
+				}
+			}
+			conditions = {
+				government = republic
+				NOT = {
+					has_reform = presidential_despot_reform
+				}
+			}
+		}
+		MONARCHY = {
+			group = {
+				STADHOUDER = {
+					group = {
+						MONARCHISTS = {
+							name = "Kingdom of Oranje-Nassau"
+							conditions = {
+								is_monarchists_in_power = yes
+							}
+						}
+						STATISTS = {
+							name = "United Provinces of Oranje-Nassau"
+							conditions = {
+								is_statists_in_power = yes
+							}
+						}
+					}
+					conditions = {
+						has_reform = stadthalter_monarchy_reform
+					}
+				}
+				STATES_GENERAL = {
+					name = "Kingdom of the Seven United Provinces"
+					conditions = {
+						has_reform = states_general_reform
+						has_reform = seven_provinces_reform
+					}
+				}
+			}
+			conditions = {
+				government = monarchy
+			}
+		}
+	}
+	conditions = {
+		primary_culture = dutch
+	}
+}
+
+SWISS_CONFEDERACY = {
+	name = "Swiss Confederacy"
+	tags = {
+		tag = SWI
+	}
+	conditions = {
+		has_reform = united_cantons_reform
 	}
 }
 
@@ -2165,14 +2253,88 @@ STEPPE = {
 		}
 	}
 	conditions = {
-		has_reform = steppe_horde
 		OR = {
-			culture_group = altaic
-			culture_group = tartar
-			primary_culture = manchu
-			primary_culture = altaic_new
+			has_reform = steppe_horde
 			tag = AVR
+			AND = {
+				OR = {
+					tag = YUA
+					tag = QNG
+				}
+				is_emperor_of_china = no
+			}
 		}
+	}
+}
+
+KALAT = {
+	name = "{ITEM_NAME} of Kalat"
+	tags = {
+		tag = BAL
+	}
+	group = {
+		HORDE = {
+			name = "Horde"
+			conditions = {
+				NOT = {
+					government_rank = 2
+				}
+			}
+		}
+		KHANATE = {
+			name = "Khanate"
+			conditions = {
+				government_rank = 2
+				NOT = {
+					government_rank = 3
+				}
+			}
+		}
+		KHAGANATE = {
+			name = "Khaganate"
+			conditions = {
+				government_rank = 3
+			}
+		}
+	}
+	conditions = {
+		has_reform = steppe_horde
+		capital = 576
+	}
+}
+
+KAZAN = {
+	name = "{ITEM_NAME} of Kazan"
+	tags = {
+		tag = KAZ
+	}
+	group = {
+		HORDE = {
+			name = "Horde"
+			conditions = {
+				NOT = {
+					government_rank = 2
+				}
+			}
+		}
+		KHANATE = {
+			name = "Khanate"
+			conditions = {
+				government_rank = 2
+				NOT = {
+					government_rank = 3
+				}
+			}
+		}
+		KHAGANATE = {
+			name = "Khaganate"
+			conditions = {
+				government_rank = 3
+			}
+		}
+	}
+	conditions = {
+		has_reform = steppe_horde
 	}
 }
 
@@ -2488,20 +2650,6 @@ OIRAT_CONFEDERATION = {
 	}
 }
 
-KAZAN_KHANATE = {
-	name = "Khanate of {NAME}"
-	tags = {
-		tag = KAZ
-	}
-	conditions = {
-		has_reform = steppe_horde
-		government_rank = 2
-		NOT = {
-			government_rank = 3
-		}
-	}
-}
-
 WLS_PRINCIPALITY = {
 	name = "Principality of {NAME}"
 	tags = {
@@ -2533,19 +2681,6 @@ PARLIAMENT_OF_HEAVEN = {
 	conditions = {
 		has_reform = celestial_empire
 		has_reform = parliamentary_reform
-	}
-}
-
-SWISS_CONFEDERATION = {
-	name = "Swiss Confederation"
-	tags = {
-		tag = SWI
-	}
-	conditions = {
-		government = republic
-		NOT = {
-			government_rank = 3
-		}
 	}
 }
 
@@ -2629,7 +2764,7 @@ TREBIZOND = {
 }
 
 LEAGUE_OF_LEZHE = {
-	name = "League of Lezhë"
+	name = "League of Lezhe"
 	tags = {
 		tag = ALB
 	}
@@ -2737,6 +2872,32 @@ KNIGHTS_OF = {
 	}
 }
 
+CRUSADER = {
+	group = {
+		ORDER = {
+			name = "Crusader Order of {NAME}"
+			conditions = {
+				NOT = {
+					government_rank = 3
+				}
+			}
+		}
+		EMPIRE = {
+			name = "Crusader Empire of {NAME}"
+			conditions = {
+				government_rank = 3
+			}
+		}
+	}
+	conditions = {
+		OR = {
+			has_reform = holy_horde_reform
+			has_reform = crusading_kingdom_reform
+			has_reform = militarized_crusader_order_reform
+		}
+	}
+}
+
 SAUDI_ARABIA = {
 	tags = {
 		tag = ARB
@@ -2794,18 +2955,19 @@ TURKISH_MONARCHY = {
 	group = {
 		BEYLIK = {
 			name = "Beylik-i {NAME}"
-			name_dynasty = "Beylik-i {DYNASTY}"
 			conditions = {
-				NOT = {
-					government_rank = 2
-				}
+				has_reform = beylik_government
 			}
 		}
 		DEVLET = {
 			name = "Devlet-i {NAME}"
-			name_dynasty = "Devlet-i {DYNASTY}"
 			conditions = {
-				government_rank = 2
+				OR = {
+					has_reform = ottoman_government
+					has_reform = modernized_ottoman_government
+					has_reform = reorganized_ottoman_government
+					has_reform = sultanate_of_rum_reform
+				}
 			}
 		}
 	}
@@ -2821,6 +2983,9 @@ TURKISH_VASSAL = {
 			name = "Sancak-i {NAME}"
 			conditions = {
 				is_subject_of_type = vassal
+				NOT = {
+					has_reform = beylik_government
+				}
 			}
 		}
 		PASHALIK = {
@@ -2843,6 +3008,7 @@ TURKISH_VASSAL = {
 	}
 	conditions = {
 		overlord = {
+			government = monarchy
 			primary_culture = turkish
 		}
 	}
