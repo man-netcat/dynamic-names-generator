@@ -10,28 +10,28 @@ CHINESE_EMPIRE = {
 				culture_group = east_asian
 			}
 		}
-		VIETNAMESE_SINICIZED = {
+		SINO_VIETNAMESE = {
 			name = "Da Yue"
 			name_adj = "Yue"
 			conditions = {
 				primary_culture = vietnamese_new
 			}
 		}
-		KOREAN_SINICIZED = {
+		SINO_KOREAN = {
 			name = "Da Zhonghan"
 			name_adj = "Zhonghan"
 			conditions = {
 				primary_culture = korean_new
 			}
 		}
-		TIBETAN_SINICIZED = {
+		SINO_TIBETAN = {
 			name = "Da Xizang"
 			name_adj = "Xizang"
 			conditions = {
 				primary_culture = tibetan_new
 			}
 		}
-		ALTAIC_SINICIZED = {
+		SINO_ALTAIC = {
 			name = "Da Menggu"
 			name_adj = "Menggu"
 			conditions = {
@@ -41,7 +41,7 @@ CHINESE_EMPIRE = {
 				}
 			}
 		}
-		ZHUANG_SINICIZED = {
+		SINO_ZHUANG = {
 			name = "Da Zhuang"
 			name_adj = "Zhuang"
 			conditions = {

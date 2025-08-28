@@ -1,400 +1,400 @@
 ISLAMIC_CONVERTED_GROUP = {
 	group = {
 		PORTUGAL = {
-			name = "al-Burtuqal"
-			name_adj = "al-Burtuqali"
+			name = "al-Burtuqál"
+			name_adj = "al-Burtuqalí"
 			tags = {
 				tag = POR
 			}
 		}
 		CASTILLE = {
-			name = "al-Qashtalah"
-			name_adj = "Qashtali"
+			name = "al-Qastíl"
+			name_adj = "al-Qastilí"
 			tags = {
 				tag = CAS
 			}
 		}
 		NAVARRA = {
-			name = "Balat al-Baskans"
-			name_adj = "Baskansi"
+			name = "Balat al-Baskáns"
+			name_adj = "al-Baskání"
 			tags = {
 				tag = NAV
 			}
 		}
 		ARAGON = {
-			name = "Araghun"
-			name_adj = "Araghuni"
+			name = "Araghún"
+			name_adj = "al-Araghuní"
 			tags = {
 				tag = ARA
 			}
 		}
 		SPAIN = {
-			name = "Isbaniya"
-			name_adj = "Isbani"
+			name = "Isbáníya"
+			name_adj = "al-Isbání"
 			tags = {
 				tag = SPA
 			}
 		}
 		FRANCE = {
-			name = "Faransa"
-			name_adj = "Faransi"
+			name = "Faransá"
+			name_adj = "al-Faransí"
 			tags = {
 				tag = FRA
 			}
 		}
 		ENGLAND = {
-			name = "Inkiliz"
-			name_adj = "Inkilizi"
+			name = "Inklíz"
+			name_adj = "al-Inklízí"
 			tags = {
 				tag = ENG
 			}
 		}
 		SCOTLAND = {
-			name = "Isqutlandiya"
-			name_adj = "Isqutlandi"
+			name = "Isqutlandíya"
+			name_adj = "al-Isqutlandí"
 			tags = {
 				tag = SCO
 			}
 		}
 		IRELAND = {
-			name = "Irlanda"
-			name_adj = "Irlandi"
+			name = "Irlandá"
+			name_adj = "al-Irlandí"
 			tags = {
 				tag = IRE
 			}
 		}
 		HUNGARY = {
-			name = "al-Majar"
-			name_adj = "Majari"
+			name = "al-Majár"
+			name_adj = "al-Majarí"
 			tags = {
 				tag = HUN
 			}
 		}
 		POLAND = {
-			name = "Lahistan"
-			name_adj = "Lahistani"
+			name = "Lahistán"
+			name_adj = "al-Lahistaní"
 			tags = {
 				tag = POL
 			}
 		}
 		LITHUANIA = {
-			name = "Litwaniya"
-			name_adj = "Litwani"
+			name = "Litwaníya"
+			name_adj = "al-Litwaní"
 			tags = {
 				tag = LIT
 			}
 		}
 		TEUTONIC_ORDER = {
-			name = "al-Rum al-Tawtuni"
-			name_adj = "Tawtuni"
+			name = "al-Rum al-Tawtúní"
+			name_adj = "al-Tawtúní"
 			tags = {
 				tag = TEU
 			}
 		}
 		LIVONIAN_ORDER = {
-			name = "al-Rum al-Liviyun"
-			name_adj = "Liviyuni"
+			name = "al-Rum al-Líviún"
+			name_adj = "al-Líviúní"
 			tags = {
 				tag = LIV
 			}
 		}
 		AUSTRIA = {
-			name = "Awstriya"
-			name_adj = "Awstriyi"
+			name = "Awstriyá"
+			name_adj = "al-Awstrí"
 			tags = {
 				tag = HAB
 			}
 		}
 		VENICE = {
-			name = "Baniqiyya"
-			name_adj = "Baniqi"
+			name = "Báníqiyya"
+			name_adj = "al-Báníqí"
 			tags = {
 				tag = VEN
 			}
 		}
 		BYZANTIUM = {
-			name = "Qustantiniyya"
-			name_adj = "Qustantini"
+			name = "Qustantíníyya"
+			name_adj = "al-Qustantíní"
 			tags = {
 				tag = BYZ
 			}
 		}
 		SERBIA = {
-			name = "Sirb"
-			name_adj = "Sirbi"
+			name = "Sírb"
+			name_adj = "al-Sírbí"
 			tags = {
 				tag = SER
 			}
 		}
 		BOSNIA = {
-			name = "Busniya"
-			name_adj = "Busni"
+			name = "Búsníya"
+			name_adj = "al-Búsní"
 			tags = {
 				tag = BOS
 			}
 		}
 		CROATIA = {
-			name = "Kirwatiya"
-			name_adj = "Kirwati"
+			name = "Kirwátíyá"
+			name_adj = "al-Kirwátí"
 			tags = {
 				tag = CRO
 			}
 		}
 		MONTENEGRO = {
 			name = "al-Jabal al-Aswad"
-			name_adj = "Aswadi"
+			name_adj = "al-Aswadí"
 			tags = {
 				tag = MON
 			}
 		}
 		GENOA = {
-			name = "Jinuwa"
-			name_adj = "Jinuwi"
+			name = "Jinúwa"
+			name_adj = "al-Jinúwí"
 			tags = {
 				tag = GEN
 			}
 		}
 		GREECE = {
-			name = "al-Yunan"
-			name_adj = "Yunani"
+			name = "al-Yúnán"
+			name_adj = "al-Yúnání"
 			tags = {
 				tag = GRE
 			}
 		}
 		CYPRUS = {
 			name = "Qubrus"
-			name_adj = "Qubrusi"
+			name_adj = "al-Qubrúsí"
 			tags = {
 				tag = CYP
 			}
 		}
 		MALTA = {
 			name = "Maltah"
-			name_adj = "Malti"
+			name_adj = "al-Maltí"
 			tags = {
 				tag = JAI
 			}
 		}
 		ITALY = {
-			name = "Italiya"
-			name_adj = "Itali"
+			name = "Itálíyá"
+			name_adj = "al-Itálí"
 			tags = {
 				tag = ITA
 			}
 		}
 		NAPLES = {
-			name = "Nabul"
-			name_adj = "Nabuli"
+			name = "Nábul"
+			name_adj = "al-Nábulí"
 			tags = {
 				tag = NAP
 			}
 		}
 		ARMENIA = {
-			name = "al-Arman"
-			name_adj = "Armani"
+			name = "al-Armán"
+			name_adj = "al-Armání"
 			tags = {
 				tag = ARM
 			}
 		}
 		GEORGIA = {
-			name = "Jurjiya"
-			name_adj = "Jurji"
+			name = "Júrjiyá"
+			name_adj = "al-Júrjí"
 			tags = {
 				tag = GEO
 			}
 		}
 		MUSCOVY = {
-			name = "Moskva"
-			name_adj = "Moskvawi"
+			name = "Muská"
+			name_adj = "al-Muskáwí"
 			tags = {
 				tag = MOS
 			}
 		}
 		NOVGOROD = {
-			name = "Nufghorod"
-			name_adj = "Nufghorodi"
+			name = "Nufghurúd"
+			name_adj = "al-Nufghurudí"
 			tags = {
 				tag = NOV
 			}
 		}
 		RUSSIA = {
-			name = "Bilad al-Rus"
-			name_adj = "Rusi"
+			name = "Bilád al-Rús"
+			name_adj = "al-Rúsí"
 			tags = {
 				tag = RUS
 			}
 		}
 		LUXEMBOURG = {
 			name = "Luksimburgh"
-			name_adj = "Luksimburghi"
+			name_adj = "al-Luksimburghí"
 			tags = {
 				tag = LUX
 			}
 		}
 		NETHERLANDS = {
-			name = "Bilad al-Aradi al-Sufla"
-			name_adj = "Suflawi"
+			name = "Bilád al-Aradí al-Suflá"
+			name_adj = "al-Sufláwí"
 			tags = {
 				tag = NED
 			}
 		}
 		DENMARK = {
-			name = "Danimark"
-			name_adj = "Danimarki"
+			name = "Dánimark"
+			name_adj = "al-Dánimarkí"
 			tags = {
 				tag = DAN
 			}
 		}
 		SWEDEN = {
-			name = "Asuj"
-			name_adj = "Asuji"
+			name = "Aswíj"
+			name_adj = "al-Aswíjí"
 			tags = {
 				tag = SWE
 			}
 		}
 		NORWAY = {
-			name = "Nirwij"
-			name_adj = "Nirwiji"
+			name = "Nirwíj"
+			name_adj = "al-Nirwíjí"
 			tags = {
 				tag = NOR
 			}
 		}
 		FINLAND = {
-			name = "Filandiya"
-			name_adj = "Filandi"
+			name = "Filandíyá"
+			name_adj = "al-Filandí"
 			tags = {
 				tag = FIN
 			}
 		}
 		BOHEMIA = {
-			name = "Buhimiya"
-			name_adj = "Buhimi"
+			name = "Buhimíyá"
+			name_adj = "al-Buhimí"
 			tags = {
 				tag = BOH
 			}
 		}
 		ROMANIA = {
-			name = "al-Wallak"
-			name_adj = "Wallaki"
+			name = "al-Wallák"
+			name_adj = "al-Wallákí"
 			tags = {
 				tag = RMN
 			}
 		}
 		WALLACHIA = {
-			name = "al-Wallak"
-			name_adj = "Wallaki"
+			name = "al-Wallák"
+			name_adj = "al-Wallákí"
 			tags = {
 				tag = WAL
 			}
 		}
 		TRANSYLVANIA = {
-			name = "Transilfaniya"
-			name_adj = "Transilfani"
+			name = "Tansilfáníyá"
+			name_adj = "al-Tansilfání"
 			tags = {
 				tag = TRA
 			}
 		}
 		ALBANIA = {
-			name = "Arban"
-			name_adj = "Arbani"
+			name = "Arbán"
+			name_adj = "al-Arbání"
 			tags = {
 				tag = ALB
 			}
 		}
 		BULGARIA = {
-			name = "Bulghar"
-			name_adj = "Bulghari"
+			name = "Búlghár"
+			name_adj = "al-Búlghárí"
 			tags = {
 				tag = BUL
 			}
 		}
 		MOLDAVIA = {
-			name = "Muldawiyya"
-			name_adj = "Muldawi"
+			name = "Muldawíyá"
+			name_adj = "al-Muldawí"
 			tags = {
 				tag = MOL
 			}
 		}
 		SICILY = {
-			name = "Siqilliyya"
-			name_adj = "Siqilli"
+			name = "Siqillíyá"
+			name_adj = "al-Siqillí"
 			tags = {
 				tag = SIC
 			}
 		}
 		SARDINIA = {
-			name = "Sardaniya"
-			name_adj = "Sardani"
+			name = "Sardáníyá"
+			name_adj = "al-Sardání"
 			tags = {
 				tag = SAR
 			}
 		}
 		CORSICA = {
-			name = "Qursika"
-			name_adj = "Qursiki"
+			name = "Qursiká"
+			name_adj = "al-Qursikí"
 			tags = {
 				tag = COR
 			}
 		}
 		MOREA = {
-			name = "Muriya"
-			name_adj = "Muriyi"
+			name = "Muríyá"
+			name_adj = "al-Murí"
 			tags = {
 				tag = MOE
 			}
 		}
 		DALMATIA = {
-			name = "Dalmatiya"
-			name_adj = "Dalmati"
+			name = "Dalmátíyá"
+			name_adj = "al-Dalmátí"
 			tags = {
 				tag = DAL
 			}
 		}
 		EPIRUS = {
-			name = "Abirus"
-			name_adj = "Abirusi"
+			name = "Ábírús"
+			name_adj = "al-Ábírúsí"
 			tags = {
 				tag = EPI
 			}
 		}
 		CRETE = {
-			name = "Iqritiya"
-			name_adj = "Iqriti"
+			name = "Iqritíyá"
+			name_adj = "al-Iqrití"
 			tags = {
 				tag = CRT
 			}
 		}
 		ATHENS = {
-			name = "Athina"
-			name_adj = "Athini"
+			name = "Athíná"
+			name_adj = "al-Athíní"
 			tags = {
 				tag = ATH
 			}
 		}
 		NAXOS = {
-			name = "Naksus"
-			name_adj = "Naksusi"
+			name = "Náksús"
+			name_adj = "al-Náksúsí"
 			tags = {
 				tag = NAX
 			}
 		}
 		RAGUSA = {
-			name = "Raghusa"
-			name_adj = "Raghusi"
+			name = "Rághúsá"
+			name_adj = "al-Rághúsí"
 			tags = {
 				tag = RAG
 			}
 		}
 		THE_KNIGHTS = {
-			name = "al-Fursan"
-			name_adj = "Fursani"
+			name = "al-Fursán"
+			name_adj = "al-Fursání"
 			tags = {
 				tag = KNI
 			}
 		}
 		LATIN_EMPIRE = {
-			name = "al-Imbraturiyya al-Latiniyya"
-			name_adj = "Latini"
+			name = "al-Imbráturiyya al-Latíníyya"
+			name_adj = "al-Latíní"
 			tags = {
 				tag = LAE
 			}

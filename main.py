@@ -81,7 +81,9 @@ class Generator:
                         substitution_rule.name_adj,
                     )
                     if not loc.adj:
-                        raise RuntimeError("Substitution rule must have a defined adjective.")
+                        raise RuntimeError(
+                            "Substitution rule must have a defined adjective."
+                        )
                     name = get_country_name(rule.name, (substitution_rule.id, loc))
                     if not name:
                         continue
@@ -293,6 +295,7 @@ class Generator:
             "on_native_change_government",
             "on_primary_culture_changed",
             "on_reform_changed",
+            "on_reform_enacted",
             "on_religion_change",
             "on_startup",
         ]
