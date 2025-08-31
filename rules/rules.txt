@@ -1456,14 +1456,6 @@ VICEROYALTY = {
 	}
 }
 
-ILKHANATE = {
-	name = "Persian Ilkhanate"
-	name_adj = "Persian"
-	tags = {
-		tag = ILK
-	}
-}
-
 SYNTH_GOV = {
 	name = "The Synthetics"
 	tags = {
@@ -2289,7 +2281,6 @@ KALAT = {
 	}
 	conditions = {
 		has_reform = steppe_horde
-		capital = 576
 	}
 }
 
@@ -2333,8 +2324,11 @@ JURCHENS = {
 	conditions = {
 		has_reform = steppe_horde
 		primary_culture = manchu
-		NOT = {
-			total_development = 150
+		OR = {
+			is_subject = yes
+			NOT = {
+				total_development = 150
+			}
 		}
 	}
 }
@@ -2343,11 +2337,33 @@ MANCHU = {
 	group = {
 		MANCHUS = {
 			name = "{NAME} Manchus"
+			conditions = {
+				NOT = {
+					government_rank = 2
+				}
+				OR = {
+					is_subject = yes
+					NOT = {
+						total_development = 150
+					}
+				}
+			}
 		}
 		THE_MANCHUS = {
 			name = "The Manchus"
 			tags = {
 				tag = MCH
+			}
+			conditions = {
+				NOT = {
+					government_rank = 2
+				}
+				OR = {
+					is_subject = yes
+					NOT = {
+						total_development = 150
+					}
+				}
 			}
 		}
 		KHANATE = {
@@ -2397,11 +2413,33 @@ MONGOL = {
 	group = {
 		MONGOLS = {
 			name = "{NAME} Mongols"
+			conditions = {
+				NOT = {
+					government_rank = 2
+				}
+				OR = {
+					is_subject = yes
+					NOT = {
+						total_development = 150
+					}
+				}
+			}
 		}
 		THE_MONGOLS = {
 			name = "The Mongols"
 			tags = {
 				tag = KHA
+			}
+			conditions = {
+				NOT = {
+					government_rank = 2
+				}
+				OR = {
+					is_subject = yes
+					NOT = {
+						total_development = 150
+					}
+				}
 			}
 		}
 		KHANATE = {
@@ -2947,13 +2985,26 @@ BEYLIK = {
 		has_reform = beylik_government
 		government = monarchy
 		primary_culture = turkish
+		NOT = {
+			government_rank = 3
+		}
 	}
 }
 
 DEVLET = {
+	name = "Devlet-i {ITEM_NAME}"
 	group = {
+		GENERIC = {
+			name = "{NAME}"
+			conditions = {
+				has_reform = beylik_government
+				government = monarchy
+				primary_culture = turkish
+				government_rank = 3
+			}
+		}
 		I_RUM = {
-			name = "Devlet-i Rûm"
+			name = "Rûm"
 			name_adj = "Rûmi"
 			tags = {
 				tag = RUM
@@ -2966,7 +3017,7 @@ DEVLET = {
 			}
 		}
 		I_SELJUK = {
-			name = "Devlet-i Selçuklu"
+			name = "Selçuklu"
 			name_adj = "Selçuk"
 			tags = {
 				tag = RUM
@@ -2980,7 +3031,7 @@ DEVLET = {
 			}
 		}
 		I_OSMANIYYE = {
-			name = "Devlet-i Aliyye-i Osmaniyye"
+			name = "Aliyye-i Osmaniyye"
 			name_adj = "Osmanli"
 			tags = {
 				tag = TUR
@@ -2995,6 +3046,17 @@ DEVLET = {
 				NOT = {
 					has_country_flag = is_TRK_flag
 				}
+			}
+		}
+		# This one is a personal mod-specific rule but I gotta figure out a good way to separate it
+		I_ILKHANID = {
+			name = "Ilkhân"
+			name_adj = "Ilkhanid"
+			tags = {
+				tag = ILK
+			}
+			conditions = {
+				has_country_flag = ere_form_ilkhanate_flag
 			}
 		}
 	}

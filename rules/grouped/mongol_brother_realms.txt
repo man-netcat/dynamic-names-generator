@@ -9,7 +9,7 @@ MONGOL_BROTHER_REALM_GROUP = {
             }
         }
         YUAN = {
-            name = "Yuan"
+            name = "Altan"
             name_adj = "Borjigid"
             tags = {
                 tag = YUA
