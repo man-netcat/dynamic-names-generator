@@ -1,0 +1,122 @@
+SISTERHOODS = {
+	group = {
+		SISTERHOOD = {
+			name = "Sisterhood of {NAME}"
+			conditions = {
+				NOT = {
+					government_rank = 3
+				}
+			}
+		}
+		GRAND = {
+			name = "Grand Sisterhood of {NAME}"
+			conditions = {
+				government_rank = 3
+			}
+		}
+	}
+	conditions = {
+		OR = {
+			AND = {
+				has_reform = holy_state_reform
+				has_country_modifier = sisters_takeover
+			}
+			has_reform = sisterhood_of_jeanne_darc_reform
+		}
+	}
+}
+
+MONASTIC = {
+	group = {
+		ORDER = {
+			name = "{NAME_ADJ} Order"
+			conditions = {
+				NOT = {
+					government_rank = 3
+				}
+			}
+		}
+		EMPIRE = {
+			name = "Empire of the {NAME_ADJ} Order"
+			conditions = {
+				government_rank = 3
+			}
+		}
+	}
+	conditions = {
+		religion = catholic
+		OR = {
+			has_reform = monastic_order_reform
+			AND = {
+				government = theocracy
+				tag = KOJ
+			}
+		}
+	}
+}
+
+KNIGHTS_OF = {
+	tags = {
+		tag = KNI
+		tag = KOJ
+	}
+	group = {
+		GENERIC = {
+			name = "The Knights"
+		}
+		RHODES = {
+			name = "The Knights of Rhodes"
+			conditions = {
+				capital = 320
+			}
+		}
+		MALTA = {
+			name = "The Knights of Malta"
+			conditions = {
+				capital = 126
+			}
+		}
+		JERUSALEM = {
+			name = "The Knights of Jerusalem"
+			conditions = {
+				capital = 379
+			}
+		}
+	}
+	conditions = {
+		religion = catholic
+		OR = {
+			has_reform = monastic_order_reform
+			government = theocracy
+		}
+		NOT = {
+			government_rank = 3
+		}
+	}
+}
+
+CRUSADER = {
+	group = {
+		ORDER = {
+			name = "Crusader Order of {NAME}"
+			conditions = {
+				NOT = {
+					government_rank = 3
+				}
+			}
+		}
+		EMPIRE = {
+			name = "Crusader Empire of {NAME}"
+			conditions = {
+				government_rank = 3
+			}
+		}
+	}
+	conditions = {
+		OR = {
+			has_reform = holy_horde_reform
+			has_reform = crusading_kingdom_reform
+			has_reform = militarized_crusader_order_reform
+		}
+	}
+}

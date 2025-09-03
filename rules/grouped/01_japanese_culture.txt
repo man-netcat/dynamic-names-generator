@@ -1,3 +1,72 @@
+INDEP_DAIMYO_GROUP = {
+	group = {
+		INDEP_DAIMYO = {
+			name = "{NAME} Lordship"
+			conditions = {
+				NOT = {
+					government_rank = 2
+				}
+			}
+		}
+		GRAND_INDEP_DAIMYO = {
+			name = "Grand {NAME} Lordship"
+			conditions = {
+				government_rank = 2
+				NOT = {
+					government_rank = 3
+				}
+			}
+		}
+		GREAT_INDEP_DAIMYO = {
+			name = "Great {NAME} Lordship"
+			conditions = {
+				government_rank = 3
+			}
+		}
+	}
+	conditions = {
+		has_reform = indep_daimyo
+	}
+}
+
+DAIMYO = {
+	name = "{NAME} Clan"
+	conditions = {
+		is_subject_of_type = daimyo_vassal
+	}
+}
+
+JAPANESE_DIVINE = {
+	group = {
+		INDEP_DAIMYO = {
+			name = "Divine Duchy of Japan"
+			conditions = {
+				NOT = {
+					government_rank = 2
+				}
+			}
+		}
+		GRAND_INDEP_DAIMYO = {
+			name = "Divine Kingdom of Japan"
+			conditions = {
+				government_rank = 2
+				NOT = {
+					government_rank = 3
+				}
+			}
+		}
+		GREAT_INDEP_DAIMYO = {
+			name = "Divine Empire of Japan"
+			conditions = {
+				government_rank = 3
+			}
+		}
+	}
+	conditions = {
+		has_reform = japanese_divine_empire
+	}
+}
+
 JAPANESE_SHOGUNATE_GROUP = {
 	group = {
 		GENERIC = {
@@ -195,5 +264,91 @@ JAPANESE_SHOGUNATE_GROUP = {
 	}
 	conditions = {
 		has_reform = shogunate
+	}
+}
+
+JAPANESE_PUPPET_GROUP = {
+	group = {
+		KARAKOKU = {
+			name = "Karakoku"
+			name_adj = "Karakoku"
+			conditions = {
+				capital_scope = {
+					superregion = china_superregion
+				}
+			}
+		}
+		TENJIKU = {
+			name = "Tenjiku"
+			name_adj = "Tenjiku"
+			conditions = {
+				capital_scope = {
+					superregion = india_superregion
+				}
+			}
+		}
+		KUNLUN = {
+			name = "Kunlun"
+			name_adj = "Kunlun"
+			conditions = {
+				capital_scope = {
+					region = tibet_region
+				}
+			}
+		}
+		MANCHUKOKU = {
+			name = "Manchukoku"
+			name_adj = "Manchukoku"
+			conditions = {
+				capital_scope = {
+					region = manchuria_region
+				}
+			}
+		}
+		CHOSENKOKU = {
+			name = "Chosenkoku"
+			name_adj = "Chosenkoku"
+			conditions = {
+				capital_scope = {
+					region = korea_region
+				}
+			}
+		}
+		FIRIPINKOKU = {
+			name = "Firipinkoku"
+			name_adj = "Firipinkoku"
+			conditions = {
+				capital_scope = {
+					region = moluccas_region
+				}
+			}
+		}
+		MOKOKOKU = {
+			name = "Mokokoku"
+			name_adj = "Mokokoku"
+			conditions = {
+				capital_scope = {
+					region = mongolia_region
+				}
+			}
+		}
+		EZOKOKU = {
+			name = "Ezokoku"
+			name_adj = "Ezokoku"
+			conditions = {
+				capital_scope = {
+					area = hokkaido_area
+				}
+			}
+		}
+	}
+	conditions = {
+		OR = {
+			is_subject_of_type = vassal
+			is_subject_of_type = march
+		}
+		overlord = {
+			tag = JAP
+		}
 	}
 }

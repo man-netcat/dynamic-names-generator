@@ -1,48 +1,48 @@
 KOREAN_DYNASTIES_GROUP = {
-    tags = {
-        tag = KOR
-    }
-    group = {
-        JOSEON = {
-            name = "Joseon"
-            name_adj = "Joseonese"
-            conditions = {
-                dynasty = "Yi"
-            }
-        }
-        GOGURYEO = {
-            name = "Goguryeo"
-            name_adj = "Goguryeoan"
-            conditions = {
-                dynasty = "Go"
-            }
-        }
-        SILLA = {
-            name = "Silla"
-            name_adj = "Sillan"
-            conditions = {
-                OR = {
-                    dynasty = "Park"
-                    dynasty = "Kim"
-                }
-            }
-        }
-        BALHAE = {
-            name = "Balhae"
-            name_adj = "Balhaean"
-            conditions = {
-                dynasty = "Dae"
-            }
-        }
-        GORYEO = {
-            name = "Goryeo"
-            name_adj = "Goryeoan"
-            conditions = {
-                dynasty = "Wang"
-            }
-        }
-    }
-    conditions = {
-        has_reform = monarchy_mechanic
-    }
+	tags = {
+		tag = KOR
+	}
+	group = {
+		JOSEON = {
+			name = "Joseon"
+			name_adj = "Joseonese"
+			conditions = {
+				dynasty = "Yi"
+			}
+		}
+		GOGURYEO = {
+			name = "Goguryeo"
+			name_adj = "Goguryeoan"
+			conditions = {
+				dynasty = "Go"
+			}
+		}
+		SILLA = {
+			name = "Silla"
+			name_adj = "Sillan"
+			conditions = {
+				OR = {
+					dynasty = "Park"
+					dynasty = "Kim"
+				}
+			}
+		}
+		BALHAE = {
+			name = "Balhae"
+			name_adj = "Balhaean"
+			conditions = {
+				dynasty = "Dae"
+			}
+		}
+		GORYEO = {
+			name = "Goryeo"
+			name_adj = "Goryeoan"
+			conditions = {
+				dynasty = "Wang"
+			}
+		}
+	}
+	conditions = {
+		government = monarchy
+	}
 }

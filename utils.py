@@ -161,7 +161,7 @@ def parse_rule_file(file_path: str) -> list[Rule]:
 def parse_rules_dir(dir_path: str) -> list[Rule]:
     all_rules: list[Rule] = []
 
-    for filename in os.listdir(dir_path):
+    for filename in sorted(os.listdir(dir_path)):
         file_path = os.path.join(dir_path, filename)
         if os.path.isfile(file_path):
             all_rules.extend(parse_rule_file(file_path))

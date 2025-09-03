@@ -1,0 +1,84 @@
+NETHERLANDS = {
+	tags = {
+		tag = NED
+	}
+	group = {
+		REPUBLIC = {
+			group = {
+				BATAVIAN = {
+					name = "Batavian Republic"
+					conditions = {
+						OR = {
+							has_reform = parliamentary_reform
+							has_reform = presidential_reform
+						}
+						is_revolutionary_republic_trigger = yes
+					}
+				}
+				UNITED_PROVINCES = {
+					group = {
+						MONARCHISTS = {
+							name = "Seven United Provinces of Oranje-Nassau"
+							conditions = {
+								is_monarchists_in_power = yes
+							}
+						}
+						STATISTS = {
+							name = "Republic of the Seven United Provinces"
+							conditions = {
+								is_statists_in_power = yes
+							}
+						}
+					}
+					conditions = {
+						has_reform = dutch_republic
+						has_reform = seven_provinces_reform
+						is_revolutionary_republic_trigger = no
+					}
+				}
+			}
+			conditions = {
+				government = republic
+				NOT = {
+					has_reform = presidential_despot_reform
+				}
+			}
+		}
+		MONARCHY = {
+			group = {
+				STADHOUDER = {
+					group = {
+						MONARCHISTS = {
+							name = "Kingdom of Oranje-Nassau"
+							conditions = {
+								is_monarchists_in_power = yes
+							}
+						}
+						STATISTS = {
+							name = "United Provinces of Oranje-Nassau"
+							conditions = {
+								is_statists_in_power = yes
+							}
+						}
+					}
+					conditions = {
+						has_reform = stadthalter_monarchy_reform
+					}
+				}
+				STATES_GENERAL = {
+					name = "Kingdom of the Seven United Provinces"
+					conditions = {
+						has_reform = states_general_reform
+						has_reform = seven_provinces_reform
+					}
+				}
+			}
+			conditions = {
+				government = monarchy
+			}
+		}
+	}
+	conditions = {
+		primary_culture = dutch
+	}
+}

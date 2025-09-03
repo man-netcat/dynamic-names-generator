@@ -1,0 +1,626 @@
+CHINESE_EMPIRE = {
+	group = {
+		GENERIC = {
+			name = "Great {NAME}"
+		}
+		# East Asian group
+		CHINESE = {
+			name = "Da {NAME}"
+			conditions = {
+				culture_group = east_asian
+			}
+		}
+		SINO_VIETNAMESE = {
+			name = "Da Yue"
+			name_adj = "Yue"
+			conditions = {
+				primary_culture = vietnamese_new
+			}
+		}
+		SINO_KOREAN = {
+			name = "Da Zhonghan"
+			name_adj = "Zhonghan"
+			conditions = {
+				primary_culture = korean_new
+			}
+		}
+		SINO_TIBETAN = {
+			name = "Da Xizang"
+			name_adj = "Xizang"
+			conditions = {
+				primary_culture = tibetan_new
+			}
+		}
+		SINO_ALTAIC = {
+			name = "Da Menggu"
+			name_adj = "Menggu"
+			conditions = {
+				primary_culture = altaic_new
+				NOT = {
+					tag = YUA
+				}
+			}
+		}
+		SINO_ZHUANG = {
+			name = "Da Zhuang"
+			name_adj = "Zhuang"
+			conditions = {
+				primary_culture = zhuang_new
+			}
+		}
+		MANCHU = {
+			name = "Da Manzhou"
+			name_adj = "Manzhou"
+			conditions = {
+				primary_culture = manchu_new
+				NOT = {
+					tag = QNG
+				}
+			}
+		}
+		# Korean group
+		KOREAN = {
+			name = "Dae {NAME}"
+			conditions = {
+				culture_group = korean_g
+			}
+		}
+		# Japanese groups
+		JAPANESE = {
+			name = "Dai Nihon"
+			name_adj = "Japanese"
+			conditions = {
+				culture_group = japanese_g
+			}
+		}
+		# Tibetan group
+		TIBETAN = {
+			name = "Bod-Chen"
+			name_adj = "Tibetan"
+			conditions = {
+				culture_group = tibetan_group
+				NOT = {
+					tag = TIB
+				}
+			}
+		}
+		# Thai group
+		THAI = {
+			name = "Maha {NAME}"
+			conditions = {
+				culture_group = thai_group
+			}
+		}
+		# South-East Asian group
+		SOUTHEAST_ASIAN = {
+			name = "{NAME} Krom"
+			conditions = {
+				culture_group = southeastasian_group
+			}
+		}
+		VIETNAMESE = {
+			name = "Dai Viet Thuong"
+			name_adj = "Viet"
+			conditions = {
+				primary_culture = vietnamese
+			}
+		}
+		# Burman group
+		BURMAN = {
+			name = "{NAME} Thiri"
+			conditions = {
+				culture_group = burman
+			}
+		}
+		# Altaic group
+		ALTAIC = {
+			name = "Altan Ulus"
+			name_adj = "Mongol"
+			conditions = {
+				culture_group = altaic
+				NOT = {
+					tag = YUA
+				}
+			}
+		}
+		# Evenk group
+		JURCHEN = {
+			name = "Da {NAME}"
+			conditions = {
+				primary_culture = manchu
+			}
+		}
+		# Explicit tags
+		YUAN = {
+			name = "Da Yuan"
+			name_adj = "Yuan"
+			tags = {
+				tag = YUA
+			}
+		}
+		QING = {
+			name = "Da Qing"
+			name_adj = "Qing"
+			tags = {
+				tag = QNG
+			}
+		}
+		TIBET = {
+			name = "Bod-Chen Po"
+			name_adj = "Tibetan"
+			tags = {
+				tag = TIB
+			}
+		}
+	}
+	conditions = {
+		is_emperor_of_china = yes
+	}
+}
+
+NORTHERN_YUAN = {
+	name = "Northern Yuan"
+	tags = {
+		tag = KHA
+	}
+	conditions = {
+		government = monarchy
+		capital_scope = {
+			region = mongolia_region
+		}
+		is_subject = no
+	}
+}
+
+# Chinese Empire titles for each of the four directions
+CHINESE = {
+	group = {
+		EASTERN = {
+			name = "Eastern {NAME}"
+			conditions = {
+				NOT = {
+					OR = {
+						any_owned_province = {
+							area = sichuan_area
+						}
+						any_owned_province = {
+							area = yun_gui_area
+						}
+						any_owned_province = {
+							area = chuannan_area
+						}
+						any_owned_province = {
+							area = yun_gui_borderland_area
+						}
+						any_owned_province = {
+							area = chuanbei_area
+						}
+						any_owned_province = {
+							area = west_gansu_area
+						}
+						any_owned_province = {
+							area = gansu_area
+						}
+						any_owned_province = {
+							area = shaanxi_area
+						}
+						any_owned_province = {
+							area = guangxi_area
+						}
+						any_owned_province = {
+							area = west_guangdong_area
+						}
+					}
+				}
+			}
+		}
+		WESTERN = {
+			name = "Western {NAME}"
+			conditions = {
+				NOT = {
+					OR = {
+						any_owned_province = {
+							area = guangdong_area
+						}
+						any_owned_province = {
+							area = fujian_area
+						}
+						any_owned_province = {
+							area = jiangxi_area
+						}
+						any_owned_province = {
+							area = huguang_area
+						}
+						any_owned_province = {
+							area = zhejiang_area
+						}
+						any_owned_province = {
+							area = south_anhui_area
+						}
+						any_owned_province = {
+							area = taiwan_area
+						}
+						any_owned_province = {
+							area = south_jiangsu_area
+						}
+						any_owned_province = {
+							area = hunan_area
+						}
+						any_owned_province = {
+							area = hebei_area
+						}
+						any_owned_province = {
+							area = south_hebei_area
+						}
+						any_owned_province = {
+							area = shandong_area
+						}
+						any_owned_province = {
+							area = henan_area
+						}
+						any_owned_province = {
+							area = shanxi_area
+						}
+						any_owned_province = {
+							area = north_henan_area
+						}
+						any_owned_province = {
+							area = jiangsu_area
+						}
+						any_owned_province = {
+							area = anhui_area
+						}
+					}
+				}
+			}
+		}
+		SOUTHERN = {
+			name = "Southern {NAME}"
+			conditions = {
+				NOT = {
+					any_owned_province = {
+						region = north_china_region
+					}
+				}
+			}
+		}
+		NORTHERN = {
+			name = "Northern {NAME}"
+			conditions = {
+				NOT = {
+					OR = {
+						any_owned_province = {
+							region = south_china_region
+						}
+						any_owned_province = {
+							region = xinan_region
+						}
+					}
+				}
+			}
+		}
+	}
+	conditions = {
+		culture_group = east_asian
+		num_of_provinces_in_states = 10
+		capital_scope = {
+			superregion = china_superregion
+		}
+		is_subject = no
+	}
+}
+
+# These are admittedly pretty arbitrary
+# LATER = {
+# 	name = "Later {NAME}"
+# 	tags = {
+# 		tag = TNG
+# 		tag = QIN
+# 		tag = YUA
+# 	}
+# 	conditions = {
+# 		is_emperor_of_china = yes
+# 	}
+# }
+CHINESE_FEUDATORY_GROUP = {
+	name = "{ITEM_NAME} Feudatory"
+	group = {
+		HEBEI = {
+			name = "Hebei"
+			name_adj = "Hebei"
+			conditions = {
+				capital_scope = {
+					OR = {
+						area = hebei_area
+						area = south_hebei_area
+					}
+				}
+			}
+		}
+		SHANDONG = {
+			name = "Shandong"
+			name_adj = "Shandong"
+			conditions = {
+				capital_scope = {
+					area = shandong_area
+				}
+			}
+		}
+		JIANGSU = {
+			name = "Jiangsu"
+			name_adj = "Jiangsu"
+			conditions = {
+				capital_scope = {
+					OR = {
+						area = jiangsu_area
+						area = south_jiangsu_area
+					}
+				}
+			}
+		}
+		ANHUI = {
+			name = "Anhui"
+			name_adj = "Anhui"
+			conditions = {
+				capital_scope = {
+					OR = {
+						area = anhui_area
+						area = south_anhui_area
+					}
+				}
+			}
+		}
+		ZHEJIANG = {
+			name = "Zhejiang"
+			name_adj = "Zhejiang"
+			conditions = {
+				capital_scope = {
+					area = zhejiang_area
+				}
+			}
+		}
+		JIANGXI = {
+			name = "Jiangxi"
+			name_adj = "Jiangxi"
+			conditions = {
+				capital_scope = {
+					area = jiangxi_area
+				}
+			}
+		}
+		FUJIAN = {
+			name = "Fujian"
+			name_adj = "Fujian"
+			conditions = {
+				capital_scope = {
+					area = fujian_area
+				}
+			}
+		}
+		TAIWAN = {
+			name = "Taiwan"
+			name_adj = "Taiwan"
+			conditions = {
+				capital_scope = {
+					area = taiwan_area
+				}
+			}
+		}
+		GUANGXI = {
+			name = "Guangxi"
+			name_adj = "Guangxi"
+			conditions = {
+				capital_scope = {
+					area = guangxi_area
+				}
+			}
+		}
+		GUANGDONG = {
+			name = "Guangdong"
+			name_adj = "Guangdong"
+			conditions = {
+				capital_scope = {
+					OR = {
+						area = guangdong_area
+						area = west_guangdong_area
+					}
+				}
+			}
+		}
+		YUNNAN = {
+			name = "Yun-Gui"
+			name_adj = "Yun-Gui"
+			conditions = {
+				capital_scope = {
+					OR = {
+						area = yun_gui_area
+						area = yun_gui_borderland_area
+					}
+				}
+			}
+		}
+		SICHUAN = {
+			name = "Sichuan"
+			name_adj = "Sichuan"
+			conditions = {
+				capital_scope = {
+					area = sichuan_area
+				}
+			}
+		}
+		CHUANNAN = {
+			name = "Chuannan"
+			name_adj = "Chuannan"
+			conditions = {
+				capital_scope = {
+					area = chuannan_area
+				}
+			}
+		}
+		CHUANBEI = {
+			name = "Chuanbei"
+			name_adj = "Chuanbei"
+			conditions = {
+				capital_scope = {
+					area = chuanbei_area
+				}
+			}
+		}
+		HUBEI = {
+			name = "Hubei"
+			name_adj = "Hubei"
+			conditions = {
+				capital_scope = {
+					area = huguang_area
+				}
+			}
+		}
+		HUNAN = {
+			name = "Hunan"
+			name_adj = "Hunan"
+			conditions = {
+				capital_scope = {
+					area = hunan_area
+				}
+			}
+		}
+		HENAN = {
+			name = "Henan"
+			name_adj = "Henan"
+			conditions = {
+				capital_scope = {
+					OR = {
+						area = henan_area
+						area = north_henan_area
+					}
+				}
+			}
+		}
+		SHAANXI = {
+			name = "Shaanxi"
+			name_adj = "Shaanxi"
+			conditions = {
+				capital_scope = {
+					area = shaanxi_area
+				}
+			}
+		}
+		SHANXI = {
+			name = "Shanxi"
+			name_adj = "Shanxi"
+			conditions = {
+				capital_scope = {
+					area = shanxi_area
+				}
+			}
+		}
+		GANSU = {
+			name = "Gansu"
+			name_adj = "Gansu"
+			conditions = {
+				capital_scope = {
+					OR = {
+						area = gansu_area
+						area = west_gansu_area
+					}
+				}
+			}
+		}
+	}
+	conditions = {
+		OR = {
+			is_subject_of_type = vassal
+			is_subject_of_type = march
+		}
+		overlord = {
+			is_emperor_of_china = yes
+		}
+	}
+}
+
+CHINESE_PROTECTORATE_GROUP = {
+	name = "{ITEM_NAME} Protectorate"
+	group = {
+		ANXI = {
+			name = "Anxi"
+			name_adj = "Anxi"
+			conditions = {
+				capital_scope = {
+					region = central_asia_region
+				}
+			}
+		}
+		ANDONG = {
+			name = "Andong"
+			name_adj = "Andong"
+			conditions = {
+				capital_scope = {
+					region = manchuria_region
+				}
+			}
+		}
+		ANNAN = {
+			name = "Annan"
+			name_adj = "Annan"
+			conditions = {
+				capital_scope = {
+					region = indo_china_region
+				}
+			}
+		}
+		ANBEI = {
+			name = "Anbei"
+			name_adj = "Anbei"
+			conditions = {
+				capital_scope = {
+					region = mongolia_region
+				}
+			}
+		}
+		ANTU = {
+			name = "Antu"
+			name_adj = "Antu"
+			conditions = {
+				capital_scope = {
+					region = tibet_region
+				}
+			}
+		}
+		ANRI = {
+			name = "Anri"
+			name_adj = "Anri"
+			conditions = {
+				capital_scope = {
+					region = japan_region
+				}
+			}
+		}
+		ANHAN = {
+			name = "Anhan"
+			name_adj = "Anhan"
+			conditions = {
+				capital_scope = {
+					region = korea_region
+				}
+			}
+		}
+		ANMIAN = {
+			name = "Anmian"
+			name_adj = "Anmian"
+			conditions = {
+				capital_scope = {
+					region = burma_region
+				}
+			}
+		}
+	}
+	conditions = {
+		OR = {
+			is_subject_of_type = vassal
+			is_subject_of_type = march
+		}
+		overlord = {
+			is_emperor_of_china = yes
+		}
+	}
+}

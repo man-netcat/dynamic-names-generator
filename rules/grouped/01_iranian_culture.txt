@@ -1,0 +1,50 @@
+IRANIAN_MONARCHY = {
+	group = {
+		SHEIKHDOM = {
+			name = "Sheikhdom of{NAME}"
+			name_dynasty = "{DYNASTY} Sheikhdom"
+			conditions = {
+				NOT = {
+					government_rank = 2
+				}
+			}
+		}
+		SHAHDOM = {
+			name = "Shahdom of {NAME}"
+			name_dynasty = "{DYNASTY} Shahdom"
+			conditions = {
+				government_rank = 2
+				NOT = {
+					government_rank = 3
+				}
+			}
+		}
+		PADISHAHDOM = {
+			name = "Padishahdom of {NAME}"
+			name_dynasty = "{DYNASTY} Padishahdom"
+			conditions = {
+				government_rank = 3
+			}
+		}
+		SAFAVID = {
+			name = "Mamâlek-e Mahruse-ye Irân"
+			conditions = {
+				has_reform = persian_government_reform
+			}
+		}
+		SASSANIAN = {
+			name = "Eranšahr"
+			conditions = {
+				has_reform = zoroastrian_persian_government_reform
+			}
+		}
+	}
+	conditions = {
+		government = monarchy
+		OR = {
+			culture_group = iranian
+			has_country_flag = turkoman_adopt_shahanshah_title
+			tag = SIS
+		}
+	}
+}

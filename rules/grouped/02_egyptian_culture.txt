@@ -1,0 +1,18 @@
+MAMLUK = {
+	group = {
+		GENERIC = {
+			name = "Mamluk Sultanate of {NAME}"
+		}
+		MAMLUKS = {
+			name = "Mamluk Sultanate of Egypt"
+			tags = {
+				tag = MAM
+			}
+		}
+	}
+	conditions = {
+		government = monarchy
+		has_reform = mamluk_government
+		is_subject = no
+	}
+}

@@ -1,0 +1,393 @@
+MUSLIM = {
+	group = {
+		REPUBLIC = {
+			group = {
+				EMIRATE = {
+					name = "Emirate of {NAME}"
+					name_dynasty = "{DYNASTY} Emirate"
+					conditions = {
+						NOT = {
+							government_rank = 2
+						}
+					}
+				}
+				VIZIERATE = {
+					name = "Vizierate of {NAME}"
+					name_dynasty = "{DYNASTY} Vizierate"
+					conditions = {
+						government_rank = 2
+						NOT = {
+							government_rank = 3
+						}
+					}
+				}
+				GRAND_VIZIERATE = {
+					name = "Grand Vizierate of {NAME}"
+					name_dynasty = "Grand {DYNASTY} Vizierate"
+					conditions = {
+						government_rank = 3
+					}
+				}
+			}
+			conditions = {
+				government = republic
+				is_revolutionary_republic_trigger = no
+			}
+		}
+		MONARCHY = {
+			group = {
+				GENERIC = {
+					group = {
+						EMIRATE = {
+							name = "Emirate of {NAME}"
+							name_dynasty = "{DYNASTY} Emirate"
+							conditions = {
+								NOT = {
+									government_rank = 2
+								}
+							}
+						}
+						SULTANATE = {
+							name = "Sultanate of {NAME}"
+							name_dynasty = "{DYNASTY} Sultanate"
+							conditions = {
+								government_rank = 2
+								NOT = {
+									government_rank = 3
+								}
+							}
+						}
+						EMPIRE = {
+							name = "Empire of {NAME}"
+							name_dynasty = "{DYNASTY} Empire"
+							conditions = {
+								government_rank = 3
+							}
+						}
+					}
+					conditions = {
+						OR = {
+							NOT = {
+								has_reform = feudal_theocracy
+							}
+							tag = ARK
+							primary_culture = somali
+						}
+					}
+				}
+				INDIAN = {
+					group = {
+						NAWABATE = {
+							name = "Nawabate of {NAME}"
+							conditions = {
+								NOT = {
+									government_rank = 2
+								}
+							}
+						}
+						INDIAN_SULTANATE = {
+							name = "Sultanate of {NAME}"
+							conditions = {
+								government_rank = 2
+								NOT = {
+									government_rank = 3
+								}
+							}
+						}
+					}
+					conditions = {
+						OR = {
+							culture_group = dravidian
+							culture_group = western_aryan
+							culture_group = hindusthani
+							culture_group = eastern_aryan
+							has_reform = indian_sultanate_reform
+						}
+					}
+				}
+			}
+			conditions = {
+				government = monarchy
+			}
+		}
+		KHEDIVATE = {
+			name = "{NAME_ADJ} Khedivate"
+			name_dynasty = "{DYNASTY} Khedivate"
+			conditions = {
+				OR = {
+					has_reform = enlightened_despotism
+					has_reform = letat_cest_moi_reform
+					has_reform = regional_representation_reform
+				}
+				primary_culture = al_misr_arabic
+				NOT = {
+					government_rank = 2
+				}
+			}
+		}
+		MALIKATE = {
+			name = "Malikate of {NAME}"
+			name_dynasty = "{DYNASTY} Malikate"
+			conditions = {
+				OR = {
+					AND = {
+						government = tribal
+						NOT = {
+							government_rank = 2
+						}
+					}
+					AND = {
+						tag = SIS
+						government = monarchy
+						NOT = {
+							government_rank = 2
+						}
+					}
+				}
+				NOT = {
+					tag = NJR
+				}
+			}
+		}
+		TRIBAL = {
+			group = {
+				GENERIC = {
+					group = {
+						SULTANATE = {
+							name = "Sultanate of {NAME}"
+							name_dynasty = "{DYNASTY} Sultanate"
+							conditions = {
+								government_rank = 2
+								NOT = {
+									government_rank = 3
+								}
+							}
+						}
+						GREAT_EMIRATE = {
+							name = "Great Emirate of {NAME}"
+							name_dynasty = "Great {DYNASTY} Emirate"
+							conditions = {
+								government_rank = 3
+							}
+						}
+					}
+				}
+				BEDOUIN = {
+					group = {
+						SHEIKHDOM = {
+							name = "Sheikhdom of {NAME}"
+							name_dynasty = "{DYNASTY} Sheikhdom"
+							conditions = {
+								NOT = {
+									government_rank = 2
+								}
+							}
+						}
+						EMIRATE = {
+							name = "Emirate of {NAME}"
+							name_dynasty = "{DYNASTY} Emirate"
+							conditions = {
+								government_rank = 2
+								NOT = {
+									government_rank = 3
+								}
+							}
+						}
+					}
+					conditions = {
+						primary_culture = bedouin_arabic
+					}
+				}
+			}
+			conditions = {
+				government = tribal
+				is_revolutionary_republic_trigger = no
+			}
+		}
+		SHARIFATES = {
+			group = {
+				SHARIFATE = {
+					name = "Sharifate of {NAME}"
+					name_dynasty = "{DYNASTY} Sharifate"
+					conditions = {
+						NOT = {
+							government_rank = 2
+						}
+					}
+				}
+				GREAT_SHARIFATE = {
+					name = "Great Sharifate of {NAME}"
+					name_dynasty = "Great {DYNASTY} Sharifate"
+					conditions = {
+						government_rank = 2
+						NOT = {
+							government_rank = 3
+						}
+					}
+				}
+				GRAND_SHARIFATE = {
+					name = "Grand Sharifate of {NAME}"
+					name_dynasty = "Grand {DYNASTY} Sharifate"
+					conditions = {
+						government_rank = 3
+					}
+				}
+			}
+			conditions = {
+				OR = {
+					tag = HED
+					tag = MDA
+					tag = MFL
+					has_reform = sharifate_reform
+				}
+			}
+		}
+		SHEIKHDOM_RELIGIOUS = {
+			name = "Sheikhdom of {NAME}"
+			name_dynasty = "{DYNASTY} Sheikhdom"
+			conditions = {
+				OR = {
+					AND = {
+						religion = sunni
+						OR = {
+							has_reform = feudal_theocracy
+							government = theocracy
+						}
+					}
+					AND = {
+						religion = sunni
+						government = theocracy
+						OR = {
+							primary_culture = uyghur
+							has_country_flag = end_of_khojas
+						}
+					}
+					AND = {
+						religion = shiite
+						OR = {
+							government = theocracy
+							has_reform = feudal_theocracy
+						}
+						NOT = {
+							primary_culture = yemeni_culture
+						}
+					}
+				}
+				NOT = {
+					government_rank = 2
+				}
+			}
+		}
+		IMAMATES = {
+			group = {
+				IMAMATE = {
+					name = "Imamate of {NAME}"
+					name_dynasty = "{DYNASTY} Imamate"
+					conditions = {
+						NOT = {
+							government_rank = 2
+						}
+					}
+				}
+				GREAT_IMAMATE = {
+					name = "Great Imamate of {NAME}"
+					name_dynasty = "Great {DYNASTY} Imamate"
+					conditions = {
+						government_rank = 2
+						NOT = {
+							government_rank = 3
+						}
+					}
+				}
+				HIGH_IMAMATE = {
+					name = "High Imamate of {NAME}"
+					name_dynasty = "High {DYNASTY} Imamate"
+					conditions = {
+						government_rank = 3
+					}
+				}
+			}
+			conditions = {
+				OR = {
+					AND = {
+						religion = sunni
+						OR = {
+							has_reform = feudal_theocracy
+							government = theocracy
+						}
+					}
+					AND = {
+						religion = shiite
+						OR = {
+							government = theocracy
+							has_reform = feudal_theocracy
+						}
+						primary_culture = yemeni_culture
+					}
+					AND = {
+						religion = ibadi
+						OR = {
+							government = theocracy
+							has_reform = feudal_theocracy
+						}
+					}
+				}
+			}
+		}
+		CALIPHATE = {
+			name = "{NAME_ADJ} Caliphate"
+			name_dynasty = "{DYNASTY} Caliphate"
+			conditions = {
+				OR = {
+					has_country_modifier = unified_islam
+					has_country_modifier = hsn_ayyubid_caliphate
+				}
+			}
+		}
+	}
+	conditions = {
+		OR = {
+			religion_group = muslim
+			AND = {
+				NOT = {
+					religion_group = muslim
+				}
+				has_country_flag = sultan_titles_for_non_muslims
+			}
+		}
+		NOT = {
+			has_reform = steppe_horde
+		}
+	}
+}
+
+SAUDI_ARABIA = {
+	tags = {
+		tag = ARB
+	}
+	group = {
+		KINGDOM = {
+			name = "Sultanate of Saudi-Arabia"
+			conditions = {
+				government_rank = 2
+				NOT = {
+					government_rank = 3
+				}
+			}
+		}
+		EMPIRE = {
+			name = "Empire of Saudi-Arabia"
+			conditions = {
+				government_rank = 3
+			}
+		}
+	}
+	conditions = {
+		OR = {
+			government = tribal
+			has_reform = tribal_democracy_legacy
+			has_reform = monarchy_mechanic
+		}
+		dynasty = "Sa'ud"
+	}
+}

@@ -1,0 +1,318 @@
+STEPPE = {
+	group = {
+		GENERIC = {
+			group = {
+				HORDE = {
+					name = "{NAME_ADJ} Horde"
+					conditions = {
+						NOT = {
+							government_rank = 2
+						}
+					}
+				}
+				KHANATE = {
+					name = "{NAME_ADJ} Khanate"
+					conditions = {
+						government_rank = 2
+						NOT = {
+							government_rank = 3
+						}
+					}
+				}
+				KHAGANATE = {
+					name = "{NAME_ADJ} Khaganate"
+					conditions = {
+						government_rank = 3
+					}
+				}
+			}
+		}
+		KALAT = {
+			name = "{ITEM_NAME} of Kalat"
+			tags = {
+				tag = BAL
+			}
+			group = {
+				HORDE = {
+					name = "Horde"
+					conditions = {
+						NOT = {
+							government_rank = 2
+						}
+					}
+				}
+				KHANATE = {
+					name = "Khanate"
+					conditions = {
+						government_rank = 2
+						NOT = {
+							government_rank = 3
+						}
+					}
+				}
+				KHAGANATE = {
+					name = "Khaganate"
+					conditions = {
+						government_rank = 3
+					}
+				}
+			}
+		}
+		KAZAN = {
+			name = "{ITEM_NAME} of Kazan"
+			tags = {
+				tag = KAZ
+			}
+			group = {
+				HORDE = {
+					name = "Horde"
+					conditions = {
+						NOT = {
+							government_rank = 2
+						}
+					}
+				}
+				KHANATE = {
+					name = "Khanate"
+					conditions = {
+						government_rank = 2
+						NOT = {
+							government_rank = 3
+						}
+					}
+				}
+				KHAGANATE = {
+					name = "Khaganate"
+					conditions = {
+						government_rank = 3
+					}
+				}
+			}
+		}
+		JURCHENS = {
+			name = "{NAME} Jurchens"
+			conditions = {
+				primary_culture = manchu
+				OR = {
+					is_subject = yes
+					NOT = {
+						total_development = 150
+					}
+				}
+			}
+		}
+		MANCHU = {
+			group = {
+				MANCHUS = {
+					name = "{NAME} Manchus"
+					conditions = {
+						OR = {
+							is_subject = yes
+							NOT = {
+								total_development = 150
+							}
+						}
+					}
+				}
+				THE_MANCHUS = {
+					name = "The Manchus"
+					tags = {
+						tag = MCH
+					}
+					conditions = {
+						OR = {
+							is_subject = yes
+							NOT = {
+								total_development = 150
+							}
+						}
+					}
+				}
+				KHANATE = {
+					name = "Manchu Khanate"
+					tags = {
+						tag = MCH
+					}
+					conditions = {
+						is_subject = no
+						total_development = 150
+					}
+				}
+				KHAGANATE = {
+					name = "Manchu Khaganate"
+					tags = {
+						tag = MCH
+					}
+					conditions = {
+						is_subject = no
+						government_rank = 3
+					}
+				}
+				LATER_JIN = {
+					name = "Later Jin"
+					tags = {
+						tag = MJZ
+						tag = MCH
+					}
+					conditions = {
+						has_country_flag = is_LJN_flag
+					}
+				}
+			}
+			conditions = {
+				primary_culture = manchu_new
+			}
+		}
+		MONGOL = {
+			group = {
+				MONGOLS = {
+					name = "{NAME} Mongols"
+					conditions = {
+						OR = {
+							is_subject = yes
+							NOT = {
+								total_development = 150
+							}
+						}
+					}
+				}
+				THE_MONGOLS = {
+					name = "The Mongols"
+					tags = {
+						tag = KHA
+					}
+					conditions = {
+						OR = {
+							is_subject = yes
+							NOT = {
+								total_development = 150
+							}
+						}
+					}
+				}
+				KHANATE = {
+					name = "Mongol Khanate"
+					tags = {
+						tag = KHA
+					}
+					conditions = {
+						is_subject = no
+						total_development = 150
+					}
+				}
+				KHAGANATE = {
+					name = "Mongol Khaganate"
+					tags = {
+						tag = KHA
+					}
+					conditions = {
+						is_subject = no
+						government_rank = 3
+					}
+				}
+			}
+			conditions = {
+				OR = {
+					primary_culture = mongol
+					primary_culture = chahar
+					primary_culture = khalkha
+					primary_culture = oirats
+				}
+			}
+		}
+		TUMEN = {
+			name = "{NAME_ADJ} Tumen"
+			conditions = {
+				is_march = yes
+				overlord = {
+					OR = {
+						culture_group = altaic
+						culture_group = tartar
+						primary_culture = altaic_new
+					}
+				}
+			}
+		}
+		OIRAT_CONFEDERATION = {
+			name = "Four Oirat Confederation"
+			tags = {
+				tag = OIR
+			}
+			conditions = {
+				OR = {
+					culture_group = altaic
+					culture_group = tartar
+					primary_culture = altaic_new
+				}
+				NOT = {
+					government_rank = 3
+				}
+				is_subject = no
+			}
+		}
+		GREAT_HORDE = {
+			name = "Great Horde"
+			tags = {
+				tag = GOL
+			}
+		}
+		GOLDEN_HORDE = {
+			name = "Golden Horde"
+			tags = {
+				tag = GLH
+			}
+		}
+		ULUG_ULUS = {
+			name = "Ulug Ulus"
+			tags = {
+				tag = GLH
+			}
+			conditions = {
+				has_country_flag = is_ULUG_ULUS_flag
+			}
+		}
+	}
+	conditions = {
+		OR = {
+			has_reform = steppe_horde
+			tag = AVR
+			AND = {
+				OR = {
+					tag = YUA
+					tag = QNG
+				}
+				is_emperor_of_china = no
+			}
+		}
+	}
+}
+
+MONGOL_BROTHER_REALM_GROUP = {
+	name = "{ITEM_NAME} Ulus"
+	group = {
+		ILKHANATE = {
+			name = "Hulegu"
+			name_adj = "Huleguid"
+			tags = {
+				tag = ILK
+			}
+		}
+		YUAN = {
+			name = "Altan"
+			name_adj = "Borjigid"
+			tags = {
+				tag = YUA
+			}
+		}
+		GOLDEN_HORDE = {
+			name = "Ulug"
+			name_adj = "Jochid"
+			tags = {
+				tag = GLH
+			}
+		}
+	}
+	conditions = {
+		is_subject_of_type = mongol_brother_realm
+	}
+}
