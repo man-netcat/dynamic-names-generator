@@ -1,0 +1,11 @@
+CALIPHATE = {
+	name = "{NAME_ADJ} Caliphate"
+	name_dynasty = "{DYNASTY} Caliphate"
+	conditions = {
+		OR = {
+			has_reform = caliphate_theocracy_reform
+			has_reform = caliphate_reform
+			has_country_modifier = hsn_ayyubid_caliphate
+		}
+	}
+}

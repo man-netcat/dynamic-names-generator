@@ -17,6 +17,7 @@ MONARCHY = {
 				}
 			}
 		}
+		# Come up with a better solution for this.
 		EMPIRE = {
 			name = "{NAME_ADJ} Empire"
 			conditions = {

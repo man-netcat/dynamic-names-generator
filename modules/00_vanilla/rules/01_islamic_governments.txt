@@ -105,6 +105,22 @@ MUSLIM = {
 						}
 					}
 				}
+				MAMLUK = {
+					group = {
+						GENERIC = {
+							name = "Mamluk Sultanate of {NAME}"
+						}
+						MAMLUKS = {
+							name = "Mamluk Sultanate of Egypt"
+							tags = {
+								tag = MAM
+							}
+						}
+					}
+					conditions = {
+						has_reform = mamluk_government
+					}
+				}
 			}
 			conditions = {
 				government = monarchy
@@ -331,16 +347,6 @@ MUSLIM = {
 							has_reform = feudal_theocracy
 						}
 					}
-				}
-			}
-		}
-		CALIPHATE = {
-			name = "{NAME_ADJ} Caliphate"
-			name_dynasty = "{DYNASTY} Caliphate"
-			conditions = {
-				OR = {
-					has_country_modifier = unified_islam
-					has_country_modifier = hsn_ayyubid_caliphate
 				}
 			}
 		}
