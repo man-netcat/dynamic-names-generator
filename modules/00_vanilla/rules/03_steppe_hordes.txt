@@ -27,37 +27,6 @@ STEPPE = {
 				}
 			}
 		}
-		KALAT = {
-			name = "{ITEM_NAME} of Kalat"
-			tags = {
-				tag = BAL
-			}
-			group = {
-				HORDE = {
-					name = "Horde"
-					conditions = {
-						NOT = {
-							government_rank = 2
-						}
-					}
-				}
-				KHANATE = {
-					name = "Khanate"
-					conditions = {
-						government_rank = 2
-						NOT = {
-							government_rank = 3
-						}
-					}
-				}
-				KHAGANATE = {
-					name = "Khaganate"
-					conditions = {
-						government_rank = 3
-					}
-				}
-			}
-		}
 		KAZAN = {
 			name = "{ITEM_NAME} of Kazan"
 			tags = {

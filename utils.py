@@ -35,7 +35,11 @@ def build_tags(tree) -> list[str]:
 
 
 def build_if_block(
-    limit: str = None, tag: str = None, event_id: int = None, override_name: str = None
+    limit: str = None,
+    tag: str = None,
+    event_name: str = None,
+    event_id: int = None,
+    override_name: str = None,
 ) -> str:
     if not (event_id or override_name):
         raise RuntimeError("event_id or override_name must be specified")
@@ -52,7 +56,7 @@ def build_if_block(
     if override_name:
         actions.append(f"override_country_name = {override_name}")
     if event_id:
-        actions.append(f"country_event = {{ id = {EVENT_NAME}.{event_id} }}")
+        actions.append(f"country_event = {{ id = {event_name}.{event_id} }}")
 
     actions_str = " ".join(actions)
 

@@ -64,17 +64,6 @@ TURKISH = {
 						}
 					}
 				}
-				# This one is a personal mod-specific rule but I gotta figure out a good way to separate it
-				I_ILKHANID = {
-					name = "Devlet-i Ilkhân"
-					name_adj = "Ilkhanid"
-					tags = {
-						tag = ILK
-					}
-					conditions = {
-						has_country_flag = ere_form_ilkhanate_flag
-					}
-				}
 			}
 			conditions = {
 				NOT = {

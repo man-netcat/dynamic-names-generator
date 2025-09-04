@@ -8,17 +8,32 @@ from utils import *
 
 
 class Generator:
-    def __init__(self):
-        # Read rules, tag names, and dynasty names from input files
-        self.tag_name_list = read_tag_names(TAG_NAMES_PATH)
-        print("Tag names read successfully")
-        self.dynasty_names = read_lines(DYNASTIES_PATH)
-        print("Dynasty names read successfully")
-        self.rules_list: list[Rule] = parse_rule_file(RULES_PATH)
-        self.rules_list.extend(parse_rules_dir(GROUPED_RULES_DIR))
-        print("Rules read successfully")
-        self.substitution_rules_list: list[Rule] = parse_rules_dir(SUB_RULES_DIR)
-        print("Substitution Rules read successfully")
+    def __init__(self, module_name):
+        self.module_name = module_name
+        self.module_path = os.path.join(MODULES_ROOT, module_name)
+        self.event_name = f"{EVENT_NAME}_{module_name.lower()}"
+
+        # Paths inside this mod, fallback to vanilla if missing
+        def path_or_vanilla(relative_path):
+            mod_file = os.path.join(self.module_path, relative_path)
+            if os.path.exists(mod_file):
+                return mod_file
+            return os.path.join(MODULES_ROOT, "00_vanilla", relative_path)
+
+        self.rules_dir = path_or_vanilla(RULES_DIR)
+        self.sub_rules_dir = path_or_vanilla(SUB_RULES_DIR)
+        self.dynasties_path = path_or_vanilla(DYNASTIES_PATH)
+        self.tag_names_path = path_or_vanilla(TAG_NAMES_PATH)
+
+        # Load data
+        self.tag_name_list = read_tag_names(self.tag_names_path)
+        print(f"[{module_name}] Tag names read successfully")
+        self.dynasty_names = read_lines(self.dynasties_path)
+        print(f"[{module_name}] Dynasty names read successfully")
+        self.rules_list: list[Rule] = parse_rules_dir(self.rules_dir)
+        print(f"[{module_name}] Rules read successfully")
+        self.substitution_rules_list: list[Rule] = parse_rules_dir(self.sub_rules_dir)
+        print(f"[{module_name}] Substitution rules read successfully")
 
         self.global_rules_list: list[Rule] = []
         self.tagged_rules_list: list[Rule] = []
@@ -108,7 +123,13 @@ class Generator:
 
         # Assign event ids for tag-specific events and add triggers for them
         for tag in self.tag_name_list.keys():
-            event_triggers.append(build_if_block(tag=tag, event_id=self.event_id))
+            event_triggers.append(
+                build_if_block(
+                    tag=tag,
+                    event_name=self.event_name,
+                    event_id=self.event_id,
+                )
+            )
             self.events[tag] = str(self.event_id)
             self.event_id += 1
 
@@ -120,7 +141,11 @@ class Generator:
             condition = substitution_rule.conditions or "always = yes"
             combined_limit = f"{tags_str} {condition}".strip()
             event_triggers.append(
-                build_if_block(limit=combined_limit, event_id=self.event_id)
+                build_if_block(
+                    limit=combined_limit,
+                    event_name=self.event_name,
+                    event_id=self.event_id,
+                )
             )
             self.events[substitution_rule.id] = str(self.event_id)
             self.event_id += 1
@@ -142,7 +167,7 @@ class Generator:
         # Write event header with triggers
         event_lines = [
             EVENT_SCRIPT_HEADER.format(
-                event_name=EVENT_NAME, event_triggers="\n".join(event_triggers)
+                event_name=self.event_name, event_triggers="\n".join(event_triggers)
             )
         ]
 
@@ -162,12 +187,13 @@ class Generator:
                     build_if_block(
                         limit=entry.condition,
                         override_name=entry.tag,
+                        event_name=self.event_name,
                         event_id=dynasty_event_id,
                     )
                 )
             event_lines.append(
                 TAG_DEPENDANT_EVENT_TEMPLATE.format(
-                    event_name=EVENT_NAME,
+                    event_name=self.event_name,
                     id=id,
                     tag=tag,
                     conditions="\n".join(conditions),
@@ -190,12 +216,13 @@ class Generator:
                     build_if_block(
                         limit=entry.condition,
                         override_name=entry.tag,
+                        event_name=self.event_name,
                         event_id=dynasty_event_id,
                     )
                 )
             event_lines.append(
                 TAG_AGNOSTIC_EVENT_TEMPLATE.format(
-                    event_name=EVENT_NAME,
+                    event_name=self.event_name,
                     id=id,
                     conditions="\n".join(conditions),
                 )
@@ -213,15 +240,15 @@ class Generator:
                 )
             event_lines.append(
                 TAG_AGNOSTIC_EVENT_TEMPLATE.format(
-                    event_name=EVENT_NAME, id=id, conditions="\n".join(conditions)
+                    event_name=self.event_name, id=id, conditions="\n".join(conditions)
                 )
             )
 
         os.makedirs(f"{MOD_PATH}/events", exist_ok=True)
-        with open(f"{MOD_PATH}/events/{EVENT_NAME}_events.txt", "w+") as f:
+        with open(f"{MOD_PATH}/events/{self.event_name}_events.txt", "w+") as f:
             f.write("\n".join(event_lines))
 
-        print("Writing event done")
+        print(f"[{self.module_name}] Writing event done")
 
     def generate_localisation(self):
         loc_lines = ["l_english:", "\n #tag rules\n"]
@@ -256,13 +283,13 @@ class Generator:
 
         os.makedirs(f"{MOD_PATH}/localisation", exist_ok=True)
         with open(
-            f"{MOD_PATH}/localisation/{EVENT_NAME}_localisation_l_english.yml",
+            f"{MOD_PATH}/localisation/{self.event_name}_localisation_l_english.yml",
             "w+",
             encoding="utf-8-sig",
         ) as f:
             f.write("\n".join(loc_lines))
 
-        print("Writing localisation done")
+        print(f"[{self.module_name}] Writing localisation done")
 
         # Check for duplicates
         seen = set()
@@ -279,54 +306,80 @@ class Generator:
                     seen.add(key)
 
         if duplicates:
-            print("FAILURE: Duplicate localisation keys found:")
+            print(f"[{self.module_name}] FAILURE: Duplicate localisation keys found:")
             for key in duplicates:
                 print(" -", key)
-            print("ABORTING")
+            print(f"[{self.module_name}] ABORTING")
             exit(1)
-
-    def generate_on_actions(self):
-        triggers = [
-            "on_bi_yearly_pulse",
-            "on_country_creation",
-            "on_country_released",
-            "on_government_change",
-            "on_monarch_death",
-            "on_native_change_government",
-            "on_primary_culture_changed",
-            "on_reform_changed",
-            "on_reform_enacted",
-            "on_religion_change",
-            "on_startup",
-        ]
-
-        on_actions_lines = [
-            f"{trigger} = {{ events = {{ {EVENT_NAME}.0 }} }}" for trigger in triggers
-        ]
-
-        os.makedirs(f"{MOD_PATH}/common/on_actions", exist_ok=True)
-        with open(
-            f"{MOD_PATH}/common/on_actions/{EVENT_NAME}_on_actions.txt", "w+"
-        ) as f:
-            f.write("\n\n".join(on_actions_lines))
-
-        print("Writing on_actions done")
-
-    def generate_decision(self):
-        os.makedirs(f"{MOD_PATH}/decisions", exist_ok=True)
-        with open(f"{MOD_PATH}/decisions/{EVENT_NAME}_decisions.txt", "w+") as f:
-            f.write(DECISION_TEMPLATE.format(event_name=EVENT_NAME))
-
-        print("Writing decision done")
 
     def build(self):
         self.assign_rules()
         self.generate_event_script()
         self.generate_localisation()
-        self.generate_on_actions()
-        self.generate_decision()
+
+
+def generate_on_actions():
+    triggers = [
+        "on_bi_yearly_pulse",
+        "on_country_creation",
+        "on_country_released",
+        "on_government_change",
+        "on_monarch_death",
+        "on_native_change_government",
+        "on_primary_culture_changed",
+        "on_reform_changed",
+        "on_reform_enacted",
+        "on_religion_change",
+        "on_startup",
+    ]
+
+    on_actions_lines = [
+        f"{trigger} = {{ events = {{ {EVENT_NAME}.0 }} }}" for trigger in triggers
+    ]
+
+    os.makedirs(f"{MOD_PATH}/common/on_actions", exist_ok=True)
+    with open(f"{MOD_PATH}/common/on_actions/{EVENT_NAME}_on_actions.txt", "w+") as f:
+        f.write("\n\n".join(on_actions_lines))
+
+    print(f"[master] Writing on_actions done")
+
+
+def generate_decision():
+    os.makedirs(f"{MOD_PATH}/decisions", exist_ok=True)
+    with open(f"{MOD_PATH}/decisions/{EVENT_NAME}_decisions.txt", "w+") as f:
+        f.write(DECISION_TEMPLATE.format(event_name=EVENT_NAME))
+
+    print(f"[master] Writing decision done")
+
+
+def build_modules(mods_root):
+    mod_names = sorted(os.listdir(mods_root))
+    triggers = []
+
+    for mod_name in mod_names:
+        mod_base_dir = os.path.join(mods_root, mod_name)
+        if not os.path.isdir(mod_base_dir):
+            continue
+        print(f"[master] Building mod: {mod_name}")
+        builder = Generator(mod_name)
+        builder.build()
+
+        event_name = f"{EVENT_NAME}_{mod_name.lower()}"
+        triggers.append(f"country_event = {{ id = {event_name}.0 }}")
+
+    os.makedirs(f"{MOD_PATH}/events", exist_ok=True)
+    with open(f"{MOD_PATH}/events/{EVENT_NAME}_master_events.txt", "w+") as f:
+        f.write(
+            MASTER_EVENT_TEMPLATE.format(
+                event_name=EVENT_NAME,
+                module_triggers="\n".join("        " + t for t in triggers),
+            )
+        )
+
+    print("[master] Writing dispatcher event done")
 
 
 if __name__ == "__main__":
-    builder = Generator()
-    builder.build()
+    build_modules(MODULES_ROOT)
+    generate_on_actions()
+    generate_decision()
