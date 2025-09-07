@@ -21,8 +21,8 @@ IRANIAN = {
 								}
 							}
 						}
-						PADISHAHDOM = {
-							name = "Padishahdom of {NAME}"
+						EMPIRE = {
+							name = "Empire of {NAME}"
 							conditions = {
 								government_rank = 3
 							}

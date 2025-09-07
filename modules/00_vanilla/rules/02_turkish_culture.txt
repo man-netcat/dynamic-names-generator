@@ -7,7 +7,6 @@ TURKISH = {
 				NOT = {
 					government_rank = 3
 				}
-				is_subject = no
 			}
 		}
 		DEVLET = {
