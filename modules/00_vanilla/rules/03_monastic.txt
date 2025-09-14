@@ -120,3 +120,20 @@ CRUSADER = {
 		}
 	}
 }
+
+PAPACY = {
+	tags = {
+		tag = PAP
+	}
+	group = {
+		STATE = {
+			name = "The Papal State"
+		}
+		KINGDOM = {
+			name = "Kingdom of God"
+			conditions = {
+				has_country_flag = is_kingdom_of_god_flag
+			}
+		}
+	}
+}

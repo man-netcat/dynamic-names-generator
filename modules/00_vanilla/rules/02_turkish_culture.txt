@@ -81,7 +81,7 @@ TURKISH = {
 	}
 }
 
-TURKISH_VASSAL = {
+OTTOMAN_VASSAL = {
 	group = {
 		SANCAK = {
 			name = "Sancak-i {NAME}"
@@ -112,8 +112,26 @@ TURKISH_VASSAL = {
 	}
 	conditions = {
 		overlord = {
-			government = monarchy
-			primary_culture = turkish
+			tag = TUR
+		}
+	}
+}
+
+SELJUK_VASSAL = {
+	group = {
+		ATABEGATE = {
+			name = "Atabeg-i {NAME}"
+			conditions = {
+				is_subject_of_type = vassal
+				NOT = {
+					has_reform = beylik_government
+				}
+			}
+		}
+	}
+	conditions = {
+		overlord = {
+			tag = RUM
 		}
 	}
 }

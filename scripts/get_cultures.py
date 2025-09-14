@@ -14,6 +14,8 @@ cultures = {
         for top_level_key, _ in culture_group_data.items()
         if top_level_key
         not in [
+            "country",
+            "province",
             "graphical_culture",
             "second_graphical_culture",
             "dynasty_names",

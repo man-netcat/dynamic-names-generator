@@ -1130,13 +1130,6 @@ COUNTY_PALATINE = {
 	}
 }
 
-PAPACY = {
-	name = "The Papal State"
-	tags = {
-		tag = PAP
-	}
-}
-
 MARCH = {
 	name = "{NAME_ADJ} March"
 	conditions = {

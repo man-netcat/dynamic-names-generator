@@ -103,17 +103,6 @@ AUS_HUA = {
 	}
 }
 
-PAPAL_GOD = {
-	name = "God"
-	name_adj = "Divine"
-	tags = {
-		tag = PAP
-	}
-	conditions = {
-		has_country_flag = is_kingdom_of_god_flag
-	}
-}
-
 CHAGATAI = {
 	name = "Chagatai"
 	name_adj = "Chagatai"

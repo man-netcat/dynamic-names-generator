@@ -314,6 +314,13 @@ TURKISH_VASSAL_GROUP = {
 				tag = RUM
 				tag = ERE
 			}
+			conditions = {
+				NOT = {
+					overlord = {
+						tag = RUM
+					}
+				}
+			}
 		}
 	}
 	conditions = {
