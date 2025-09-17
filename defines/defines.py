@@ -1,5 +1,5 @@
 # === PATHS ===
-MOD_PATH = "/home/rick/.local/share/Paradox Interactive/Europa Universalis IV/mod/Dynamic-Names"
+MOD_PATH = "../"
 
 MODULES_ROOT = "modules"
 
