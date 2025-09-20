@@ -27,37 +27,6 @@ STEPPE = {
 				}
 			}
 		}
-		KAZAN = {
-			name = "{ITEM_NAME} of Kazan"
-			tags = {
-				tag = KAZ
-			}
-			group = {
-				HORDE = {
-					name = "Horde"
-					conditions = {
-						NOT = {
-							government_rank = 2
-						}
-					}
-				}
-				KHANATE = {
-					name = "Khanate"
-					conditions = {
-						government_rank = 2
-						NOT = {
-							government_rank = 3
-						}
-					}
-				}
-				KHAGANATE = {
-					name = "Khaganate"
-					conditions = {
-						government_rank = 3
-					}
-				}
-			}
-		}
 		JURCHENS = {
 			name = "{NAME} Jurchens"
 			conditions = {
@@ -244,7 +213,6 @@ STEPPE = {
 	conditions = {
 		OR = {
 			has_reform = steppe_horde
-			tag = AVR
 			AND = {
 				OR = {
 					tag = YUA
@@ -283,5 +251,66 @@ MONGOL_BROTHER_REALM_GROUP = {
 	}
 	conditions = {
 		is_subject_of_type = mongol_brother_realm
+	}
+}
+
+KAZAN = {
+	name = "{ITEM_NAME} of Kazan"
+	tags = {
+		tag = KAZ
+	}
+	group = {
+		HORDE = {
+			name = "Horde"
+			conditions = {
+				NOT = {
+					government_rank = 2
+				}
+			}
+		}
+		KHANATE = {
+			name = "Khanate"
+			conditions = {
+				government_rank = 2
+				NOT = {
+					government_rank = 3
+				}
+			}
+		}
+		KHAGANATE = {
+			name = "Khaganate"
+			conditions = {
+				government_rank = 3
+			}
+		}
+	}
+	conditions = {
+		has_reform = steppe_horde
+	}
+}
+
+AVAR = {
+	name = "Avar {ITEM_NAME}"
+	tags = {
+		tag = AVR
+	}
+	group = {
+		KHANATE = {
+			name = "Khanate"
+			conditions = {
+				NOT = {
+					government_rank = 3
+				}
+			}
+		}
+		KHAGANATE = {
+			name = "Khaganate"
+			conditions = {
+				government_rank = 3
+			}
+		}
+	}
+	conditions = {
+		government = monarchy
 	}
 }
