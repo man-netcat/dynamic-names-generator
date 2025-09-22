@@ -72,6 +72,8 @@ def substitute(template: str, format_str: str, item_name: str) -> str:
 
 
 def read_lines(path: str) -> list[str]:
+    if not path or not os.path.exists(path):
+        return []
     with open(path, encoding="utf-8-sig") as f:
         return [line.strip() for line in f if line.strip() and not line.startswith("#")]
 
@@ -163,8 +165,10 @@ def parse_rule_file(file_path: str) -> list[Rule]:
 
 
 def parse_rules_dir(dir_path: str) -> list[Rule]:
-    all_rules: list[Rule] = []
+    if not dir_path or not os.path.exists(dir_path):
+        return []
 
+    all_rules: list[Rule] = []
     for filename in sorted(os.listdir(dir_path)):
         file_path = os.path.join(dir_path, filename)
         if os.path.isfile(file_path):
