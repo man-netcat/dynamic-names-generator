@@ -998,14 +998,14 @@ ARCHDUCHY = {
 
 ARCHKINGDOM = {
 	name = "Arch-Kingdom of {NAME}"
+	tags = {
+		tag = DAN
+	}
 	conditions = {
 		government = monarchy
 		religion_group = christian
-		AND = {
-			tag = DAN
-			government = monarchy
-			has_ruler = "Christopher III"
-		}
+		government = monarchy
+		has_ruler = "Christopher III"
 		has_ruler_flag = has_proclaimed_archking_title
 		government_rank = 2
 		NOT = {

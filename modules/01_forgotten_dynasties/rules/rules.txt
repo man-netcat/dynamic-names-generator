@@ -1,0 +1,21 @@
+CHINESE_EMPIRE = {
+	group = {
+		LIAO = {
+			name = "Da Liao"
+			name_adj = "Liao"
+			tags = {
+				tag = LIA
+			}
+		}
+		XIA = {
+			name = "Da Xia"
+			name_adj = "Xia"
+			tags = {
+				tag = XIA
+			}
+		}
+	}
+	conditions = {
+		is_emperor_of_china = yes
+	}
+}
