@@ -71,15 +71,11 @@ class Generator:
 
             # Load data
             self.tag_name_list = read_tag_names(self._get_tag_names_path())
-            self._log_module(module_2, "Tag names read successfully")
             self.dynasty_names = read_lines(self._get_dynasties_path())
-            self._log_module(module_2, "Dynasty names read successfully")
             self.rules_list: list[Rule] = parse_rules_dir(self._get_rules_dir())
-            self._log_module(module_1, "Rules read successfully")
             self.substitution_rules_list: list[Rule] = parse_rules_dir(
                 self._get_sub_rules_dir()
             )
-            self._log_module(module_2, "Substitution rules read successfully")
 
             # Validate loaded data
             self._validate_required_data()
@@ -132,14 +128,21 @@ class Generator:
             """Log a success message for this product."""
             log_product(self.module_1, self.module_2, message)
 
+        def _get_missing_data(self):
+            """Get list of missing data types."""
+            missing = []
+            if not self.tag_name_list:
+                missing.append("tags")
+            if not self.dynasty_names:
+                missing.append("dynasties")
+            if not self.rules_list:
+                missing.append("rules")
+            return missing
+
         def _validate_required_data(self):
             """Validate that required data is loaded properly."""
-            if not self.tag_name_list:
-                self._log_product("WARNING: No tag names found")
-            if not self.dynasty_names:
-                self._log_product("WARNING: No dynasty names found")
-            if not self.rules_list:
-                self._log_product("WARNING: No rules found")
+            # Missing data will be reported in skip messages if needed
+            pass
 
         def _has_duplicates_in_list(
             self, items: list, item_name: str = "items"
@@ -386,7 +389,16 @@ class Generator:
 
             # If no events will be generated, skip creating the file
             if not event_triggers and not dynasty_rules:
-                self._log_product("No events to generate, skipping event file")
+                # Determine the real reason for the skip
+                has_dynasty_rules = any(rule.name_dynasty for rule in self.rules_list)
+                has_global_rules = bool(self.global_rules_list)
+
+                if has_dynasty_rules and not self.dynasty_names:
+                    self._log_product("(skipped - dynasty rules need dynasty names)")
+                elif not has_global_rules and not has_dynasty_rules:
+                    self._log_product("(skipped - no applicable rules)")
+                else:
+                    self._log_product("(skipped - no events generated)")
                 return False
 
             # Write event header with triggers
@@ -438,7 +450,6 @@ class Generator:
             write_file_with_directory(
                 self._get_events_output_path(), "\n".join(event_lines)
             )
-            self._log_product("Writing event done")
             return True
 
         def generate_localisation(self):
@@ -511,12 +522,11 @@ class Generator:
             write_file_with_directory(
                 out_path, "\n".join(loc_lines), LOCALISATION_ENCODING
             )
-            self._log_product(f"Writing localisation done: {out_path}")
 
             return set(keys)
 
         def build(self):
-            """Build this product and return its generated keys."""
+            """Build this product and return (success, keys) tuple."""
             self.assign_rules()
             events_generated = self.generate_event_script()
 
@@ -527,9 +537,7 @@ class Generator:
                 # Register keys with parent generator for duplicate checking
                 self.generator._register_product_keys(self.event_name, keys)
             else:
-                self._log_product(
-                    "Skipping localisation generation - no events created"
-                )
+                pass  # Skip message already shown in generate_event_script
 
             # Only collect trigger for master dispatcher if events were generated
             if events_generated:
@@ -537,7 +545,7 @@ class Generator:
                     f"country_event = {{ id = {self.event_name}.0 }}"
                 )
 
-            return keys
+            return events_generated, keys
 
     def _log_duplicate_warning(self, key: str, event_name: str, other: str):
         """Log a duplicate key warning."""
@@ -547,22 +555,19 @@ class Generator:
 
     def _report_statistics(self):
         """Report final generation statistics."""
-        total_products = len(self.module_names) * len(self.module_names)
         total_unique_keys = len(self.generated_keys)
         duplicate_count = len(self.duplicate_keys)
 
         self._print_duplicate_summary(duplicate_count)
-        self._print_final_stats(total_products, total_unique_keys, duplicate_count)
+        self._print_final_stats(total_unique_keys, duplicate_count)
 
     def _print_duplicate_summary(self, duplicate_count: int):
         """Print detailed duplicate keys summary."""
         print_duplicate_keys_summary(self.duplicate_keys, duplicate_count)
 
-    def _print_final_stats(
-        self, total_products: int, total_unique_keys: int, duplicate_count: int
-    ):
+    def _print_final_stats(self, total_unique_keys: int, duplicate_count: int):
         """Print final generation statistics."""
-        print_final_statistics(total_products, total_unique_keys, duplicate_count)
+        print_final_statistics(total_unique_keys, duplicate_count)
 
     def _should_build_product(self, module_1: str, module_2: str) -> bool:
         """Check if a product should be built based on available data."""
@@ -594,20 +599,22 @@ class Generator:
     def build_all(self):
         built_products = 0
         skipped_products = 0
+        total_products = len(self.module_names) * len(self.module_names)
 
-        for module_1 in self.module_names:
-            for module_2 in self.module_names:
-                if not self._should_build_product(module_1, module_2):
-                    log_master(
-                        f"Skipping product: {module_1}_{module_2} (insufficient data)"
-                    )
-                    skipped_products += 1
-                    continue
+        for i, (module_1, module_2) in enumerate(
+            [(m1, m2) for m1 in self.module_names for m2 in self.module_names], 1
+        ):
+            if not self._should_build_product(module_1, module_2):
+                skipped_products += 1
+                continue
 
-                log_master(f"Building product: {module_1}_{module_2}")
-                product = self.Product(self, module_1, module_2)
-                product.build()  # Keys and triggers are automatically registered
+            log_master(f"[{i}/{total_products}] {module_1}_{module_2}")
+            product = self.Product(self, module_1, module_2)
+            success, keys = product.build()
+            if success:
                 built_products += 1
+            else:
+                skipped_products += 1
 
         log_master(
             f"Built {built_products} products, skipped {skipped_products} products"
@@ -621,7 +628,7 @@ class Generator:
         write_file_with_directory(
             build_master_event_file_path(EVENT_NAME), master_content
         )
-        log_master("Writing dispatcher event done")
+        log_master("Mod files generated")
 
         # Generate duplicate keys report
         self._report_statistics()
@@ -637,15 +644,12 @@ class Generator:
             " " + GLOBAL_DECISION_KEYS["title"],
             " " + GLOBAL_DECISION_KEYS["desc"],
             " " + GLOBAL_DECISION_KEYS["tooltip"],
-            " #master event",
-            ' dynamic_names.0.a:0 "OK"',
         ]
 
         global_loc_path = build_global_localisation_file_path(EVENT_NAME)
         write_file_with_directory(
             global_loc_path, "\n".join(global_loc_lines), LOCALISATION_ENCODING
         )
-        log_master("Writing global localisation done")
 
 
 def generate_on_actions():
@@ -657,7 +661,6 @@ def generate_on_actions():
 
     on_actions_path = build_on_actions_file_path(EVENT_NAME)
     write_file_with_directory(on_actions_path, "\n\n".join(on_actions_lines))
-    log_master("Writing on_actions done")
 
 
 def generate_decision():
@@ -665,7 +668,6 @@ def generate_decision():
     decision_content = DECISION_TEMPLATE.format(event_name=EVENT_NAME)
     decision_path = build_decisions_file_path(EVENT_NAME)
     write_file_with_directory(decision_path, decision_content)
-    log_master("Writing decision done")
 
 
 def build_modules(mods_root):
