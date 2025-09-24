@@ -21,7 +21,7 @@ def read_lines(path: str) -> list[str]:
 
 
 def parse_rule_data(
-    key: str, rule_data: dict, parent_tags=None, parent_conditions=""
+    key: str, rule_data: dict, parent_tags=None, parent_conditions="", parent_name_adj=None
 ) -> list[Rule]:
     """Recursively parse rule data (grouped or regular)."""
     if parent_tags is None:
@@ -39,6 +39,9 @@ def parse_rule_data(
         else:
             group_conditions = build_conditions(rule_data["conditions"])
 
+    # Inherit name_adj from parent or use current level's name_adj
+    current_name_adj = rule_data["name_adj"] if "name_adj" in rule_data else parent_name_adj
+
     # Handle grouped rules
     if "group" in rule_data:
         group_name_template = rule_data["name"] if "name" in rule_data else None
@@ -48,14 +51,14 @@ def parse_rule_data(
                 sub_rule["name"] = get_item_name(group_name_template, sub_rule["name"])
             rules.extend(
                 parse_rule_data(
-                    get_tag_name(key, sub_key), sub_rule, group_tags, group_conditions
+                    get_tag_name(key, sub_key), sub_rule, group_tags, group_conditions, current_name_adj
                 )
             )
         return rules
 
     # Handle regular rule
     rule_name = rule_data["name"] if "name" in rule_data else None
-    name_adj = rule_data["name_adj"] if "name_adj" in rule_data else None
+    name_adj = rule_data["name_adj"] if "name_adj" in rule_data else current_name_adj
     name_dynasty = rule_data["name_dynasty"] if "name_dynasty" in rule_data else None
 
     rules.append(

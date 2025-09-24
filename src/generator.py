@@ -198,6 +198,11 @@ class Generator:
             self, loc_lines: list, keys: list, key: str, name: str, name_adj: str
         ):
             """Add a localisation entry with both base and adjective forms."""
+            if name_adj is None:
+                self._log_product(f"ERROR: Rule '{key}' missing name_adj field (name: '{name}')")
+                # Use placeholder instead of crashing
+                name_adj = "[MISSING_ADJ]"
+            
             loc_lines.append(f' {key}: "{name}"')
             loc_lines.append(f' {key}_ADJ: "{name_adj}"')
             keys.append(key)

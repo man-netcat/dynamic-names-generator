@@ -42,12 +42,14 @@ IRANIAN = {
 				}
 				SAFAVID = {
 					name = "Mamâlek-e Mahruse-ye Irân"
+					name_adj = "Persian"
 					conditions = {
 						has_reform = persian_government_reform
 					}
 				}
 				SASSANIAN = {
 					name = "Eranšahr"
+					name_adj = "Sassanian"
 					conditions = {
 						has_reform = zoroastrian_persian_government_reform
 					}

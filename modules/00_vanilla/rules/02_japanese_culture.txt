@@ -37,6 +37,7 @@ DAIMYO = {
 }
 
 JAPANESE_DIVINE = {
+	name_adj = "Divine Japanese"
 	group = {
 		INDEP_DAIMYO = {
 			name = "Divine Duchy of Japan"
