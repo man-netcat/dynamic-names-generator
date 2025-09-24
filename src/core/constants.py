@@ -21,8 +21,9 @@ ON_ACTION_TRIGGERS = [
 
 # Global localisation keys for the decision system
 GLOBAL_DECISION_KEYS = {
-    "title": 'update_dynamic_names_decision_title: "Update Dynamic Names"',
-    "desc": 'update_dynamic_names_decision_desc: "Force update dynamic names (e.g. after a government rank change). Happens automatically every 2 in-game years."',
+    "title": 'dynamic_names_decision_title:0 "Update Dynamic Names"',
+    "desc": 'dynamic_names_decision_desc:0 "Force update dynamic names (e.g. after a government rank change). Happens automatically every 2 in-game years."',
+    "tooltip": 'dynamic_names_decision_tooltip:0 "Force update dynamic names (e.g. after a government rank change)."',
 }
 
 # Default file encoding for localisation files
@@ -30,3 +31,6 @@ LOCALISATION_ENCODING = "utf-8-sig"
 
 # Default file encoding for other files
 DEFAULT_ENCODING = "utf-8"
+
+# === NAME FORMATTING ===
+FORMAT_TEMPLATES = ["{NAME}", "{NAME_ADJ}", "{DYNASTY}"]

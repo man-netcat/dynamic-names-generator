@@ -6,31 +6,12 @@ from collections import defaultdict
 from .classes.Localisation import Localisation
 from .classes.Rule import Rule
 from .classes.RuleEntry import RuleEntry
-from .core.constants import (
-    GLOBAL_DECISION_KEYS,
-    LOCALISATION_ENCODING,
-    ON_ACTION_TRIGGERS,
-)
+from .core.constants import *
 from .defines.paths import *
 from .defines.templates import *
 from .defines.game_config import *
-from .core.file_helpers import (
-    build_decisions_file_path,
-    build_event_file_path,
-    build_global_localisation_file_path,
-    build_localisation_file_path,
-    build_master_event_file_path,
-    build_on_actions_file_path,
-    ensure_directory,
-    write_file_with_directory,
-)
-from .core.logging_utils import (
-    log_master,
-    log_module,
-    log_product,
-    print_duplicate_keys_summary,
-    print_final_statistics,
-)
+from .core.file_helpers import *
+from .core.logging_utils import *
 from .utils import *
 
 
@@ -231,6 +212,11 @@ class Generator:
                 if orig_rule and orig_rule.name_dynasty:
                     dynasty_event_id = self.events.get(orig_rule.id)
 
+                # Skip entries that have no meaningful condition and no dynasty event
+                condition_stripped = (entry.condition or "").strip()
+                if not condition_stripped and not dynasty_event_id:
+                    continue
+
                 conditions.append(
                     build_if_block(
                         limit=entry.condition,
@@ -243,8 +229,11 @@ class Generator:
 
         def _create_event_for_tag(self, tag: str) -> str:
             """Create an event for a specific tag."""
-            event_id = self.events[tag]
             conditions = self._generate_conditions_for_entries(self.rules[tag])
+            if not conditions:
+                return ""  # Return empty string for tags with no conditions
+
+            event_id = self.events[tag]
             return TAG_DEPENDANT_EVENT_TEMPLATE.format(
                 event_name=self.event_name,
                 id=event_id,
@@ -254,10 +243,15 @@ class Generator:
 
         def _create_event_for_substitution_rule(self, substitution_rule) -> str:
             """Create an event for a substitution rule."""
-            event_id = self.events[substitution_rule.id]
             conditions = self._generate_conditions_for_entries(
                 self.rules[substitution_rule.id]
             )
+            if not conditions:
+                return (
+                    ""  # Return empty string for substitution rules with no conditions
+                )
+
+            event_id = self.events[substitution_rule.id]
             return TAG_AGNOSTIC_EVENT_TEMPLATE.format(
                 event_name=self.event_name,
                 id=event_id,
@@ -339,6 +333,10 @@ class Generator:
 
             # Assign event ids for tag-specific events and add triggers for them
             for tag in self.tag_name_list.keys():
+                # Only create events for tags that have rules
+                if not self.rules[tag]:
+                    continue
+
                 event_triggers.append(
                     build_if_block(
                         tag=tag,
@@ -351,6 +349,10 @@ class Generator:
 
             # Assign event ids for substitution rules and add triggers for them
             for substitution_rule in self.substitution_rules_list:
+                # Only create events for substitution rules that have entries
+                if not self.rules[substitution_rule.id]:
+                    continue
+
                 tags_str = ""
                 if substitution_rule.tags != []:
                     tags_str = f"OR = {{ {' '.join(f'tag = {tag}' for tag in substitution_rule.tags)} }}"
@@ -367,10 +369,12 @@ class Generator:
                 self.event_id += 1
 
             # Assign event ids for dynasty rules here but do not append them to the initial triggers
+            # Only assign dynasty event IDs if dynasty names are available
             dynasty_rules = [rule for rule in self.rules_list if rule.name_dynasty]
-            for rule in dynasty_rules:
-                self.events[rule.id] = str(self.event_id)
-                self.event_id += 1
+            if self.dynasty_names and dynasty_rules:
+                for rule in dynasty_rules:
+                    self.events[rule.id] = str(self.event_id)
+                    self.event_id += 1
 
             # Add global rules directly to the initial triggers
             for rule in self.global_rules_list:
@@ -379,6 +383,11 @@ class Generator:
                 )
                 self.events[rule.id] = str(self.event_id)
                 self.event_id += 1
+
+            # If no events will be generated, skip creating the file
+            if not event_triggers and not dynasty_rules:
+                self._log_product("No events to generate, skipping event file")
+                return False
 
             # Write event header with triggers
             event_lines = [
@@ -389,70 +398,90 @@ class Generator:
 
             # Country events per tag
             for tag in self.tag_name_list.keys():
-                event_lines.append(self._create_event_for_tag(tag))
+                # Only create events for tags that have rules
+                if not self.rules[tag]:
+                    continue
+                event = self._create_event_for_tag(tag)
+                if event:  # Only append non-empty events
+                    event_lines.append(event)
 
             # Country events per substituted name tag
             for substitution_rule in self.substitution_rules_list:
-                event_lines.append(
-                    self._create_event_for_substitution_rule(substitution_rule)
-                )
+                # Only create events for substitution rules that have entries
+                if not self.rules[substitution_rule.id]:
+                    continue
+                event = self._create_event_for_substitution_rule(substitution_rule)
+                if event:  # Only append non-empty events
+                    event_lines.append(event)
 
-            # Dynasty rules events
-            for rule in dynasty_rules:
-                id = self.events[rule.id]
-                conditions = []
-                for name in self.dynasty_names:
-                    key = self.dynasty_keys[name]
-                    limit_cond = f'dynasty = "{name}" NOT = {{ any_country = {{ dynasty = "{name}" }} }}'
-                    conditions.append(
-                        build_if_block(
-                            limit=limit_cond, override_name=f"{key}_{rule.id}"
+            # Dynasty rules events - only create if dynasty names are available
+            if self.dynasty_names and dynasty_rules:
+                for rule in dynasty_rules:
+                    id = self.events[rule.id]
+                    conditions = []
+                    for name in self.dynasty_names:
+                        key = self.dynasty_keys[name]
+                        limit_cond = f'dynasty = "{name}" NOT = {{ any_country = {{ dynasty = "{name}" }} }}'
+                        conditions.append(
+                            build_if_block(
+                                limit=limit_cond, override_name=f"{key}_{rule.id}"
+                            )
+                        )
+                    event_lines.append(
+                        TAG_AGNOSTIC_EVENT_TEMPLATE.format(
+                            event_name=self.event_name,
+                            id=id,
+                            conditions="\n".join(conditions),
                         )
                     )
-                event_lines.append(
-                    TAG_AGNOSTIC_EVENT_TEMPLATE.format(
-                        event_name=self.event_name,
-                        id=id,
-                        conditions="\n".join(conditions),
-                    )
-                )
 
             write_file_with_directory(
                 self._get_events_output_path(), "\n".join(event_lines)
             )
             self._log_product("Writing event done")
+            return True
 
         def generate_localisation(self):
             """Generate localisation lines and write to file.
 
             Returns the set of localisation keys generated for cross-file duplicate checking.
             """
-            loc_lines = ["l_english:", "\n #tag rules\n"]
+            loc_lines = ["l_english:"]
             keys = []
-            for tag, entries in self.rules.items():
-                loc_lines.append(f" # {tag}")
-                for entry in entries:
-                    self._add_localisation_entry(
-                        loc_lines, keys, entry.tag, entry.name, entry.name_adj
-                    )
 
-            loc_lines.append(" #dynasties")
-            for rule in self.rules_list:
-                if rule.name_dynasty:
-                    loc_lines.append(f"\n # {rule.id}")
-                    for name in self.dynasty_names:
-                        key = self.dynasty_keys[name]
-                        dynasty_key = f"{key}_{rule.id}"
-                        dynasty_name = rule.name_dynasty.replace(
-                            "{DYNASTY}", name.title()
-                        )
-                        self._add_localisation_entry(
-                            loc_lines, keys, dynasty_key, dynasty_name, name.title()
-                        )
+            # Always add tag rules section header if there are any rules defined
+            if self.rules:
+                loc_lines.append("\n #tag / substitution rules\n")
+                for tag, entries in self.rules.items():
+                    # Only add tag header if there are actual entries
+                    if entries:
+                        loc_lines.append(f" # {tag}")
+                        for entry in entries:
+                            self._add_localisation_entry(
+                                loc_lines, keys, entry.tag, entry.name, entry.name_adj
+                            )
 
-            # Only include global rules when module1 == module2 to avoid duplicates
-            if self.module_1 == self.module_2:
-                loc_lines.append(" #global rules")
+            # Always add dynasties section header if there are dynasty rules defined
+            dynasty_rules = [rule for rule in self.rules_list if rule.name_dynasty]
+            if dynasty_rules:
+                loc_lines.append("\n #dynasty rules")
+                for rule in dynasty_rules:
+                    # Only add dynasty rule header if there are actual dynasty names
+                    if self.dynasty_names:
+                        loc_lines.append(f"\n # {rule.id}")
+                        for name in self.dynasty_names:
+                            key = self.dynasty_keys[name]
+                            dynasty_key = f"{key}_{rule.id}"
+                            dynasty_name = rule.name_dynasty.replace(
+                                "{DYNASTY}", name.title()
+                            )
+                            self._add_localisation_entry(
+                                loc_lines, keys, dynasty_key, dynasty_name, name.title()
+                            )
+
+            # Always add global rules section header when module1 == module2 and global rules exist
+            if self.module_1 == self.module_2 and self.global_rules_list:
+                loc_lines.append("\n #global rules")
                 for rule in self.global_rules_list:
                     loc_lines.append(f"\n # {rule.id}")
                     self._add_localisation_entry(
@@ -489,16 +518,24 @@ class Generator:
         def build(self):
             """Build this product and return its generated keys."""
             self.assign_rules()
-            self.generate_event_script()
-            keys = self.generate_localisation()
+            events_generated = self.generate_event_script()
 
-            # Register keys with parent generator for duplicate checking
-            self.generator._register_product_keys(self.event_name, keys)
+            # Only generate localisation if events were actually created
+            keys = []
+            if events_generated:
+                keys = self.generate_localisation()
+                # Register keys with parent generator for duplicate checking
+                self.generator._register_product_keys(self.event_name, keys)
+            else:
+                self._log_product(
+                    "Skipping localisation generation - no events created"
+                )
 
-            # Collect trigger for master dispatcher
-            self.generator.triggers.append(
-                f"country_event = {{ id = {self.event_name}.0 }}"
-            )
+            # Only collect trigger for master dispatcher if events were generated
+            if events_generated:
+                self.generator.triggers.append(
+                    f"country_event = {{ id = {self.event_name}.0 }}"
+                )
 
             return keys
 
@@ -527,12 +564,54 @@ class Generator:
         """Print final generation statistics."""
         print_final_statistics(total_products, total_unique_keys, duplicate_count)
 
+    def _should_build_product(self, module_1: str, module_2: str) -> bool:
+        """Check if a product should be built based on available data."""
+        module_1_path = os.path.join(self.modules_root, module_1)
+        module_2_path = os.path.join(self.modules_root, module_2)
+
+        # Check if module_1 has rules
+        rules_dir = os.path.join(module_1_path, RULES_DIR)
+        if not os.path.exists(rules_dir) or not os.listdir(rules_dir):
+            return False
+
+        # Check if module_2 has at least one of: dynasties, tags, or substitution rules
+        dynasties_path = os.path.join(module_2_path, DYNASTIES_PATH)
+        tag_names_path = os.path.join(module_2_path, TAG_NAMES_PATH)
+        sub_rules_dir = os.path.join(module_2_path, SUB_RULES_DIR)
+
+        has_dynasties = (
+            os.path.exists(dynasties_path) and os.path.getsize(dynasties_path) > 0
+        )
+        has_tags = (
+            os.path.exists(tag_names_path) and os.path.getsize(tag_names_path) > 0
+        )
+        has_sub_rules = os.path.exists(sub_rules_dir) and bool(
+            os.listdir(sub_rules_dir) if os.path.exists(sub_rules_dir) else False
+        )
+
+        return has_dynasties or has_tags or has_sub_rules
+
     def build_all(self):
+        built_products = 0
+        skipped_products = 0
+
         for module_1 in self.module_names:
             for module_2 in self.module_names:
+                if not self._should_build_product(module_1, module_2):
+                    log_master(
+                        f"Skipping product: {module_1}_{module_2} (insufficient data)"
+                    )
+                    skipped_products += 1
+                    continue
+
                 log_master(f"Building product: {module_1}_{module_2}")
                 product = self.Product(self, module_1, module_2)
                 product.build()  # Keys and triggers are automatically registered
+                built_products += 1
+
+        log_master(
+            f"Built {built_products} products, skipped {skipped_products} products"
+        )
 
         # write master event that dispatches to all products
         master_content = MASTER_EVENT_TEMPLATE.format(
@@ -552,15 +631,20 @@ class Generator:
         ensure_directory(os.path.join(MOD_PATH, "localisation"))
 
         global_loc_lines = [
-            "#Generated by EU4 Dynamic Names Generator",
             "l_english:",
+            " #Generated by EU4 Dynamic Names Generator",
             " #decision",
-            GLOBAL_DECISION_KEYS["title"],
-            GLOBAL_DECISION_KEYS["desc"],
+            " " + GLOBAL_DECISION_KEYS["title"],
+            " " + GLOBAL_DECISION_KEYS["desc"],
+            " " + GLOBAL_DECISION_KEYS["tooltip"],
+            " #master event",
+            ' dynamic_names.0.a:0 "OK"',
         ]
 
         global_loc_path = build_global_localisation_file_path(EVENT_NAME)
-        write_file_with_directory(global_loc_path, "\n".join(global_loc_lines))
+        write_file_with_directory(
+            global_loc_path, "\n".join(global_loc_lines), LOCALISATION_ENCODING
+        )
         log_master("Writing global localisation done")
 
 
