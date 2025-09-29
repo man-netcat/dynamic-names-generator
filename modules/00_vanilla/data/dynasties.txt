@@ -163,287 +163,287 @@ Zikri
 Ziyadoghlu
 Zulqadr
 # Additional dynasties
-Abdali
-Abdallabi
-Abyssinid
-Adil
-Adinda
-Afrasiyabid
-Afshar
-Ahmadi
-Ahmadid
-Akamalwal
-Al
-Al-Malindi
-Al-Mazrui
-Al-Tumi
-Al-Zaid
-Aleyli
-Aliid
-Anteoni
-Anwarudid
-Aq
-Arabshahid
-Arackal
-Arghun
-Arnavut
-Asaf
-Askia
-Askiya
-Avari
-Awadhi
-Aydinoglu
-Azna
-Baba
-Babi
-Bacolod
-Balawat
-Baloi
-Banu
-Barabara
-Bardisi
-Barid
-Bau-Bau
-Beg
-Bendahara
-Beni
-Bhanj
-Bhuyavamsha
-Biga
-Bitchin
-Bolkiah
-Bostandji
-Buhtur
-Bursala
-Butig
-Candaroglu
-Chacki
-Chagatayid
-Chaouch
-Chisti
-Chudasama
-Corso
-Dali
-Dandani
-Darod
-Deli
-Demak
-Denianke
-Derbendi
-Dhana
-Dhiyamigili
-Diallo
-Ditsaan
-Djafarid
-Djanush
-Djavush
-Djelebi
-Donboli
-Dotawo
-Dragutli
-Dughlat
-Dulkadiroglu
-Dumalondong
-Durrani
-Edigid
-Eshaqvand
-Etsu
-Faruqi
-Fodio
-Fulani
-Galeni
-Gallipoli
-Ganesha
-Gapi
-Gareen
-Genghisid
-Gerad
-Germiyan
-Ghuri
-Giray
-Gorogo
-Gunungjati
-Habe
-Hadiya
-Hadj
-Hajj
-Hajji
-Hamawi
-Harari
-Harti
-Hasan-Jalalyan
-Hilaalee
-Hintata
-Holkar
-Huraa
-Hussein
-Husseinid
-Ibrahimid
-Idrisid
-Ilya
-Ilyas
-Imad
-Inayat
-Inland
-Isdhoo
-Iskanderid
-Ismaili
-Istanbulewa
-Izmirli
-Jafarid
-Jaladi
-Jambi
-Jeenung
-Jenne-Koi
-Kachwaha
-Kaidid
-Kalhora
-Kalopid
-Kanz
-Karamanoglu
-Karanle
-Karh
-Karrani
-Kartanegara
-Kedah
-Keita
-Kelantan
-Kenadid
-Kerdeki
-Khalji
-Khederid
-Khmer
-Khoja
-Khoudja
-Kiya
-Kolathiri
-Konboro
-Kse
-Kuloglu
-Kumukh
-Kurdogli
-Langa
-Lobbo
-Madaya
-Maguindanao
-Mahamat
-Majapahit
-Malikzada
-Manghit
-Maragai
-Marashi
-Maribo
-Matarama
-Mauli
-Maynila
-Mehmedi
-Mehmedid
-Melaka
-Mentesoglu
-Mewati
-Mezzomorto
-Ming
-Mkeddem
-Mokrani
-Moussadid
-Muara
-Mudaito
-Mugyat
-Muhammadid
-# Musha'sha'iya
-Mustafid
-Muzaffar
-Muzaffarid
-Mvita
-Nabhan
-Najafi
-Narayan
-Nasiri
-Nasrid
-Ndiaye
-Negara
-Nizam
-Osmanoglu
-Paduspanid
-Pajang
-Palembang
-Palopo
-Pasai
-Pehlavan
-Qadirid
-Qara
-Qasemlu
-Qasim
-Qasimid
-Qongirat
-Qutb
-Ramadanid
-Ramazanoglu
-Rashid
-Rizvanid
-Rodesi
-Rohilla
-Rojaki
-Sa'ud
-Saadatullahid
-Samma
-Sandhawalia
-Saqizli
-Sarkar
-Saruhanoglu
-Sayfawa
-Sayyid
-Seku
-Senar
-Shabanid
-Shah
-Shahsevan
-Shaja'atid
-Shamkhal
-Sharqi
-Shaybanid
-Shaykiyya
-Shi
-Siak
-Siddhi
-Simnani
-Sinsiniwar
-Soliman
-Solomonid
-Solong
-Sonni
-Srivijaya
-Suleimanid
-Suri
-Taibughin
-Talpur
-Terzi
-Tidore
-Timurid
-Torodbe
-Tuqaitimurid
-Turani
-Ulyanoglu
-Ummatur
-Utheemu
-Uthmanid
-Veneziano
-Vnziano
-Walashma
-Wattara
-Wodeyar
-Ya'ariba
-Yan
-Yusufid
-Zanzibari
-al-Djeszairli
-al-Haddad
-al-Hassan
-al-Kahwadji
-al-Khardj
-al-Makram
-al-Mawahib
-al-Mughamis
-al-Suhali
-al-Turki
-el-Kbir
+# Abdali
+# Abdallabi
+# Abyssinid
+# Adil
+# Adinda
+# Afrasiyabid
+# Afshar
+# Ahmadi
+# Ahmadid
+# Akamalwal
+# Al
+# Al-Malindi
+# Al-Mazrui
+# Al-Tumi
+# Al-Zaid
+# Aleyli
+# Aliid
+# Anteoni
+# Anwarudid
+# Aq
+# Arabshahid
+# Arackal
+# Arghun
+# Arnavut
+# Asaf
+# Askia
+# Askiya
+# Avari
+# Awadhi
+# Aydinoglu
+# Azna
+# Baba
+# Babi
+# Bacolod
+# Balawat
+# Baloi
+# Banu
+# Barabara
+# Bardisi
+# Barid
+# Bau-Bau
+# Beg
+# Bendahara
+# Beni
+# Bhanj
+# Bhuyavamsha
+# Biga
+# Bitchin
+# Bolkiah
+# Bostandji
+# Buhtur
+# Bursala
+# Butig
+# Candaroglu
+# Chacki
+# Chagatayid
+# Chaouch
+# Chisti
+# Chudasama
+# Corso
+# Dali
+# Dandani
+# Darod
+# Deli
+# Demak
+# Denianke
+# Derbendi
+# Dhana
+# Dhiyamigili
+# Diallo
+# Ditsaan
+# Djafarid
+# Djanush
+# Djavush
+# Djelebi
+# Donboli
+# Dotawo
+# Dragutli
+# Dughlat
+# Dulkadiroglu
+# Dumalondong
+# Durrani
+# Edigid
+# Eshaqvand
+# Etsu
+# Faruqi
+# Fodio
+# Fulani
+# Galeni
+# Gallipoli
+# Ganesha
+# Gapi
+# Gareen
+# Genghisid
+# Gerad
+# Germiyan
+# Ghuri
+# Giray
+# Gorogo
+# Gunungjati
+# Habe
+# Hadiya
+# Hadj
+# Hajj
+# Hajji
+# Hamawi
+# Harari
+# Harti
+# Hasan-Jalalyan
+# Hilaalee
+# Hintata
+# Holkar
+# Huraa
+# Hussein
+# Husseinid
+# Ibrahimid
+# Idrisid
+# Ilya
+# Ilyas
+# Imad
+# Inayat
+# Inland
+# Isdhoo
+# Iskanderid
+# Ismaili
+# Istanbulewa
+# Izmirli
+# Jafarid
+# Jaladi
+# Jambi
+# Jeenung
+# Jenne-Koi
+# Kachwaha
+# Kaidid
+# Kalhora
+# Kalopid
+# Kanz
+# Karamanoglu
+# Karanle
+# Karh
+# Karrani
+# Kartanegara
+# Kedah
+# Keita
+# Kelantan
+# Kenadid
+# Kerdeki
+# Khalji
+# Khederid
+# Khmer
+# Khoja
+# Khoudja
+# Kiya
+# Kolathiri
+# Konboro
+# Kse
+# Kuloglu
+# Kumukh
+# Kurdogli
+# Langa
+# Lobbo
+# Madaya
+# Maguindanao
+# Mahamat
+# Majapahit
+# Malikzada
+# Manghit
+# Maragai
+# Marashi
+# Maribo
+# Matarama
+# Mauli
+# Maynila
+# Mehmedi
+# Mehmedid
+# Melaka
+# Mentesoglu
+# Mewati
+# Mezzomorto
+# Ming
+# Mkeddem
+# Mokrani
+# Moussadid
+# Muara
+# Mudaito
+# Mugyat
+# Muhammadid
+# # Musha'sha'iya
+# Mustafid
+# Muzaffar
+# Muzaffarid
+# Mvita
+# Nabhan
+# Najafi
+# Narayan
+# Nasiri
+# Nasrid
+# Ndiaye
+# Negara
+# Nizam
+# Osmanoglu
+# Paduspanid
+# Pajang
+# Palembang
+# Palopo
+# Pasai
+# Pehlavan
+# Qadirid
+# Qara
+# Qasemlu
+# Qasim
+# Qasimid
+# Qongirat
+# Qutb
+# Ramadanid
+# Ramazanoglu
+# Rashid
+# Rizvanid
+# Rodesi
+# Rohilla
+# Rojaki
+# Sa'ud
+# Saadatullahid
+# Samma
+# Sandhawalia
+# Saqizli
+# Sarkar
+# Saruhanoglu
+# Sayfawa
+# Sayyid
+# Seku
+# Senar
+# Shabanid
+# Shah
+# Shahsevan
+# Shaja'atid
+# Shamkhal
+# Sharqi
+# Shaybanid
+# Shaykiyya
+# Shi
+# Siak
+# Siddhi
+# Simnani
+# Sinsiniwar
+# Soliman
+# Solomonid
+# Solong
+# Sonni
+# Srivijaya
+# Suleimanid
+# Suri
+# Taibughin
+# Talpur
+# Terzi
+# Tidore
+# Timurid
+# Torodbe
+# Tuqaitimurid
+# Turani
+# Ulyanoglu
+# Ummatur
+# Utheemu
+# Uthmanid
+# Veneziano
+# Vnziano
+# Walashma
+# Wattara
+# Wodeyar
+# Ya'ariba
+# Yan
+# Yusufid
+# Zanzibari
+# al-Djeszairli
+# al-Haddad
+# al-Hassan
+# al-Kahwadji
+# al-Khardj
+# al-Makram
+# al-Mawahib
+# al-Mughamis
+# al-Suhali
+# al-Turki
+# el-Kbir

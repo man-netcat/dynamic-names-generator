@@ -20,6 +20,26 @@ def read_lines(path: str) -> list[str]:
         return [line.strip() for line in f if line.strip() and not line.startswith("#")]
 
 
+def read_modules_config(config_path: str) -> list[str]:
+    """Read module names from modules.conf, filtering out comments and empty lines."""
+    if not os.path.exists(config_path):
+        # Fallback to directory listing if config doesn't exist
+        modules_dir = os.path.dirname(config_path)
+        modules_root = os.path.join(modules_dir, "modules")
+        if os.path.exists(modules_root):
+            return sorted(os.listdir(modules_root))
+        return []
+    
+    with open(config_path, encoding="utf-8-sig") as f:
+        modules = []
+        for line in f:
+            line = line.strip()
+            # Skip empty lines and comments
+            if line and not line.startswith("#"):
+                modules.append(line)
+        return modules
+
+
 def parse_rule_data(
     key: str, rule_data: dict, parent_tags=None, parent_conditions="", parent_name_adj=None
 ) -> list[Rule]:

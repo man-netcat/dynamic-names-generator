@@ -1696,17 +1696,6 @@ KALMAR_UNION = {
 	}
 }
 
-NORTH_SEA_EMPIRE = {
-	name = "North Sea Empire"
-	tags = {
-		tag = SCA
-	}
-	conditions = {
-		has_country_flag = renamed_to_north_sea_empire
-		government_rank = 3
-	}
-}
-
 NOVGOROD = {
 	tags = {
 		tag = NOV

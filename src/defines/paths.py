@@ -6,6 +6,7 @@ This module contains all path-related constants used throughout the generator.
 # === BASE PATHS ===
 MOD_PATH = "../"
 MODULES_ROOT = "modules"
+MODULES_CONFIG_PATH = "modules.conf"
 
 # === DIRECTORY NAMES ===
 RULES_DIR = "rules"

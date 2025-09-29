@@ -286,3 +286,14 @@ VIET_NAM = {
 		}
 	}
 }
+
+NORTH_SEA_EMPIRE = {
+	name = "The North Sea"
+	name_adj = "North Sea"
+	tags = {
+		tag = SCA
+	}
+	conditions = {
+		has_country_flag = renamed_to_north_sea_empire
+	}
+}

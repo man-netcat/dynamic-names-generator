@@ -13,6 +13,7 @@ from .defines.game_config import *
 from .core.file_helpers import *
 from .core.logging_utils import *
 from .utils import *
+from .utils.file_parsing import read_modules_config
 
 
 class Generator:
@@ -30,7 +31,8 @@ class Generator:
 
     def __init__(self, modules_root: str):
         self.modules_root = modules_root
-        self.module_names = sorted(os.listdir(modules_root))
+        config_path = os.path.join(os.path.dirname(modules_root), MODULES_CONFIG_PATH)
+        self.module_names = read_modules_config(config_path)
         self.generated_keys: dict[str, str] = {}  # key -> product event_name
         self.duplicate_keys: dict[str, list[str]] = (
             {}
