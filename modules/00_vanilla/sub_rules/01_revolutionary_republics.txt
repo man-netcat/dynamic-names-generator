@@ -1,412 +1,426 @@
 # Revolutionary republics
 REVOLUTIONARY_REPUBLIC_GROUP = {
-    group = {
-        INDIA = {
-            name = "India"
-            name_adj = "Indian"
-            tags = {
-                tag = BHA
-                tag = HIN
-            }
-        }
-        BANGLADESH = {
-            name = "Bangladesh"
-            name_adj = "Bangladeshi"
-            tags = {
-                tag = BNG
-            }
-        }
-        SRI_LANKA = {
-            name = "Sri Lanka"
-            name_adj = "Sri Lankan"
-            tags = {
-                tag = CEY
-            }
-        }
-        CAMBODIA = {
-            name = "Cambodia"
-            name_adj = "Cambodian"
-            tags = {
-                tag = KHM
-            }
-        }
-        LAOS = {
-            name = "Laos"
-            name_adj = "Laotian"
-            tags = {
-                tag = LXA
-            }
-        }
-        THAILAND = {
-            name = "Thailand"
-            name_adj = "Thai"
-            tags = {
-                tag = SUK
-                tag = AYU
-                tag = SIA
-            }
-        }
-        BURMA = {
-            name = "Burma"
-            name_adj = "Burmese"
-            tags = {
-                tag = AVA
-                tag = TAU
-                tag = PEG
-            }
-        }
-        TAIWAN = {
-            name = "Taiwan"
-            name_adj = "Taiwanese"
-            tags = {
-                tag = FRM
-            }
-        }
-        BELGIUM = {
-            name = "Belgium"
-            name_adj = "Belgian"
-            tags = {
-                tag = HAI
-                tag = FLA
-            }
-        }
-        LIGURIA = {
-            name = "Liguria"
-            name_adj = "Ligurian"
-            tags = {
-                tag = GEN
-            }
-        }
-        CISAPLIA = {
-            name = "Cisalpia"
-            name_adj = "Cisalpine"
-            tags = {
-                tag = MLO
-            }
-        }
-        PARTHENOPEA = {
-            name = "Parthenopea"
-            name_adj = "Parthenopean"
-            tags = {
-                tag = NAP
-                tag = TTS
-            }
-        }
-        PIEDMONT = {
-            name = "Piedmont"
-            name_adj = "Piedmontese"
-            tags = {
-                tag = SAV
-                tag = SPI
-            }
-        }
-        HELVETIA = {
-            name = "Helvetia"
-            name_adj = "Helvetic"
-            tags = {
-                tag = SWI
-            }
-        }
-        ETRURIA = {
-            name = "Etruria"
-            name_adj = "Etrurian"
-            tags = {
-                tag = LAN
-                tag = TUS
-            }
-        }
-        ANCONIA = {
-            name = "Anconia"
-            name_adj = "Anconine"
-            tags = {
-                tag = URB
-            }
-        }
-        SAN_MARCO = {
-            name = "San Marco"
-            name_adj = "Sanmarconese"
-            tags = {
-                tag = VEN
-            }
-        }
-        CZECHIA = {
-            name = "Czechia"
-            name_adj = "Czech"
-            tags = {
-                tag = BOH
-            }
-        }
-        SLOVENIA = {
-            name = "Slovenia"
-            name_adj = "Slovene"
-            tags = {
-                tag = CLI
-            }
-        }
-        ILLYRIA = {
-            name = "Illyria"
-            name_adj = "Illyrian"
-            tags = {
-                tag = CRO
-            }
-        }
-        UKRAINE = {
-            name = "Ukraine"
-            name_adj = "Ukrainian"
-            tags = {
-                tag = UKR
-                tag = KIE
-            }
-        }
-        LATVIA = {
-            name = "Latvia"
-            name_adj = "Latvian"
-            tags = {
-                tag = LVA
-            }
-        }
-        DACIA = {
-            name = "Dacia"
-            name_adj = "Dacian"
-            tags = {
-                tag = RMN
-            }
-        }
-        SLOVAKIA = {
-            name = "Slovakia"
-            name_adj = "Slovak"
-            tags = {
-                tag = SLO
-            }
-        }
-        HELLADA = {
-            name = "Hellada"
-            name_adj = "Hellene"
-            tags = {
-                tag = GRE
-            }
-        }
-        BELARUS = {
-            name = "Belarus"
-            name_adj = "Belarussian"
-            tags = {
-                tag = PLT
-            }
-        }
-        KUBAN = {
-            name = "Kuban"
-            name_adj = "Kuban"
-            tags = {
-                tag = CIR
-            }
-        }
-        TATARSTAN = {
-            name = "Tatarstan"
-            name_adj = "Tatar"
-            tags = {
-                tag = KAZ
-            }
-        }
-        KAZAKHSTAN = {
-            name = "Kazakhstan"
-            name_adj = "Kazakh"
-            tags = {
-                tag = KZH
-            }
-        }
-        SIBERIA = {
-            name = "Siberia"
-            name_adj = "Siberian"
-            tags = {
-                tag = SIB
-            }
-        }
-        TAJIKISTAN = {
-            name = "Tajikistan"
-            name_adj = "Tajikistani"
-            tags = {
-                tag = KOK
-            }
-        }
-        TURKMENISTAN = {
-            name = "Turkmenistan"
-            name_adj = "Turkmen"
-            tags = {
-                tag = KHI
-            }
-        }
-        UZBEKISTAN = {
-            name = "Uzbekistan"
-            name_adj = "Uzbek"
-            tags = {
-                tag = SHY
-            }
-        }
-        XINJIANG = {
-            name = "Xinjiang"
-            name_adj = "Xinjiang"
-            tags = {
-                tag = KAS
-            }
-        }
-        KYRGYZSTAN = {
-            name = "Kyrgyzstan"
-            name_adj = "Kyrgyzstani"
-            tags = {
-                tag = CHG
-            }
-        }
-        MONGOLIA = {
-            name = "Mongolia"
-            name_adj = "Mongolian"
-            tags = {
-                tag = KLK
-            }
-        }
-        JAMAICA = {
-            name = "Jamaica"
-            name_adj = "Jamaican"
-            tags = {
-                tag = WSI
-            }
-        }
-        KURDISTAN = {
-            name = "Kurdistan"
-            name_adj = "Kurdistani"
-            tags = {
-                tag = BTL
-                tag = ARD
-            }
-        }
-        AZERBAIJAN = {
-            name = "Azerbaijan"
-            name_adj = "Azerbaijani"
-            tags = {
-                tag = SRV
-            }
-        }
-        LIBYA = {
-            name = "Libya"
-            name_adj = "Libyan"
-            tags = {
-                tag = TRP
-            }
-        }
-        TUNISIA = {
-            name = "Tunisia"
-            name_adj = "Tunisian"
-            tags = {
-                tag = TUN
-            }
-        }
-        ALGERIA = {
-            name = "Algeria"
-            name_adj = "Algerian"
-            tags = {
-                tag = ALG
-            }
-        }
-        UGANDA = {
-            name = "Uganda"
-            name_adj = "Ugandan"
-            tags = {
-                tag = BUG
-            }
-        }
-        SENEGAL = {
-            name = "Senegal"
-            name_adj = "Senegalese"
-            tags = {
-                tag = JOL
-            }
-        }
-        CHAD = {
-            name = "Chad"
-            name_adj = "Chadian"
-            tags = {
-                tag = KBO
-            }
-        }
-        KENYA = {
-            name = "Kenya"
-            name_adj = "Kenyan"
-            tags = {
-                tag = MBA
-            }
-        }
-        MADAGASCAR = {
-            name = "Madagascar"
-            name_adj = "Malagasy"
-            tags = {
-                tag = MIR
-            }
-        }
-        BURKINA_FASO = {
-            name = "Burkina Faso"
-            name_adj = "Burkinabe"
-            tags = {
-                tag = MSI
-            }
-        }
-        ANGOLA = {
-            name = "Angola"
-            name_adj = "Angolan"
-            tags = {
-                tag = NDO
-            }
-        }
-        SOMALILAND = {
-            name = "Somaliland"
-            name_adj = "Somalilander"
-            tags = {
-                tag = ADA
-            }
-        }
-        SOUTH_AFRICA = {
-            name = "South Africa"
-            name_adj = "South African"
-            tags = {
-                tag = ZUL
-            }
-        }
-        SUDAN = {
-            name = "Sudan"
-            name_adj = "Sudanese"
-            tags = {
-                tag = ABB
-            }
-        }
-        NIGER = {
-            name = "Niger"
-            name_adj = "Nigerien"
-            tags = {
-                tag = SON
-            }
-        }
-        NIGERIA = {
-            name = "Nigeria"
-            name_adj = "Nigerian"
-            tags = {
-                tag = HAU
-            }
-        }
-        GHANA = {
-            name = "Ghana"
-            name_adj = "Ghanaian"
-            tags = {
-                tag = ASH
-            }
-        }
-        EZO = {
-            name = "Ezo"
-            name_adj = "Ezoan"
-            tags = {
-                tag = ANU
-            }
-        }
-    }
-    conditions = {
-        government = republic
-        is_revolutionary_republic_trigger = yes
-    }
+	group = {
+		INDIA = {
+			name = "India"
+			name_adj = "Indian"
+			tags = {
+				tag = BHA
+				tag = HIN
+			}
+		}
+		BANGLADESH = {
+			name = "Bangladesh"
+			name_adj = "Bangladeshi"
+			tags = {
+				tag = BNG
+			}
+		}
+		SRI_LANKA = {
+			name = "Sri Lanka"
+			name_adj = "Sri Lankan"
+			tags = {
+				tag = CEY
+			}
+		}
+		CAMBODIA = {
+			name = "Cambodia"
+			name_adj = "Cambodian"
+			tags = {
+				tag = KHM
+			}
+		}
+		LAOS = {
+			name = "Laos"
+			name_adj = "Laotian"
+			tags = {
+				tag = LXA
+			}
+		}
+		THAILAND = {
+			name = "Thailand"
+			name_adj = "Thai"
+			tags = {
+				tag = SUK
+				tag = AYU
+				tag = SIA
+			}
+		}
+		BURMA = {
+			name = "Burma"
+			name_adj = "Burmese"
+			tags = {
+				tag = AVA
+				tag = TAU
+				tag = PEG
+			}
+		}
+		TAIWAN = {
+			name = "Taiwan"
+			name_adj = "Taiwanese"
+			tags = {
+				tag = FRM
+			}
+		}
+		BELGIUM = {
+			name = "Belgium"
+			name_adj = "Belgian"
+			tags = {
+				tag = HAI
+				tag = FLA
+			}
+		}
+		LIGURIA = {
+			name = "Liguria"
+			name_adj = "Ligurian"
+			tags = {
+				tag = GEN
+			}
+		}
+		CISAPLIA = {
+			name = "Cisalpia"
+			name_adj = "Cisalpine"
+			tags = {
+				tag = MLO
+			}
+		}
+		PARTHENOPEA = {
+			name = "Parthenopea"
+			name_adj = "Parthenopean"
+			tags = {
+				tag = NAP
+				tag = TTS
+			}
+		}
+		PIEDMONT = {
+			name = "Piedmont"
+			name_adj = "Piedmontese"
+			tags = {
+				tag = SAV
+				tag = SPI
+			}
+		}
+		HELVETIA = {
+			name = "Helvetia"
+			name_adj = "Helvetic"
+			tags = {
+				tag = SWI
+			}
+		}
+		ETRURIA = {
+			name = "Etruria"
+			name_adj = "Etrurian"
+			tags = {
+				tag = LAN
+				tag = TUS
+			}
+		}
+		ANCONIA = {
+			name = "Anconia"
+			name_adj = "Anconine"
+			tags = {
+				tag = URB
+			}
+		}
+		SAN_MARCO = {
+			name = "San Marco"
+			name_adj = "Sanmarconese"
+			tags = {
+				tag = VEN
+			}
+		}
+		CZECHIA = {
+			name = "Czechia"
+			name_adj = "Czech"
+			tags = {
+				tag = BOH
+			}
+		}
+		SLOVENIA = {
+			name = "Slovenia"
+			name_adj = "Slovene"
+			tags = {
+				tag = CLI
+			}
+		}
+		ILLYRIA = {
+			name = "Illyria"
+			name_adj = "Illyrian"
+			tags = {
+				tag = CRO
+			}
+		}
+		UKRAINE = {
+			name = "Ukraine"
+			name_adj = "Ukrainian"
+			tags = {
+				tag = UKR
+				tag = KIE
+			}
+		}
+		LATVIA = {
+			name = "Latvia"
+			name_adj = "Latvian"
+			tags = {
+				tag = LVA
+			}
+		}
+		DACIA = {
+			name = "Dacia"
+			name_adj = "Dacian"
+			tags = {
+				tag = RMN
+			}
+		}
+		SLOVAKIA = {
+			name = "Slovakia"
+			name_adj = "Slovak"
+			tags = {
+				tag = SLO
+			}
+		}
+		HELLADA = {
+			name = "Hellada"
+			name_adj = "Hellene"
+			tags = {
+				tag = GRE
+			}
+		}
+		BELARUS = {
+			name = "Belarus"
+			name_adj = "Belarussian"
+			tags = {
+				tag = PLT
+			}
+		}
+		CHERKESSIA = {
+			name = "Cherkessia"
+			name_adj = "Cherkessian"
+			tags = {
+				tag = CIR
+			}
+		}
+		TATARSTAN = {
+			name = "Tatarstan"
+			name_adj = "Tatar"
+			tags = {
+				tag = KAZ
+			}
+		}
+		KAZAKHSTAN = {
+			name = "Kazakhstan"
+			name_adj = "Kazakh"
+			tags = {
+				tag = KZH
+			}
+		}
+		SIBERIA = {
+			name = "Siberia"
+			name_adj = "Siberian"
+			tags = {
+				tag = SIB
+			}
+		}
+		TAJIKISTAN = {
+			name = "Tajikistan"
+			name_adj = "Tajikistani"
+			tags = {
+				tag = KOK
+			}
+		}
+		TURKMENISTAN = {
+			name = "Turkmenistan"
+			name_adj = "Turkmen"
+			tags = {
+				tag = KHI
+			}
+		}
+		UZBEKISTAN = {
+			name = "Uzbekistan"
+			name_adj = "Uzbek"
+			tags = {
+				tag = SHY
+			}
+		}
+		XINJIANG = {
+			name = "Xinjiang"
+			name_adj = "Xinjiang"
+			tags = {
+				tag = KAS
+			}
+		}
+		KYRGYZSTAN = {
+			name = "Kyrgyzstan"
+			name_adj = "Kyrgyzstani"
+			tags = {
+				tag = CHG
+			}
+		}
+		MONGOLIA = {
+			name = "Mongolia"
+			name_adj = "Mongolian"
+			tags = {
+				tag = KLK
+			}
+		}
+		KALMYKIA = {
+			name = "Kalmykia"
+			name_adj = "Kalmyk"
+			tags = {
+				tag = KLM
+			}
+		}
+		JAMAICA = {
+			name = "Jamaica"
+			name_adj = "Jamaican"
+			tags = {
+				tag = WSI
+			}
+		}
+		KURDISTAN = {
+			name = "Kurdistan"
+			name_adj = "Kurdistani"
+			tags = {
+				tag = BTL
+				tag = ARD
+			}
+		}
+		DAGESTAN = {
+			name = "Dagestan"
+			name_adj = "Dagestani"
+			tags = {
+				tag = GAZ
+			}
+		}
+		AZERBAIJAN = {
+			name = "Azerbaijan"
+			name_adj = "Azerbaijani"
+			tags = {
+				tag = SRV
+			}
+		}
+		LIBYA = {
+			name = "Libya"
+			name_adj = "Libyan"
+			tags = {
+				tag = TRP
+			}
+		}
+		TUNISIA = {
+			name = "Tunisia"
+			name_adj = "Tunisian"
+			tags = {
+				tag = TUN
+			}
+		}
+		ALGERIA = {
+			name = "Algeria"
+			name_adj = "Algerian"
+			tags = {
+				tag = ALG
+			}
+		}
+		UGANDA = {
+			name = "Uganda"
+			name_adj = "Ugandan"
+			tags = {
+				tag = BUG
+			}
+		}
+		SENEGAL = {
+			name = "Senegal"
+			name_adj = "Senegalese"
+			tags = {
+				tag = JOL
+			}
+		}
+		CHAD = {
+			name = "Chad"
+			name_adj = "Chadian"
+			tags = {
+				tag = KBO
+			}
+		}
+		KENYA = {
+			name = "Kenya"
+			name_adj = "Kenyan"
+			tags = {
+				tag = MBA
+			}
+		}
+		MADAGASCAR = {
+			name = "Madagascar"
+			name_adj = "Malagasy"
+			tags = {
+				tag = MIR
+			}
+		}
+		BURKINA_FASO = {
+			name = "Burkina Faso"
+			name_adj = "Burkinabe"
+			tags = {
+				tag = MSI
+			}
+		}
+		ANGOLA = {
+			name = "Angola"
+			name_adj = "Angolan"
+			tags = {
+				tag = NDO
+			}
+		}
+		SOMALILAND = {
+			name = "Somaliland"
+			name_adj = "Somalilander"
+			tags = {
+				tag = ADA
+			}
+		}
+		SOUTH_AFRICA = {
+			name = "South Africa"
+			name_adj = "South African"
+			tags = {
+				tag = ZUL
+			}
+		}
+		SUDAN = {
+			name = "Sudan"
+			name_adj = "Sudanese"
+			tags = {
+				tag = ABB
+			}
+		}
+		NIGER = {
+			name = "Niger"
+			name_adj = "Nigerien"
+			tags = {
+				tag = SON
+			}
+		}
+		NIGERIA = {
+			name = "Nigeria"
+			name_adj = "Nigerian"
+			tags = {
+				tag = HAU
+			}
+		}
+		GHANA = {
+			name = "Ghana"
+			name_adj = "Ghanaian"
+			tags = {
+				tag = ASH
+			}
+		}
+		EZO = {
+			name = "Ezo"
+			name_adj = "Ezoan"
+			tags = {
+				tag = ANU
+			}
+		}
+	}
+	conditions = {
+		government = republic
+		is_revolutionary_republic_trigger = yes
+	}
 }
