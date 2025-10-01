@@ -1,6 +1,6 @@
-JALAYRIDS = {
-	name = "Jalayrids"
-	name_adj = "Jalayrid"
+JALAYIRIDS = {
+	name = "The Jalayirids"
+	name_adj = "Jalayirid"
 	tags = {
 		tag = ILK
 	}
