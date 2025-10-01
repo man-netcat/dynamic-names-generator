@@ -66,6 +66,25 @@ PEASANT_REPUBLIC = {
 	}
 }
 
+PEASANT_JUNTA = {
+	name = "Peasant Junta of {NAME}"
+	conditions = {
+		is_revolutionary_republic_trigger = yes
+		have_had_reform = peasants_republic
+		government_rank = 3
+	}
+}
+
+SUPREME_JUNTA = {
+	name = "Supreme Junta of {NAME}"
+	tags = {
+		tag = SPA
+	}
+	conditions = {
+		is_revolutionary_republic_trigger = yes
+	}
+}
+
 REVOLUTIONARY_EMPIRE = {
 	name = "Revolutionary Empire of {NAME}"
 	conditions = {
@@ -1246,6 +1265,16 @@ PIRATE_REPUBLICS = {
 	}
 }
 
+MILITARY_REPUBLIC = {
+	name = "Military Republic of {NAME}"
+	conditions = {
+		OR = {
+			has_reform = military_dictatorship_reform
+			has_reform = military_rulership_reform
+		}
+	}
+}
+
 SAVANAROLA_GOVERNMENT = {
 	name = "Divine Mandate of {NAME}"
 	conditions = {
@@ -1609,6 +1638,7 @@ CROWN_SPANISH = {
 		tag = CAT
 	}
 	conditions = {
+		government = monarchy
 		religion_group = christian
 		government_rank = 2
 		num_of_provinces_in_states = 18
