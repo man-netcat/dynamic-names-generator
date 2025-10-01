@@ -314,3 +314,10 @@ AVAR = {
 		government = monarchy
 	}
 }
+
+ILKHANATE = {
+	name = "The Ilkhanate"
+	tags = {
+		tag = ILK
+	}
+}

@@ -1,0 +1,10 @@
+JALAYRIDS = {
+	name = "Jalayrids"
+	name_adj = "Jalayrid"
+	tags = {
+		tag = ILK
+	}
+	conditions = {
+		has_country_flag = jalayirid_identity_chosen
+	}
+}
