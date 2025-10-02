@@ -320,4 +320,11 @@ ILKHANATE = {
 	tags = {
 		tag = ILK
 	}
+	conditions = {
+		is_vassal = no
+		OR = {
+			government = monarchy
+			government = tribal
+		}
+	}
 }
