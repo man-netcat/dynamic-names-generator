@@ -67,3 +67,14 @@ KHITAN = {
 		primary_culture = khitan
 	}
 }
+
+WESTERN_LIAO = {
+	tags = {
+		tag = QKH
+	}
+	name = "Western Liao"
+	name_adj = "Liao"
+	conditions = {
+		has_country_flag = is_WESTERN_LIAO_flag
+	}
+}
