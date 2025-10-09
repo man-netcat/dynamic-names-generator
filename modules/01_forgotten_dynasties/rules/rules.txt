@@ -26,3 +26,44 @@ CHINESE_EMPIRE = {
 		is_emperor_of_china = yes
 	}
 }
+
+KHITAN = {
+	tags = {
+		tag = QKH
+		tag = LIA
+	}
+	group = {
+		THE_KHITANS = {
+			name = "The Khitans"
+			conditions = {
+				OR = {
+					is_subject = yes
+					NOT = {
+						total_development = 150
+					}
+				}
+			}
+		}
+		KHANATE = {
+			name = "{NAME} Khanate"
+			conditions = {
+				is_subject = no
+				total_development = 150
+			}
+		}
+		KHAGANATE = {
+			name = "{NAME} Khaganate"
+			conditions = {
+				is_subject = no
+				government_rank = 3
+			}
+		}
+	}
+	conditions = {
+		OR = {
+			has_reform = steppe_horde
+			is_emperor_of_china = no
+		}
+		primary_culture = khitan
+	}
+}
