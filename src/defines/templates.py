@@ -13,6 +13,9 @@ country_event = {{
     id = {event_name}.0
     hidden = yes
     is_triggered_only = yes
+    title = "DUMMY"
+    desc = "DUMMY"
+    picture = TRADE_GOODS_FURS_FISH_AND_SALT_eventPicture
 
     immediate = {{
 {event_triggers}
@@ -29,6 +32,9 @@ country_event = {{
     id = {event_name}.{id}
     hidden = yes
     is_triggered_only = yes
+    title = "DUMMY"
+    desc = "DUMMY"
+    picture = TRADE_GOODS_FURS_FISH_AND_SALT_eventPicture
 
     trigger = {{
         tag = {tag}
@@ -49,6 +55,9 @@ country_event = {{
     id = {event_name}.{id}
     hidden = yes
     is_triggered_only = yes
+    title = "DUMMY"
+    desc = "DUMMY"
+    picture = TRADE_GOODS_FURS_FISH_AND_SALT_eventPicture
 
     immediate = {{
 {conditions}
@@ -80,6 +89,9 @@ country_event = {{
     id = {event_name}.0
     hidden = yes
     is_triggered_only = yes
+    title = "DUMMY"
+    desc = "DUMMY"
+    picture = TRADE_GOODS_FURS_FISH_AND_SALT_eventPicture
 
     immediate = {{
 {module_triggers}
