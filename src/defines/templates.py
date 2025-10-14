@@ -71,7 +71,7 @@ country_event = {{
 
 DECISION_TEMPLATE = """\
 country_decisions = {{
-    update_dynamic_names_decision = {{
+    update_{event_name}_decision = {{
         potential = {{ always = yes }}
         allow = {{ always = yes }}
         ai_will_do = {{ factor = 0 }}

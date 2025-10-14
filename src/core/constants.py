@@ -4,6 +4,8 @@ This module contains all configuration constants that control the behavior
 of the dynamic names generation process.
 """
 
+from ..defines import EVENT_NAME
+
 # Game event triggers that should trigger dynamic name updates
 ON_ACTION_TRIGGERS = [
     "on_bi_yearly_pulse",
@@ -21,9 +23,9 @@ ON_ACTION_TRIGGERS = [
 
 # Global localisation keys for the decision system
 GLOBAL_DECISION_KEYS = {
-    "title": 'update_dynamic_names_decision_title:0 "Update Dynamic Names"',
-    "desc": 'update_dynamic_names_decision_desc:0 "Force update dynamic names (e.g. after a government rank change). Happens automatically every 2 in-game years."',
-    "tooltip": 'update_dynamic_names_decision_tooltip:0 "Force update dynamic names (e.g. after a government rank change)."',
+    "title": f'update_{EVENT_NAME}_decision_title:0 "Update Dynamic Names"',
+    "desc": f'update_{EVENT_NAME}_decision_desc:0 "Force update dynamic names (e.g. after a government rank change). Happens automatically every 2 in-game years."',
+    "tooltip": f'update_{EVENT_NAME}_decision_tooltip:0 "Force update dynamic names (e.g. after a government rank change)."',
 }
 
 # Default file encoding for localisation files
