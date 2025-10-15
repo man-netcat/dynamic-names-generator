@@ -78,3 +78,29 @@ WESTERN_LIAO = {
 		has_country_flag = is_WESTERN_LIAO_flag
 	}
 }
+
+MAJIN = {
+	tags = {
+		tag = MJN
+	}
+	group = {
+		DIVINE_KINGDOM = {
+			name = "Divine Kingdom of {NAME}"
+			conditions = {
+				NOT = {
+					government_rank = 3
+				}
+			}
+		}
+		DIVINE_EMPIRE = {
+			name = "Divine Empire of {NAME}"
+			conditions = {
+				government_rank = 3
+			}
+		}
+	}
+	name_adj = "Majin"
+	conditions = {
+		has_reform = maitreya_kingdom
+	}
+}

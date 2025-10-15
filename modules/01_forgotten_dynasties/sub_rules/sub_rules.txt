@@ -1,0 +1,10 @@
+TAEBONG = {
+	name = "Taebong"
+	name_adj = "Taebong"
+	tags = {
+		tag = MJN
+	}
+	conditions = {
+		has_country_flag = is_TAEBONG_flag
+	}
+}
