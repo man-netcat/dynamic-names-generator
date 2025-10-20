@@ -8,3 +8,14 @@ TAEBONG = {
 		has_country_flag = is_TAEBONG_flag
 	}
 }
+
+KALAT = {
+	name = "Kalat"
+	name_adj = "Kalatli"
+	tags = {
+		tag = BAL
+	}
+	conditions = {
+		has_country_flag = is_KALAT_flag
+	}
+}
