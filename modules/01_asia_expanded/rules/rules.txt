@@ -104,6 +104,7 @@ MAJIN = {
 		has_reform = maitreya_kingdom
 	}
 }
+
 DEVLET_I_ILKHANID = {
 	name = "Devlet-i Ilkhân"
 	name_adj = "Ilkhanid"
@@ -158,6 +159,23 @@ KALAT = {
 		AND = {
 			has_reform = steppe_horde
 			has_country_flag = is_KALAT_flag
+		}
+	}
+}
+
+AUTONOMOUS_REGION = {
+	name = "{NAME} Autonomous Region"
+	tags = {
+		tag = XIN
+		tag = TIB
+		tag = MCH
+		tag = CHH
+		tag = KHA
+	}
+	conditions = {
+		subject_type = personal_union
+		overlord = {
+			is_emperor_of_china = yes
 		}
 	}
 }
