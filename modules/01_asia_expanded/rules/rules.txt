@@ -171,6 +171,7 @@ AUTONOMOUS_REGION = {
 		tag = MCH
 		tag = CHH
 		tag = KHA
+		tag = NAN
 	}
 	conditions = {
 		subject_type = personal_union
