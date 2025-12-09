@@ -174,7 +174,7 @@ AUTONOMOUS_REGION = {
 		tag = NAN
 	}
 	conditions = {
-		subject_type = autonomous_region
+		is_subject_of_type = autonomous_region
 		overlord = {
 			is_emperor_of_china = yes
 		}

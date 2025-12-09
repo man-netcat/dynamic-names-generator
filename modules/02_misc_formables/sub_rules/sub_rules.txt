@@ -1,0 +1,32 @@
+UGRIA = {
+	name = "Ugria"
+	name_adj = "Ugric"
+	tags = {
+		tag = FUG
+	}
+	conditions = {
+		has_country_flag = is_UGRIA_flag
+	}
+}
+
+ESTONIA_FINLAND = {
+	name = "Estonia-Finland"
+	name_adj = "Estonian-Finnish"
+	tags = {
+		tag = EFI
+	}
+	conditions = {
+		has_country_flag = is_ESTONIA_FINLAND_flag
+	}
+}
+
+FINLAND_ESTONIA = {
+	name = "Finland-Estonia"
+	name_adj = "Finno-Estonian"
+	tags = {
+		tag = EFI
+	}
+	conditions = {
+		has_country_flag = is_FINLAND_ESTONIA_flag
+	}
+}
